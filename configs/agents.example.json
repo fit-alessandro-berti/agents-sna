@@ -1,0 +1,17 @@
+{
+  "max_iterations": 4,
+  "agents": [
+    {
+      "name": "planner",
+      "description": "A pragmatic planning agent. Break the problem into actionable steps, identify dependencies, and keep the final answer focused on execution."
+    },
+    {
+      "name": "critic",
+      "description": "A skeptical review agent. Look for incorrect assumptions, edge cases, missing constraints, and failure modes."
+    },
+    {
+      "name": "synthesizer",
+      "description": "A synthesis agent. Reconcile previous perspectives into a concise, coherent answer that directly addresses the user's request."
+    }
+  ]
+}
