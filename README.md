@@ -168,3 +168,36 @@ benchmark_runs/<run-name>/summary.json
 
 PNG questions are sent as multimodal `image_url` messages by default. Use
 `--skip-images` to process only textual questions.
+
+## Agent Judge
+
+Evaluate saved benchmark request/response artifacts with an
+LLM-as-a-judge:
+
+```bash
+python3 src/agents_sna/agent_judge.py \
+  benchmark_runs/gpt-5.4-mini-verification-heavy \
+  --judge-model openai/gpt-5.4
+```
+
+You can also pass a `requests/` directory, individual
+`*.requests.json` files, or glob patterns. Matching response files are
+found from the sibling `responses/` directory by default.
+
+Each output file is written under:
+
+```text
+agent_evaluations/<source-run>/<judge-model>/<question>.agent_evaluations.json
+```
+
+The output is a JSON list of nodes. `START` is always first and
+represents the first selector decision, `COMPLETE` is always last, and
+later selector calls are skipped:
+
+```json
+[
+  { "agent_type": "START", "evaluation": 8.0, "explanation": "Good first choice" },
+  { "agent_type": "artifact_parser", "evaluation": 8.5, "explanation": "Correct parsing" },
+  { "agent_type": "COMPLETE", "evaluation": 9.0, "explanation": "Grounded final answer" }
+]
+```

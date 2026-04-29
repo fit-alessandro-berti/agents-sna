@@ -15,6 +15,7 @@ dependencies = [
 [project.scripts]
 agents-sna = "agents_sna.cli:main"
 agents-sna-benchmark = "agents_sna.benchmark_runner:main"
+agents-sna-judge = "agents_sna.agent_judge:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
