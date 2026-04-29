@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
 import json
 import re
@@ -13,6 +14,8 @@ from agents_sna.prompts import (
     build_selection_messages,
 )
 from agents_sna.types import AgentAnswer
+
+EventHandler = Callable[[str, dict[str, object]], None]
 
 
 class ChatClient(Protocol):
@@ -38,9 +41,16 @@ class AgentSelection:
 
 
 class AgenticOrchestrator:
-    def __init__(self, *, config: AgenticConfig, client: ChatClient):
+    def __init__(
+        self,
+        *,
+        config: AgenticConfig,
+        client: ChatClient,
+        event_handler: EventHandler | None = None,
+    ):
         self.config = config
         self.client = client
+        self.event_handler = event_handler
 
     def run(self, original_prompt: str) -> OrchestrationResult:
         prompt = original_prompt.strip()
@@ -49,6 +59,12 @@ class AgenticOrchestrator:
 
         previous_answers: list[AgentAnswer] = []
         agents_by_name = self.config.agent_by_name()
+        self._emit(
+            "run_start",
+            prompt=prompt,
+            max_iterations=self.config.max_iterations,
+            agent_names=tuple(agents_by_name),
+        )
 
         for iteration in range(1, self.config.max_iterations):
             selection_messages = build_selection_messages(
@@ -58,8 +74,27 @@ class AgenticOrchestrator:
                 current_iteration=iteration,
                 max_iterations=self.config.max_iterations,
             )
+            self._emit(
+                "request",
+                kind="selector",
+                iteration=iteration,
+                messages=selection_messages,
+                model=None,
+            )
             raw_selection = self.client.complete(selection_messages)
+            self._emit(
+                "response",
+                kind="selector",
+                iteration=iteration,
+                content=raw_selection,
+            )
             selection = parse_agent_selection(raw_selection, set(agents_by_name))
+            self._emit(
+                "selection",
+                iteration=iteration,
+                agent_names=selection.agent_names,
+                final_requested=selection.final_requested,
+            )
             if selection.final_requested:
                 break
 
@@ -72,9 +107,24 @@ class AgenticOrchestrator:
                     current_iteration=iteration,
                     max_iterations=self.config.max_iterations,
                 )
+                self._emit(
+                    "request",
+                    kind="agent",
+                    iteration=iteration,
+                    agent_name=agent.name,
+                    messages=agent_messages,
+                    model=agent.model,
+                )
                 answer = self.client.complete(
                     agent_messages,
                     model=agent.model,
+                )
+                self._emit(
+                    "response",
+                    kind="agent",
+                    iteration=iteration,
+                    agent_name=agent.name,
+                    content=answer,
                 )
                 previous_answers.append(
                     AgentAnswer(
@@ -84,16 +134,28 @@ class AgenticOrchestrator:
                     )
                 )
 
+        final_messages = build_final_messages(
+            original_prompt=prompt,
+            previous_answers=previous_answers,
+        )
+        self._emit(
+            "request",
+            kind="final",
+            iteration=self.config.max_iterations,
+            messages=final_messages,
+            model=None,
+        )
         final_answer = self.client.complete(
-            build_final_messages(
-                original_prompt=prompt,
-                previous_answers=previous_answers,
-            )
+            final_messages
         )
         return OrchestrationResult(
             final_answer=final_answer.strip(),
             agent_answers=tuple(previous_answers),
         )
+
+    def _emit(self, event: str, **payload: object) -> None:
+        if self.event_handler:
+            self.event_handler(event, payload)
 
 
 def parse_agent_selection(raw_selection: str, known_agents: set[str]) -> AgentSelection:

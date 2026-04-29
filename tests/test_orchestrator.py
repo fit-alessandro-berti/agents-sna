@@ -91,6 +91,40 @@ class OrchestratorTests(unittest.TestCase):
         self.assertEqual(client.calls[2]["model"], "critic-model")
         self.assertEqual(len(client.calls), 5)
 
+    def test_orchestrator_emits_prompt_and_response_events(self) -> None:
+        config = AgenticConfig(
+            max_iterations=2,
+            agents=(AgentSpec(name="planner", description="Plans."),),
+        )
+        client = FakeClient(
+            [
+                '["planner"]',
+                "planner answer",
+                "final answer",
+            ]
+        )
+        events: list[tuple[str, dict[str, object]]] = []
+
+        result = AgenticOrchestrator(
+            config=config,
+            client=client,
+            event_handler=lambda event, payload: events.append((event, payload)),
+        ).run("Original")
+
+        self.assertEqual(result.final_answer, "final answer")
+        self.assertEqual([event for event, _ in events], [
+            "run_start",
+            "request",
+            "response",
+            "selection",
+            "request",
+            "response",
+            "request",
+        ])
+        self.assertEqual(events[1][1]["kind"], "selector")
+        self.assertEqual(events[4][1]["kind"], "agent")
+        self.assertEqual(events[-1][1]["kind"], "final")
+
     def test_max_iterations_one_goes_directly_to_final(self) -> None:
         config = AgenticConfig(
             max_iterations=1,

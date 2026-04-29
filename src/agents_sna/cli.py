@@ -5,10 +5,160 @@ import json
 import os
 from pathlib import Path
 import sys
+import textwrap
+from typing import TextIO
+
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from agents_sna.config import load_config
 from agents_sna.openrouter import DEFAULT_BASE_URL, DEFAULT_MODEL, OpenRouterClient
 from agents_sna.orchestrator import AgenticOrchestrator
+
+
+class Colors:
+    RESET = "\033[0m"
+    BOLD = "\033[1m"
+    DIM = "\033[2m"
+    GRAY = "\033[90m"
+    RED = "\033[31m"
+    GREEN = "\033[32m"
+    YELLOW = "\033[33m"
+    BLUE = "\033[34m"
+    MAGENTA = "\033[35m"
+    CYAN = "\033[36m"
+    WHITE = "\033[97m"
+
+
+class CliLogger:
+    def __init__(
+        self,
+        *,
+        enabled: bool,
+        use_color: bool,
+        stream: TextIO,
+        config_path: Path,
+        default_model: str,
+        base_url: str,
+    ):
+        self.enabled = enabled
+        self.use_color = use_color
+        self.stream = stream
+        self.config_path = config_path
+        self.default_model = default_model
+        self.base_url = base_url
+
+    def handle(self, event: str, payload: dict[str, object]) -> None:
+        if not self.enabled:
+            return
+
+        if event == "run_start":
+            self._run_start(payload)
+        elif event == "request":
+            self._request(payload)
+        elif event == "response":
+            self._response(payload)
+        elif event == "selection":
+            self._selection(payload)
+
+    def _run_start(self, payload: dict[str, object]) -> None:
+        prompt = str(payload.get("prompt", ""))
+        max_iterations = payload.get("max_iterations", "?")
+        agent_names = payload.get("agent_names", ())
+        agents = ", ".join(str(name) for name in agent_names)
+
+        self._line("agents-sna starting", Colors.GREEN, bold=True)
+        self._line(f"config: {self.config_path}", Colors.GRAY)
+        self._line(f"openrouter base url: {self.base_url}", Colors.GRAY)
+        self._line(f"default model: {self.default_model}", Colors.GRAY)
+        self._line(f"max iterations: {max_iterations}", Colors.GRAY)
+        self._line(f"agents: {agents}", Colors.GRAY)
+        self._block("original prompt sent by the user", prompt, Colors.YELLOW)
+
+    def _request(self, payload: dict[str, object]) -> None:
+        kind = str(payload.get("kind", "request"))
+        iteration = payload.get("iteration", "?")
+        agent_name = payload.get("agent_name")
+        model = payload.get("model") or self.default_model
+        messages = payload.get("messages")
+
+        if kind == "selector":
+            title = f"selector prompt sent | iteration {iteration} | model {model}"
+            color = Colors.MAGENTA
+        elif kind == "agent":
+            title = (
+                f"agent prompt sent | iteration {iteration} | "
+                f"agent {agent_name} | model {model}"
+            )
+            color = Colors.CYAN
+        elif kind == "final":
+            title = f"final synthesis prompt sent | model {model}"
+            color = Colors.BLUE
+        else:
+            title = f"{kind} prompt sent | iteration {iteration} | model {model}"
+            color = Colors.BLUE
+
+        self._line("")
+        self._line(title, color, bold=True)
+        if isinstance(messages, list):
+            self._messages(messages)
+
+    def _response(self, payload: dict[str, object]) -> None:
+        kind = str(payload.get("kind", "response"))
+        iteration = payload.get("iteration", "?")
+        content = str(payload.get("content", ""))
+
+        if kind == "selector":
+            title = f"selector response received | iteration {iteration}"
+            color = Colors.MAGENTA
+        elif kind == "agent":
+            agent_name = payload.get("agent_name", "?")
+            title = f"agent response received | iteration {iteration} | agent {agent_name}"
+            color = Colors.GREEN
+        else:
+            title = f"{kind} response received | iteration {iteration}"
+            color = Colors.CYAN
+
+        self._block(title, content, color)
+
+    def _selection(self, payload: dict[str, object]) -> None:
+        iteration = payload.get("iteration", "?")
+        if payload.get("final_requested"):
+            text = f"selector requested final answer generation at iteration {iteration}"
+        else:
+            names = payload.get("agent_names", ())
+            selected = ", ".join(str(name) for name in names)
+            text = f"selector chose next agent(s) at iteration {iteration}: {selected}"
+        self._line(text, Colors.BLUE)
+
+    def _messages(self, messages: list[object]) -> None:
+        for index, raw_message in enumerate(messages, start=1):
+            if not isinstance(raw_message, dict):
+                continue
+            role = str(raw_message.get("role", "?"))
+            content = str(raw_message.get("content", ""))
+            color = {
+                "system": Colors.BLUE,
+                "user": Colors.YELLOW,
+                "assistant": Colors.GREEN,
+            }.get(role, Colors.CYAN)
+
+            self._line(f"  message {index}: {role}", color)
+            self._line(textwrap.indent(content.rstrip() or "<empty>", "    "), Colors.GRAY)
+
+    def _block(self, title: str, content: str, color: str) -> None:
+        self._line("")
+        self._line(title, color, bold=True)
+        self._line(textwrap.indent(content.rstrip() or "<empty>", "  "), color)
+
+    def _line(self, text: str, color: str = Colors.GRAY, *, bold: bool = False) -> None:
+        print(self._paint(text, color, bold=bold), file=self.stream)
+
+    def _paint(self, text: str, color: str, *, bold: bool = False) -> str:
+        if not self.use_color:
+            return text
+        prefix = f"{Colors.BOLD if bold else ''}{color}"
+        return f"{prefix}{text}{Colors.RESET}"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -17,13 +167,22 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         prompt = read_prompt(args)
-        config = load_config(args.config)
+        config_path = resolve_config_path(args.config)
+        config = load_config(config_path)
         api_key = args.api_key or os.getenv("OPENROUTER_API_KEY")
         if not api_key:
             raise ValueError(
                 "OpenRouter API key missing. Set OPENROUTER_API_KEY or pass --api-key."
             )
 
+        logger = CliLogger(
+            enabled=not args.quiet,
+            use_color=not args.no_color and os.getenv("NO_COLOR") is None,
+            stream=sys.stderr,
+            config_path=config_path,
+            default_model=args.model,
+            base_url=args.base_url,
+        )
         client = OpenRouterClient(
             api_key=api_key,
             model=args.model,
@@ -32,9 +191,20 @@ def main(argv: list[str] | None = None) -> int:
             app_url=args.app_url,
             app_name=args.app_name,
         )
-        result = AgenticOrchestrator(config=config, client=client).run(prompt)
+        result = AgenticOrchestrator(
+            config=config,
+            client=client,
+            event_handler=logger.handle,
+        ).run(prompt)
     except Exception as exc:
-        print(f"error: {exc}", file=sys.stderr)
+        print(
+            color_text(
+                f"error: {exc}",
+                Colors.RED,
+                enabled=not getattr(args, "no_color", False),
+            ),
+            file=sys.stderr,
+        )
         return 1
 
     if args.json:
@@ -55,11 +225,7 @@ def main(argv: list[str] | None = None) -> int:
             )
         )
     else:
-        if args.show_transcript:
-            for answer in result.agent_answers:
-                print(f"\n[{answer.iteration}] {answer.agent_name}\n{answer.content}")
-            print("\nFinal answer\n")
-        print(result.final_answer)
+        print(color_text(result.final_answer, Colors.WHITE, enabled=not args.no_color))
 
     return 0
 
@@ -115,12 +281,22 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--show-transcript",
         action="store_true",
-        help="Print intermediate agent answers before the final answer.",
+        help="Deprecated: progress output now shows the transcript during the run.",
     )
     parser.add_argument(
         "--json",
         action="store_true",
         help="Print final answer and transcript as JSON.",
+    )
+    parser.add_argument(
+        "--quiet",
+        action="store_true",
+        help="Suppress progress output. The final answer is still printed.",
+    )
+    parser.add_argument(
+        "--no-color",
+        action="store_true",
+        help="Disable ANSI color output.",
     )
     return parser
 
@@ -132,7 +308,26 @@ def read_prompt(args: argparse.Namespace) -> str:
         return args.prompt_file.read_text(encoding="utf-8")
     if args.prompt:
         return " ".join(args.prompt)
+    if sys.stdin.isatty():
+        raise ValueError("Provide a prompt argument, --prompt-file, or pipe text on stdin.")
     return sys.stdin.read()
+
+
+def resolve_config_path(raw_path: str) -> Path:
+    path = Path(raw_path)
+    if path.is_absolute() or path.exists():
+        return path
+
+    repo_relative = Path(__file__).resolve().parents[2] / path
+    if repo_relative.exists():
+        return repo_relative
+    return path
+
+
+def color_text(text: str, color: str, *, enabled: bool = True) -> str:
+    if not enabled or os.getenv("NO_COLOR") is not None:
+        return text
+    return f"{color}{text}{Colors.RESET}"
 
 
 if __name__ == "__main__":

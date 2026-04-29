@@ -67,9 +67,17 @@ Useful options:
 
 ```bash
 agents-sna --help
-agents-sna --model openai/gpt-5.4-mini --show-transcript "Your prompt"
+agents-sna --model openai/gpt-5.4-mini "Your prompt"
 agents-sna --json "Your prompt"
+agents-sna --quiet "Your prompt"
+agents-sna --no-color "Your prompt"
 ```
+
+By default, the CLI prints colored progress details to stderr while the
+run is happening: the original prompt, each prompt bundle sent to the
+LLM, selector responses, selected agents, and agent responses. The final
+answer is printed to stdout in white. Use `--quiet` to suppress progress
+output or `--no-color` to disable ANSI colors.
 
 ## Flow
 
