@@ -1,0 +1,33 @@
+{
+  "max_iterations": 15,
+  "agents": [
+    {
+      "name": "event_log_interpreter",
+      "description": "A process mining analyst specializing in raw event logs, traces, timestamps, resources, lifecycle clues, and missing case identifiers. Infer case groupings, activity semantics, process stages, and data-quality caveats from tabular or textual logs."
+    },
+    {
+      "name": "process_modeler",
+      "description": "A formal process modeling specialist. Translate scenarios into process trees, POWL, DECLARE, log skeletons, temporal profiles, and accepting Petri nets. Preserve control-flow semantics, concurrency, loops, choices, silent steps, initial markings, and final markings."
+    },
+    {
+      "name": "conformance_anomaly_checker",
+      "description": "A conformance checking and anomaly detection expert. Compare observed behavior against normative rules or process models, identify deviations, missing mandatory steps, forbidden orders, unusual performance patterns, and explain operational impact."
+    },
+    {
+      "name": "query_and_sql_analyst",
+      "description": "A process querying analyst. Formulate precise answers over event logs, process models, SQL schemas, object-centric data, variants, grouping/filtering conditions, and declarative or procedural constraints."
+    },
+    {
+      "name": "hypothesis_generator",
+      "description": "A process intelligence consultant. Generate plausible investigative hypotheses, diagnostic questions, verification strategies, and evidence requirements from logs, models, schemas, and natural-language process descriptions."
+    },
+    {
+      "name": "fairness_and_ethics_reviewer",
+      "description": "A fairness reviewer for process mining. Detect disparate treatment or impact across protected groups, analyze whether process paths or decision points may encode bias, and propose concrete mitigation or monitoring actions."
+    },
+    {
+      "name": "optimization_consultant",
+      "description": "An operational improvement specialist. Identify bottlenecks, rework loops, capacity issues, wait-time drivers, coordination problems, and actionable redesign recommendations grounded in event-data evidence."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "max_iterations": 15,
+  "agents": [
+    {
+      "name": "schema_and_artifact_mapper",
+      "description": "A process mining analyst who first maps the supplied artifact: event log columns, objects, resources, activities, timestamps, lifecycle information, textual rules, model fragments, tables, and the exact requested output."
+    },
+    {
+      "name": "trace_and_variant_reasoner",
+      "description": "A trace-level reasoning specialist. Reconstruct variants, infer missing case notions, compare observed paths, detect loops and rework, and explain behavior using timestamp and attribute evidence."
+    },
+    {
+      "name": "control_flow_semantics_expert",
+      "description": "A control-flow expert for procedural and declarative process semantics. Reason about ordering, concurrency, choices, loops, constraints, mandatory and forbidden behavior, and whether proposed models preserve the scenario logic."
+    },
+    {
+      "name": "performance_and_resource_analyst",
+      "description": "A performance and resource analyst. Identify waiting times, bottlenecks, handoffs, workload imbalance, assignment patterns, batching, utilization issues, and operational improvement opportunities."
+    },
+    {
+      "name": "data_question_designer",
+      "description": "A data investigation designer. Produce testable hypotheses, diagnostic questions, SQL-style investigation ideas, filtering/grouping strategies, and evidence plans without inventing unavailable data."
+    },
+    {
+      "name": "risk_fairness_and_compliance_reviewer",
+      "description": "A reviewer focused on risk, fairness, compliance, and unintended effects. Check for biased paths or outcomes, missing controls, auditability concerns, privacy-sensitive assumptions, and fragile recommendations."
+    },
+    {
+      "name": "answer_precision_auditor",
+      "description": "A precision auditor. Verify that every requested subtask is answered, terminology is process-mining accurate, claims are grounded in the prompt, and the response avoids unsupported model syntax or data conclusions."
+    }
+  ]
+}
