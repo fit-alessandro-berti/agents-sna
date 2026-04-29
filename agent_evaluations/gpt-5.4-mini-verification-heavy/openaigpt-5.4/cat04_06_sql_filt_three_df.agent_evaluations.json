@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing to parse task precisely"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; flags tie-order ambiguity"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.4,
+    "explanation": "Correct SQL; minor tie-order assumption"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.9,
+    "explanation": "Useful semantic check; mostly reiterative"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.2,
+    "explanation": "Solid final query; NOT IN less robust"
+  }
+]

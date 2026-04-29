@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing; sensible parser choice"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.7,
+    "explanation": "Strong extraction; one SQL labeled violation is we"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.8,
+    "explanation": "Useful but one SQL query misdefines anomalies"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.1,
+    "explanation": "Accurate checks; concise and grounded"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.2,
+    "explanation": "Covers asks, but anomaly clustering SQL is flawed"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.4,
+    "explanation": "Accurate extraction; flags key ambiguities"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.1,
+    "explanation": "Solid SQL; minor tie/parameter assumptions"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.5,
+    "explanation": "Useful restatement; less precise than n3"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.0,
+    "explanation": "Correct final query; tie handling underspecified"
+  }
+]

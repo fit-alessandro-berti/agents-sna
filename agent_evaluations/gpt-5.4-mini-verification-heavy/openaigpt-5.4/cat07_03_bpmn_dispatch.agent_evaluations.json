@@ -1,0 +1,12 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 1.0,
+    "explanation": "Premature FINAL; no analysis or delegation"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.6,
+    "explanation": "Detailed but likely hallucinated image specifics"
+  }
+]

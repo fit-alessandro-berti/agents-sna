@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Sensible first pick; limited direct content"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.8,
+    "explanation": "Useful grounded parse; some assumptions"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Clear final description; slightly inferred"
+  }
+]

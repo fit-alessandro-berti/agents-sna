@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing; parser was apt"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.6,
+    "explanation": "Useful extraction; slight early inference"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.2,
+    "explanation": "Correct core answer, but not rigorous"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first routing to schema/task extraction"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; key caveats flagged"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.1,
+    "explanation": "Useful, but adjacency assumption weakens rigor"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.7,
+    "explanation": "Sharp caveats; improves grounding and SQL"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.6,
+    "explanation": "Comprehensive, but repeats flawed SQL assumptions"
+  }
+]

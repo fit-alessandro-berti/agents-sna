@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Sensible first agent choice; no deeper strategy"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.9,
+    "explanation": "Useful but not pure parsing; omits exact deliverab"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.6,
+    "explanation": "Solid PM points, but high-level and incomplete"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Comprehensive and grounded; some rigor gaps"
+  }
+]

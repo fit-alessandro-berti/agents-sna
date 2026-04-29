@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first choice; parser useful before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.9,
+    "explanation": "Useful metrics list, but not true parsing"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.1,
+    "explanation": "Solid PM guidance, but brief and generic"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.4,
+    "explanation": "Strong caveats on semantics, causality, rigor"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Comprehensive and grounded; some generic claims"
+  }
+]

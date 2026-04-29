@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first routing, no deeper strategy"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.1,
+    "explanation": "Wrong role; invalid dicts and weak grounding"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.9,
+    "explanation": "Caught syntax/semantics issues; useful fixes"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.2,
+    "explanation": "Strong edge-case critique, well grounded"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Valid syntax, but overconstrained and inconsistent"
+  }
+]
