@@ -16,6 +16,9 @@ from agents_sna.openrouter import DEFAULT_BASE_URL, DEFAULT_MODEL, OpenRouterCli
 from agents_sna.orchestrator import AgenticOrchestrator
 
 
+JsonObject = dict[str, object]
+
+
 class Colors:
     RESET = "\033[0m"
     BOLD = "\033[1m"
@@ -115,6 +118,14 @@ class CliLogger:
             agent_name = payload.get("agent_name", "?")
             title = f"agent response received | iteration {iteration} | agent {agent_name}"
             color = Colors.GREEN
+        elif kind == "final":
+            self._line("")
+            self._line(
+                "final response received; printing final answer on stdout",
+                Colors.BLUE,
+                bold=True,
+            )
+            return
         else:
             title = f"{kind} response received | iteration {iteration}"
             color = Colors.CYAN
@@ -161,6 +172,106 @@ class CliLogger:
         return f"{prefix}{text}{Colors.RESET}"
 
 
+class ReportRecorder:
+    def __init__(
+        self,
+        *,
+        request_inputs_path: Path | None,
+        conversation_trace_path: Path | None,
+    ):
+        self.request_inputs_path = request_inputs_path
+        self.conversation_trace_path = conversation_trace_path
+        self.request_inputs: list[list[dict[str, str]]] = []
+        self.trace: JsonObject = {
+            "original_prompt": "",
+            "events": [],
+        }
+        self._selector_responses: dict[int, str] = {}
+
+    @property
+    def enabled(self) -> bool:
+        return bool(self.request_inputs_path or self.conversation_trace_path)
+
+    def handle(self, event: str, payload: dict[str, object]) -> None:
+        if not self.enabled:
+            return
+
+        if event == "run_start":
+            self.trace["original_prompt"] = str(payload.get("prompt", ""))
+        elif event == "request":
+            self._request(payload)
+        elif event == "response":
+            self._response(payload)
+        elif event == "selection":
+            self._selection(payload)
+
+    def write(self) -> None:
+        if self.request_inputs_path:
+            write_json_file(self.request_inputs_path, self.request_inputs)
+        if self.conversation_trace_path:
+            write_json_file(self.conversation_trace_path, self.trace)
+
+    def _request(self, payload: dict[str, object]) -> None:
+        if not self.request_inputs_path:
+            return
+
+        messages = payload.get("messages")
+        if not isinstance(messages, list):
+            return
+
+        self.request_inputs.append(normalize_messages(messages))
+
+    def _response(self, payload: dict[str, object]) -> None:
+        kind = str(payload.get("kind", "response"))
+        iteration = int(payload.get("iteration", 0) or 0)
+        content = str(payload.get("content", ""))
+
+        if kind == "selector":
+            self._selector_responses[iteration] = content
+        elif kind == "agent":
+            self._append_trace(
+                {
+                    "type": "agent_response",
+                    "iteration": iteration,
+                    "agent": str(payload.get("agent_name", "")),
+                    "response": content,
+                }
+            )
+        elif kind == "final":
+            self._append_trace(
+                {
+                    "type": "final_answer",
+                    "iteration": iteration,
+                    "response": content,
+                }
+            )
+
+    def _selection(self, payload: dict[str, object]) -> None:
+        iteration = int(payload.get("iteration", 0) or 0)
+        agent_names = payload.get("agent_names", ())
+        if isinstance(agent_names, tuple):
+            agents = list(agent_names)
+        elif isinstance(agent_names, list):
+            agents = agent_names
+        else:
+            agents = []
+
+        self._append_trace(
+            {
+                "type": "choice",
+                "iteration": iteration,
+                "raw_response": self._selector_responses.pop(iteration, ""),
+                "agents": [str(agent) for agent in agents],
+                "final_requested": bool(payload.get("final_requested")),
+            }
+        )
+
+    def _append_trace(self, item: JsonObject) -> None:
+        events = self.trace.get("events")
+        if isinstance(events, list):
+            events.append(item)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -183,6 +294,10 @@ def main(argv: list[str] | None = None) -> int:
             default_model=args.model,
             base_url=args.base_url,
         )
+        report_recorder = ReportRecorder(
+            request_inputs_path=args.request_inputs_file,
+            conversation_trace_path=args.conversation_trace_file,
+        )
         client = OpenRouterClient(
             api_key=api_key,
             model=args.model,
@@ -194,8 +309,9 @@ def main(argv: list[str] | None = None) -> int:
         result = AgenticOrchestrator(
             config=config,
             client=client,
-            event_handler=logger.handle,
+            event_handler=composite_event_handler(logger.handle, report_recorder.handle),
         ).run(prompt)
+        report_recorder.write()
     except Exception as exc:
         print(
             color_text(
@@ -298,6 +414,22 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Disable ANSI color output.",
     )
+    parser.add_argument(
+        "--request-inputs-file",
+        type=Path,
+        help=(
+            "Write a JSON report of every LLM request input message list "
+            "with system/user/assistant roles."
+        ),
+    )
+    parser.add_argument(
+        "--conversation-trace-file",
+        type=Path,
+        help=(
+            "Write a compact JSON trace with the original prompt, selector "
+            "choices, agent responses, and final answer."
+        ),
+    )
     return parser
 
 
@@ -328,6 +460,37 @@ def color_text(text: str, color: str, *, enabled: bool = True) -> str:
     if not enabled or os.getenv("NO_COLOR") is not None:
         return text
     return f"{color}{text}{Colors.RESET}"
+
+
+def composite_event_handler(*handlers: object):
+    def handle(event: str, payload: dict[str, object]) -> None:
+        for handler in handlers:
+            if callable(handler):
+                handler(event, payload)
+
+    return handle
+
+
+def normalize_messages(messages: list[object]) -> list[dict[str, str]]:
+    normalized: list[dict[str, str]] = []
+    for message in messages:
+        if not isinstance(message, dict):
+            continue
+        normalized.append(
+            {
+                "role": str(message.get("role", "")),
+                "content": str(message.get("content", "")),
+            }
+        )
+    return normalized
+
+
+def write_json_file(path: Path, payload: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":

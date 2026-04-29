@@ -71,6 +71,9 @@ agents-sna --model openai/gpt-5.4-mini "Your prompt"
 agents-sna --json "Your prompt"
 agents-sna --quiet "Your prompt"
 agents-sna --no-color "Your prompt"
+agents-sna --request-inputs-file reports/requests.json \
+  --conversation-trace-file reports/trace.json \
+  "Your prompt"
 ```
 
 By default, the CLI prints colored progress details to stderr while the
@@ -78,6 +81,14 @@ run is happening: the original prompt, each prompt bundle sent to the
 LLM, selector responses, selected agents, and agent responses. The final
 answer is printed to stdout in white. Use `--quiet` to suppress progress
 output or `--no-color` to disable ANSI colors.
+
+Both report files are optional and are written as JSON with indent `2`.
+`--request-inputs-file` writes the full list of LLM request inputs, one
+message list per OpenRouter call, in call order. Each message contains a
+`role` such as `system`, `user`, or `assistant`, and its `content`.
+`--conversation-trace-file` writes a shorter trace containing the
+original prompt, selector choices, chosen-agent responses, and final
+answer.
 
 ## Flow
 

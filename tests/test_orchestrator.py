@@ -120,6 +120,7 @@ class OrchestratorTests(unittest.TestCase):
             "request",
             "response",
             "request",
+            "response",
         ])
         self.assertEqual(events[1][1]["kind"], "selector")
         self.assertEqual(events[4][1]["kind"], "agent")

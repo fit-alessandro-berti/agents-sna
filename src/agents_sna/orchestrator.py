@@ -148,6 +148,12 @@ class AgenticOrchestrator:
         final_answer = self.client.complete(
             final_messages
         )
+        self._emit(
+            "response",
+            kind="final",
+            iteration=self.config.max_iterations,
+            content=final_answer,
+        )
         return OrchestrationResult(
             final_answer=final_answer.strip(),
             agent_answers=tuple(previous_answers),
