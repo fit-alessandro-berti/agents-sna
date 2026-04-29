@@ -204,3 +204,39 @@ later selector calls are skipped:
   { "agent_type": "COMPLETE", "evaluation": 9.0, "explanation": "Grounded final answer" }
 ]
 ```
+
+## Evaluation Network
+
+Aggregate a folder of judged agent-evaluation files into node and edge
+statistics:
+
+```bash
+python3 src/agents_sna/evaluation_network.py \
+  agent_evaluations/gpt-5.4-mini-verification-heavy/openaigpt-5.4
+```
+
+The default output is:
+
+```text
+agent_evaluations/<source-run>/<judge-model>/social_network_analysis.json
+```
+
+Nodes are grouped by `agent_type`. Directed edges are consecutive
+`agent_type` pairs in each evaluation file. Since evaluation files score
+nodes, not handoffs, each edge occurrence is scored with the target
+node's evaluation by default. Use `--edge-score mean` to score an edge
+with the mean of its source and target node scores.
+
+The output contains `count`, `average`, and population `stddev` for each
+node and edge:
+
+```json
+{
+  "nodes": [
+    { "agent_type": "artifact_parser", "count": 30, "average": 7.2, "stddev": 0.8 }
+  ],
+  "edges": [
+    { "source": "START", "target": "artifact_parser", "count": 18, "average": 7.4, "stddev": 0.9 }
+  ]
+}
+```

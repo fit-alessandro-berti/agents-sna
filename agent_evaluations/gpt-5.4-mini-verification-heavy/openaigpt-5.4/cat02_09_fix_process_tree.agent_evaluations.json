@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.6,
+    "explanation": "Correct fix; slight overreach on domain order"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Accurate final, but no semantic caveats"
+  }
+]

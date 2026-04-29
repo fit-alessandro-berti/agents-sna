@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-verification-heavy",
+  "question": "cat06_03_bias_powl.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_verification_heavy.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-verification-heavy_cat06_03_bias_powl.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat06_03_bias_powl.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat06_03_bias_powl.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\traces\\cat06_03_bias_powl.trace.json",
+  "final_answer_length": 1920
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first choice: parse before modeling"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.4,
+    "explanation": "Useful extraction; loop/RDT handling shaky"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.6,
+    "explanation": "Catches nesting, but repeats flawed loop view"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.9,
+    "explanation": "Mostly usable tree; unresolved semantic defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.5,
+    "explanation": "Clear final tree, but key modeling caveat remains"
+  }
+]

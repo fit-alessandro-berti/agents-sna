@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first-agent choice; minimal but apt"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 9.1,
+    "explanation": "Precise parse, ambiguities flagged well"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.6,
+    "explanation": "Useful redesign, but not task-by-task enough"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Strong coverage; limited rigor, no edge cases"
+  }
+]

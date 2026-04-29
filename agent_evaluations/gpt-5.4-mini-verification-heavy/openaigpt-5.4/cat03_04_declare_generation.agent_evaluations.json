@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first routing to parse prompt requirements"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate schema extraction; flags key ambiguity"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Useful assumptions, but pair semantics too vague"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.5,
+    "explanation": "Strong caution on semantics and empty keys"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.1,
+    "explanation": "Final dict malformed for binary constraints in pm4"
+  }
+]

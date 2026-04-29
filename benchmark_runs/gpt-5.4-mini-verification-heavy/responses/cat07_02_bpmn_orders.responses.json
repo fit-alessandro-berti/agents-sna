@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "selector",
+    "iteration": 1,
+    "agent": null,
+    "content": "[\"artifact_parser\"]"
+  },
+  {
+    "kind": "agent",
+    "iteration": 1,
+    "agent": "artifact_parser",
+    "content": "Here’s a concise description of the visualization:\n\n- It is a **BPMN-style process diagram** with four swimlanes: **Sales**, **Production**, **Procurement**, and **Warehouse**.\n- The flow starts in **Sales** on **Monday morning** with **“Check customer’s order”**.\n- In Sales, the process checks whether the order is complete and whether the customer already exists in the database:\n  - If the customer is **not in the database**, the process adds the customer.\n  - If the customer **is already in the database**, it proceeds directly.\n- Sales then **sends order details**, which are then used by downstream departments.\n\n- In **Production**, **order details arrive**, then the process branches to:\n  - **Plan production**\n  - Continue to **Manufacture product**\n- There is a material-related exception/interaction path involving **“Material not faulty”** and a connection to Procurement.\n\n- In **Procurement**, **order details arrive** and a **Material Compensation Subprocess** handles:\n  - **Order materials**\n  - **Return material**\n  - **Check materials**\n  - An **order cancellation** path is also shown.\n- Procurement supports Production by providing materials or handling material issues.\n\n- In **Warehouse**, after **product complete**, the warehouse **sends product**, and the flow ends with **product sent**.\n\n- The diagram also includes:\n  - a **database** artifact in Sales,\n  - message/event-style connectors between lanes,\n  - gateway diamonds for decision/parallel branching,\n  - and end events marking completion.\n\nOverall, the visualization describes a **cross-department order fulfillment workflow** from customer order validation through production, procurement/material handling, warehouse dispatch, and invoice drafting."
+  },
+  {
+    "kind": "selector",
+    "iteration": 2,
+    "agent": null,
+    "content": "[\"FINAL\"]"
+  },
+  {
+    "kind": "final",
+    "iteration": 50,
+    "agent": null,
+    "content": "The visualization is a **BPMN-style business process diagram** showing how an order moves through four departments: **Sales, Production, Procurement, and Warehouse**.\n\n### Overall flow\n- The process starts in **Sales** on **Monday morning**.\n- Sales first **checks the customer’s order** for completeness.\n- It then **checks whether the customer already exists in the database**:\n  - If the customer is **not in the database**, Sales **adds the customer to the database**.\n  - If the customer **is already in the database**, it continues without adding them.\n- After that, Sales **sends the order details** onward.\n\n### Production lane\n- In **Production**, the **order details arrive**.\n- Production then:\n  - **Plans production**\n  - **Manufactures the product**\n- A material-related exception path is shown, including a condition like **“material not faulty”**, which links to Procurement.\n\n### Procurement lane\n- In **Procurement**, the order details also arrive.\n- There is a **Material Compensation Subprocess** that includes:\n  - **Order materials**\n  - **Return material**\n- Procurement then **checks materials**.\n- There is also an **order cancellation** path if material issues cannot be resolved.\n\n### Warehouse lane\n- Once the product is complete, it reaches **Warehouse**.\n- Warehouse **sends the product**.\n- The process then reaches an end state where the **product is sent**.\n\n### Additional elements\n- The diagram includes:\n  - **Gateways** for decisions and branching\n  - **Message flows** between departments\n  - A **database** object in Sales\n  - **Start and end events** marking process boundaries\n\n### In summary\nIt depicts a **cross-functional order fulfillment and production workflow**, beginning with order validation in Sales, continuing through Production and Procurement coordination, and ending with product dispatch from Warehouse and invoice drafting in Sales."
+  }
+]

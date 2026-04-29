@@ -5,6 +5,180 @@
       "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_01_case_id_inference.requests.json",
       "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_01_case_id_inference.responses.json",
       "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_01_case_id_inference.agent_evaluations.json",
+      "status": "skipped_existing"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_02_activity_context.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_02_activity_context.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_02_activity_context.agent_evaluations.json",
+      "status": "skipped_existing"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_03_high_level_events.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_03_high_level_events.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_03_high_level_events.agent_evaluations.json",
+      "status": "skipped_existing"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_04_sensor_recordings.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_04_sensor_recordings.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_04_sensor_recordings.agent_evaluations.json",
+      "status": "skipped_existing"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_05_merge_two_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_05_merge_two_logs.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_05_merge_two_logs.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_06_system_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_06_system_logs.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_06_system_logs.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_07_interv_to_pseudo_bpmn.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_07_interv_to_pseudo_bpmn.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_07_interv_to_pseudo_bpmn.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat01_08_tables_to_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat01_08_tables_to_log.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat01_08_tables_to_log.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_01_conformance_textual.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_01_conformance_textual.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_01_conformance_textual.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_02_conf_desiderata.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_02_conf_desiderata.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_02_conf_desiderata.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_03_anomaly_event_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_03_anomaly_event_log.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_03_anomaly_event_log.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_04_powl_anomaly_detection.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_04_powl_anomaly_detection.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_04_powl_anomaly_detection.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_05_two_powls_anomalies.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_05_two_powls_anomalies.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_05_two_powls_anomalies.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_06_root_cause_1.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_06_root_cause_1.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_06_root_cause_1.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_07_root_cause_2.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_07_root_cause_2.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_07_root_cause_2.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_08_underfitting_process_tree.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_08_underfitting_process_tree.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_08_underfitting_process_tree.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat02_09_fix_process_tree.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat02_09_fix_process_tree.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat02_09_fix_process_tree.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_01_process_tree_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_01_process_tree_generation.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_01_process_tree_generation.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_02_powl_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_02_powl_generation.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_02_powl_generation.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_03_log_skeleton_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_03_log_skeleton_generation.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_03_log_skeleton_generation.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_04_declare_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_04_declare_generation.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_04_declare_generation.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_05_temp_profile_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_05_temp_profile_generation.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_05_temp_profile_generation.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_06_petri_net_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_06_petri_net_generation.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_06_petri_net_generation.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_07_process_tree_discovery.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_07_process_tree_discovery.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_07_process_tree_discovery.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat03_08_powl_discovery.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat03_08_powl_discovery.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat03_08_powl_discovery.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat04_01_pseudo_bpmn_description.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat04_01_pseudo_bpmn_description.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat04_01_pseudo_bpmn_description.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat04_02_pseudo_bpmn_open_question.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat04_02_pseudo_bpmn_open_question.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat04_02_pseudo_bpmn_open_question.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat04_03_declare_open_question.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat04_03_declare_open_question.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat04_03_declare_open_question.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat04_04_declare_description.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat04_04_declare_description.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat04_04_declare_description.agent_evaluations.json",
+      "status": "completed"
+    },
+    {
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat04_05_sql_filt_num_events.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat04_05_sql_filt_num_events.responses.json",
+      "output_path": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4\\cat04_05_sql_filt_num_events.agent_evaluations.json",
       "status": "completed"
     }
   ]

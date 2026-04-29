@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-verification-heavy",
+  "question": "cat07_02_bpmn_orders.png",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_verification_heavy.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-verification-heavy_cat07_02_bpmn_orders.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\requests\\cat07_02_bpmn_orders.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\responses\\cat07_02_bpmn_orders.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-verification-heavy\\traces\\cat07_02_bpmn_orders.trace.json",
+  "final_answer_length": 1891
+}

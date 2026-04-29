@@ -1,0 +1,185 @@
+{
+  "source_dir": "agent_evaluations\\gpt-5.4-mini-verification-heavy\\openaigpt-5.4",
+  "files_processed": 30,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 30,
+      "average": 6.593333333333334,
+      "stddev": 1.9597505510197522
+    },
+    {
+      "agent_type": "START",
+      "count": 30,
+      "average": 7.9,
+      "stddev": 0.4654746681256312
+    },
+    {
+      "agent_type": "artifact_parser",
+      "count": 30,
+      "average": 7.153333333333333,
+      "stddev": 1.4609890105298156
+    },
+    {
+      "agent_type": "benchmark_answer_judge",
+      "count": 4,
+      "average": 6.975,
+      "stddev": 1.221423350030611
+    },
+    {
+      "agent_type": "counterexample_hunter",
+      "count": 5,
+      "average": 7.92,
+      "stddev": 0.6431174076325413
+    },
+    {
+      "agent_type": "data_consistency_auditor",
+      "count": 4,
+      "average": 7.475,
+      "stddev": 0.861321658847611
+    },
+    {
+      "agent_type": "domain_reasoner",
+      "count": 15,
+      "average": 6.5600000000000005,
+      "stddev": 1.5473848907107757
+    },
+    {
+      "agent_type": "formal_semantics_checker",
+      "count": 9,
+      "average": 6.788888888888889,
+      "stddev": 1.581451122963017
+    }
+  ],
+  "edges": [
+    {
+      "source": "START",
+      "target": "artifact_parser",
+      "count": 30,
+      "average": 7.153333333333333,
+      "stddev": 1.4609890105298156
+    },
+    {
+      "source": "artifact_parser",
+      "target": "COMPLETE",
+      "count": 7,
+      "average": 7.414285714285714,
+      "stddev": 1.045300464567241
+    },
+    {
+      "source": "artifact_parser",
+      "target": "benchmark_answer_judge",
+      "count": 2,
+      "average": 6.75,
+      "stddev": 1.6500000000000004
+    },
+    {
+      "source": "artifact_parser",
+      "target": "counterexample_hunter",
+      "count": 3,
+      "average": 7.566666666666666,
+      "stddev": 0.5436502143433365
+    },
+    {
+      "source": "artifact_parser",
+      "target": "data_consistency_auditor",
+      "count": 3,
+      "average": 7.266666666666667,
+      "stddev": 0.9030811456096048
+    },
+    {
+      "source": "artifact_parser",
+      "target": "domain_reasoner",
+      "count": 11,
+      "average": 6.954545454545454,
+      "stddev": 1.331686310567194
+    },
+    {
+      "source": "artifact_parser",
+      "target": "formal_semantics_checker",
+      "count": 4,
+      "average": 6.175,
+      "stddev": 1.5072740294982863
+    },
+    {
+      "source": "benchmark_answer_judge",
+      "target": "COMPLETE",
+      "count": 4,
+      "average": 7.65,
+      "stddev": 1.0805091392487154
+    },
+    {
+      "source": "counterexample_hunter",
+      "target": "COMPLETE",
+      "count": 4,
+      "average": 7.75,
+      "stddev": 1.0210288928331068
+    },
+    {
+      "source": "counterexample_hunter",
+      "target": "domain_reasoner",
+      "count": 1,
+      "average": 7.0,
+      "stddev": 0.0
+    },
+    {
+      "source": "data_consistency_auditor",
+      "target": "COMPLETE",
+      "count": 4,
+      "average": 7.4,
+      "stddev": 0.8246211251235321
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "COMPLETE",
+      "count": 7,
+      "average": 5.171428571428572,
+      "stddev": 2.0810123125291593
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "benchmark_answer_judge",
+      "count": 2,
+      "average": 7.199999999999999,
+      "stddev": 0.3999999999999999
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "data_consistency_auditor",
+      "count": 1,
+      "average": 8.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "formal_semantics_checker",
+      "count": 5,
+      "average": 7.279999999999999,
+      "stddev": 1.4634206503941374
+    },
+    {
+      "source": "formal_semantics_checker",
+      "target": "COMPLETE",
+      "count": 4,
+      "average": 4.625,
+      "stddev": 2.174137760124689
+    },
+    {
+      "source": "formal_semantics_checker",
+      "target": "counterexample_hunter",
+      "count": 2,
+      "average": 8.45,
+      "stddev": 0.35000000000000053
+    },
+    {
+      "source": "formal_semantics_checker",
+      "target": "domain_reasoner",
+      "count": 3,
+      "average": 4.966666666666667,
+      "stddev": 1.515109090315135
+    }
+  ]
+}

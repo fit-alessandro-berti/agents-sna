@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first routing to parse task"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.0,
+    "explanation": "Accurate extraction; flags key ambiguity"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.3,
+    "explanation": "Useful dict, but arbitrary assumptions"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.6,
+    "explanation": "Solid critique; notes caveats needed"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.0,
+    "explanation": "Meets format, but ungrounded estimates"
+  }
+]

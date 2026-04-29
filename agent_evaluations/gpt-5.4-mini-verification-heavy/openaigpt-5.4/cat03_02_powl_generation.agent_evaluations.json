@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parsing agent"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; minor label assumption"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.1,
+    "explanation": "Useful structure, but no full code"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.1,
+    "explanation": "Invalid Python identifier breaks answer"
+  }
+]

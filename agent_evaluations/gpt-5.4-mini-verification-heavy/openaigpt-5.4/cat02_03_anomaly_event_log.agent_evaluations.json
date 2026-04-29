@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parser"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.6,
+    "explanation": "Useful parse, but too interpretive"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.0,
+    "explanation": "Sharp caveats and exception framing"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Correct, grounded, minor rigor limits"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first choice; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.4,
+    "explanation": "Accurate extraction; flags key ambiguities"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.9,
+    "explanation": "Useful draft, but overassumes mandatory linearity"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.7,
+    "explanation": "Strong semantic critique; identifies overstrong fr"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.2,
+    "explanation": "Final answer ignores caveats; too strong assumptio"
+  }
+]

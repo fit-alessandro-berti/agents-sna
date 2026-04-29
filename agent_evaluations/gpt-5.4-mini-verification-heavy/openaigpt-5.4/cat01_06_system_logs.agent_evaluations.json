@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first parser choice; reasonable routing"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.3,
+    "explanation": "Useful draft, but not a parser; adds assumptions"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 6.1,
+    "explanation": "Helpful checks, but shallow and misses defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Solid final log, but case model is arguable"
+  }
+]
