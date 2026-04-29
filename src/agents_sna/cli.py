@@ -69,6 +69,8 @@ class CliLogger:
         max_iterations = payload.get("max_iterations", "?")
         agent_names = payload.get("agent_names", ())
         agents = ", ".join(str(name) for name in agent_names)
+        single_agent = bool(payload.get("single_agent_per_iteration"))
+        excluded_handoffs = payload.get("excluded_handoffs", ())
 
         self._line("agents-sna starting", Colors.GREEN, bold=True)
         self._line(f"config: {self.config_path}", Colors.GRAY)
@@ -76,6 +78,14 @@ class CliLogger:
         self._line(f"default model: {self.default_model}", Colors.GRAY)
         self._line(f"max iterations: {max_iterations}", Colors.GRAY)
         self._line(f"agents: {agents}", Colors.GRAY)
+        self._line(f"single agent per iteration: {single_agent}", Colors.GRAY)
+        if isinstance(excluded_handoffs, tuple) and excluded_handoffs:
+            handoffs = ", ".join(
+                f"{item.get('from')} -> {item.get('to')}"
+                for item in excluded_handoffs
+                if isinstance(item, dict)
+            )
+            self._line(f"excluded handoffs: {handoffs}", Colors.GRAY)
         self._block("original prompt sent by the user", prompt, Colors.YELLOW)
 
     def _request(self, payload: dict[str, object]) -> None:

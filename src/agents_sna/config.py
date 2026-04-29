@@ -13,12 +13,32 @@ class AgentSpec:
 
 
 @dataclass(frozen=True)
+class HandoffExclusion:
+    source: str
+    target: str
+
+
+@dataclass(frozen=True)
 class AgenticConfig:
     max_iterations: int
     agents: tuple[AgentSpec, ...]
+    single_agent_per_iteration: bool = False
+    excluded_handoffs: tuple[HandoffExclusion, ...] = ()
 
     def agent_by_name(self) -> dict[str, AgentSpec]:
         return {agent.name: agent for agent in self.agents}
+
+    def allowed_agent_names_after(self, source: str | None) -> set[str]:
+        agent_names = set(self.agent_by_name())
+        if not self.single_agent_per_iteration or source is None:
+            return agent_names
+
+        excluded_targets = {
+            exclusion.target
+            for exclusion in self.excluded_handoffs
+            if exclusion.source == source
+        }
+        return agent_names.difference(excluded_targets)
 
 
 def load_config(path: str | Path) -> AgenticConfig:
@@ -71,7 +91,68 @@ def load_config(path: str | Path) -> AgenticConfig:
             )
         )
 
+    single_agent_per_iteration = raw.get("single_agent_per_iteration", False)
+    if not isinstance(single_agent_per_iteration, bool):
+        raise ValueError(
+            "Configuration field 'single_agent_per_iteration' must be a boolean."
+        )
+
     return AgenticConfig(
         max_iterations=max_iterations,
         agents=tuple(agents),
+        single_agent_per_iteration=single_agent_per_iteration,
+        excluded_handoffs=parse_excluded_handoffs(raw, seen_names),
     )
+
+
+def parse_excluded_handoffs(
+    raw: dict[str, object],
+    known_agents: set[str],
+) -> tuple[HandoffExclusion, ...]:
+    raw_handoffs = raw.get("excluded_handoffs", [])
+    if not isinstance(raw_handoffs, list):
+        raise ValueError("Configuration field 'excluded_handoffs' must be a list.")
+
+    handoffs: list[HandoffExclusion] = []
+    seen: set[tuple[str, str]] = set()
+    for index, item in enumerate(raw_handoffs, start=1):
+        source, target = _parse_handoff_item(item, index)
+
+        if source not in known_agents:
+            raise ValueError(
+                f"Excluded handoff #{index} references unknown source agent '{source}'."
+            )
+        if target not in known_agents:
+            raise ValueError(
+                f"Excluded handoff #{index} references unknown target agent '{target}'."
+            )
+
+        edge = (source, target)
+        if edge not in seen:
+            handoffs.append(HandoffExclusion(source=source, target=target))
+            seen.add(edge)
+
+    return tuple(handoffs)
+
+
+def _parse_handoff_item(item: object, index: int) -> tuple[str, str]:
+    source: object
+    target: object
+
+    if isinstance(item, dict):
+        source = item.get("from", item.get("source"))
+        target = item.get("to", item.get("target"))
+    elif isinstance(item, list) and len(item) == 2:
+        source, target = item
+    else:
+        raise ValueError(
+            "Excluded handoff "
+            f"#{index} must be an object with from/to fields or a two-item list."
+        )
+
+    if not isinstance(source, str) or not source.strip():
+        raise ValueError(f"Excluded handoff #{index} field 'from' must be a string.")
+    if not isinstance(target, str) or not target.strip():
+        raise ValueError(f"Excluded handoff #{index} field 'to' must be a string.")
+
+    return source.strip(), target.strip()

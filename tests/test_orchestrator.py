@@ -6,7 +6,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from agents_sna.config import AgentSpec, AgenticConfig
+from agents_sna.config import AgentSpec, AgenticConfig, HandoffExclusion
 from agents_sna.orchestrator import AgenticOrchestrator, parse_agent_selection
 from agents_sna.prompts import build_selection_messages
 from agents_sna.types import AgentAnswer
@@ -46,6 +46,24 @@ class OrchestratorTests(unittest.TestCase):
         selection = parse_agent_selection('["FINAL"]', {"planner"})
 
         self.assertTrue(selection.final_requested)
+
+    def test_parse_selection_single_agent_uses_first_valid_agent(self) -> None:
+        selection = parse_agent_selection(
+            '["planner", "critic"]',
+            {"planner", "critic"},
+            single_agent_per_iteration=True,
+        )
+
+        self.assertEqual(selection.agent_names, ("planner",))
+
+    def test_parse_selection_rejects_disallowed_handoff_target(self) -> None:
+        with self.assertRaisesRegex(ValueError, "disallowed handoff target"):
+            parse_agent_selection(
+                '["critic"]',
+                {"planner", "critic"},
+                single_agent_per_iteration=True,
+                allowed_agents={"planner"},
+            )
 
     def test_prompt_builder_includes_iteration_and_agents(self) -> None:
         messages = build_selection_messages(
@@ -138,6 +156,38 @@ class OrchestratorTests(unittest.TestCase):
         self.assertEqual(result.final_answer, "final answer")
         self.assertEqual(result.agent_answers, ())
         self.assertEqual(len(client.calls), 1)
+
+    def test_single_agent_mode_applies_handoff_constraints(self) -> None:
+        config = AgenticConfig(
+            max_iterations=4,
+            single_agent_per_iteration=True,
+            excluded_handoffs=(HandoffExclusion("planner", "critic"),),
+            agents=(
+                AgentSpec(name="planner", description="Plans."),
+                AgentSpec(name="critic", description="Critiques."),
+                AgentSpec(name="reviewer", description="Reviews."),
+            ),
+        )
+        client = FakeClient(
+            [
+                '["planner", "critic"]',
+                "planner answer",
+                '["reviewer"]',
+                "reviewer answer",
+                '["FINAL"]',
+                "final answer",
+            ]
+        )
+
+        result = AgenticOrchestrator(config=config, client=client).run("Original")
+
+        self.assertEqual(
+            [answer.agent_name for answer in result.agent_answers],
+            ["planner", "reviewer"],
+        )
+        second_selector_prompt = client.calls[2]["messages"][-1]["content"]
+        self.assertIn("Allowed next agents", second_selector_prompt)
+        self.assertNotIn("'critic'", second_selector_prompt)
 
 
 if __name__ == "__main__":

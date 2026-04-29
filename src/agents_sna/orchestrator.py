@@ -59,20 +59,33 @@ class AgenticOrchestrator:
 
         previous_answers: list[AgentAnswer] = []
         agents_by_name = self.config.agent_by_name()
+        previous_agent_name: str | None = None
         self._emit(
             "run_start",
             prompt=prompt,
             max_iterations=self.config.max_iterations,
             agent_names=tuple(agents_by_name),
+            single_agent_per_iteration=self.config.single_agent_per_iteration,
+            excluded_handoffs=tuple(
+                {
+                    "from": exclusion.source,
+                    "to": exclusion.target,
+                }
+                for exclusion in self.config.excluded_handoffs
+            ),
         )
 
         for iteration in range(1, self.config.max_iterations):
+            allowed_agent_names = self.config.allowed_agent_names_after(previous_agent_name)
             selection_messages = build_selection_messages(
                 original_prompt=prompt,
                 agents=self.config.agents,
                 previous_answers=previous_answers,
                 current_iteration=iteration,
                 max_iterations=self.config.max_iterations,
+                single_agent_per_iteration=self.config.single_agent_per_iteration,
+                allowed_agent_names=allowed_agent_names,
+                previous_agent_name=previous_agent_name,
             )
             self._emit(
                 "request",
@@ -80,6 +93,8 @@ class AgenticOrchestrator:
                 iteration=iteration,
                 messages=selection_messages,
                 model=None,
+                previous_agent_name=previous_agent_name,
+                allowed_agent_names=tuple(sorted(allowed_agent_names)),
             )
             raw_selection = self.client.complete(selection_messages)
             self._emit(
@@ -88,12 +103,19 @@ class AgenticOrchestrator:
                 iteration=iteration,
                 content=raw_selection,
             )
-            selection = parse_agent_selection(raw_selection, set(agents_by_name))
+            selection = parse_agent_selection(
+                raw_selection,
+                set(agents_by_name),
+                single_agent_per_iteration=self.config.single_agent_per_iteration,
+                allowed_agents=allowed_agent_names,
+            )
             self._emit(
                 "selection",
                 iteration=iteration,
                 agent_names=selection.agent_names,
                 final_requested=selection.final_requested,
+                previous_agent_name=previous_agent_name,
+                allowed_agent_names=tuple(sorted(allowed_agent_names)),
             )
             if selection.final_requested:
                 break
@@ -133,6 +155,7 @@ class AgenticOrchestrator:
                         content=answer.strip(),
                     )
                 )
+                previous_agent_name = agent.name
 
         final_messages = build_final_messages(
             original_prompt=prompt,
@@ -164,7 +187,13 @@ class AgenticOrchestrator:
             self.event_handler(event, payload)
 
 
-def parse_agent_selection(raw_selection: str, known_agents: set[str]) -> AgentSelection:
+def parse_agent_selection(
+    raw_selection: str,
+    known_agents: set[str],
+    *,
+    single_agent_per_iteration: bool = False,
+    allowed_agents: set[str] | None = None,
+) -> AgentSelection:
     try:
         parsed = json.loads(_extract_json_list(raw_selection))
     except json.JSONDecodeError as exc:
@@ -173,6 +202,7 @@ def parse_agent_selection(raw_selection: str, known_agents: set[str]) -> AgentSe
     if not isinstance(parsed, list):
         raise ValueError(f"Selector response must be a JSON list: {raw_selection}")
 
+    allowed = allowed_agents if allowed_agents is not None else known_agents
     names: list[str] = []
     for item in parsed:
         candidate = _selection_item_to_name(item)
@@ -188,8 +218,15 @@ def parse_agent_selection(raw_selection: str, known_agents: set[str]) -> AgentSe
                 f"Selector chose unknown agent '{normalized}'. Known agents: "
                 f"{', '.join(sorted(known_agents))}"
             )
+        if normalized not in allowed:
+            raise ValueError(
+                f"Selector chose disallowed handoff target '{normalized}'. Allowed "
+                f"agents now: {', '.join(sorted(allowed)) or '(none)'}"
+            )
         if normalized not in names:
             names.append(normalized)
+        if single_agent_per_iteration:
+            break
 
     if not names:
         raise ValueError("Selector returned an empty agent list.")

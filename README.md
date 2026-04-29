@@ -28,6 +28,8 @@ from [configs/agents.example.json](configs/agents.example.json):
 ```json
 {
   "max_iterations": 4,
+  "single_agent_per_iteration": false,
+  "excluded_handoffs": [],
   "agents": [
     {
       "name": "planner",
@@ -40,6 +42,21 @@ from [configs/agents.example.json](configs/agents.example.json):
 `max_iterations` includes the final synthesis call. For example, with
 `max_iterations: 4`, the system can run up to three selector/agent
 discussion iterations and then the final-answer request.
+
+Set `single_agent_per_iteration` to `true` when each discussion round
+should call at most one agent. In that mode, `excluded_handoffs` can
+block directed transitions between agents:
+
+```json
+{
+  "from": "artifact_parser",
+  "to": "benchmark_answer_judge"
+}
+```
+
+This prevents `benchmark_answer_judge` from being selected immediately
+after `artifact_parser`; the selector prompt receives the currently
+allowed next agents each iteration.
 
 ## Run
 

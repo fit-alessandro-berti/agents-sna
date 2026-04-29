@@ -1,5 +1,7 @@
 {
   "max_iterations": 4,
+  "single_agent_per_iteration": true,
+  "excluded_handoffs": [],
   "agents": [
     {
       "name": "planner",
