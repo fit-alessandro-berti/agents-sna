@@ -130,3 +130,36 @@ The implementation uses `requests.post` against OpenRouter's
 ```bash
 python3 -m unittest discover -s tests
 ```
+
+## Benchmark Runner
+
+Run a config over every question in a local PM-LLM-Benchmark checkout:
+
+```bash
+python3 src/agents_sna/benchmark_runner.py gpt-5.4-mini-verification-heavy \
+  --config configs/pm_benchmark_verification_heavy.json \
+  --benchmark-dir ../pm-llm-benchmark \
+  --model openai/gpt-5.4-mini
+```
+
+The positional name is the benchmark run alias used for answer filenames,
+for example:
+
+```text
+../pm-llm-benchmark/answers/gpt-5.4-mini-verification-heavy_cat01_01_case_id_inference.txt
+```
+
+The actual OpenRouter model is controlled by `--model`.
+
+Local artifacts are written under:
+
+```text
+benchmark_runs/<run-name>/requests/
+benchmark_runs/<run-name>/responses/
+benchmark_runs/<run-name>/traces/
+benchmark_runs/<run-name>/metadata/
+benchmark_runs/<run-name>/summary.json
+```
+
+PNG questions are sent as multimodal `image_url` messages by default. Use
+`--skip-images` to process only textual questions.

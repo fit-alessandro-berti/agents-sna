@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from agents_sna.config import AgentSpec
-from agents_sna.types import AgentAnswer
+from agents_sna.types import AgentAnswer, ChatMessage, MessageContent
 
 
 FINAL_SENTINEL = "FINAL"
@@ -9,7 +9,7 @@ FINAL_SENTINEL = "FINAL"
 
 def build_selection_messages(
     *,
-    original_prompt: str,
+    original_prompt: MessageContent,
     agents: tuple[AgentSpec, ...],
     previous_answers: list[AgentAnswer],
     current_iteration: int,
@@ -17,7 +17,7 @@ def build_selection_messages(
     single_agent_per_iteration: bool = False,
     allowed_agent_names: set[str] | None = None,
     previous_agent_name: str | None = None,
-) -> list[dict[str, str]]:
+) -> list[ChatMessage]:
     if allowed_agent_names is None:
         allowed_names = sorted(agent.name for agent in agents)
     else:
@@ -72,12 +72,12 @@ def build_selection_messages(
 
 def build_agent_messages(
     *,
-    original_prompt: str,
+    original_prompt: MessageContent,
     agent: AgentSpec,
     previous_answers: list[AgentAnswer],
     current_iteration: int,
     max_iterations: int,
-) -> list[dict[str, str]]:
+) -> list[ChatMessage]:
     system_prompt = (
         f"You are the '{agent.name}' agent in a multi-agent LLM discussion.\n\n"
         f"Persona:\n{agent.description}"
@@ -99,9 +99,9 @@ def build_agent_messages(
 
 def build_final_messages(
     *,
-    original_prompt: str,
+    original_prompt: MessageContent,
     previous_answers: list[AgentAnswer],
-) -> list[dict[str, str]]:
+) -> list[ChatMessage]:
     return [
         {"role": "user", "content": original_prompt},
         *previous_answer_messages(previous_answers),
@@ -115,7 +115,7 @@ def build_final_messages(
     ]
 
 
-def previous_answer_messages(answers: list[AgentAnswer]) -> list[dict[str, str]]:
+def previous_answer_messages(answers: list[AgentAnswer]) -> list[ChatMessage]:
     return [
         {
             "role": "assistant",

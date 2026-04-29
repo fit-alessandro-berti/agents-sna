@@ -4,6 +4,8 @@ from dataclasses import dataclass
 
 import requests
 
+from agents_sna.types import ChatMessage
+
 
 DEFAULT_MODEL = "openai/gpt-5.4-mini"
 DEFAULT_BASE_URL = "https://openrouter.ai/api/v1"
@@ -24,7 +26,7 @@ class OpenRouterClient:
 
     def complete(
         self,
-        messages: list[dict[str, str]],
+        messages: list[ChatMessage],
         *,
         model: str | None = None,
     ) -> str:

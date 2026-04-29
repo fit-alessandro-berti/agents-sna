@@ -13,7 +13,7 @@ from agents_sna.prompts import (
     build_final_messages,
     build_selection_messages,
 )
-from agents_sna.types import AgentAnswer
+from agents_sna.types import AgentAnswer, ChatMessage, MessageContent
 
 EventHandler = Callable[[str, dict[str, object]], None]
 
@@ -21,7 +21,7 @@ EventHandler = Callable[[str, dict[str, object]], None]
 class ChatClient(Protocol):
     def complete(
         self,
-        messages: list[dict[str, str]],
+        messages: list[ChatMessage],
         *,
         model: str | None = None,
     ) -> str:
@@ -52,9 +52,10 @@ class AgenticOrchestrator:
         self.client = client
         self.event_handler = event_handler
 
-    def run(self, original_prompt: str) -> OrchestrationResult:
-        prompt = original_prompt.strip()
-        if not prompt:
+    def run(self, original_prompt: MessageContent) -> OrchestrationResult:
+        prompt = normalize_original_prompt(original_prompt)
+        prompt_text = message_content_to_text(prompt).strip()
+        if not prompt_text:
             raise ValueError("Original prompt must not be empty.")
 
         previous_answers: list[AgentAnswer] = []
@@ -62,7 +63,7 @@ class AgenticOrchestrator:
         previous_agent_name: str | None = None
         self._emit(
             "run_start",
-            prompt=prompt,
+            prompt=prompt_text,
             max_iterations=self.config.max_iterations,
             agent_names=tuple(agents_by_name),
             single_agent_per_iteration=self.config.single_agent_per_iteration,
@@ -256,3 +257,25 @@ def _extract_json_list(raw: str) -> str:
     if start != -1 and end != -1 and start < end:
         return text[start : end + 1]
     return text
+
+
+def normalize_original_prompt(original_prompt: MessageContent) -> MessageContent:
+    if isinstance(original_prompt, str):
+        return original_prompt.strip()
+    return original_prompt
+
+
+def message_content_to_text(content: MessageContent) -> str:
+    if isinstance(content, str):
+        return content
+
+    parts: list[str] = []
+    for part in content:
+        part_type = part.get("type")
+        if part_type == "text":
+            parts.append(str(part.get("text", "")))
+        elif part_type == "image_url":
+            parts.append("[image]")
+        else:
+            parts.append(str(part))
+    return "\n".join(parts)

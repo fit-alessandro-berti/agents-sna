@@ -14,6 +14,7 @@ if __package__ in {None, ""}:
 from agents_sna.config import load_config
 from agents_sna.openrouter import DEFAULT_BASE_URL, DEFAULT_MODEL, OpenRouterClient
 from agents_sna.orchestrator import AgenticOrchestrator
+from agents_sna.types import MessageContent
 
 
 JsonObject = dict[str, object]
@@ -191,7 +192,7 @@ class ReportRecorder:
     ):
         self.request_inputs_path = request_inputs_path
         self.conversation_trace_path = conversation_trace_path
-        self.request_inputs: list[list[dict[str, str]]] = []
+        self.request_inputs: list[list[dict[str, object]]] = []
         self.trace: JsonObject = {
             "original_prompt": "",
             "events": [],
@@ -481,18 +482,30 @@ def composite_event_handler(*handlers: object):
     return handle
 
 
-def normalize_messages(messages: list[object]) -> list[dict[str, str]]:
-    normalized: list[dict[str, str]] = []
+def normalize_messages(messages: list[object]) -> list[dict[str, object]]:
+    normalized: list[dict[str, object]] = []
     for message in messages:
         if not isinstance(message, dict):
             continue
         normalized.append(
             {
                 "role": str(message.get("role", "")),
-                "content": str(message.get("content", "")),
+                "content": normalize_message_content(message.get("content", "")),
             }
         )
     return normalized
+
+
+def normalize_message_content(content: object) -> MessageContent:
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        normalized_parts: list[dict[str, object]] = []
+        for part in content:
+            if isinstance(part, dict):
+                normalized_parts.append(dict(part))
+        return normalized_parts
+    return str(content)
 
 
 def write_json_file(path: Path, payload: object) -> None:
