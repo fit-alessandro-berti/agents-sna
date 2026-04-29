@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+from collections.abc import Callable
 import json
 import os
 from pathlib import Path
@@ -23,10 +24,54 @@ from agents_sna.cli import (
 from agents_sna.config import load_config
 from agents_sna.openrouter import DEFAULT_BASE_URL, DEFAULT_MODEL, OpenRouterClient
 from agents_sna.orchestrator import AgenticOrchestrator
-from agents_sna.types import MessageContent
+from agents_sna.types import ChatMessage, MessageContent
 
 
 IMAGE_PROMPT = "Can you describe the provided visualization?"
+
+
+class RetryingChatClient:
+    def __init__(
+        self,
+        client: OpenRouterClient,
+        *,
+        retry_delay: float = 15.0,
+        max_retries: int = 0,
+        sleep_func: Callable[[float], None] = time.sleep,
+        use_color: bool = True,
+    ):
+        self.client = client
+        self.retry_delay = retry_delay
+        self.max_retries = max_retries
+        self.sleep_func = sleep_func
+        self.use_color = use_color
+
+    def complete(
+        self,
+        messages: list[ChatMessage],
+        *,
+        model: str | None = None,
+    ) -> str:
+        failed_attempts = 0
+        while True:
+            try:
+                return self.client.complete(messages, model=model)
+            except Exception as exc:
+                failed_attempts += 1
+                if self.max_retries and failed_attempts > self.max_retries:
+                    raise
+
+                print(
+                    color_text(
+                        "request failed "
+                        f"(attempt {failed_attempts}); retrying in "
+                        f"{self.retry_delay:g}s: {exc}",
+                        Colors.YELLOW,
+                        enabled=self.use_color,
+                    ),
+                    file=sys.stderr,
+                )
+                self.sleep_func(self.retry_delay)
 
 
 class QuestionRunRecorder:
@@ -215,13 +260,18 @@ def run_benchmark(args: argparse.Namespace) -> None:
     if not question_paths:
         raise ValueError(f"No questions found in {questions_dir}")
 
-    client = OpenRouterClient(
-        api_key=api_key,
-        model=args.model,
-        base_url=args.base_url,
-        timeout=args.timeout,
-        app_url=args.app_url,
-        app_name=args.app_name,
+    client = RetryingChatClient(
+        OpenRouterClient(
+            api_key=api_key,
+            model=args.model,
+            base_url=args.base_url,
+            timeout=args.timeout,
+            app_url=args.app_url,
+            app_name=args.app_name,
+        ),
+        retry_delay=args.retry_delay,
+        max_retries=args.max_retries,
+        use_color=not args.no_color,
     )
 
     summary: list[dict[str, object]] = []
@@ -246,12 +296,15 @@ def run_benchmark(args: argparse.Namespace) -> None:
         trace_path = trace_dir / f"{question_slug}.trace.json"
         metadata_path = metadata_dir / f"{question_slug}.metadata.json"
 
-        if answer_path.exists() and not args.overwrite:
-            print(f"[{index}/{len(question_paths)}] skipping existing {answer_path.name}")
+        if answer_received(answer_path) and not args.overwrite:
+            print(
+                f"[{index}/{len(question_paths)}] skipping answered "
+                f"{answer_path.name}"
+            )
             summary.append(
                 {
                     "question": question_path.name,
-                    "status": "skipped_existing",
+                    "status": "skipped_existing_response",
                     "answer_path": str(answer_path),
                 }
             )
@@ -388,6 +441,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Continue with later questions after a failed question.",
     )
     parser.add_argument(
+        "--retry-delay",
+        type=float,
+        default=15.0,
+        help="Seconds to wait before retrying a failed request. Defaults to 15.",
+    )
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=0,
+        help="Maximum retries per failed request. Use 0 for unlimited retries.",
+    )
+    parser.add_argument(
         "--skip-images",
         action="store_true",
         help="Skip PNG questions. By default PNG questions are sent as image_url content.",
@@ -438,6 +503,12 @@ def answer_file_path(*, answers_dir: Path, run_slug: str, question_path: Path) -
     if question_path.suffix.lower() == ".png":
         answer_name = answer_name[: -len(".png")] + ".txt"
     return answers_dir / answer_name
+
+
+def answer_received(answer_path: Path) -> bool:
+    if not answer_path.exists() or not answer_path.is_file():
+        return False
+    return bool(answer_path.read_text(encoding="utf-8", errors="ignore").strip())
 
 
 def safe_question_slug(question_path: Path) -> str:

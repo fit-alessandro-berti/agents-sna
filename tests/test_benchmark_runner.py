@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import base64
+from contextlib import redirect_stderr
+import io
 from pathlib import Path
 import sys
 import tempfile
@@ -10,12 +12,25 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from agents_sna.benchmark_runner import (
     IMAGE_PROMPT,
+    RetryingChatClient,
+    answer_received,
     answer_file_path,
     clean_model_name,
     list_question_paths,
     load_question_prompt,
     safe_question_slug,
 )
+
+
+class FlakyClient:
+    def __init__(self) -> None:
+        self.calls = 0
+
+    def complete(self, messages, *, model=None):
+        self.calls += 1
+        if self.calls < 3:
+            raise RuntimeError("temporary failure")
+        return "ok"
 
 
 class BenchmarkRunnerTests(unittest.TestCase):
@@ -33,6 +48,32 @@ class BenchmarkRunnerTests(unittest.TestCase):
         )
 
         self.assertEqual(answer_path, Path("answers/run_cat07_01_ocdfg.txt"))
+
+    def test_answer_received_requires_non_empty_file(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "answer.txt"
+            self.assertFalse(answer_received(path))
+
+            path.write_text("   \n", encoding="utf-8")
+            self.assertFalse(answer_received(path))
+
+            path.write_text("response\n", encoding="utf-8")
+            self.assertTrue(answer_received(path))
+
+    def test_retrying_chat_client_retries_failed_requests(self) -> None:
+        sleeps: list[float] = []
+        client = RetryingChatClient(
+            FlakyClient(),
+            retry_delay=15,
+            sleep_func=sleeps.append,
+            use_color=False,
+        )
+
+        with redirect_stderr(io.StringIO()):
+            result = client.complete([{"role": "user", "content": "hello"}])
+
+        self.assertEqual(result, "ok")
+        self.assertEqual(sleeps, [15, 15])
 
     def test_list_question_paths_filters_supported_files(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

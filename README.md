@@ -151,6 +151,11 @@ for example:
 
 The actual OpenRouter model is controlled by `--model`.
 
+Questions with an existing non-empty answer file are skipped unless
+`--overwrite` is passed. If an OpenRouter request fails, the runner
+retries the same request after 15 seconds by default; adjust this with
+`--retry-delay` or cap retries with `--max-retries`.
+
 Local artifacts are written under:
 
 ```text
