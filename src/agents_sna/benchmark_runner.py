@@ -354,8 +354,15 @@ def run_benchmark(args: argparse.Namespace) -> None:
                     "trace_path": str(trace_path),
                 }
             )
-            print(color_text(f"failed {question_path.name}: {exc}", Colors.RED, enabled=not args.no_color))
-            if not args.continue_on_error:
+            action = "stopping" if args.stop_on_error else "continuing"
+            print(
+                color_text(
+                    f"failed {question_path.name}: {exc} ({action})",
+                    Colors.RED,
+                    enabled=not args.no_color,
+                )
+            )
+            if args.stop_on_error:
                 break
 
     write_json_file(
@@ -438,7 +445,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--continue-on-error",
         action="store_true",
-        help="Continue with later questions after a failed question.",
+        help=(
+            "Deprecated; this is now the default. Failed questions are recorded "
+            "and later questions continue."
+        ),
+    )
+    parser.add_argument(
+        "--stop-on-error",
+        action="store_true",
+        help="Stop the benchmark after the first failed question.",
     )
     parser.add_argument(
         "--retry-delay",

@@ -1,25 +1,30 @@
 from __future__ import annotations
 
 import base64
-from contextlib import redirect_stderr
+from contextlib import redirect_stderr, redirect_stdout
 import io
 from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+import agents_sna.benchmark_runner as benchmark_runner
 from agents_sna.benchmark_runner import (
     IMAGE_PROMPT,
     RetryingChatClient,
     answer_received,
     answer_file_path,
+    build_parser,
     clean_model_name,
     list_question_paths,
     load_question_prompt,
+    run_benchmark,
     safe_question_slug,
 )
+from agents_sna.orchestrator import OrchestrationResult
 
 
 class FlakyClient:
@@ -31,6 +36,27 @@ class FlakyClient:
         if self.calls < 3:
             raise RuntimeError("temporary failure")
         return "ok"
+
+
+class FakeOpenRouterClient:
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
+    def complete(self, messages, *, model=None):
+        return "unused"
+
+
+class FailOnceOrchestrator:
+    calls = 0
+
+    def __init__(self, *, config, client, event_handler=None) -> None:
+        self.event_handler = event_handler
+
+    def run(self, prompt):
+        type(self).calls += 1
+        if type(self).calls == 1:
+            raise RuntimeError("question failure")
+        return OrchestrationResult(final_answer="second answer", agent_answers=())
 
 
 class BenchmarkRunnerTests(unittest.TestCase):
@@ -112,6 +138,49 @@ class BenchmarkRunnerTests(unittest.TestCase):
 
     def test_safe_question_slug(self) -> None:
         self.assertEqual(safe_question_slug(Path("cat 01?/x.txt")), "x")
+
+    def test_run_benchmark_continues_after_failed_question_by_default(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            benchmark_dir = root / "pm-llm-benchmark"
+            questions_dir = benchmark_dir / "questions"
+            questions_dir.mkdir(parents=True)
+            (questions_dir / "a.txt").write_text("first", encoding="utf-8")
+            (questions_dir / "b.txt").write_text("second", encoding="utf-8")
+            output_dir = root / "runs"
+
+            args = build_parser().parse_args(
+                [
+                    "run",
+                    "--config",
+                    "config.json",
+                    "--benchmark-dir",
+                    str(benchmark_dir),
+                    "--output-dir",
+                    str(output_dir),
+                    "--api-key",
+                    "key",
+                    "--no-color",
+                ]
+            )
+
+            FailOnceOrchestrator.calls = 0
+            with (
+                redirect_stdout(io.StringIO()),
+                redirect_stderr(io.StringIO()),
+                patch.object(benchmark_runner, "OpenRouterClient", FakeOpenRouterClient),
+                patch.object(benchmark_runner, "AgenticOrchestrator", FailOnceOrchestrator),
+                patch.object(benchmark_runner, "load_config", return_value=object()),
+                patch.object(benchmark_runner, "resolve_config_path", return_value=Path("config.json")),
+            ):
+                run_benchmark(args)
+
+            self.assertEqual(FailOnceOrchestrator.calls, 2)
+            self.assertFalse((benchmark_dir / "answers" / "run_a.txt").exists())
+            self.assertEqual(
+                (benchmark_dir / "answers" / "run_b.txt").read_text(encoding="utf-8"),
+                "second answer\n",
+            )
 
 
 if __name__ == "__main__":

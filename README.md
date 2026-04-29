@@ -154,7 +154,10 @@ The actual OpenRouter model is controlled by `--model`.
 Questions with an existing non-empty answer file are skipped unless
 `--overwrite` is passed. If an OpenRouter request fails, the runner
 retries the same request after 15 seconds by default; adjust this with
-`--retry-delay` or cap retries with `--max-retries`.
+`--retry-delay` or cap retries with `--max-retries`. If a question still
+fails at the orchestration level, the failure is recorded and the runner
+continues with later questions by default. Use `--stop-on-error` to stop
+after the first failed question.
 
 Local artifacts are written under:
 

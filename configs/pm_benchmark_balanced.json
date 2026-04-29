@@ -1,5 +1,5 @@
 {
-  "max_iterations": 15,
+  "max_iterations": 50,
   "single_agent_per_iteration": true,
   "excluded_handoffs": [],
   "agents": [
