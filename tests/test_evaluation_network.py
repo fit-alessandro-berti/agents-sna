@@ -5,17 +5,20 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from agents_sna.evaluation_network import (
     analyze_evaluation_folder,
     build_agent_usage_by_category_table,
+    build_graphviz_dot,
     count_summary,
     question_category_from_path,
     read_evaluation_file,
     score_summary,
     write_agent_usage_latex_table,
+    write_graphviz_network_files,
 )
 
 
@@ -174,6 +177,89 @@ class EvaluationNetworkTests(unittest.TestCase):
         self.assertIn("\\begin{tabular}", content)
         self.assertIn("cat01", content)
         self.assertIn("parser", content)
+
+    def test_build_graphviz_dot_is_deterministic_and_labeled(self) -> None:
+        analysis = {
+            "nodes": [
+                {
+                    "agent_type": "slow_reviewer",
+                    "count": 1,
+                    "average": 4.2,
+                    "stddev": 0.0,
+                },
+                {
+                    "agent_type": "artifact_parser",
+                    "count": 3,
+                    "average": 8.25,
+                    "stddev": 0.72,
+                },
+            ],
+            "edges": [
+                {
+                    "source": "slow_reviewer",
+                    "target": "artifact_parser",
+                    "count": 1,
+                    "average": 8.0,
+                    "stddev": 0.0,
+                },
+                {
+                    "source": "artifact_parser",
+                    "target": "slow_reviewer",
+                    "count": 3,
+                    "average": 4.2,
+                    "stddev": 0.5,
+                },
+            ],
+        }
+
+        dot = build_graphviz_dot(analysis)
+
+        self.assertIn('rankdir="TB"', dot)
+        self.assertIn('nodesep="0.22"', dot)
+        self.assertIn('ranksep="0.32"', dot)
+        self.assertIn('fontname="Helvetica-Bold"', dot)
+        self.assertLess(dot.index('"artifact_parser" ['), dot.index('"slow_reviewer" ['))
+        self.assertLess(
+            dot.index('"artifact_parser" -> "slow_reviewer"'),
+            dot.index('"slow_reviewer" -> "artifact_parser"'),
+        )
+        self.assertIn("<B>artifact<BR/>parser</B>", dot)
+        self.assertIn("f=3", dot)
+        self.assertIn("mu=8,2 std=0,7", dot)
+        self.assertIn('penwidth="4.50"', dot)
+
+    def test_write_graphviz_network_files_writes_gv_and_invokes_dot(self) -> None:
+        analysis = {
+            "nodes": [
+                {
+                    "agent_type": "artifact_parser",
+                    "count": 1,
+                    "average": 8.0,
+                    "stddev": 0.0,
+                },
+            ],
+            "edges": [],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            graphviz_path = root / "network.gv"
+            svg_path = root / "network.svg"
+
+            with patch("agents_sna.evaluation_network.subprocess.run") as run:
+                write_graphviz_network_files(
+                    analysis,
+                    graphviz_path,
+                    svg_path,
+                    dot_command="dot-test",
+                )
+
+            content = graphviz_path.read_text(encoding="utf-8")
+
+        self.assertIn("digraph social_network_analysis", content)
+        run.assert_called_once_with(
+            ["dot-test", "-Tsvg", str(graphviz_path), "-o", str(svg_path)],
+            check=True,
+        )
 
     def test_read_evaluation_file_rejects_invalid_scores(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

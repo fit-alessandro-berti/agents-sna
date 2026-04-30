@@ -203,6 +203,8 @@ The default outputs are:
 ```text
 agent_evaluations/<source-run>/<judge-model>/social_network_analysis.json
 agent_evaluations/<source-run>/<judge-model>/agent_usage_by_category.tex
+agent_evaluations/<source-run>/<judge-model>/social_network_analysis.gv
+agent_evaluations/<source-run>/<judge-model>/social_network_analysis.svg
 ```
 
 Nodes are grouped by `agent_type`. Directed edges are consecutive
@@ -231,3 +233,9 @@ The LaTeX table is generated with Pandas. It uses benchmark question
 categories such as `cat01` as columns, agent types as rows, and integer
 counts for how often each agent appears in judged answers for that
 category. `START` and `COMPLETE` markers are excluded.
+
+The Graphviz output is deterministic, top-to-bottom, and compact. Nodes
+and edges are colored from red to green based on average score, report
+frequency and score statistics in their labels, and edge thickness scales
+with frequency. The script writes the `.gv` source and compiles the SVG
+with `dot`.

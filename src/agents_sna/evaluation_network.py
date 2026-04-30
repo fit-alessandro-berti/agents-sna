@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 from math import sqrt
 from pathlib import Path
 import re
+import subprocess
 import sys
 
 import pandas as pd
@@ -15,6 +17,8 @@ if __package__ in {None, ""}:
 
 DEFAULT_OUTPUT_NAME = "social_network_analysis.json"
 DEFAULT_LATEX_OUTPUT_NAME = "agent_usage_by_category.tex"
+DEFAULT_GRAPHVIZ_OUTPUT_NAME = "social_network_analysis.gv"
+DEFAULT_SVG_OUTPUT_NAME = "social_network_analysis.svg"
 EXCLUDED_USAGE_AGENT_TYPES = frozenset({"START", "COMPLETE"})
 LATEX_TABLE_CAPTION = "Agent usage by benchmark question category."
 LATEX_TABLE_LABEL = "tab:agent-usage-by-category"
@@ -34,14 +38,28 @@ def main(argv: list[str] | None = None) -> int:
         latex_output_path = (
             args.latex_output or args.evaluations_dir / DEFAULT_LATEX_OUTPUT_NAME
         )
+        graphviz_output_path = (
+            args.graphviz_output or args.evaluations_dir / DEFAULT_GRAPHVIZ_OUTPUT_NAME
+        )
+        svg_output_path = (
+            args.svg_output or args.evaluations_dir / DEFAULT_SVG_OUTPUT_NAME
+        )
         write_json_file(output_path, analysis)
         write_agent_usage_latex_table(
             args.evaluations_dir,
             latex_output_path,
             continue_on_error=args.continue_on_error,
         )
+        write_graphviz_network_files(
+            analysis,
+            graphviz_output_path,
+            svg_output_path,
+            dot_command=args.dot_command,
+        )
         print(f"wrote {output_path}")
         print(f"wrote {latex_output_path}")
+        print(f"wrote {graphviz_output_path}")
+        print(f"wrote {svg_output_path}")
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
@@ -72,6 +90,27 @@ def build_parser() -> argparse.ArgumentParser:
             "Output LaTeX table path. Defaults to agent_usage_by_category.tex "
             "inside the evaluations folder."
         ),
+    )
+    parser.add_argument(
+        "--graphviz-output",
+        type=Path,
+        help=(
+            "Output Graphviz DOT path. Defaults to social_network_analysis.gv "
+            "inside the evaluations folder."
+        ),
+    )
+    parser.add_argument(
+        "--svg-output",
+        type=Path,
+        help=(
+            "Output SVG graph path. Defaults to social_network_analysis.svg "
+            "inside the evaluations folder."
+        ),
+    )
+    parser.add_argument(
+        "--dot-command",
+        default="dot",
+        help="Graphviz DOT executable used to compile the SVG. Defaults to dot.",
     )
     parser.add_argument(
         "--edge-score",
@@ -211,7 +250,11 @@ def agent_usage_table_to_latex(table: pd.DataFrame) -> str:
             escape=True,
         )
     except ImportError:
-        return render_latex_table(table, caption=LATEX_TABLE_CAPTION, label=LATEX_TABLE_LABEL)
+        return render_latex_table(
+            table,
+            caption=LATEX_TABLE_CAPTION,
+            label=LATEX_TABLE_LABEL,
+        )
 
 
 def render_latex_table(table: pd.DataFrame, *, caption: str, label: str) -> str:
@@ -254,6 +297,223 @@ def escape_latex(value: str) -> str:
         "^": r"\textasciicircum{}",
     }
     return "".join(replacements.get(character, character) for character in value)
+
+
+def write_graphviz_network_files(
+    analysis: dict[str, object],
+    graphviz_output_path: Path,
+    svg_output_path: Path,
+    *,
+    dot_command: str = "dot",
+) -> None:
+    graphviz_output_path.parent.mkdir(parents=True, exist_ok=True)
+    graphviz_output_path.write_text(build_graphviz_dot(analysis), encoding="utf-8")
+    compile_graphviz_to_svg(
+        graphviz_output_path,
+        svg_output_path,
+        dot_command=dot_command,
+    )
+
+
+def compile_graphviz_to_svg(
+    graphviz_path: Path,
+    svg_output_path: Path,
+    *,
+    dot_command: str = "dot",
+) -> None:
+    svg_output_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        subprocess.run(
+            [
+                dot_command,
+                "-Tsvg",
+                str(graphviz_path),
+                "-o",
+                str(svg_output_path),
+            ],
+            check=True,
+        )
+    except FileNotFoundError as exc:
+        raise RuntimeError(
+            f"Graphviz DOT executable not found: {dot_command}"
+        ) from exc
+    except subprocess.CalledProcessError as exc:
+        raise RuntimeError(
+            f"Graphviz DOT failed with exit code {exc.returncode}: {dot_command}"
+        ) from exc
+
+
+def build_graphviz_dot(analysis: dict[str, object]) -> str:
+    nodes = sorted_graph_items(extract_graph_nodes(analysis), name_keys=("agent_type",))
+    edges = sorted_graph_items(
+        extract_graph_edges(analysis),
+        name_keys=("source", "target"),
+    )
+    max_edge_count = max((int(edge["count"]) for edge in edges), default=1)
+
+    lines = [
+        "digraph social_network_analysis {",
+        "  graph [",
+        '    rankdir="TB",',
+        '    bgcolor="transparent",',
+        '    margin="0.03",',
+        '    pad="0.02",',
+        '    nodesep="0.22",',
+        '    ranksep="0.32",',
+        '    splines="polyline",',
+        '    concentrate="true",',
+        '    outputorder="edgesfirst",',
+        '    ordering="out"',
+        "  ];",
+        "  node [",
+        '    shape="box",',
+        '    style="rounded,filled",',
+        '    fontname="Helvetica-Bold",',
+        '    fontsize="9",',
+        '    margin="0.045,0.035",',
+        '    penwidth="0.8",',
+        '    color="#666666"',
+        "  ];",
+        "  edge [",
+        '    fontname="Helvetica-Bold",',
+        '    fontsize="6.8",',
+        '    arrowsize="0.55",',
+        '    fontcolor="#333333"',
+        "  ];",
+        "",
+    ]
+
+    for node in nodes:
+        agent_type = str(node["agent_type"])
+        average = float(node["average"])
+        lines.append(
+            "  "
+            f"{dot_quote(agent_type)} "
+            "["
+            f"label=<{node_html_label(agent_type, node)}>, "
+            f'fillcolor="{score_to_color(average, pastel=True)}"'
+            "];"
+        )
+
+    if nodes and edges:
+        lines.append("")
+
+    for edge in edges:
+        source = str(edge["source"])
+        target = str(edge["target"])
+        average = float(edge["average"])
+        color = score_to_color(average)
+        lines.append(
+            "  "
+            f"{dot_quote(source)} -> {dot_quote(target)} "
+            "["
+            f"label=<{edge_html_label(edge)}>, "
+            f'color="{color}", '
+            f'fontcolor="{color}", '
+            f'penwidth="{edge_penwidth(int(edge["count"]), max_edge_count):.2f}"'
+            "];"
+        )
+
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
+def extract_graph_nodes(analysis: dict[str, object]) -> list[dict[str, object]]:
+    raw_nodes = analysis.get("nodes")
+    if not isinstance(raw_nodes, list):
+        raise ValueError("Analysis field 'nodes' must be a list")
+    return [dict(item) for item in raw_nodes if isinstance(item, dict)]
+
+
+def extract_graph_edges(analysis: dict[str, object]) -> list[dict[str, object]]:
+    raw_edges = analysis.get("edges")
+    if not isinstance(raw_edges, list):
+        raise ValueError("Analysis field 'edges' must be a list")
+    return [dict(item) for item in raw_edges if isinstance(item, dict)]
+
+
+def sorted_graph_items(
+    items: list[dict[str, object]],
+    *,
+    name_keys: tuple[str, ...],
+) -> list[dict[str, object]]:
+    return sorted(
+        items,
+        key=lambda item: (
+            -int(item.get("count", 0)),
+            -float(item.get("average", 0.0)),
+            float(item.get("stddev", 0.0)),
+            *(str(item.get(key, "")) for key in name_keys),
+        ),
+    )
+
+
+def node_html_label(agent_type: str, summary: dict[str, object]) -> str:
+    name = "<BR/>".join(html.escape(part) for part in agent_type.split("_"))
+    return (
+        '<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1">'
+        f"<TR><TD><B>{name}</B></TD></TR>"
+        '<TR><TD><FONT POINT-SIZE="7"><B>'
+        f'f={int(summary["count"])}'
+        "</B></FONT></TD></TR>"
+        '<TR><TD><FONT POINT-SIZE="7"><B>'
+        f'mu={format_decimal(float(summary["average"]))} '
+        f'std={format_decimal(float(summary["stddev"]))}'
+        "</B></FONT></TD></TR>"
+        "</TABLE>"
+    )
+
+
+def edge_html_label(summary: dict[str, object]) -> str:
+    return (
+        '<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">'
+        '<TR><TD><FONT POINT-SIZE="6.8"><B>'
+        f'f={int(summary["count"])}'
+        "</B></FONT></TD></TR>"
+        '<TR><TD><FONT POINT-SIZE="6.8"><B>'
+        f'mu={format_decimal(float(summary["average"]))} '
+        f'std={format_decimal(float(summary["stddev"]))}'
+        "</B></FONT></TD></TR>"
+        "</TABLE>"
+    )
+
+
+def format_decimal(value: float) -> str:
+    return f"{value:.1f}".replace(".", ",")
+
+
+def score_to_color(score: float, *, pastel: bool = False) -> str:
+    ratio = min(max(score / 10.0, 0.0), 1.0)
+    if ratio < 0.5:
+        local = ratio * 2.0
+        start = (215, 48, 39)
+        end = (254, 224, 139)
+    else:
+        local = (ratio - 0.5) * 2.0
+        start = (254, 224, 139)
+        end = (26, 152, 80)
+
+    rgb = tuple(
+        round(start[index] + (end[index] - start[index]) * local)
+        for index in range(3)
+    )
+    if pastel:
+        rgb = blend_with_white(rgb, 0.5)
+    return "#{:02x}{:02x}{:02x}".format(*rgb)
+
+
+def blend_with_white(rgb: tuple[int, int, int], amount: float) -> tuple[int, int, int]:
+    return tuple(round(channel + (255 - channel) * amount) for channel in rgb)
+
+
+def edge_penwidth(count: int, max_count: int) -> float:
+    if max_count <= 0:
+        return 1.0
+    return 0.9 + 3.6 * (count / max_count)
+
+
+def dot_quote(value: str) -> str:
+    return '"' + value.replace("\\", "\\\\").replace('"', r"\"") + '"'
 
 
 def question_category_from_path(path: Path) -> str:
