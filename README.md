@@ -8,17 +8,10 @@ CLI, and individual agents can also override it in the JSON config.
 
 ## Install
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
+Create a virtual environment with `python -m venv .venv`, activate it
+with `source .venv/bin/activate`, then install with `pip install -e .`.
 
-Or install only the runtime dependency:
-
-```bash
-pip install -r requirements.txt
-```
+Or install only the runtime dependency with `pip install -r requirements.txt`.
 
 ## Configure
 
@@ -79,10 +72,7 @@ agents-sna --config configs/agents.example.json \
 
 Or without installing the console script:
 
-```bash
-PYTHONPATH=src python3 -m agents_sna.cli --config configs/agents.example.json \
-  "Design a migration plan for a legacy Flask app."
-```
+`PYTHONPATH=src python -m agents_sna.cli --config configs/agents.example.json "Design a migration plan for a legacy Flask app."`
 
 Useful options:
 
@@ -134,20 +124,13 @@ The implementation uses `requests.post` against OpenRouter's
 
 ## Test
 
-```bash
-python3 -m unittest discover -s tests
-```
+`python -m unittest discover -s tests`
 
 ## Benchmark Runner
 
 Run a config over every question in a local PM-LLM-Benchmark checkout:
 
-```bash
-python3 src/agents_sna/benchmark_runner.py gpt-5.4-mini-verification-heavy \
-  --config configs/pm_benchmark_verification_heavy.json \
-  --benchmark-dir ../pm-llm-benchmark \
-  --model openai/gpt-5.4-mini
-```
+`python src/agents_sna/benchmark_runner.py gpt-5.4-mini-verification-heavy --config configs/pm_benchmark_verification_heavy.json --benchmark-dir ../pm-llm-benchmark --model openai/gpt-5.4-mini`
 
 The positional name is the benchmark run alias used for answer filenames,
 for example:
@@ -184,11 +167,7 @@ PNG questions are sent as multimodal `image_url` messages by default. Use
 Evaluate saved benchmark request/response artifacts with an
 LLM-as-a-judge:
 
-```bash
-python3 src/agents_sna/agent_judge.py \
-  benchmark_runs/gpt-5.4-mini-verification-heavy \
-  --judge-model openai/gpt-5.4
-```
+`python src/agents_sna/agent_judge.py benchmark_runs/gpt-5.4-mini-verification-heavy --judge-model openai/gpt-5.4`
 
 You can also pass a `requests/` directory, individual
 `*.requests.json` files, or glob patterns. Matching response files are
@@ -217,10 +196,7 @@ later selector calls are skipped:
 Aggregate a folder of judged agent-evaluation files into node and edge
 statistics:
 
-```bash
-python3 src/agents_sna/evaluation_network.py \
-  agent_evaluations/gpt-5.4-mini-verification-heavy/openaigpt-5.4
-```
+`python src/agents_sna/evaluation_network.py agent_evaluations/gpt-5.4-mini-verification-heavy/openaigpt-5.4`
 
 The default output is:
 
