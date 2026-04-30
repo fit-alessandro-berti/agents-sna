@@ -1,0 +1,12 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 1.2,
+    "explanation": "Premature FINAL; no analysis or agent use"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.8,
+    "explanation": "Useful summary, but image-grounding unverified"
+  }
+]

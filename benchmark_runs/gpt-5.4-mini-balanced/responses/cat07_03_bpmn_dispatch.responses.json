@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "selector",
+    "iteration": 1,
+    "agent": null,
+    "content": "[\"FINAL\"]"
+  },
+  {
+    "kind": "final",
+    "iteration": 50,
+    "agent": null,
+    "content": "The visualization is a **BPMN-style process diagram** showing the workflow for preparing and shipping goods, organized into **three swimlanes**:\n\n- **Secretariat / Dispatch of goods at Computer Hardware Shop**\n- **Logistics**\n- **Warehouse**\n\n### Overall flow\nThe process starts with **“Ship goods”** and then follows several decision points and parallel tasks before ending at **“Shipment prepared.”**\n\n### Main steps\n1. **Ship goods** begins the process.\n2. A **parallel gateway** splits work:\n   - One path goes to **“Clarify shipment method”**\n   - Another path leads directly to **“Package goods”** in the warehouse\n3. After **clarifying shipment method**, a decision is made:\n   - **Special handling?**\n     - **Yes** → get **3 offers from logistic companies** → **select logistic company and place order**\n     - **No** → **check if insurance is required**\n4. If insurance is needed:\n   - **Insure parcel**\n   - then continue to **write package label**\n5. The shipping preparation tasks then synchronize through gateways and continue into the warehouse flow.\n6. In the warehouse:\n   - **Package goods** is shown as a time-based task with a **48 hours** deadline indicator\n   - If delayed, the process goes to **“Notify customer about delay”**\n7. The flow then merges into:\n   - **Fill out shipment paperwork**\n   - **Move package to pickup area**\n8. The process ends at **“Shipment prepared.”**\n\n### Visual conventions used\n- **Rounded rectangles** = tasks\n- **Diamonds** = gateways/decisions\n- **Circles** = start/end events\n- **Cylinder icon** = data store or customer information\n- **Document icon** = order details\n- **Clock icon** = time-related constraint\n\nIn short, the diagram illustrates the coordinated logistics workflow for shipping a package, including decision-making, insurance handling, packaging, paperwork, and final handoff for pickup."
+  }
+]

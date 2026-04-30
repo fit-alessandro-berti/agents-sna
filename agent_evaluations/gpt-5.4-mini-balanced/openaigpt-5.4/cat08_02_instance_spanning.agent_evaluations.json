@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.4,
+    "explanation": "Reasonable first pick, but narrow planning."
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 7.9,
+    "explanation": "Useful, grounded, but light on rigor/details."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Strong structure; some vagueness, no formulas."
+  }
+]

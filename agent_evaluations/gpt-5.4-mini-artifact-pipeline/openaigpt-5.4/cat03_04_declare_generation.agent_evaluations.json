@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 2.3,
+    "explanation": "Major DECLARE misuse; unsupported constraints"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.7,
+    "explanation": "Accurately flags overreach and key errors"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.6,
+    "explanation": "Final answer still malformed, unsupported"
+  }
+]

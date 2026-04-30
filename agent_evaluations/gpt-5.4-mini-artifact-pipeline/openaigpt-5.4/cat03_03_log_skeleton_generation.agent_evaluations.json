@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing; mapper fits the task"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 4.6,
+    "explanation": "Useful draft, but over-assumes constraints"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.9,
+    "explanation": "Strong caution on grounding; no fix offered"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.1,
+    "explanation": "Still adds unsupported strong constraints"
+  }
+]

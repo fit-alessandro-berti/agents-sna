@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "selector",
+    "iteration": 1,
+    "agent": null,
+    "content": "[\"FINAL\"]"
+  },
+  {
+    "kind": "final",
+    "iteration": 50,
+    "agent": null,
+    "content": "The visualization shows a **process model for a lab visit and lab test workflow**, combined with supporting structural and example information.\n\n### Main parts of the figure\n\n#### (a) Two process classes connected through two channels\nThis is the large diagram on the left. It depicts two interacting workflows:\n\n- **Lab visit**\n  - Order entry\n  - Take blood sample\n  - Judge results\n  - If everything is fine, send report\n  - If not, do tests again and receive updated result\n\n- **Lab test**\n  - Perform test\n  - Make report\n  - Finish lab test\n  - If needed, perform test again and provide updated report\n\nThese two processes communicate through two labeled channels:\n- **Order system**\n- **HIS** (Hospital Information System)\n\nThe arrows and connectors show how one process can trigger or influence steps in the other, such as sending the sample, receiving results, and requesting updated reports.\n\n#### (b) Class diagram containing the two process classes\nOn the right, there is a small UML-style class diagram showing:\n- **Lab visit**\n- **Lab test**\n\nThe relationship labeled **“requires”** indicates that:\n- one **Lab visit** is associated with\n- one or more **Lab test** instances\n\nThis explains the structural connection between the two process types.\n\n#### (c) Example of a performative\nAt the bottom is a table illustrating an example message or action in the workflow. It includes fields like:\n- **Time**\n- **Channel**\n- **Sender**\n- **Receivers**\n- **Action**\n- **Content**\n- **Scope**\n- **Direction**\n\nThe example shows a message at **11:00** on the **Order system** channel, sent from **Lab visit - John** to **Lab test - HGB**, with the action **Create** and content asking whether a **HGB test** can be performed for John.\n\n### Overall meaning\nThe figure is illustrating how two business/process classes—**lab visit** and **lab test**—are coordinated through communication channels, with both workflow behavior and message exchange represented. It appears to be an example of **interacting process models** or **cross-organizational workflow coordination** in a medical/laboratory setting."
+  }
+]

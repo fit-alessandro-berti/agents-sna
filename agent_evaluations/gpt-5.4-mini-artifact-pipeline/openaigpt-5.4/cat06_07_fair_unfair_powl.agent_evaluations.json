@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first agent choice; sensible setup."
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 6.4,
+    "explanation": "Useful draft, but missed ResumeParsing label."
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.4,
+    "explanation": "Sharp corrections; improved fidelity."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Solid final models; minor overclaim/syntax noise."
+  }
+]

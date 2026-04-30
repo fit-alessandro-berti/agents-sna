@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.4,
+    "explanation": "Reasonable first agent choice, but generic"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 8.1,
+    "explanation": "Strong structure; limited formal modeling rigor"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 7.8,
+    "explanation": "Useful ops focus, but overlaps and stays high-leve"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.3,
+    "explanation": "Comprehensive final; solid but not near-flawless"
+  }
+]

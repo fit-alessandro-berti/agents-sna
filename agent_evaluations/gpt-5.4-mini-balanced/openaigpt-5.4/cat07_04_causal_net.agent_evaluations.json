@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Reasonable agent pick; limited added value"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.3,
+    "explanation": "Useful summary but speculative semantics"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.0,
+    "explanation": "Clear description, but repeats speculation"
+  }
+]

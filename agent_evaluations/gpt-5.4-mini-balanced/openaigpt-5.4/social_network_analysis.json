@@ -1,0 +1,273 @@
+{
+  "source_dir": "agent_evaluations\\gpt-5.4-mini-balanced\\openaigpt-5.4",
+  "files_processed": 57,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 2.3508771929824563,
+    "stddev": 0.662033763653095
+  },
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 57,
+      "average": 6.745614035087719,
+      "stddev": 1.812149075568486
+    },
+    {
+      "agent_type": "START",
+      "count": 57,
+      "average": 7.8122807017543865,
+      "stddev": 1.4350341001435978
+    },
+    {
+      "agent_type": "conformance_anomaly_checker",
+      "count": 12,
+      "average": 7.216666666666666,
+      "stddev": 1.1950127846828902
+    },
+    {
+      "agent_type": "event_log_interpreter",
+      "count": 13,
+      "average": 6.746153846153846,
+      "stddev": 1.6387684797363888
+    },
+    {
+      "agent_type": "fairness_and_ethics_reviewer",
+      "count": 7,
+      "average": 7.142857142857143,
+      "stddev": 1.2782321976152877
+    },
+    {
+      "agent_type": "hypothesis_generator",
+      "count": 6,
+      "average": 7.816666666666666,
+      "stddev": 0.8254628331359858
+    },
+    {
+      "agent_type": "optimization_consultant",
+      "count": 10,
+      "average": 6.7700000000000005,
+      "stddev": 1.7140886791528611
+    },
+    {
+      "agent_type": "process_modeler",
+      "count": 22,
+      "average": 6.236363636363635,
+      "stddev": 1.9795650244309766
+    },
+    {
+      "agent_type": "query_and_sql_analyst",
+      "count": 7,
+      "average": 7.314285714285715,
+      "stddev": 1.3271113328564104
+    }
+  ],
+  "edges": [
+    {
+      "source": "START",
+      "target": "COMPLETE",
+      "count": 2,
+      "average": 4.85,
+      "stddev": 0.050000000000000266
+    },
+    {
+      "source": "START",
+      "target": "conformance_anomaly_checker",
+      "count": 7,
+      "average": 7.914285714285714,
+      "stddev": 0.8870956969291444
+    },
+    {
+      "source": "START",
+      "target": "event_log_interpreter",
+      "count": 13,
+      "average": 6.746153846153846,
+      "stddev": 1.6387684797363888
+    },
+    {
+      "source": "START",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 6,
+      "average": 7.316666666666666,
+      "stddev": 1.3018149723452341
+    },
+    {
+      "source": "START",
+      "target": "hypothesis_generator",
+      "count": 4,
+      "average": 8.025,
+      "stddev": 0.9443913383762048
+    },
+    {
+      "source": "START",
+      "target": "optimization_consultant",
+      "count": 4,
+      "average": 8.05,
+      "stddev": 0.11180339887498908
+    },
+    {
+      "source": "START",
+      "target": "process_modeler",
+      "count": 18,
+      "average": 6.261111111111111,
+      "stddev": 1.9888966480295576
+    },
+    {
+      "source": "START",
+      "target": "query_and_sql_analyst",
+      "count": 3,
+      "average": 7.833333333333333,
+      "stddev": 1.2391753530294067
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "COMPLETE",
+      "count": 9,
+      "average": 7.366666666666666,
+      "stddev": 1.2328828005937953
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "hypothesis_generator",
+      "count": 1,
+      "average": 7.4,
+      "stddev": 0.0
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "query_and_sql_analyst",
+      "count": 2,
+      "average": 6.35,
+      "stddev": 1.5500000000000003
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "COMPLETE",
+      "count": 9,
+      "average": 6.233333333333333,
+      "stddev": 1.8618986725025255
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "optimization_consultant",
+      "count": 3,
+      "average": 6.7,
+      "stddev": 0.2160246899469286
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "process_modeler",
+      "count": 1,
+      "average": 5.8,
+      "stddev": 0.0
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "COMPLETE",
+      "count": 6,
+      "average": 6.7,
+      "stddev": 1.7262676501632068
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "conformance_anomaly_checker",
+      "count": 1,
+      "average": 5.4,
+      "stddev": 0.0
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "COMPLETE",
+      "count": 3,
+      "average": 8.133333333333333,
+      "stddev": 0.20548046676563259
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "optimization_consultant",
+      "count": 1,
+      "average": 5.2,
+      "stddev": 0.0
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "query_and_sql_analyst",
+      "count": 2,
+      "average": 7.5,
+      "stddev": 0.2999999999999998
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "COMPLETE",
+      "count": 7,
+      "average": 7.857142857142857,
+      "stddev": 0.6388765649999399
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "conformance_anomaly_checker",
+      "count": 1,
+      "average": 5.3,
+      "stddev": 0.0
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "process_modeler",
+      "count": 2,
+      "average": 7.8,
+      "stddev": 0.20000000000000018
+    },
+    {
+      "source": "process_modeler",
+      "target": "COMPLETE",
+      "count": 15,
+      "average": 5.873333333333333,
+      "stddev": 2.224849557960168
+    },
+    {
+      "source": "process_modeler",
+      "target": "conformance_anomaly_checker",
+      "count": 3,
+      "average": 6.833333333333333,
+      "stddev": 0.5185449728701351
+    },
+    {
+      "source": "process_modeler",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 1,
+      "average": 6.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "process_modeler",
+      "target": "optimization_consultant",
+      "count": 2,
+      "average": 5.1,
+      "stddev": 2.6999999999999997
+    },
+    {
+      "source": "process_modeler",
+      "target": "process_modeler",
+      "count": 1,
+      "average": 3.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "query_and_sql_analyst",
+      "target": "COMPLETE",
+      "count": 6,
+      "average": 7.45,
+      "stddev": 0.9429563439877092
+    },
+    {
+      "source": "query_and_sql_analyst",
+      "target": "hypothesis_generator",
+      "count": 1,
+      "average": 7.4,
+      "stddev": 0.0
+    }
+  ]
+}

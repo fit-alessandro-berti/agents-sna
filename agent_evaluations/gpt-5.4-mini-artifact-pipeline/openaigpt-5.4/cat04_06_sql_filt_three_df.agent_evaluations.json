@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible and relevant"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.6,
+    "explanation": "Useful SQL; tie-order edge case noted"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.4,
+    "explanation": "Improved exclusion safety; precise audit"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.8,
+    "explanation": "Correct final query, but tie-order unresolved"
+  }
+]

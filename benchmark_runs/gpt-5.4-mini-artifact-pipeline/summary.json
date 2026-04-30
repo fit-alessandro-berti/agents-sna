@@ -1,0 +1,467 @@
+{
+  "run_name": "gpt-5.4-mini-artifact-pipeline",
+  "requested_run_name": "gpt-5.4-mini-artifact-pipeline",
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "benchmark_dir": "C:\\Users\\berti\\pm-llm-benchmark",
+  "started_at": "2026-04-30T09:46:40+0200",
+  "finished_at": "2026-04-30T10:10:38+0200",
+  "questions": [
+    {
+      "question": "cat01_01_case_id_inference.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_01_case_id_inference.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_01_case_id_inference.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_01_case_id_inference.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_01_case_id_inference.trace.json"
+    },
+    {
+      "question": "cat01_02_activity_context.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_02_activity_context.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_02_activity_context.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_02_activity_context.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_02_activity_context.trace.json"
+    },
+    {
+      "question": "cat01_03_high_level_events.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_03_high_level_events.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_03_high_level_events.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_03_high_level_events.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_03_high_level_events.trace.json"
+    },
+    {
+      "question": "cat01_04_sensor_recordings.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_04_sensor_recordings.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_04_sensor_recordings.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_04_sensor_recordings.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_04_sensor_recordings.trace.json"
+    },
+    {
+      "question": "cat01_05_merge_two_logs.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_05_merge_two_logs.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_05_merge_two_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_05_merge_two_logs.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_05_merge_two_logs.trace.json"
+    },
+    {
+      "question": "cat01_06_system_logs.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_06_system_logs.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_06_system_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_06_system_logs.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_06_system_logs.trace.json"
+    },
+    {
+      "question": "cat01_07_interv_to_pseudo_bpmn.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_07_interv_to_pseudo_bpmn.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_07_interv_to_pseudo_bpmn.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_07_interv_to_pseudo_bpmn.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_07_interv_to_pseudo_bpmn.trace.json"
+    },
+    {
+      "question": "cat01_08_tables_to_log.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat01_08_tables_to_log.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat01_08_tables_to_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat01_08_tables_to_log.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat01_08_tables_to_log.trace.json"
+    },
+    {
+      "question": "cat02_01_conformance_textual.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_01_conformance_textual.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_01_conformance_textual.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_01_conformance_textual.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_01_conformance_textual.trace.json"
+    },
+    {
+      "question": "cat02_02_conf_desiderata.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_02_conf_desiderata.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_02_conf_desiderata.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_02_conf_desiderata.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_02_conf_desiderata.trace.json"
+    },
+    {
+      "question": "cat02_03_anomaly_event_log.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_03_anomaly_event_log.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_03_anomaly_event_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_03_anomaly_event_log.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_03_anomaly_event_log.trace.json"
+    },
+    {
+      "question": "cat02_04_powl_anomaly_detection.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_04_powl_anomaly_detection.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_04_powl_anomaly_detection.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_04_powl_anomaly_detection.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_04_powl_anomaly_detection.trace.json"
+    },
+    {
+      "question": "cat02_05_two_powls_anomalies.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_05_two_powls_anomalies.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_05_two_powls_anomalies.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_05_two_powls_anomalies.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_05_two_powls_anomalies.trace.json"
+    },
+    {
+      "question": "cat02_06_root_cause_1.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_06_root_cause_1.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_06_root_cause_1.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_06_root_cause_1.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_06_root_cause_1.trace.json"
+    },
+    {
+      "question": "cat02_07_root_cause_2.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_07_root_cause_2.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_07_root_cause_2.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_07_root_cause_2.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_07_root_cause_2.trace.json"
+    },
+    {
+      "question": "cat02_08_underfitting_process_tree.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_08_underfitting_process_tree.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_08_underfitting_process_tree.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_08_underfitting_process_tree.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_08_underfitting_process_tree.trace.json"
+    },
+    {
+      "question": "cat02_09_fix_process_tree.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat02_09_fix_process_tree.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat02_09_fix_process_tree.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat02_09_fix_process_tree.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat02_09_fix_process_tree.trace.json"
+    },
+    {
+      "question": "cat03_01_process_tree_generation.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_01_process_tree_generation.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_01_process_tree_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_01_process_tree_generation.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_01_process_tree_generation.trace.json"
+    },
+    {
+      "question": "cat03_02_powl_generation.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_02_powl_generation.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_02_powl_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_02_powl_generation.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_02_powl_generation.trace.json"
+    },
+    {
+      "question": "cat03_03_log_skeleton_generation.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_03_log_skeleton_generation.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_03_log_skeleton_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_03_log_skeleton_generation.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_03_log_skeleton_generation.trace.json"
+    },
+    {
+      "question": "cat03_04_declare_generation.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_04_declare_generation.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_04_declare_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_04_declare_generation.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_04_declare_generation.trace.json"
+    },
+    {
+      "question": "cat03_05_temp_profile_generation.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_05_temp_profile_generation.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_05_temp_profile_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_05_temp_profile_generation.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_05_temp_profile_generation.trace.json"
+    },
+    {
+      "question": "cat03_06_petri_net_generation.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_06_petri_net_generation.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_06_petri_net_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_06_petri_net_generation.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_06_petri_net_generation.trace.json"
+    },
+    {
+      "question": "cat03_07_process_tree_discovery.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_07_process_tree_discovery.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_07_process_tree_discovery.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_07_process_tree_discovery.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_07_process_tree_discovery.trace.json"
+    },
+    {
+      "question": "cat03_08_powl_discovery.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat03_08_powl_discovery.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat03_08_powl_discovery.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat03_08_powl_discovery.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat03_08_powl_discovery.trace.json"
+    },
+    {
+      "question": "cat04_01_pseudo_bpmn_description.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat04_01_pseudo_bpmn_description.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat04_01_pseudo_bpmn_description.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat04_01_pseudo_bpmn_description.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat04_01_pseudo_bpmn_description.trace.json"
+    },
+    {
+      "question": "cat04_02_pseudo_bpmn_open_question.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat04_02_pseudo_bpmn_open_question.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat04_02_pseudo_bpmn_open_question.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat04_02_pseudo_bpmn_open_question.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat04_02_pseudo_bpmn_open_question.trace.json"
+    },
+    {
+      "question": "cat04_03_declare_open_question.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat04_03_declare_open_question.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat04_03_declare_open_question.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat04_03_declare_open_question.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat04_03_declare_open_question.trace.json"
+    },
+    {
+      "question": "cat04_04_declare_description.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat04_04_declare_description.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat04_04_declare_description.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat04_04_declare_description.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat04_04_declare_description.trace.json"
+    },
+    {
+      "question": "cat04_05_sql_filt_num_events.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat04_05_sql_filt_num_events.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat04_05_sql_filt_num_events.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat04_05_sql_filt_num_events.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat04_05_sql_filt_num_events.trace.json"
+    },
+    {
+      "question": "cat04_06_sql_filt_three_df.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat04_06_sql_filt_three_df.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat04_06_sql_filt_three_df.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat04_06_sql_filt_three_df.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat04_06_sql_filt_three_df.trace.json"
+    },
+    {
+      "question": "cat04_07_sql_filt_top_k_vars.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat04_07_sql_filt_top_k_vars.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat04_07_sql_filt_top_k_vars.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat04_07_sql_filt_top_k_vars.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat04_07_sql_filt_top_k_vars.trace.json"
+    },
+    {
+      "question": "cat05_01_hyp_generation_log.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_01_hyp_generation_log.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_01_hyp_generation_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_01_hyp_generation_log.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_01_hyp_generation_log.trace.json"
+    },
+    {
+      "question": "cat05_02_hyp_gen_powl.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_02_hyp_gen_powl.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_02_hyp_gen_powl.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_02_hyp_gen_powl.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_02_hyp_gen_powl.trace.json"
+    },
+    {
+      "question": "cat05_03_hyp_gen_declare.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_03_hyp_gen_declare.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_03_hyp_gen_declare.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_03_hyp_gen_declare.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_03_hyp_gen_declare.trace.json"
+    },
+    {
+      "question": "cat05_04_hyp_gen_temp_profile.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_04_hyp_gen_temp_profile.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_04_hyp_gen_temp_profile.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_04_hyp_gen_temp_profile.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_04_hyp_gen_temp_profile.trace.json"
+    },
+    {
+      "question": "cat05_05_question_gen_nlp.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_05_question_gen_nlp.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_05_question_gen_nlp.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_05_question_gen_nlp.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_05_question_gen_nlp.trace.json"
+    },
+    {
+      "question": "cat05_06_question_pseudo_bpmn.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_06_question_pseudo_bpmn.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_06_question_pseudo_bpmn.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_06_question_pseudo_bpmn.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_06_question_pseudo_bpmn.trace.json"
+    },
+    {
+      "question": "cat05_07_question_interview.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_07_question_interview.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_07_question_interview.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_07_question_interview.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_07_question_interview.trace.json"
+    },
+    {
+      "question": "cat06_01_bias_text.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat06_01_bias_text.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat06_01_bias_text.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat06_01_bias_text.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat06_01_bias_text.trace.json"
+    },
+    {
+      "question": "cat06_02_bias_event_log.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat06_02_bias_event_log.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat06_02_bias_event_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat06_02_bias_event_log.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat06_02_bias_event_log.trace.json"
+    },
+    {
+      "question": "cat06_03_bias_powl.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat06_03_bias_powl.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat06_03_bias_powl.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat06_03_bias_powl.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat06_03_bias_powl.trace.json"
+    },
+    {
+      "question": "cat06_04_bias_two_logs.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat06_04_bias_two_logs.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat06_04_bias_two_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat06_04_bias_two_logs.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat06_04_bias_two_logs.trace.json"
+    },
+    {
+      "question": "cat06_05_bias_two_logs_2.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat06_05_bias_two_logs_2.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat06_05_bias_two_logs_2.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat06_05_bias_two_logs_2.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat06_05_bias_two_logs_2.trace.json"
+    },
+    {
+      "question": "cat06_06_bias_mitigation_declare.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat06_06_bias_mitigation_declare.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat06_06_bias_mitigation_declare.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat06_06_bias_mitigation_declare.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat06_06_bias_mitigation_declare.trace.json"
+    },
+    {
+      "question": "cat06_07_fair_unfair_powl.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat06_07_fair_unfair_powl.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat06_07_fair_unfair_powl.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat06_07_fair_unfair_powl.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat06_07_fair_unfair_powl.trace.json"
+    },
+    {
+      "question": "cat07_01_ocdfg.png",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat07_01_ocdfg.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat07_01_ocdfg.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat07_01_ocdfg.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat07_01_ocdfg.trace.json"
+    },
+    {
+      "question": "cat07_02_bpmn_orders.png",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat07_02_bpmn_orders.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat07_02_bpmn_orders.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat07_02_bpmn_orders.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat07_02_bpmn_orders.trace.json"
+    },
+    {
+      "question": "cat07_03_bpmn_dispatch.png",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat07_03_bpmn_dispatch.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat07_03_bpmn_dispatch.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat07_03_bpmn_dispatch.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat07_03_bpmn_dispatch.trace.json"
+    },
+    {
+      "question": "cat07_04_causal_net.png",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat07_04_causal_net.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat07_04_causal_net.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat07_04_causal_net.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat07_04_causal_net.trace.json"
+    },
+    {
+      "question": "cat07_05_proclets.png",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat07_05_proclets.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat07_05_proclets.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat07_05_proclets.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat07_05_proclets.trace.json"
+    },
+    {
+      "question": "cat07_06_perf_spectrum.png",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat07_06_perf_spectrum.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat07_06_perf_spectrum.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat07_06_perf_spectrum.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat07_06_perf_spectrum.trace.json"
+    },
+    {
+      "question": "cat08_01_queue_mining.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat08_01_queue_mining.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat08_01_queue_mining.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat08_01_queue_mining.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat08_01_queue_mining.trace.json"
+    },
+    {
+      "question": "cat08_02_instance_spanning.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat08_02_instance_spanning.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat08_02_instance_spanning.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat08_02_instance_spanning.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat08_02_instance_spanning.trace.json"
+    },
+    {
+      "question": "cat08_03_transport_opt.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat08_03_transport_opt.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat08_03_transport_opt.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat08_03_transport_opt.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat08_03_transport_opt.trace.json"
+    },
+    {
+      "question": "cat08_04_resource_assign.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat08_04_resource_assign.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat08_04_resource_assign.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat08_04_resource_assign.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat08_04_resource_assign.trace.json"
+    },
+    {
+      "question": "cat08_05_task_schedul.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat08_05_task_schedul.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat08_05_task_schedul.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat08_05_task_schedul.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat08_05_task_schedul.trace.json"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first-agent choice; sensible routing."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 7.4,
+    "explanation": "Useful, grounded; lacks data-quality edge cases."
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 6.8,
+    "explanation": "Helpful but repetitive; limited added rigor."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.8,
+    "explanation": "Strong structured synthesis; some assumptions vagu"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 2.3,
+    "explanation": "Poor agent choice; no image-mapping first"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 4.8,
+    "explanation": "Useful summary, but speculative and unverified"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Clear final, but repeats unsupported claims"
+  }
+]

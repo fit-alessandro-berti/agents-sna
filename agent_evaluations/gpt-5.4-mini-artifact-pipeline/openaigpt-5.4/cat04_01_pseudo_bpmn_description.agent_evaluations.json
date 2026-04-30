@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first pick; control-flow was primary need"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 8.6,
+    "explanation": "Strong, grounded flow analysis; minor speculation"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.8,
+    "explanation": "Useful audit summary, but little new added"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.7,
+    "explanation": "Comprehensive and correct; slight unsupported deta"
+  }
+]

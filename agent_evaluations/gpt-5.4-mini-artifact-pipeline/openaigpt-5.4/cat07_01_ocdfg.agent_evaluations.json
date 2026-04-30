@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.3,
+    "explanation": "Reasonable first routing; mapper fits task."
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 1.4,
+    "explanation": "Invents labels, counts, flows from unseen image."
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 1.1,
+    "explanation": "Fails to audit; repeats unsupported specifics."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.0,
+    "explanation": "Final answer is wholly ungrounded hallucination."
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing; mapper was apt."
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 5.4,
+    "explanation": "Useful description, but speculative semantics."
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 6.1,
+    "explanation": "Adds caution, but repeats weak assumptions."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.0,
+    "explanation": "Clear summary, still speculative and generic."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-balanced",
+  "question": "cat07_06_perf_spectrum.png",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_balanced.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-balanced_cat07_06_perf_spectrum.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\requests\\cat07_06_perf_spectrum.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\responses\\cat07_06_perf_spectrum.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\traces\\cat07_06_perf_spectrum.trace.json",
+  "final_answer_length": 1591
+}

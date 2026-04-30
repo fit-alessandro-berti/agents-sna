@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 4.6,
+    "explanation": "Reasonable agent pick, but no deeper planning"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.4,
+    "explanation": "Useful, grounded questions; lacks edge cases"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Solid final list, but generic and not exhaustive"
+  }
+]

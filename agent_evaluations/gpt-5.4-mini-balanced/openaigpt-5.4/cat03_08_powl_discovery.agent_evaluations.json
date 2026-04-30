@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first routing; interpreter useful first."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 5.4,
+    "explanation": "Useful draft, but assembly loop misfits case 4."
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.8,
+    "explanation": "Slightly sharper, still wrong on optional IQC."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.2,
+    "explanation": "Clear final, but inherits flawed assembly model."
+  }
+]

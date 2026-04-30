@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Strong first-agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.6,
+    "explanation": "Useful structure; some unsupported assumptions"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.7,
+    "explanation": "Sharp coverage check; improved rigor"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Comprehensive and grounded; minor rigor gaps"
+  }
+]

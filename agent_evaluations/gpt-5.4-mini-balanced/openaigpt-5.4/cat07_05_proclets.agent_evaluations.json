@@ -1,0 +1,12 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 1.2,
+    "explanation": "Premature FINAL; no analysis or delegation"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.9,
+    "explanation": "Useful gist, but speculative and not grounded"
+  }
+]

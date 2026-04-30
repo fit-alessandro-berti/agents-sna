@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "selector",
+    "iteration": 1,
+    "agent": null,
+    "content": "[\"query_and_sql_analyst\"]"
+  },
+  {
+    "kind": "agent",
+    "iteration": 1,
+    "agent": "query_and_sql_analyst",
+    "content": "```sql\nWITH ordered_events AS (\n    SELECT\n        case_id,\n        activity,\n        \"timestamp\",\n        ROW_NUMBER() OVER (\n            PARTITION BY case_id\n            ORDER BY \"timestamp\"\n        ) AS rn\n    FROM event_log\n),\nmatching_cases AS (\n    SELECT DISTINCT e1.case_id\n    FROM ordered_events e1\n    JOIN ordered_events e2\n      ON e1.case_id = e2.case_id\n     AND e2.rn = e1.rn + 1\n    JOIN ordered_events e3\n      ON e1.case_id = e3.case_id\n     AND e3.rn = e1.rn + 2\n    WHERE e1.activity = 'Approve Purchase Requisition'\n      AND e2.activity = 'Create Order'\n      AND e3.activity = 'Confirm Order'\n      AND e3.\"timestamp\" - e2.\"timestamp\" > INTERVAL '5 days'\n)\nSELECT el.*\nFROM event_log el\nWHERE el.case_id NOT IN (SELECT case_id FROM matching_cases)\nORDER BY el.case_id, el.\"timestamp\";\n```\n\nThis returns all events except those from cases where the three activities occur in direct succession and the gap between `Create Order` and `Confirm Order` is more than 5 days."
+  },
+  {
+    "kind": "selector",
+    "iteration": 2,
+    "agent": null,
+    "content": "[\"FINAL\"]"
+  },
+  {
+    "kind": "final",
+    "iteration": 50,
+    "agent": null,
+    "content": "```sql\nWITH ordered_events AS (\n    SELECT\n        case_id,\n        activity,\n        \"timestamp\",\n        ROW_NUMBER() OVER (\n            PARTITION BY case_id\n            ORDER BY \"timestamp\"\n        ) AS rn\n    FROM event_log\n),\nmatching_cases AS (\n    SELECT DISTINCT e1.case_id\n    FROM ordered_events e1\n    JOIN ordered_events e2\n      ON e1.case_id = e2.case_id\n     AND e2.rn = e1.rn + 1\n    JOIN ordered_events e3\n      ON e1.case_id = e3.case_id\n     AND e3.rn = e1.rn + 2\n    WHERE e1.activity = 'Approve Purchase Requisition'\n      AND e2.activity = 'Create Order'\n      AND e3.activity = 'Confirm Order'\n      AND e3.\"timestamp\" - e2.\"timestamp\" > INTERVAL '5 days'\n)\nSELECT el.*\nFROM event_log el\nWHERE el.case_id NOT IN (SELECT case_id FROM matching_cases)\nORDER BY el.case_id, el.\"timestamp\";\n```\n\nThis query:\n- finds cases where the three activities occur in direct succession,\n- checks that `Confirm Order` happens more than 5 days after `Create Order`,\n- and excludes all events from those cases from the final result.\n\nIf you want, I can also provide a version using `NOT EXISTS` instead of `NOT IN` for better null-safety."
+  }
+]

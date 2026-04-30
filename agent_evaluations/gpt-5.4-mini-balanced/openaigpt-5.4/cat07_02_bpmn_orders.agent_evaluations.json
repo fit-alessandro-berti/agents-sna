@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first pick; limited added value"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 7.6,
+    "explanation": "Useful description; some unsupported specifics"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.4,
+    "explanation": "Speculative optimization, not asked by prompt"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.3,
+    "explanation": "Clear summary, but inherits uncertain details"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Good first routing to variant reasoning"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 2.6,
+    "explanation": "Loop semantics wrong; misses no-RMI path"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.1,
+    "explanation": "Flags issue but repeats same flawed tree"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.2,
+    "explanation": "Final tree cannot replay observed variants"
+  }
+]

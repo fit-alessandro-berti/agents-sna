@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Correctly routed to process_modeler"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 6.7,
+    "explanation": "Useful code; AP wrongly made mandatory"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.5,
+    "explanation": "Mostly n2 restated; same AP defect"
+  }
+]

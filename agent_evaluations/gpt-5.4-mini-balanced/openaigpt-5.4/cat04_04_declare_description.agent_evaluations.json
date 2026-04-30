@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first agent choice; reasonable routing"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.7,
+    "explanation": "Useful but several DECLARE semantics misstated"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 7.2,
+    "explanation": "Helpful caveats; mostly grounded, some vagueness"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.2,
+    "explanation": "Coherent but repeats key semantic errors"
+  }
+]

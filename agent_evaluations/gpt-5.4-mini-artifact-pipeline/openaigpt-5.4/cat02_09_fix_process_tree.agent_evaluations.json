@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first routing to control-flow expert"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 8.8,
+    "explanation": "Correct strict-sequence fix; minor nuance loss"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.5,
+    "explanation": "Useful validation; mostly repeats prior answer"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.7,
+    "explanation": "Accurate final answer; slightly overclaims order"
+  }
+]

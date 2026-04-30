@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-balanced",
+  "question": "cat08_01_queue_mining.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_balanced.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-balanced_cat08_01_queue_mining.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\requests\\cat08_01_queue_mining.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\responses\\cat08_01_queue_mining.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\traces\\cat08_01_queue_mining.trace.json",
+  "final_answer_length": 15246
+}

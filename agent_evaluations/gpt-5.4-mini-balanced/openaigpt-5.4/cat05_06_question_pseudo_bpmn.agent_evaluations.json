@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good agent choice; relevant and efficient."
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 8.7,
+    "explanation": "Strong 20 questions; grounded, minor omissions."
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 5.2,
+    "explanation": "Useful insights, but not in requested list form."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 9.1,
+    "explanation": "High-quality final 20 questions; well aligned."
+  }
+]

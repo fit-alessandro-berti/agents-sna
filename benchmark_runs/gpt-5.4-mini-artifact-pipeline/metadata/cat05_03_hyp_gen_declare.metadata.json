@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-artifact-pipeline",
+  "question": "cat05_03_hyp_gen_declare.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_03_hyp_gen_declare.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_03_hyp_gen_declare.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_03_hyp_gen_declare.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_03_hyp_gen_declare.trace.json",
+  "final_answer_length": 8094
+}

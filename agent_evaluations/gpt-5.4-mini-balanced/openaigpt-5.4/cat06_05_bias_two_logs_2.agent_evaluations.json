@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good agent choice; directly relevant"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 8.4,
+    "explanation": "Correct bias finding; minor rigor gaps"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Accurate synthesis; slight overclaim on outcome"
+  }
+]

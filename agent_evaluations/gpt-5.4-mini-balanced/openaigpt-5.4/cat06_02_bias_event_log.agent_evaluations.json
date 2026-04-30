@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.1,
+    "explanation": "Picked the most relevant agent immediately"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 7.4,
+    "explanation": "Useful bias read; some threshold inference unsuppo"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Good summary, but repeats unsupported causal claim"
+  }
+]

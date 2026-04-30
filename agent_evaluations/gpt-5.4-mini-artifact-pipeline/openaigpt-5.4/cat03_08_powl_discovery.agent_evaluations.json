@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.6,
+    "explanation": "Useful mapping; minor syntax/semantics imprecision"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 5.2,
+    "explanation": "Mostly repeats prior work; one wrong chain claim"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.9,
+    "explanation": "Concise, grounded validation; little added depth"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.8,
+    "explanation": "Correct final model; minor notation/code issues"
+  }
+]

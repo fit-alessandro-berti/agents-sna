@@ -1,0 +1,156 @@
+{
+  "source_dir": "agent_evaluations\\gpt-5.4-mini-artifact-pipeline\\openaigpt-5.4",
+  "files_processed": 57,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 2.9473684210526314,
+    "stddev": 0.5435766099940235
+  },
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 57,
+      "average": 6.7368421052631575,
+      "stddev": 2.125916238298733
+    },
+    {
+      "agent_type": "START",
+      "count": 57,
+      "average": 7.373684210526316,
+      "stddev": 1.5600861779828537
+    },
+    {
+      "agent_type": "answer_precision_auditor",
+      "count": 56,
+      "average": 7.528571428571429,
+      "stddev": 1.708039214767528
+    },
+    {
+      "agent_type": "control_flow_semantics_expert",
+      "count": 7,
+      "average": 7.1571428571428575,
+      "stddev": 1.968216845528055
+    },
+    {
+      "agent_type": "risk_fairness_and_compliance_reviewer",
+      "count": 5,
+      "average": 7.4,
+      "stddev": 1.2489995996796797
+    },
+    {
+      "agent_type": "schema_and_artifact_mapper",
+      "count": 41,
+      "average": 6.580487804878049,
+      "stddev": 1.5310158451642368
+    },
+    {
+      "agent_type": "trace_and_variant_reasoner",
+      "count": 2,
+      "average": 5.35,
+      "stddev": 2.7499999999999996
+    }
+  ],
+  "edges": [
+    {
+      "source": "START",
+      "target": "COMPLETE",
+      "count": 1,
+      "average": 2.6,
+      "stddev": 0.0
+    },
+    {
+      "source": "START",
+      "target": "answer_precision_auditor",
+      "count": 5,
+      "average": 5.8,
+      "stddev": 2.484351021896866
+    },
+    {
+      "source": "START",
+      "target": "control_flow_semantics_expert",
+      "count": 3,
+      "average": 8.6,
+      "stddev": 0.16329931618554536
+    },
+    {
+      "source": "START",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 5,
+      "average": 7.4,
+      "stddev": 1.2489995996796797
+    },
+    {
+      "source": "START",
+      "target": "schema_and_artifact_mapper",
+      "count": 41,
+      "average": 6.580487804878049,
+      "stddev": 1.5310158451642368
+    },
+    {
+      "source": "START",
+      "target": "trace_and_variant_reasoner",
+      "count": 2,
+      "average": 5.35,
+      "stddev": 2.7499999999999996
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "COMPLETE",
+      "count": 55,
+      "average": 6.825454545454545,
+      "stddev": 2.0868609033071817
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "control_flow_semantics_expert",
+      "count": 1,
+      "average": 8.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "answer_precision_auditor",
+      "count": 7,
+      "average": 7.9,
+      "stddev": 0.6590035768383314
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "answer_precision_auditor",
+      "count": 5,
+      "average": 7.9399999999999995,
+      "stddev": 0.37735924528226417
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "COMPLETE",
+      "count": 1,
+      "average": 6.0,
+      "stddev": 0.0
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "answer_precision_auditor",
+      "count": 37,
+      "average": 7.7270270270270265,
+      "stddev": 1.5578308981971205
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "control_flow_semantics_expert",
+      "count": 3,
+      "average": 5.3999999999999995,
+      "stddev": 1.8832595855767378
+    },
+    {
+      "source": "trace_and_variant_reasoner",
+      "target": "answer_precision_auditor",
+      "count": 2,
+      "average": 5.85,
+      "stddev": 2.7499999999999996
+    }
+  ]
+}

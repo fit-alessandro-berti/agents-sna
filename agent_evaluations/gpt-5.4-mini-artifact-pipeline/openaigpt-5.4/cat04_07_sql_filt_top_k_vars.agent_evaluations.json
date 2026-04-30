@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.6,
+    "explanation": "Useful SQL; misses timestamp tie edge case"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 5.7,
+    "explanation": "Helpful check, but overlooked ordering ambiguity"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Correct overall; still omits tie handling nuance"
+  }
+]

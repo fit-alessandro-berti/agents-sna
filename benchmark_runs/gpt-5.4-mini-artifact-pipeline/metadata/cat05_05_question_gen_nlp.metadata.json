@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-artifact-pipeline",
+  "question": "cat05_05_question_gen_nlp.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-artifact-pipeline_cat05_05_question_gen_nlp.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\requests\\cat05_05_question_gen_nlp.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\responses\\cat05_05_question_gen_nlp.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-artifact-pipeline\\traces\\cat05_05_question_gen_nlp.trace.json",
+  "final_answer_length": 2271
+}

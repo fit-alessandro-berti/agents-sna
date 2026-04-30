@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Reasonable first pick; useful but not optimal."
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 8.2,
+    "explanation": "Strong structure; some unsupported specifics."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 5.3,
+    "explanation": "Useful checks, but overclaims from sparse evidence"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Comprehensive and relevant; limited rigor/detail."
+  }
+]
