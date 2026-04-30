@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.4,
+    "explanation": "Mostly correct; weak on case 2 desiderata"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.1,
+    "explanation": "Useful checks, but adds little beyond prior"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.8,
+    "explanation": "Correct final answer; slight incompleteness"
+  }
+]

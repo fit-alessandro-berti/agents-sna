@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Reasonable first-agent choice; no deeper value"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.2,
+    "explanation": "Strong extraction and useful checks; minor SQL fla"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.8,
+    "explanation": "Good sharpening, but limited novelty/detail"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.6,
+    "explanation": "Covers tasks well; one SQL logic bug, some weak cl"
+  }
+]

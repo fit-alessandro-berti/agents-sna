@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first choice; parser was the right start."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.9,
+    "explanation": "Strong structure; a bit interpretive, not just par"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.4,
+    "explanation": "Useful synthesis, but generic and less detailed."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.3,
+    "explanation": "Comprehensive and grounded; some unsupported extra"
+  }
+]

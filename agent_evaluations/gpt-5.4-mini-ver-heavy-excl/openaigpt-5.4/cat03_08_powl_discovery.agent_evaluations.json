@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first agent choice; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.4,
+    "explanation": "Useful extraction; slight overclaim on loop fit"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.0,
+    "explanation": "Solid structure, but vague and not fully rigorous"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.0,
+    "explanation": "Good semantic caveat; improved faithfulness"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.6,
+    "explanation": "Reasonable final model; code syntax/fit issues"
+  }
+]

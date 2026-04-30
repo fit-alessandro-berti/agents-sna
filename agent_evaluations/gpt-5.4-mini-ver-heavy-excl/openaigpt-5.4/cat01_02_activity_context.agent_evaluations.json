@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing; parser was apt"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.4,
+    "explanation": "Useful parse, but wrongly treats non-recurring Adj"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.8,
+    "explanation": "Helpful refinements, repeats Adjust error"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.7,
+    "explanation": "Solid final, but includes non-recurring activity"
+  }
+]

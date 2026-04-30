@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.3,
+    "explanation": "Good first routing; parser was useful"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.8,
+    "explanation": "Useful, but not true parsing; misses edge cases"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.9,
+    "explanation": "Strong PM framing; concise but somewhat generic"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Comprehensive and grounded; minor rigor gaps"
+  }
+]

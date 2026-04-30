@@ -1,0 +1,87 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.8,
+    "explanation": "Good first agent choice."
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 7.6,
+    "explanation": "Useful 45-pair draft; weak rigor claims."
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 3.1,
+    "explanation": "Speculative; little progress to answer."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.0,
+    "explanation": "Factually wrong pair count and claims."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 2.2,
+    "explanation": "Builds on false omissions; misleading."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 5.0,
+    "explanation": "Complete dict, but invented corrections."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.3,
+    "explanation": "Incorrectly says present pairs absent."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 1.6,
+    "explanation": "Repeats false critique; no new value."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.1,
+    "explanation": "Hallucinates missing pairs again."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 2.0,
+    "explanation": "Some useful constraints, mostly wrong."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.1,
+    "explanation": "Persistent false non-conformance claims."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 2.4,
+    "explanation": "Minor guidance, but grounded poorly."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.2,
+    "explanation": "Still wrong on completeness and stats."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 2.0,
+    "explanation": "Repetitive and based on false premise."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.1,
+    "explanation": "Same hallucinated defects repeated."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 1.9,
+    "explanation": "No real advance; repeats bad critique."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.2,
+    "explanation": "Usable final dict; weak statistical rigor."
+  }
+]

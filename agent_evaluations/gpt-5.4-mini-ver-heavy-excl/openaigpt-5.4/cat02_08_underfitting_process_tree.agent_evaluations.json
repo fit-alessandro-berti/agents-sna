@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first agent selection"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.1,
+    "explanation": "Invents invalid double-close success trace"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.8,
+    "explanation": "Correct counterexample; well grounded"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.6,
+    "explanation": "Correct final, but not maximally rigorous"
+  }
+]

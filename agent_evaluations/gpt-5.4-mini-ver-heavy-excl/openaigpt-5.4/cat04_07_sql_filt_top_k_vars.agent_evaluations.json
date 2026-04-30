@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Good first routing; sensible parser choice."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.3,
+    "explanation": "Accurate extraction; flags ties and K ambiguity."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.6,
+    "explanation": "Solid SQL; tie-ordering edge case unresolved."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Correct overall, but same timestamp ambiguity rema"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.1,
+    "explanation": "Right first agent; efficient routing."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 8.8,
+    "explanation": "Correct grouping; minor overclaim on uniqueness."
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 3.6,
+    "explanation": "Mostly irrelevant; model errors and bad notation."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.9,
+    "explanation": "Unsupported perfect-fitness claims; off-task."
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 4.2,
+    "explanation": "Some useful caveats, but mostly unnecessary."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.0,
+    "explanation": "No final answer provided."
+  }
+]

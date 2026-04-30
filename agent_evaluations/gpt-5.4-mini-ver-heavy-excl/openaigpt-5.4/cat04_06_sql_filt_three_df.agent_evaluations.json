@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; flags tie-order ambiguity"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.4,
+    "explanation": "Useful SQL; misses deterministic ordering"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.9,
+    "explanation": "Valid semantic caveat; limited added depth"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.1,
+    "explanation": "Clear draft; mostly repeats prior SQL"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.0,
+    "explanation": "Correct final answer, but tie-case caveat remains"
+  }
+]

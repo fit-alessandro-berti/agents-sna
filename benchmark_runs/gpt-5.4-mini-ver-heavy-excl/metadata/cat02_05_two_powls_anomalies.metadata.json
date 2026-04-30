@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-ver-heavy-excl",
+  "question": "cat02_05_two_powls_anomalies.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_verification_heavy_excluding_low_edges.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-ver-heavy-excl_cat02_05_two_powls_anomalies.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-ver-heavy-excl\\requests\\cat02_05_two_powls_anomalies.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-ver-heavy-excl\\responses\\cat02_05_two_powls_anomalies.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-ver-heavy-excl\\traces\\cat02_05_two_powls_anomalies.trace.json",
+  "final_answer_length": 3420
+}

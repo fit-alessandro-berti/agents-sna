@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.7,
+    "explanation": "Reasonable agent pick; no deeper planning"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 8.3,
+    "explanation": "Grounded fairness analysis; slight overreach"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Clear answer; useful but mostly repeats n2"
+  }
+]

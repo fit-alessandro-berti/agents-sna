@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.9,
+    "explanation": "Useful extraction; some premature inference"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.6,
+    "explanation": "Mostly correct; slight overclaim on merit"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.1,
+    "explanation": "Sharp caveat; tightened claim well"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.2,
+    "explanation": "Clear answer; still mildly overstates bias"
+  }
+]

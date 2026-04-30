@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 8.1,
+    "explanation": "Strong core analysis; minor overclaims"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 5.2,
+    "explanation": "Useful hypotheses, but speculative/stat-heavy"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 6.4,
+    "explanation": "Actionable, but several unsupported claims"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.6,
+    "explanation": "Invents at-most-one rule; weak grounding"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.3,
+    "explanation": "Formalism inaccurate; many fabricated details"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 2.1,
+    "explanation": "Overstates bias from tiny, non-protected data"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 4.8,
+    "explanation": "Helpful aggregates, but SQL/result errors"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Covers task, but repeats unsupported claims"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.3,
+    "explanation": "Correctly chose process_modeler immediately"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.4,
+    "explanation": "Loop semantics wrong; adds invalid optionality"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 6.4,
+    "explanation": "Useful correction, but loop still debatable"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 6.1,
+    "explanation": "Mostly repetition; no new rigor added"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Good final tree, but misses zero-iteration nuance"
+  }
+]

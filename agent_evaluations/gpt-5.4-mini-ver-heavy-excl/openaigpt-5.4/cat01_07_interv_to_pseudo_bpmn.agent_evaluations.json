@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first choice; sensible parsing-first step"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.4,
+    "explanation": "Strong extraction; minor role/sequence conflation"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.8,
+    "explanation": "Useful BPMN refinement; some unsupported phrasing"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Comprehensive, grounded; slight overcommitment"
+  }
+]

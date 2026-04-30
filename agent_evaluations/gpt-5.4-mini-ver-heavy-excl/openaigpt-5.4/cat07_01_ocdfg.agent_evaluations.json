@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first pick; parser sensible for image task"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.4,
+    "explanation": "Hallucinates specifics; not faithful parsing"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.1,
+    "explanation": "Plausible PM framing, but unsupported claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.0,
+    "explanation": "Clear but largely speculative final description"
+  }
+]

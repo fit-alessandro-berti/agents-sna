@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.3,
+    "explanation": "Reasonable first routing choice"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.4,
+    "explanation": "Useful parse, but key factual mistakes"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.0,
+    "explanation": "Helpful but repeats a clear log error"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Solid structure, weak SQL rigor, one bad claim"
+  }
+]

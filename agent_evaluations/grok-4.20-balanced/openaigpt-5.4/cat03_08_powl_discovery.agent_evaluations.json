@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.5,
+    "explanation": "Good first agent choice; sensible and useful."
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 3.2,
+    "explanation": "Misses Case 4; bad LOOP semantics for IQC/AS."
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.4,
+    "explanation": "Incorrect claims; says perfect fitness wrongly."
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.0,
+    "explanation": "Final model still cannot replay Case 4."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.8,
+    "explanation": "Incorrect final POWL; false 100% fitness claim."
+  }
+]

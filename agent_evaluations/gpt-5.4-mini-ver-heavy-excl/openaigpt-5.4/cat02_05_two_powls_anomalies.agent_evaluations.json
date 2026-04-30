@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.1,
+    "explanation": "Strong extraction; minor overclaim on optionality"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.8,
+    "explanation": "Useful core judgment; somewhat terse"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.6,
+    "explanation": "Has a backbone error; limited added value"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.9,
+    "explanation": "Correct conclusion; clear but misses nuances"
+  }
+]

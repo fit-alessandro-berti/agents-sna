@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first choice; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.1,
+    "explanation": "Clear extraction; flags key ambiguity"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.2,
+    "explanation": "Overclaimed, unsupported constraints"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 9.1,
+    "explanation": "Accurate critique; catches major flaws"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.9,
+    "explanation": "Strong skepticism; useful edge cases"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Improved, but still assumes too much"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.8,
+    "explanation": "Readable final, but frequencies unsupported"
+  }
+]

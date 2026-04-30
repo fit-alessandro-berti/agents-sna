@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Sensible first-agent choice; minimal but apt"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.6,
+    "explanation": "Thorough parse; minor overreach in synthesis hints"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.9,
+    "explanation": "Useful redesign; lacks PM rigor and specifics"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.8,
+    "explanation": "Sharp edge cases; strongly improves grounding"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Strong coverage; generic, little PM evidence"
+  }
+]

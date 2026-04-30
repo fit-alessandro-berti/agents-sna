@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.1,
+    "explanation": "Reasonable first agent choice; limited impact"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 3.2,
+    "explanation": "Did not parse; invented weak DECLARE model"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.7,
+    "explanation": "Useful semantic critique, but vague/inexact"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.3,
+    "explanation": "Improved final structure; schema still dubious"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.9,
+    "explanation": "Clear final dict, but semantically underjustified"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-balanced",
+  "question": "cat04_07_sql_filt_top_k_vars.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_balanced.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-balanced_cat04_07_sql_filt_top_k_vars.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-balanced\\requests\\cat04_07_sql_filt_top_k_vars.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-balanced\\responses\\cat04_07_sql_filt_top_k_vars.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-balanced\\traces\\cat04_07_sql_filt_top_k_vars.trace.json",
+  "final_answer_length": 1812
+}

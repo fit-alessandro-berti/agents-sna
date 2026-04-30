@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first parser choice; no extra value"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.6,
+    "explanation": "Useful gist, but speculative and not exact"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Clear summary, but repeats unsupported claims"
+  }
+]

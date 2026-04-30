@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first routing to parser; sensible."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.3,
+    "explanation": "Accurate extraction and timings; minor overreach."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.8,
+    "explanation": "Useful but one duration error and mild vagueness."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.7,
+    "explanation": "Strong confound checks; sharpened claims well."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.9,
+    "explanation": "Solid final answer; clear, but not fully rigorous."
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.4,
+    "explanation": "Reasonable first agent; no deeper planning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.1,
+    "explanation": "Did not parse artifacts; jumped to solution"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.6,
+    "explanation": "Useful PM analysis, but generic and incomplete"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.2,
+    "explanation": "Strong coverage; lacks rigor/edge cases"
+  }
+]

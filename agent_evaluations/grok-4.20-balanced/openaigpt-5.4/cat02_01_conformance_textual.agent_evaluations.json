@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; appropriate and efficient"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 8.8,
+    "explanation": "Correct case IDs and violations; minor overclaim"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.4,
+    "explanation": "Useful formalization, but Petri net is flawed"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 9.1,
+    "explanation": "Accurate, grounded, complete final answer"
+  }
+]

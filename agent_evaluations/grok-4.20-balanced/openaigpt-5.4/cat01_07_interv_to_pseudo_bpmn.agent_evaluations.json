@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.1,
+    "explanation": "Correctly chose process_modeler first"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 7.0,
+    "explanation": "Useful model; some BPMN/flow inaccuracies"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.2,
+    "explanation": "Formalism flawed; bad constraints/process tree"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 2.4,
+    "explanation": "Speculative, adds unsupported assumptions"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.6,
+    "explanation": "Invents deviations and false percentages"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.8,
+    "explanation": "Mostly redesign speculation, weakly grounded"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.8,
+    "explanation": "Helpful refinement but still imprecise"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Strong final model; a few overclaims remain"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Sensible first-agent choice; limited substance"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.6,
+    "explanation": "Useful extraction, but over-interprets patterns"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.4,
+    "explanation": "Mostly grounded; fair caveats, weak rigor"
+  }
+]

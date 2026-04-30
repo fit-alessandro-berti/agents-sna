@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "selector",
+    "iteration": 1,
+    "agent": null,
+    "content": "[\"artifact_parser\"]"
+  },
+  {
+    "kind": "agent",
+    "iteration": 1,
+    "agent": "artifact_parser",
+    "content": "The visualization is a **BPMN-style process diagram** for **dispatching goods** in a **computer hardware shop**, organized into **three swimlanes**:\n\n- **Secretary**\n- **Logistics**\n- **Warehouse**\n\n### Main flow\nThe process starts with **“Ship goods”** and then moves through these steps:\n\n1. **Clarify shipment method**\n2. Decision: **“Special handling?”**\n   - **Yes** → get **3 offers from logistic companies** → **select logistic company and place order**\n   - **No** → **check if insurance is required**\n3. Decision: **insurance required?**\n   - If needed → **insure parcel**\n   - Then continue to **write package label**\n4. The logistics branch and the insurance branch merge, then continue\n5. In parallel with warehouse work, the process goes to:\n   - **Package goods**\n   - if packaging takes too long, after **48 hours** there is a step to **notify customer about delay**\n6. The workflow then converges and proceeds to:\n   - **Fill out shipment paperwork**\n   - **Move package to pickup area**\n7. The process ends at **“Shipment prepared”**\n\n### Notable elements\n- There are **exclusive gateways** for:\n  - special handling\n  - insurance requirement\n- There are **parallel / synchronization gateways** coordinating packaging and administrative tasks\n- A **timer event** is attached to **Package goods**, labeled **48 hours**, triggering a delay notification\n- A data object **“Order details”** and a data store/object **“Customer information”** are shown as inputs\n\n### Overall meaning\nIt depicts the coordination needed to prepare a shipment, combining:\n- customer/order review,\n- logistics selection and insurance decisions,\n- warehouse packaging,\n- paperwork completion,\n- and final transfer to pickup."
+  },
+  {
+    "kind": "selector",
+    "iteration": 2,
+    "agent": null,
+    "content": "[\"FINAL\"]"
+  },
+  {
+    "kind": "final",
+    "iteration": 50,
+    "agent": null,
+    "content": "The visualization is a **BPMN-style workflow diagram** showing how a **computer hardware shop** prepares goods for shipment. It is divided into three swimlanes:\n\n- **Secretary**\n- **Logistics**\n- **Warehouse**\n\n### What the process shows\nThe flow begins with **“Ship goods”** and then moves through several coordinated steps:\n\n1. **Clarify shipment method**\n2. Check whether there is **special handling**\n   - If **yes**, the shop **gets 3 offers from logistics companies** and then **selects a logistics company and places the order**\n   - If **no**, it goes to checking whether **insurance is required**\n3. If insurance is needed, the parcel is **insured**\n4. The parcel is then **labeled**\n5. In parallel, the warehouse **packages the goods**\n   - A **48-hour timer event** is attached here, and if packaging takes too long, the customer is **notified about the delay**\n6. The process then continues to **fill out shipment paperwork**\n7. Finally, the package is **moved to the pickup area**\n8. The workflow ends at **“Shipment prepared”**\n\n### Diagram features\n- **Decision gateways** are used for:\n  - special handling\n  - insurance requirement\n- **Parallel/synchronization gateways** show tasks that happen or merge together\n- A **timer event** highlights delay handling during packaging\n- Supporting information objects such as **“Order details”** and **“Customer information”** are shown as inputs\n\n### Overall interpretation\nThe diagram describes the end-to-end **shipment preparation process**, combining:\n- administrative checks,\n- logistics coordination,\n- insurance decisions,\n- warehouse packaging,\n- paperwork completion,\n- and final handoff for pickup."
+  }
+]
