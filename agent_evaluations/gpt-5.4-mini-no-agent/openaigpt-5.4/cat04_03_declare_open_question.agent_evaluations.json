@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Useful, but key DECLARE semantics wrong"
+  }
+]

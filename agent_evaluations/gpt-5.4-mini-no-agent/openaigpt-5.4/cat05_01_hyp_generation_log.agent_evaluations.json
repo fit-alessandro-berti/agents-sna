@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Useful, grounded; some SQL is weak/vague"
+  }
+]

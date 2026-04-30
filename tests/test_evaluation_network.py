@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from agents_sna.evaluation_network import (
     analyze_evaluation_folder,
+    count_summary,
     read_evaluation_file,
     score_summary,
 )
@@ -22,6 +23,13 @@ class EvaluationNetworkTests(unittest.TestCase):
         self.assertEqual(summary["count"], 2)
         self.assertEqual(summary["average"], 3.0)
         self.assertEqual(summary["stddev"], 1.0)
+
+    def test_count_summary_allows_empty_counts(self) -> None:
+        summary = count_summary([])
+
+        self.assertEqual(summary["count"], 0)
+        self.assertEqual(summary["average"], 0.0)
+        self.assertEqual(summary["stddev"], 0.0)
 
     def test_analyze_evaluation_folder_aggregates_nodes_and_edges(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -49,6 +57,9 @@ class EvaluationNetworkTests(unittest.TestCase):
         edges = {(edge["source"], edge["target"]): edge for edge in analysis["edges"]}
 
         self.assertEqual(analysis["files_processed"], 2)
+        self.assertEqual(analysis["edge_instantiations_per_question"]["count"], 2)
+        self.assertEqual(analysis["edge_instantiations_per_question"]["average"], 2.0)
+        self.assertEqual(analysis["edge_instantiations_per_question"]["stddev"], 0.0)
         self.assertEqual(nodes["START"]["average"], 9.0)
         self.assertEqual(nodes["START"]["stddev"], 1.0)
         self.assertEqual(nodes["parser"]["average"], 7.0)
@@ -56,6 +67,32 @@ class EvaluationNetworkTests(unittest.TestCase):
         self.assertEqual(edges[("START", "parser")]["stddev"], 1.0)
         self.assertEqual(edges[("parser", "COMPLETE")]["average"], 8.0)
         self.assertEqual(edges[("parser", "COMPLETE")]["stddev"], 1.0)
+
+    def test_analyze_evaluation_folder_summarizes_edge_counts_per_question(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_evaluation(
+                root / "a.agent_evaluations.json",
+                [
+                    ("START", 8.0),
+                    ("parser", 6.0),
+                    ("COMPLETE", 7.0),
+                ],
+            )
+            write_evaluation(
+                root / "b.agent_evaluations.json",
+                [
+                    ("START", 10.0),
+                    ("COMPLETE", 9.0),
+                ],
+            )
+
+            analysis = analyze_evaluation_folder(root)
+
+        summary = analysis["edge_instantiations_per_question"]
+        self.assertEqual(summary["count"], 2)
+        self.assertEqual(summary["average"], 1.5)
+        self.assertEqual(summary["stddev"], 0.5)
 
     def test_analyze_evaluation_folder_supports_mean_edge_score(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

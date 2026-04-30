@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-no-agent",
+  "question": "cat08_05_task_schedul.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\no_agents.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-no-agent_cat08_05_task_schedul.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-no-agent\\requests\\cat08_05_task_schedul.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-no-agent\\responses\\cat08_05_task_schedul.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-no-agent\\traces\\cat08_05_task_schedul.trace.json",
+  "final_answer_length": 17934
+}

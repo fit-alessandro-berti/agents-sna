@@ -4,6 +4,11 @@
   "files_skipped": [],
   "edge_score": "target",
   "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 3.1578947368421053,
+    "stddev": 0.8942206973596252
+  },
   "nodes": [
     {
       "agent_type": "COMPLETE",

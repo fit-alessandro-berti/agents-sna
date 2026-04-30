@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "```python\nlog_skeleton = {\n    'equivalence': {\n        ('PO', 'GSL'),\n        ('GSL', 'PO'),\n    },\n    'always_before': {\n        ('CA', 'RI'),\n        ('RI', 'PI'),\n        ('PI', 'QC'),\n        ('QC', 'PO'),\n        ('PO', 'GSL'),\n        ('GSL', 'D'),\n        ('IC', 'RP'),\n    },\n    'always_after': {\n        ('RO', 'CA'),\n        ('CA', 'RI'),\n        ('RI', 'PI'),\n        ('PI', 'QC'),\n        ('QC', 'PO'),\n        ('PO', 'GSL'),\n        ('GSL', 'D'),\n    },\n    'never_together': {\n        ('RO', 'RP'),\n        ('RO', 'IC'),\n    },\n    'activ_freq': {\n        'RO': {1},\n        'CA': {1},\n        'RI': {1},\n        'PI': {1},\n        'QC': {1},\n        'PO': {1},\n        'GSL': {1},\n        'D': {1},\n        'IC': {1},\n        'RP': {1},\n    },\n    'directly_follows': {\n        ('RO', 'CA'),\n        ('CA', 'RI'),\n        ('RI', 'PI'),\n        ('PI', 'QC'),\n        ('QC', 'PO'),\n        ('PO', 'GSL'),\n        ('GSL', 'D'),\n        ('IC', 'RP'),\n    }\n}\n```\n\nIf you want, I can also provide a short explanation of why each constraint was chosen."
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "```sql\nWITH case_variants AS (\n    -- Build the ordered activity sequence for each case\n    SELECT\n        case_id,\n        list(activity ORDER BY \"timestamp\") AS variant\n    FROM event_log\n    GROUP BY case_id\n),\nvariant_counts AS (\n    -- Count how many cases follow each variant\n    SELECT\n        variant,\n        COUNT(*) AS case_count\n    FROM case_variants\n    GROUP BY variant\n),\ntop_variants AS (\n    -- Select the top K variants by case frequency\n    SELECT variant\n    FROM variant_counts\n    ORDER BY case_count DESC, variant\n    LIMIT K\n),\ntop_cases AS (\n    -- Keep only cases whose variant is in the top K\n    SELECT cv.case_id\n    FROM case_variants cv\n    JOIN top_variants tv\n      ON cv.variant = tv.variant\n)\n-- Return all events from the original log for those cases\nSELECT el.*\nFROM event_log el\nJOIN top_cases tc\n  ON el.case_id = tc.case_id\nORDER BY el.case_id, el.\"timestamp\";\n```\n\n### Notes\n- `list(activity ORDER BY \"timestamp\")` constructs the full ordered activity sequence per `case_id`.\n- `variant_counts` groups identical sequences and counts how many cases share each one.\n- Replace `K` with the desired number of top variants.\n- The final query returns **all events** belonging only to cases whose complete sequence is among the top K variants.\n\nIf you want, I can also provide a version that returns the variant sequence and case count alongside the filtered events."
+  }
+]

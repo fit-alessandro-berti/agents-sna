@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "Here is the most likely case grouping based on matching patient attributes, department, activity flow, and timing.\n\n## Inferred cases\n\n### Case 1: ER patient, 45-year-old male\nMatches:\n- **1** Register patient\n- **4** Initial triage\n- **7** X-ray imaging\n- **12** Doctor consultation\n- **15** Patient discharged\n\n**Case 1 sequence:** 1 → 4 → 7 → 12 → 15\n\n---\n\n### Case 2: ER patient, 62-year-old female\nMatches:\n- **2** Register patient\n- **5** Initial triage\n- **8** Lab test requested\n- **10** Lab test completed\n- **11** Doctor consultation\n- **14** Prescription created\n- **17** Patient discharged\n\n**Case 2 sequence:** 2 → 5 → 8 → 10 → 11 → 14 → 17\n\n---\n\n### Case 3: Surgery patient, 28-year-old male\nMatches:\n- **3** Register patient\n- **6** Doctor consultation\n- **9** Surgery preparation\n- **13** Surgery performed\n- **16** Recovery room\n- **18** Patient discharged\n\n**Case 3 sequence:** 3 → 6 → 9 → 13 → 16 → 18\n\n---\n\n## Summary table\n\n| Case ID | Events |\n|---|---|\n| Case 1 | 1, 4, 7, 12, 15 |\n| Case 2 | 2, 5, 8, 10, 11, 14, 17 |\n| Case 3 | 3, 6, 9, 13, 16, 18 |\n\nIf you want, I can also reformat this as a JSON object or a CSV-style mapping."
+  }
+]

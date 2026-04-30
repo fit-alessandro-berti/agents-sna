@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-no-agent",
+  "question": "cat01_06_system_logs.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\no_agents.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-no-agent_cat01_06_system_logs.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-no-agent\\requests\\cat01_06_system_logs.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-no-agent\\responses\\cat01_06_system_logs.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-no-agent\\traces\\cat01_06_system_logs.trace.json",
+  "final_answer_length": 5085
+}

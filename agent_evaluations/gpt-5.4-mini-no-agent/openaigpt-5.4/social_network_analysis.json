@@ -1,0 +1,21 @@
+{
+  "source_dir": "agent_evaluations\\gpt-5.4-mini-no-agent\\openaigpt-5.4",
+  "files_processed": 57,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 0.0,
+    "stddev": 0.0
+  },
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 57,
+      "average": 6.717543859649123,
+      "stddev": 2.158388190620414
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Correct SQL; minor tie/ordering caveat"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "run_name": "gpt-5.4-mini-no-agent",
+  "question": "cat04_05_sql_filt_num_events.txt",
+  "original_prompt": "**Draft Prompt for the Benchmark:**\n\n\"Assume you have an event log stored in a DuckDB table named `event_log`, with each row representing a single event. The table has at least the following columns: `case_id`, `activity`, and `timestamp`. Each `case_id` groups events that belong to a single process instance (or 'case').\n\nYour task: Please craft a DuckDB SQL query that filters out any cases containing more than six events, and returns only the events from cases that have six or fewer events in total.\n\nIn other words, the query should identify the number of events per `case_id`, exclude any `case_id` where this count is greater than six, and then return the full set of events for the remaining cases. Be sure to consider the correct grouping and filtering to achieve this result.\"",
+  "events": [
+    {
+      "type": "final_answer",
+      "iteration": 1,
+      "response": "```sql\nSELECT *\nFROM event_log\nWHERE case_id IN (\n    SELECT case_id\n    FROM event_log\n    GROUP BY case_id\n    HAVING COUNT(*) <= 6\n);\n```\n\nIf you want, I can also provide a version using a CTE or a window function."
+    }
+  ]
+}

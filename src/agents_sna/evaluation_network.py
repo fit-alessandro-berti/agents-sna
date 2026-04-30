@@ -83,6 +83,7 @@ def analyze_evaluation_folder(
 
     node_scores: dict[str, list[float]] = {}
     edge_scores: dict[tuple[str, str], list[float]] = {}
+    edge_counts_per_question: list[int] = []
     skipped_files: list[dict[str, str]] = []
     processed_files: list[str] = []
 
@@ -96,6 +97,7 @@ def analyze_evaluation_folder(
             continue
 
         processed_files.append(str(path))
+        edge_counts_per_question.append(max(len(records) - 1, 0))
         for record in records:
             node_scores.setdefault(record["agent_type"], []).append(record["evaluation"])
 
@@ -109,6 +111,7 @@ def analyze_evaluation_folder(
         "files_skipped": skipped_files,
         "edge_score": edge_score,
         "edge_score_description": edge_score_description(edge_score),
+        "edge_instantiations_per_question": count_summary(edge_counts_per_question),
         "nodes": [
             {"agent_type": agent_type, **score_summary(scores)}
             for agent_type, scores in sorted(node_scores.items())
@@ -181,6 +184,16 @@ def score_summary(scores: list[float]) -> dict[str, float | int]:
         "average": average,
         "stddev": sqrt(variance),
     }
+
+
+def count_summary(counts: list[int]) -> dict[str, float | int]:
+    if not counts:
+        return {
+            "count": 0,
+            "average": 0.0,
+            "stddev": 0.0,
+        }
+    return score_summary([float(count) for count in counts])
 
 
 def write_json_file(path: Path, payload: object) -> None:

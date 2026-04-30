@@ -211,10 +211,12 @@ node's evaluation by default. Use `--edge-score mean` to score an edge
 with the mean of its source and target node scores.
 
 The output contains `count`, `average`, and population `stddev` for each
-node and edge:
+node and edge, plus the same summary for the number of edge occurrences
+instantiated per evaluated question:
 
 ```json
 {
+  "edge_instantiations_per_question": { "count": 30, "average": 2.4, "stddev": 0.7 },
   "nodes": [
     { "agent_type": "artifact_parser", "count": 30, "average": 7.2, "stddev": 0.8 }
   ],

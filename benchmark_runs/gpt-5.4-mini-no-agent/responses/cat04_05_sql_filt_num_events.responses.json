@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "```sql\nSELECT *\nFROM event_log\nWHERE case_id IN (\n    SELECT case_id\n    FROM event_log\n    GROUP BY case_id\n    HAVING COUNT(*) <= 6\n);\n```\n\nIf you want, I can also provide a version using a CTE or a window function."
+  }
+]

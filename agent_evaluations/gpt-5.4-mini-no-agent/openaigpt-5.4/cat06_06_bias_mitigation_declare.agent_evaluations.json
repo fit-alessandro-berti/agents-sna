@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.3,
+    "explanation": "Invalid dict; contradictory, overrestrictive"
+  }
+]
