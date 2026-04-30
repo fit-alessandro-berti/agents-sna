@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agents SNA Chat</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --panel: #ffffff;
+      --panel-2: #eef3f4;
+      --text: #1e2428;
+      --muted: #68747c;
+      --line: #d6dde1;
+      --accent: #1f6f68;
+      --accent-2: #d8ece8;
+      --danger: #a43a33;
+      --warning: #9a6a12;
+      --shadow: 0 8px 22px rgba(25, 36, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.4;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      min-height: 34px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: #9eb0b8;
+      background: #f9fbfb;
+    }
+
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    button.primary:hover {
+      background: #175852;
+      border-color: #175852;
+    }
+
+    button.danger {
+      color: var(--danger);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+      padding: 8px 9px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(31, 111, 104, 0.12);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: minmax(320px, 390px) minmax(0, 1fr) minmax(320px, 420px);
+      min-height: 100vh;
+    }
+
+    .sidebar,
+    .graph-panel {
+      background: var(--panel);
+      border-right: 1px solid var(--line);
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .graph-panel {
+      border-right: 0;
+      border-left: 1px solid var(--line);
+    }
+
+    .chat {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-width: 0;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfc;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .title strong {
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .title span,
+    .status {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .status {
+      white-space: nowrap;
+    }
+
+    .section {
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 14px;
+      margin: 0 0 14px;
+    }
+
+    .section:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: 12px;
+      margin: 0 0 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .field {
+      display: grid;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .field label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .row > * {
+      flex: 1;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      margin: -2px 0 10px;
+    }
+
+    .check-row input {
+      width: auto;
+    }
+
+    .config-editor {
+      min-height: 290px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .agent-list {
+      display: grid;
+      gap: 8px;
+      max-height: 230px;
+      overflow: auto;
+      padding-right: 2px;
+    }
+
+    .agent-card {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 8px;
+      background: #fbfcfc;
+    }
+
+    .agent-card strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    .agent-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .messages {
+      overflow: auto;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .message {
+      max-width: min(820px, 92%);
+      border-radius: 8px;
+      padding: 12px 13px;
+      box-shadow: var(--shadow);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .message.user {
+      align-self: flex-end;
+      background: #eaf4f1;
+      border-color: #c7dfd9;
+    }
+
+    .message.assistant {
+      align-self: flex-start;
+    }
+
+    .message.system {
+      align-self: center;
+      max-width: 720px;
+      background: #fff8e8;
+      border-color: #ead7a6;
+      color: #5f4611;
+      box-shadow: none;
+      font-size: 13px;
+    }
+
+    .message .meta {
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 7px;
+    }
+
+    details.run-details {
+      max-width: min(820px, 92%);
+      align-self: flex-start;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px 12px;
+    }
+
+    details.run-details summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .detail-item {
+      border-top: 1px solid var(--line);
+      margin-top: 9px;
+      padding-top: 9px;
+      font-size: 13px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .composer {
+      border-top: 1px solid var(--line);
+      background: #fbfcfc;
+      padding: 14px 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .composer textarea {
+      min-height: 96px;
+      max-height: 240px;
+    }
+
+    .composer-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .graph-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .graph-box {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      min-height: 280px;
+      background: #fff;
+      overflow: auto;
+      padding: 8px;
+    }
+
+    .graph-box svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    .dot-source {
+      min-height: 170px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 11px;
+      margin-top: 10px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel-2);
+      padding: 9px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .error {
+      color: var(--danger);
+    }
+
+    .ok {
+      color: var(--accent);
+    }
+
+    @media (max-width: 1180px) {
+      .app {
+        grid-template-columns: 340px minmax(0, 1fr);
+      }
+
+      .graph-panel {
+        grid-column: 1 / -1;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .app {
+        display: block;
+      }
+
+      .sidebar,
+      .graph-panel {
+        border: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .chat {
+        min-height: 680px;
+      }
+
+      .topbar,
+      .composer {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .messages {
+        padding: 12px;
+      }
+
+      .message,
+      details.run-details {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <section class="section">
+        <h2>Connection</h2>
+        <div class="field">
+          <label for="apiKey">OpenRouter API key</label>
+          <input id="apiKey" type="password" autocomplete="off" placeholder="sk-or-v1-...">
+        </div>
+        <label class="check-row">
+          <input id="rememberKey" type="checkbox">
+          Remember key in this browser
+        </label>
+        <div class="grid-2">
+          <div class="field">
+            <label for="model">Model</label>
+            <input id="model" value="openai/gpt-5.4-mini">
+          </div>
+          <div class="field">
+            <label for="maxTurns">Max turns</label>
+            <input id="maxTurns" type="number" min="1" max="80" value="50">
+          </div>
+        </div>
+        <div class="field">
+          <label for="baseUrl">Base URL</label>
+          <input id="baseUrl" value="https://openrouter.ai/api/v1">
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Agents</h2>
+        <div class="field">
+          <label for="presetSelect">Preset</label>
+          <select id="presetSelect"></select>
+        </div>
+        <div class="row">
+          <button id="loadPreset">Load Preset</button>
+          <button id="validateConfig">Validate</button>
+        </div>
+        <div class="field" style="margin-top: 10px;">
+          <label for="configEditor">Configuration JSON</label>
+          <textarea id="configEditor" class="config-editor" spellcheck="false"></textarea>
+        </div>
+        <div id="configStatus" class="status"></div>
+      </section>
+
+      <section class="section">
+        <h2>Active Agents</h2>
+        <div id="agentList" class="agent-list"></div>
+      </section>
+    </aside>
+
+    <main class="chat">
+      <div class="topbar">
+        <div class="title">
+          <strong>Agents SNA Chat</strong>
+          <span id="runSummary">No messages yet</span>
+        </div>
+        <div id="runStatus" class="status">Idle</div>
+      </div>
+
+      <div id="messages" class="messages"></div>
+
+      <form id="composer" class="composer">
+        <textarea id="promptInput" placeholder="Send a prompt to the configured agents"></textarea>
+        <div class="composer-actions">
+          <button id="stopButton" type="button" disabled>Stop</button>
+          <button class="primary" id="sendButton" type="submit">Send</button>
+        </div>
+      </form>
+    </main>
+
+    <aside class="graph-panel">
+      <section class="section">
+        <h2>Agent Graph</h2>
+        <div class="stats">
+          <div class="stat"><strong id="turnCount">0</strong><span>prompts</span></div>
+          <div class="stat"><strong id="nodeCount">0</strong><span>nodes</span></div>
+          <div class="stat"><strong id="edgeCount">0</strong><span>edges</span></div>
+        </div>
+        <div class="graph-actions">
+          <button id="renderGraph">Render Graph</button>
+          <button id="resetGraph" class="danger">Reset Graph</button>
+        </div>
+        <div id="graphBox" class="graph-box"></div>
+        <textarea id="dotSource" class="dot-source" spellcheck="false" readonly></textarea>
+      </section>
+    </aside>
+  </div>
+
+  <script type="module">
+    const FINAL_SENTINEL = "FINAL";
+    const GRAPHVIZ_MODULE_URL = "https://cdn.jsdelivr.net/npm/@hpcc-js/wasm@2.20.0/dist/graphviz.js";
+    const STORAGE = {
+      apiKey: "agents-sna-chat.api-key",
+      rememberKey: "agents-sna-chat.remember-key",
+      model: "agents-sna-chat.model",
+      baseUrl: "agents-sna-chat.base-url",
+      graph: "agents-sna-chat.graph",
+      config: "agents-sna-chat.config"
+    };
+
+    const PRESETS = [
+      {
+        name: "General Trio",
+        config: {
+          max_iterations: 4,
+          single_agent_per_iteration: true,
+          excluded_handoffs: [],
+          agents: [
+            {
+              name: "planner",
+              description: "A pragmatic planning agent. Break the problem into actionable steps, identify dependencies, and keep the final answer focused on execution."
+            },
+            {
+              name: "critic",
+              description: "A skeptical review agent. Look for incorrect assumptions, edge cases, missing constraints, and failure modes."
+            },
+            {
+              name: "synthesizer",
+              description: "A synthesis agent. Reconcile previous perspectives into a concise, coherent answer that directly addresses the user's request."
+            }
+          ]
+        }
+      },
+      {
+        name: "Direct Answer",
+        config: {
+          max_iterations: 1,
+          single_agent_per_iteration: false,
+          excluded_handoffs: [],
+          agents: []
+        }
+      },
+      {
+        name: "Balanced Process Analysis",
+        config: {
+          max_iterations: 50,
+          single_agent_per_iteration: true,
+          excluded_handoffs: [],
+          agents: [
+            {
+              name: "event_log_interpreter",
+              description: "A process mining analyst specializing in raw event logs, traces, timestamps, resources, lifecycle clues, and missing case identifiers. Infer case groupings, activity semantics, process stages, and data-quality caveats from tabular or textual logs."
+            },
+            {
+              name: "process_modeler",
+              description: "A formal process modeling specialist. Translate scenarios into process trees, POWL, DECLARE, log skeletons, temporal profiles, and accepting Petri nets. Preserve control-flow semantics, concurrency, loops, choices, silent steps, initial markings, and final markings."
+            },
+            {
+              name: "conformance_anomaly_checker",
+              description: "A conformance checking and anomaly detection expert. Compare observed behavior against normative rules or process models, identify deviations, missing mandatory steps, forbidden orders, unusual performance patterns, and explain operational impact."
+            },
+            {
+              name: "query_and_sql_analyst",
+              description: "A process querying analyst. Formulate precise answers over event logs, process models, SQL schemas, object-centric data, variants, grouping/filtering conditions, and declarative or procedural constraints."
+            },
+            {
+              name: "hypothesis_generator",
+              description: "A process intelligence consultant. Generate plausible investigative hypotheses, diagnostic questions, verification strategies, and evidence requirements from logs, models, schemas, and natural-language process descriptions."
+            },
+            {
+              name: "fairness_and_ethics_reviewer",
+              description: "A fairness reviewer for process mining. Detect disparate treatment or impact across protected groups, analyze whether process paths or outcomes may encode bias, and propose concrete mitigation or monitoring actions."
+            },
+            {
+              name: "optimization_consultant",
+              description: "An operational improvement specialist. Identify bottlenecks, rework loops, capacity issues, wait-time drivers, coordination problems, and actionable redesign recommendations grounded in event-data evidence."
+            }
+          ]
+        }
+      },
+      {
+        name: "Artifact Pipeline",
+        config: {
+          max_iterations: 50,
+          single_agent_per_iteration: true,
+          excluded_handoffs: [],
+          agents: [
+            {
+              name: "schema_and_artifact_mapper",
+              description: "A process mining analyst who first maps the supplied artifact: event log columns, objects, resources, activities, timestamps, lifecycle information, textual rules, model fragments, tables, and the exact requested output."
+            },
+            {
+              name: "trace_and_variant_reasoner",
+              description: "A trace-level reasoning specialist. Reconstruct variants, infer missing case notions, compare observed paths, detect loops and rework, and explain behavior using timestamp and attribute evidence."
+            },
+            {
+              name: "control_flow_semantics_expert",
+              description: "A control-flow expert for procedural and declarative process semantics. Reason about ordering, concurrency, choices, loops, constraints, mandatory and forbidden behavior, and whether proposed models preserve the scenario logic."
+            },
+            {
+              name: "performance_and_resource_analyst",
+              description: "A performance and resource analyst. Identify waiting times, bottlenecks, handoffs, workload imbalance, assignment patterns, batching, utilization issues, and operational improvement opportunities."
+            },
+            {
+              name: "data_question_designer",
+              description: "A data investigation designer. Produce testable hypotheses, diagnostic questions, SQL-style investigation ideas, filtering/grouping strategies, and evidence plans without inventing unavailable data."
+            },
+            {
+              name: "risk_fairness_and_compliance_reviewer",
+              description: "A reviewer focused on risk, fairness, compliance, and unintended effects. Check for biased paths or outcomes, missing controls, auditability concerns, privacy-sensitive assumptions, and fragile recommendations."
+            },
+            {
+              name: "answer_precision_auditor",
+              description: "A precision auditor. Verify that every requested subtask is answered, terminology is process-mining accurate, claims are grounded in the prompt, and the response avoids unsupported model syntax or data conclusions."
+            }
+          ]
+        }
+      },
+      {
+        name: "Verification Heavy",
+        config: {
+          max_iterations: 50,
+          single_agent_per_iteration: true,
+          excluded_handoffs: [],
+          agents: [
+            {
+              name: "artifact_parser",
+              description: "A meticulous artifact parser. Extract the exact entities, activities, timestamps, objects, rules, model fragments, schemas, and requested deliverables before any interpretation. Flag ambiguous wording and missing assumptions."
+            },
+            {
+              name: "domain_reasoner",
+              description: "A process mining domain expert. Build the primary answer using knowledge of event logs, process discovery, conformance checking, procedural and declarative models, process querying, fairness, and optimization."
+            },
+            {
+              name: "formal_semantics_checker",
+              description: "A formal semantics reviewer. Check whether proposed process trees, POWL models, DECLARE constraints, Petri nets, temporal profiles, and log skeletons are syntactically coherent and semantically faithful to the prompt."
+            },
+            {
+              name: "counterexample_hunter",
+              description: "A skeptical adversarial reviewer. Search for counterexamples, alternative trace interpretations, edge cases, impossible event orders, unsupported conclusions, and places where the answer overgeneralizes."
+            },
+            {
+              name: "data_consistency_auditor",
+              description: "A data consistency auditor. Verify that case IDs, attributes, resources, time ordering, group comparisons, SQL/table logic, and performance claims are internally consistent with the supplied evidence."
+            },
+            {
+              name: "bias_and_impact_auditor",
+              description: "A fairness and impact auditor. Review process decisions, group outcomes, protected attributes, intervention recommendations, and optimization proposals for bias, disparate impact, and operational side effects."
+            },
+            {
+              name: "benchmark_answer_judge",
+              description: "A benchmark-oriented quality judge. Evaluate whether the draft would score highly under an LLM-as-a-judge setup: answer all requested parts, be explicit, avoid hallucinated facts, and use clear process-mining terminology."
+            }
+          ]
+        }
+      },
+      {
+        name: "Verification Heavy, Low Handoffs Excluded",
+        config: {
+          max_iterations: 50,
+          single_agent_per_iteration: true,
+          excluded_handoffs: [
+            { from: "formal_semantics_checker", to: "domain_reasoner" },
+            { from: "artifact_parser", to: "benchmark_answer_judge" },
+            { from: "artifact_parser", to: "formal_semantics_checker" },
+            { from: "domain_reasoner", to: "benchmark_answer_judge" }
+          ],
+          agents: [
+            {
+              name: "artifact_parser",
+              description: "A meticulous artifact parser. Extract the exact entities, activities, timestamps, objects, rules, model fragments, schemas, and requested deliverables before any interpretation. Flag ambiguous wording and missing assumptions."
+            },
+            {
+              name: "domain_reasoner",
+              description: "A process mining domain expert. Build the primary answer using knowledge of event logs, process discovery, conformance checking, procedural and declarative models, process querying, fairness, and optimization."
+            },
+            {
+              name: "formal_semantics_checker",
+              description: "A formal semantics reviewer. Check whether proposed process trees, POWL models, DECLARE constraints, Petri nets, temporal profiles, and log skeletons are syntactically coherent and semantically faithful to the prompt."
+            },
+            {
+              name: "counterexample_hunter",
+              description: "A skeptical adversarial reviewer. Search for counterexamples, alternative trace interpretations, edge cases, impossible event orders, unsupported conclusions, and places where the answer overgeneralizes."
+            },
+            {
+              name: "data_consistency_auditor",
+              description: "A data consistency auditor. Verify that case IDs, attributes, resources, time ordering, group comparisons, SQL/table logic, and performance claims are internally consistent with the supplied evidence."
+            },
+            {
+              name: "bias_and_impact_auditor",
+              description: "A fairness and impact auditor. Review process decisions, group outcomes, protected attributes, intervention recommendations, and optimization proposals for bias, disparate impact, and operational side effects."
+            },
+            {
+              name: "benchmark_answer_judge",
+              description: "A benchmark-oriented quality judge. Evaluate whether the draft would score highly under an LLM-as-a-judge setup: answer all requested parts, be explicit, avoid hallucinated facts, and use clear process-mining terminology."
+            }
+          ]
+        }
+      }
+    ];
+
+    const el = {
+      apiKey: document.getElementById("apiKey"),
+      rememberKey: document.getElementById("rememberKey"),
+      model: document.getElementById("model"),
+      maxTurns: document.getElementById("maxTurns"),
+      baseUrl: document.getElementById("baseUrl"),
+      presetSelect: document.getElementById("presetSelect"),
+      loadPreset: document.getElementById("loadPreset"),
+      validateConfig: document.getElementById("validateConfig"),
+      configEditor: document.getElementById("configEditor"),
+      configStatus: document.getElementById("configStatus"),
+      agentList: document.getElementById("agentList"),
+      messages: document.getElementById("messages"),
+      composer: document.getElementById("composer"),
+      promptInput: document.getElementById("promptInput"),
+      sendButton: document.getElementById("sendButton"),
+      stopButton: document.getElementById("stopButton"),
+      runStatus: document.getElementById("runStatus"),
+      runSummary: document.getElementById("runSummary"),
+      renderGraph: document.getElementById("renderGraph"),
+      resetGraph: document.getElementById("resetGraph"),
+      graphBox: document.getElementById("graphBox"),
+      dotSource: document.getElementById("dotSource"),
+      turnCount: document.getElementById("turnCount"),
+      nodeCount: document.getElementById("nodeCount"),
+      edgeCount: document.getElementById("edgeCount")
+    };
+
+    let controller = null;
+    let graphvizInstance = null;
+    let graphState = loadGraphState();
+
+    function init() {
+      PRESETS.forEach((preset, index) => {
+        const option = document.createElement("option");
+        option.value = String(index);
+        option.textContent = preset.name;
+        el.presetSelect.append(option);
+      });
+
+      const remembered = localStorage.getItem(STORAGE.rememberKey) === "true";
+      el.rememberKey.checked = remembered;
+      if (remembered) {
+        el.apiKey.value = localStorage.getItem(STORAGE.apiKey) || "";
+      }
+      el.model.value = localStorage.getItem(STORAGE.model) || el.model.value;
+      el.baseUrl.value = localStorage.getItem(STORAGE.baseUrl) || el.baseUrl.value;
+
+      const savedConfig = localStorage.getItem(STORAGE.config);
+      el.configEditor.value = savedConfig || pretty(PRESETS[0].config);
+      applyConfigToUi();
+      updateGraphStats();
+      updateDotSource();
+      appendSystem("Ready");
+    }
+
+    el.loadPreset.addEventListener("click", () => {
+      const preset = PRESETS[Number(el.presetSelect.value)];
+      el.configEditor.value = pretty(preset.config);
+      localStorage.setItem(STORAGE.config, el.configEditor.value);
+      applyConfigToUi();
+    });
+
+    el.validateConfig.addEventListener("click", () => {
+      applyConfigToUi();
+    });
+
+    el.configEditor.addEventListener("change", () => {
+      localStorage.setItem(STORAGE.config, el.configEditor.value);
+      applyConfigToUi();
+    });
+
+    el.model.addEventListener("change", () => localStorage.setItem(STORAGE.model, el.model.value));
+    el.baseUrl.addEventListener("change", () => localStorage.setItem(STORAGE.baseUrl, el.baseUrl.value));
+    el.rememberKey.addEventListener("change", persistApiKey);
+    el.apiKey.addEventListener("change", persistApiKey);
+
+    el.stopButton.addEventListener("click", () => {
+      if (controller) {
+        controller.abort();
+      }
+    });
+
+    el.composer.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      await runPrompt();
+    });
+
+    el.renderGraph.addEventListener("click", async () => {
+      await renderGraph();
+    });
+
+    el.resetGraph.addEventListener("click", () => {
+      graphState = emptyGraphState();
+      saveGraphState();
+      updateGraphStats();
+      updateDotSource();
+      el.graphBox.innerHTML = "";
+    });
+
+    function persistApiKey() {
+      localStorage.setItem(STORAGE.rememberKey, String(el.rememberKey.checked));
+      if (el.rememberKey.checked) {
+        localStorage.setItem(STORAGE.apiKey, el.apiKey.value);
+      } else {
+        localStorage.removeItem(STORAGE.apiKey);
+      }
+    }
+
+    function applyConfigToUi() {
+      try {
+        const config = readConfig();
+        localStorage.setItem(STORAGE.config, el.configEditor.value);
+        el.maxTurns.value = String(config.max_iterations);
+        el.configStatus.textContent = `${config.agents.length} agents, ${config.excluded_handoffs.length} excluded handoffs`;
+        el.configStatus.className = "status ok";
+        renderAgentList(config);
+        return config;
+      } catch (error) {
+        el.configStatus.textContent = error.message;
+        el.configStatus.className = "status error";
+        return null;
+      }
+    }
+
+    function renderAgentList(config) {
+      el.agentList.innerHTML = "";
+      if (!config.agents.length) {
+        const item = document.createElement("div");
+        item.className = "agent-card";
+        item.innerHTML = "<strong>Direct answer</strong><p>No agent discussion is configured.</p>";
+        el.agentList.append(item);
+        return;
+      }
+      for (const agent of config.agents) {
+        const item = document.createElement("div");
+        item.className = "agent-card";
+        const name = document.createElement("strong");
+        name.textContent = agent.name;
+        const description = document.createElement("p");
+        description.textContent = agent.description;
+        item.append(name, description);
+        el.agentList.append(item);
+      }
+    }
+
+    async function runPrompt() {
+      const prompt = el.promptInput.value.trim();
+      if (!prompt) {
+        return;
+      }
+      const apiKey = el.apiKey.value.trim();
+      if (!apiKey) {
+        appendSystem("OpenRouter API key required");
+        return;
+      }
+
+      let config;
+      try {
+        config = readConfig();
+      } catch (error) {
+        appendSystem(error.message);
+        return;
+      }
+
+      config.max_iterations = readPositiveInt(el.maxTurns.value, "Max turns");
+      el.configEditor.value = pretty(config);
+      localStorage.setItem(STORAGE.config, el.configEditor.value);
+      applyConfigToUi();
+
+      setRunning(true);
+      controller = new AbortController();
+      appendMessage("user", prompt);
+      el.promptInput.value = "";
+
+      try {
+        const run = await orchestrate(prompt, config, controller.signal);
+        appendRunDetails(run);
+        appendMessage("assistant", run.finalAnswer);
+        commitGraph(prompt, run.sequence);
+        updateDotSource();
+        updateGraphStats();
+        el.runSummary.textContent = `${graphState.turns.length} prompts recorded`;
+      } catch (error) {
+        appendSystem(error.name === "AbortError" ? "Stopped" : error.message);
+      } finally {
+        controller = null;
+        setRunning(false);
+      }
+    }
+
+    async function orchestrate(originalPrompt, config, signal) {
+      const previousAnswers = [];
+      const sequence = ["START"];
+      const details = [];
+      const agentsByName = new Map(config.agents.map((agent) => [agent.name, agent]));
+      let previousAgentName = null;
+
+      if (config.agents.length) {
+        for (let iteration = 1; iteration < config.max_iterations; iteration += 1) {
+          const allowed = allowedAgentNamesAfter(config, previousAgentName);
+          const selectionMessages = buildSelectionMessages({
+            originalPrompt,
+            agents: config.agents,
+            previousAnswers,
+            currentIteration: iteration,
+            maxIterations: config.max_iterations,
+            singleAgentPerIteration: config.single_agent_per_iteration,
+            allowedAgentNames: allowed,
+            previousAgentName
+          });
+          setStatus(`Selecting, turn ${iteration}`);
+          const rawSelection = await complete(selectionMessages, null, signal);
+          const selection = parseAgentSelection(rawSelection, new Set(agentsByName.keys()), {
+            singleAgentPerIteration: config.single_agent_per_iteration,
+            allowedAgents: allowed
+          });
+          details.push({
+            title: `selector ${iteration}`,
+            content: rawSelection
+          });
+          if (selection.finalRequested) {
+            break;
+          }
+
+          for (const agentName of selection.agentNames) {
+            const agent = agentsByName.get(agentName);
+            if (!agent) {
+              throw new Error(`Unknown selected agent: ${agentName}`);
+            }
+            setStatus(`${agent.name}, turn ${iteration}`);
+            const agentMessages = buildAgentMessages({
+              originalPrompt,
+              agent,
+              previousAnswers,
+              currentIteration: iteration,
+              maxIterations: config.max_iterations
+            });
+            const answer = await complete(agentMessages, agent.model || null, signal);
+            previousAnswers.push({
+              iteration,
+              agent_name: agent.name,
+              content: answer.trim()
+            });
+            sequence.push(agent.name);
+            previousAgentName = agent.name;
+            details.push({
+              title: `${agent.name} ${iteration}`,
+              content: answer
+            });
+          }
+        }
+      }
+
+      setStatus("Final answer");
+      const finalAnswer = await complete(buildFinalMessages(originalPrompt, previousAnswers), null, signal);
+      sequence.push("COMPLETE");
+      return { finalAnswer: finalAnswer.trim(), previousAnswers, details, sequence };
+    }
+
+    async function complete(messages, modelOverride, signal) {
+      const baseUrl = el.baseUrl.value.trim().replace(/\/+$/, "");
+      const model = modelOverride || el.model.value.trim();
+      const response = await fetch(`${baseUrl}/chat/completions`, {
+        method: "POST",
+        signal,
+        headers: {
+          "Authorization": `Bearer ${el.apiKey.value.trim()}`,
+          "Content-Type": "application/json",
+          "X-Title": "agents-sna-html"
+        },
+        body: JSON.stringify({ model, messages })
+      });
+
+      const text = await response.text();
+      if (!response.ok) {
+        throw new Error(`OpenRouter HTTP ${response.status}: ${text}`);
+      }
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (error) {
+        throw new Error(`OpenRouter returned non-JSON response: ${text}`);
+      }
+      const content = data?.choices?.[0]?.message?.content;
+      if (typeof content !== "string") {
+        throw new Error(`Unexpected OpenRouter response: ${text}`);
+      }
+      return content;
+    }
+
+    function buildSelectionMessages({
+      originalPrompt,
+      agents,
+      previousAnswers,
+      currentIteration,
+      maxIterations,
+      singleAgentPerIteration,
+      allowedAgentNames,
+      previousAgentName
+    }) {
+      const allowedNames = Array.from(allowedAgentNames).sort();
+      const selectionInstruction = singleAgentPerIteration
+        ? "Choose exactly one next agent that should contribute."
+        : "Choose the next agent or agents that should contribute.";
+      const systemPrompt = [
+        "You coordinate a multi-agent LLM discussion before the final answer.",
+        "",
+        "Available agents:",
+        formatAgentDescriptions(agents),
+        "",
+        formatAllowedAgents(allowedNames, previousAgentName, singleAgentPerIteration),
+        "",
+        `${selectionInstruction} Pick only agents whose perspective is useful now. If the discussion is ready for synthesis, return ['${FINAL_SENTINEL}'].`
+      ].join("\n");
+      let jsonInstruction;
+      if (singleAgentPerIteration) {
+        jsonInstruction = allowedNames.length
+          ? `The JSON must be a list containing exactly one allowed agent name, for example ["${allowedNames[0]}"], or ["${FINAL_SENTINEL}"] to request final answer generation.`
+          : `There are no allowed next agents; return ["${FINAL_SENTINEL}"].`;
+      } else {
+        jsonInstruction = `The JSON must be a list of agent names, for example ["planner", "critic"]. To request final answer generation, return ["${FINAL_SENTINEL}"].`;
+      }
+      const finalUserPrompt = [
+        `Current iteration: ${currentIteration}`,
+        `Maximum iterations, including final synthesis: ${maxIterations}`,
+        "",
+        `Allowed next agents: ${JSON.stringify(allowedNames)}`,
+        "",
+        `Return only valid JSON. ${jsonInstruction} Do not include explanation or Markdown.`
+      ].join("\n");
+      return [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: originalPrompt },
+        ...previousAnswerMessages(previousAnswers),
+        { role: "user", content: finalUserPrompt }
+      ];
+    }
+
+    function buildAgentMessages({
+      originalPrompt,
+      agent,
+      previousAnswers,
+      currentIteration,
+      maxIterations
+    }) {
+      const systemPrompt = `You are the '${agent.name}' agent in a multi-agent LLM discussion.\n\nPersona:\n${agent.description}`;
+      const insightPrompt = [
+        "Apply your persona to provide insights for the original inquiry.",
+        `Current iteration: ${currentIteration}`,
+        `Maximum iterations, including final synthesis: ${maxIterations}`,
+        "",
+        "Be concise, avoid repeating earlier agents unless you are correcting or refining them, and make your contribution useful for the final synthesis."
+      ].join("\n");
+      return [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: originalPrompt },
+        ...previousAnswerMessages(previousAnswers),
+        { role: "user", content: insightPrompt }
+      ];
+    }
+
+    function buildFinalMessages(originalPrompt, previousAnswers) {
+      const finalPrompt = previousAnswers.length
+        ? "Please provide the final answer to my original inquiry, based on all the different perspectives."
+        : "Please provide the final answer to my original inquiry.";
+      return [
+        { role: "user", content: originalPrompt },
+        ...previousAnswerMessages(previousAnswers),
+        { role: "user", content: finalPrompt }
+      ];
+    }
+
+    function previousAnswerMessages(answers) {
+      return answers.map((answer) => ({
+        role: "assistant",
+        content: `Iteration ${answer.iteration}, agent '${answer.agent_name}':\n${answer.content}`
+      }));
+    }
+
+    function formatAgentDescriptions(agents) {
+      return agents.map((agent) => `- ${agent.name}: ${agent.description}`).join("\n");
+    }
+
+    function formatAllowedAgents(allowedNames, previousAgentName, singleAgentPerIteration) {
+      if (!singleAgentPerIteration) {
+        return "No single-agent handoff restriction is active.";
+      }
+      const previous = previousAgentName || "none; this is the first selection";
+      const allowed = allowedNames.length ? allowedNames.join(", ") : "none; select FINAL";
+      return [
+        "Single-agent-per-iteration mode is active.",
+        `Most recent called agent: ${previous}.`,
+        `Allowed next agents after handoff constraints: ${allowed}.`
+      ].join("\n");
+    }
+
+    function parseAgentSelection(rawSelection, knownAgents, { singleAgentPerIteration, allowedAgents }) {
+      let parsed;
+      try {
+        parsed = JSON.parse(extractJsonList(rawSelection));
+      } catch (error) {
+        throw new Error(`Selector did not return a valid JSON list: ${rawSelection}`);
+      }
+      if (!Array.isArray(parsed)) {
+        throw new Error(`Selector response must be a JSON list: ${rawSelection}`);
+      }
+
+      const names = [];
+      for (const item of parsed) {
+        const candidate = selectionItemToName(item);
+        if (!candidate) {
+          throw new Error(`Invalid selector item: ${JSON.stringify(item)}`);
+        }
+        const normalized = candidate.trim();
+        if (normalized.toUpperCase() === FINAL_SENTINEL) {
+          return { agentNames: [], finalRequested: true };
+        }
+        if (!knownAgents.has(normalized)) {
+          throw new Error(`Selector chose unknown agent: ${normalized}`);
+        }
+        if (!allowedAgents.has(normalized)) {
+          throw new Error(`Selector chose disallowed handoff target: ${normalized}`);
+        }
+        if (!names.includes(normalized)) {
+          names.push(normalized);
+        }
+        if (singleAgentPerIteration) {
+          break;
+        }
+      }
+      if (!names.length) {
+        throw new Error("Selector returned an empty agent list.");
+      }
+      return { agentNames: names, finalRequested: false };
+    }
+
+    function selectionItemToName(item) {
+      if (typeof item === "string") {
+        return item;
+      }
+      if (item && typeof item === "object") {
+        for (const key of ["agent", "name", "id", "next_agent"]) {
+          if (typeof item[key] === "string") {
+            return item[key];
+          }
+        }
+      }
+      return null;
+    }
+
+    function extractJsonList(raw) {
+      const text = raw.trim();
+      const fenced = text.match(/```(?:json)?\s*(\[[\s\S]*?\])\s*```/);
+      if (fenced) {
+        return fenced[1];
+      }
+      const start = text.indexOf("[");
+      const end = text.lastIndexOf("]");
+      if (start !== -1 && end !== -1 && start < end) {
+        return text.slice(start, end + 1);
+      }
+      return text;
+    }
+
+    function allowedAgentNamesAfter(config, source) {
+      const names = new Set(config.agents.map((agent) => agent.name));
+      if (!config.single_agent_per_iteration || !source) {
+        return names;
+      }
+      for (const handoff of config.excluded_handoffs) {
+        const from = handoff.from ?? handoff.source;
+        const to = handoff.to ?? handoff.target;
+        if (from === source) {
+          names.delete(to);
+        }
+      }
+      return names;
+    }
+
+    function readConfig() {
+      let config;
+      try {
+        config = JSON.parse(el.configEditor.value);
+      } catch (error) {
+        throw new Error(`Configuration JSON is invalid: ${error.message}`);
+      }
+      validateConfig(config);
+      return JSON.parse(JSON.stringify(config));
+    }
+
+    function validateConfig(config) {
+      if (!config || typeof config !== "object" || Array.isArray(config)) {
+        throw new Error("Configuration root must be an object.");
+      }
+      if (!Number.isInteger(config.max_iterations) || config.max_iterations < 1) {
+        throw new Error("max_iterations must be an integer >= 1.");
+      }
+      if (!Array.isArray(config.agents)) {
+        throw new Error("agents must be a list.");
+      }
+      if (typeof config.single_agent_per_iteration !== "boolean") {
+        config.single_agent_per_iteration = false;
+      }
+      if (!Array.isArray(config.excluded_handoffs)) {
+        config.excluded_handoffs = [];
+      }
+
+      const names = new Set();
+      for (const [index, agent] of config.agents.entries()) {
+        if (!agent || typeof agent !== "object") {
+          throw new Error(`Agent ${index + 1} must be an object.`);
+        }
+        if (typeof agent.name !== "string" || !agent.name.trim()) {
+          throw new Error(`Agent ${index + 1} needs a name.`);
+        }
+        agent.name = agent.name.trim();
+        if (names.has(agent.name)) {
+          throw new Error(`Duplicate agent name: ${agent.name}`);
+        }
+        names.add(agent.name);
+        if (typeof agent.description !== "string" || !agent.description.trim()) {
+          throw new Error(`Agent '${agent.name}' needs a description.`);
+        }
+        agent.description = agent.description.trim();
+        if (agent.model != null && (typeof agent.model !== "string" || !agent.model.trim())) {
+          throw new Error(`Agent '${agent.name}' model must be a string when set.`);
+        }
+      }
+
+      for (const [index, handoff] of config.excluded_handoffs.entries()) {
+        const from = handoff.from ?? handoff.source;
+        const to = handoff.to ?? handoff.target;
+        if (!names.has(from)) {
+          throw new Error(`Excluded handoff ${index + 1} has unknown source '${from}'.`);
+        }
+        if (!names.has(to)) {
+          throw new Error(`Excluded handoff ${index + 1} has unknown target '${to}'.`);
+        }
+      }
+    }
+
+    function readPositiveInt(value, label) {
+      const number = Number(value);
+      if (!Number.isInteger(number) || number < 1) {
+        throw new Error(`${label} must be an integer >= 1.`);
+      }
+      return number;
+    }
+
+    function appendMessage(role, content) {
+      const message = document.createElement("div");
+      message.className = `message ${role}`;
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = role === "user" ? "You" : "Assistant";
+      const body = document.createElement("div");
+      body.textContent = content;
+      message.append(meta, body);
+      el.messages.append(message);
+      scrollMessages();
+    }
+
+    function appendSystem(content) {
+      const message = document.createElement("div");
+      message.className = "message system";
+      message.textContent = content;
+      el.messages.append(message);
+      scrollMessages();
+    }
+
+    function appendRunDetails(run) {
+      if (!run.details.length) {
+        return;
+      }
+      const details = document.createElement("details");
+      details.className = "run-details";
+      const summary = document.createElement("summary");
+      summary.textContent = `Agent trace: ${run.sequence.join(" -> ")}`;
+      details.append(summary);
+      for (const item of run.details) {
+        const block = document.createElement("div");
+        block.className = "detail-item";
+        block.textContent = `${item.title}\n${item.content}`;
+        details.append(block);
+      }
+      el.messages.append(details);
+      scrollMessages();
+    }
+
+    function scrollMessages() {
+      el.messages.scrollTop = el.messages.scrollHeight;
+    }
+
+    function setRunning(running) {
+      el.sendButton.disabled = running;
+      el.stopButton.disabled = !running;
+      setStatus(running ? "Running" : "Idle");
+    }
+
+    function setStatus(text) {
+      el.runStatus.textContent = text;
+    }
+
+    function commitGraph(prompt, sequence) {
+      const timestamp = new Date().toISOString();
+      graphState.turns.push({ prompt, sequence: [...sequence], timestamp });
+      for (const node of sequence) {
+        graphState.nodes[node] = (graphState.nodes[node] || 0) + 1;
+      }
+      for (let index = 0; index < sequence.length - 1; index += 1) {
+        const source = sequence[index];
+        const target = sequence[index + 1];
+        const key = `${source}\u0000${target}`;
+        if (!graphState.edges[key]) {
+          graphState.edges[key] = { source, target, count: 0 };
+        }
+        graphState.edges[key].count += 1;
+      }
+      saveGraphState();
+    }
+
+    function loadGraphState() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(STORAGE.graph) || "");
+        if (parsed && parsed.nodes && parsed.edges && Array.isArray(parsed.turns)) {
+          return parsed;
+        }
+      } catch (error) {
+        return emptyGraphState();
+      }
+      return emptyGraphState();
+    }
+
+    function emptyGraphState() {
+      return { nodes: {}, edges: {}, turns: [] };
+    }
+
+    function saveGraphState() {
+      localStorage.setItem(STORAGE.graph, JSON.stringify(graphState));
+    }
+
+    function updateGraphStats() {
+      el.turnCount.textContent = String(graphState.turns.length);
+      el.nodeCount.textContent = String(Object.keys(graphState.nodes).length);
+      el.edgeCount.textContent = String(Object.keys(graphState.edges).length);
+    }
+
+    function updateDotSource() {
+      el.dotSource.value = buildGraphDot();
+    }
+
+    async function renderGraph() {
+      const dot = buildGraphDot();
+      el.dotSource.value = dot;
+      if (!Object.keys(graphState.nodes).length) {
+        el.graphBox.textContent = "No graph data";
+        return;
+      }
+      el.graphBox.textContent = "Rendering...";
+      try {
+        const graphviz = await loadGraphviz();
+        const svg = await graphviz.layout(dot, "svg", "dot");
+        el.graphBox.innerHTML = svg;
+      } catch (error) {
+        el.graphBox.textContent = error.message;
+      }
+    }
+
+    async function loadGraphviz() {
+      if (graphvizInstance) {
+        return graphvizInstance;
+      }
+      const module = await import(GRAPHVIZ_MODULE_URL);
+      graphvizInstance = await module.Graphviz.load();
+      return graphvizInstance;
+    }
+
+    function buildGraphDot() {
+      const nodes = Object.entries(graphState.nodes)
+        .map(([name, count]) => ({ name, count }))
+        .sort((left, right) => right.count - left.count || nodeRank(left.name) - nodeRank(right.name) || left.name.localeCompare(right.name));
+      const edges = Object.values(graphState.edges)
+        .sort((left, right) => right.count - left.count || left.source.localeCompare(right.source) || left.target.localeCompare(right.target));
+      const maxEdgeCount = edges.reduce((max, edge) => Math.max(max, edge.count), 1);
+
+      const lines = [
+        "digraph agents_sna_chat {",
+        "  graph [",
+        '    rankdir="TB",',
+        '    bgcolor="transparent",',
+        '    margin="0.03",',
+        '    pad="0.02",',
+        '    nodesep="0.24",',
+        '    ranksep="0.34",',
+        '    splines="polyline",',
+        '    outputorder="edgesfirst"',
+        "  ];",
+        "  node [",
+        '    shape="box",',
+        '    style="rounded,filled",',
+        '    fontname="Helvetica-Bold",',
+        '    fontsize="9",',
+        '    margin="0.055,0.04",',
+        '    penwidth="0.8",',
+        '    color="#667176"',
+        "  ];",
+        "  edge [",
+        '    fontname="Helvetica-Bold",',
+        '    fontsize="6.8",',
+        '    arrowsize="0.55",',
+        '    fontcolor="#333333"',
+        "  ];",
+        ""
+      ];
+
+      for (const node of nodes) {
+        lines.push(`  ${dotQuote(node.name)} [label=<${nodeLabel(node.name, node.count)}>, fillcolor="${frequencyColor(node.count)}"];`);
+      }
+      if (nodes.length && edges.length) {
+        lines.push("");
+      }
+      for (const edge of edges) {
+        lines.push(`  ${dotQuote(edge.source)} -> ${dotQuote(edge.target)} [label=<${edgeLabel(edge.count)}>, color="${frequencyColor(edge.count, false)}", fontcolor="${frequencyColor(edge.count, false)}", penwidth="${edgePenWidth(edge.count, maxEdgeCount).toFixed(2)}"];`);
+      }
+      lines.push("}");
+      return `${lines.join("\n")}\n`;
+    }
+
+    function nodeLabel(name, count) {
+      return [
+        '<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1">',
+        `<TR><TD><B>${nameToHtml(name)}</B></TD></TR>`,
+        `<TR><TD><FONT POINT-SIZE="7"><B>f=${count}</B></FONT></TD></TR>`,
+        "</TABLE>"
+      ].join("");
+    }
+
+    function edgeLabel(count) {
+      return [
+        '<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">',
+        `<TR><TD><FONT POINT-SIZE="6.8"><B>f=${count}</B></FONT></TD></TR>`,
+        "</TABLE>"
+      ].join("");
+    }
+
+    function nameToHtml(name) {
+      return name.split("_").map(escapeHtml).join("<BR/>");
+    }
+
+    function frequencyColor(count, pastel = true) {
+      const max = Math.max(1, ...Object.values(graphState.nodes), ...Object.values(graphState.edges).map((edge) => edge.count));
+      const ratio = Math.min(1, Math.max(0, count / max));
+      const start = pastel ? [232, 241, 240] : [107, 139, 135];
+      const end = pastel ? [174, 216, 204] : [31, 111, 104];
+      const rgb = start.map((channel, index) => Math.round(channel + (end[index] - channel) * ratio));
+      return `#${rgb.map((channel) => channel.toString(16).padStart(2, "0")).join("")}`;
+    }
+
+    function edgePenWidth(count, maxCount) {
+      return 0.9 + 3.4 * (count / Math.max(1, maxCount));
+    }
+
+    function nodeRank(name) {
+      if (name === "START") {
+        return -1;
+      }
+      if (name === "COMPLETE") {
+        return 1;
+      }
+      return 0;
+    }
+
+    function dotQuote(value) {
+      return `"${String(value).replaceAll("\\", "\\\\").replaceAll('"', '\\"')}"`;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    function pretty(value) {
+      return JSON.stringify(value, null, 2);
+    }
+
+    init();
+  </script>
+</body>
+</html>
