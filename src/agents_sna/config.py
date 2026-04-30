@@ -56,8 +56,8 @@ def load_config(path: str | Path) -> AgenticConfig:
         raise ValueError("Configuration field 'max_iterations' must be an integer >= 1.")
 
     raw_agents = raw.get("agents")
-    if not isinstance(raw_agents, list) or not raw_agents:
-        raise ValueError("Configuration field 'agents' must be a non-empty list.")
+    if not isinstance(raw_agents, list):
+        raise ValueError("Configuration field 'agents' must be a list.")
 
     agents: list[AgentSpec] = []
     seen_names: set[str] = set()

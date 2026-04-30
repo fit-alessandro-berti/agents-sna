@@ -76,87 +76,90 @@ class AgenticOrchestrator:
             ),
         )
 
-        for iteration in range(1, self.config.max_iterations):
-            allowed_agent_names = self.config.allowed_agent_names_after(previous_agent_name)
-            selection_messages = build_selection_messages(
-                original_prompt=prompt,
-                agents=self.config.agents,
-                previous_answers=previous_answers,
-                current_iteration=iteration,
-                max_iterations=self.config.max_iterations,
-                single_agent_per_iteration=self.config.single_agent_per_iteration,
-                allowed_agent_names=allowed_agent_names,
-                previous_agent_name=previous_agent_name,
-            )
-            self._emit(
-                "request",
-                kind="selector",
-                iteration=iteration,
-                messages=selection_messages,
-                model=None,
-                previous_agent_name=previous_agent_name,
-                allowed_agent_names=tuple(sorted(allowed_agent_names)),
-            )
-            raw_selection = self.client.complete(selection_messages)
-            self._emit(
-                "response",
-                kind="selector",
-                iteration=iteration,
-                content=raw_selection,
-            )
-            selection = parse_agent_selection(
-                raw_selection,
-                set(agents_by_name),
-                single_agent_per_iteration=self.config.single_agent_per_iteration,
-                allowed_agents=allowed_agent_names,
-            )
-            self._emit(
-                "selection",
-                iteration=iteration,
-                agent_names=selection.agent_names,
-                final_requested=selection.final_requested,
-                previous_agent_name=previous_agent_name,
-                allowed_agent_names=tuple(sorted(allowed_agent_names)),
-            )
-            if selection.final_requested:
-                break
-
-            for agent_name in selection.agent_names:
-                agent = agents_by_name[agent_name]
-                agent_messages = build_agent_messages(
+        if agents_by_name:
+            for iteration in range(1, self.config.max_iterations):
+                allowed_agent_names = self.config.allowed_agent_names_after(
+                    previous_agent_name
+                )
+                selection_messages = build_selection_messages(
                     original_prompt=prompt,
-                    agent=agent,
+                    agents=self.config.agents,
                     previous_answers=previous_answers,
                     current_iteration=iteration,
                     max_iterations=self.config.max_iterations,
+                    single_agent_per_iteration=self.config.single_agent_per_iteration,
+                    allowed_agent_names=allowed_agent_names,
+                    previous_agent_name=previous_agent_name,
                 )
                 self._emit(
                     "request",
-                    kind="agent",
+                    kind="selector",
                     iteration=iteration,
-                    agent_name=agent.name,
-                    messages=agent_messages,
-                    model=agent.model,
+                    messages=selection_messages,
+                    model=None,
+                    previous_agent_name=previous_agent_name,
+                    allowed_agent_names=tuple(sorted(allowed_agent_names)),
                 )
-                answer = self.client.complete(
-                    agent_messages,
-                    model=agent.model,
-                )
+                raw_selection = self.client.complete(selection_messages)
                 self._emit(
                     "response",
-                    kind="agent",
+                    kind="selector",
                     iteration=iteration,
-                    agent_name=agent.name,
-                    content=answer,
+                    content=raw_selection,
                 )
-                previous_answers.append(
-                    AgentAnswer(
+                selection = parse_agent_selection(
+                    raw_selection,
+                    set(agents_by_name),
+                    single_agent_per_iteration=self.config.single_agent_per_iteration,
+                    allowed_agents=allowed_agent_names,
+                )
+                self._emit(
+                    "selection",
+                    iteration=iteration,
+                    agent_names=selection.agent_names,
+                    final_requested=selection.final_requested,
+                    previous_agent_name=previous_agent_name,
+                    allowed_agent_names=tuple(sorted(allowed_agent_names)),
+                )
+                if selection.final_requested:
+                    break
+
+                for agent_name in selection.agent_names:
+                    agent = agents_by_name[agent_name]
+                    agent_messages = build_agent_messages(
+                        original_prompt=prompt,
+                        agent=agent,
+                        previous_answers=previous_answers,
+                        current_iteration=iteration,
+                        max_iterations=self.config.max_iterations,
+                    )
+                    self._emit(
+                        "request",
+                        kind="agent",
                         iteration=iteration,
                         agent_name=agent.name,
-                        content=answer.strip(),
+                        messages=agent_messages,
+                        model=agent.model,
                     )
-                )
-                previous_agent_name = agent.name
+                    answer = self.client.complete(
+                        agent_messages,
+                        model=agent.model,
+                    )
+                    self._emit(
+                        "response",
+                        kind="agent",
+                        iteration=iteration,
+                        agent_name=agent.name,
+                        content=answer,
+                    )
+                    previous_answers.append(
+                        AgentAnswer(
+                            iteration=iteration,
+                            agent_name=agent.name,
+                            content=answer.strip(),
+                        )
+                    )
+                    previous_agent_name = agent.name
 
         final_messages = build_final_messages(
             original_prompt=prompt,

@@ -1,0 +1,6 @@
+{
+  "max_iterations": 1,
+  "single_agent_per_iteration": false,
+  "excluded_handoffs": [],
+  "agents": []
+}

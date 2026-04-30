@@ -39,6 +39,10 @@ from [configs/agents.example.json](configs/agents.example.json):
 }
 ```
 
+Use an empty `agents` list to skip the selector and agent-discussion
+steps and send the prompt directly to final-answer generation. See
+[configs/no_agents.json](configs/no_agents.json).
+
 `max_iterations` includes the final synthesis call. For example, with
 `max_iterations: 4`, the system can run up to three selector/agent
 discussion iterations and then the final-answer request.
@@ -121,6 +125,9 @@ For each discussion iteration before the final one:
 3. When the selector returns `["FINAL"]`, or when the discussion budget is
    exhausted, the final request includes the original prompt, all previous
    agent answers, and a final synthesis prompt.
+
+If `agents` is empty, the selector and discussion iterations are skipped
+and only the final request is sent.
 
 The implementation uses `requests.post` against OpenRouter's
 `/chat/completions` endpoint.

@@ -102,16 +102,18 @@ def build_final_messages(
     original_prompt: MessageContent,
     previous_answers: list[AgentAnswer],
 ) -> list[ChatMessage]:
+    if previous_answers:
+        final_prompt = (
+            "Please provide the final answer to my original inquiry, based on all "
+            "the different perspectives."
+        )
+    else:
+        final_prompt = "Please provide the final answer to my original inquiry."
+
     return [
         {"role": "user", "content": original_prompt},
         *previous_answer_messages(previous_answers),
-        {
-            "role": "user",
-            "content": (
-                "Please provide the final answer to my original inquiry, based on all "
-                "the different perspectives."
-            ),
-        },
+        {"role": "user", "content": final_prompt},
     ]
 
 

@@ -49,6 +49,25 @@ class ConfigTests(unittest.TestCase):
         self.assertEqual(config.excluded_handoffs[0], HandoffExclusion("planner", "critic"))
         self.assertEqual(config.allowed_agent_names_after("planner"), {"planner"})
 
+    def test_load_config_allows_empty_agents(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "agents.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "max_iterations": 3,
+                        "agents": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            config = load_config(path)
+
+        self.assertEqual(config.max_iterations, 3)
+        self.assertEqual(config.agents, ())
+        self.assertEqual(config.allowed_agent_names_after(None), set())
+
     def test_rejects_duplicate_agents(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "agents.json"

@@ -157,6 +157,31 @@ class OrchestratorTests(unittest.TestCase):
         self.assertEqual(result.agent_answers, ())
         self.assertEqual(len(client.calls), 1)
 
+    def test_no_agents_goes_directly_to_final(self) -> None:
+        config = AgenticConfig(
+            max_iterations=4,
+            agents=(),
+        )
+        client = FakeClient(["final answer"])
+        events: list[tuple[str, dict[str, object]]] = []
+
+        result = AgenticOrchestrator(
+            config=config,
+            client=client,
+            event_handler=lambda event, payload: events.append((event, payload)),
+        ).run("Original")
+
+        self.assertEqual(result.final_answer, "final answer")
+        self.assertEqual(result.agent_answers, ())
+        self.assertEqual(len(client.calls), 1)
+        self.assertEqual([event for event, _ in events], [
+            "run_start",
+            "request",
+            "response",
+        ])
+        self.assertEqual(events[1][1]["kind"], "final")
+        self.assertEqual(events[0][1]["agent_names"], ())
+
     def test_single_agent_mode_applies_handoff_constraints(self) -> None:
         config = AgenticConfig(
             max_iterations=4,
