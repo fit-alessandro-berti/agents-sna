@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first-agent choice; sensible routing"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 7.6,
+    "explanation": "Accurate log build; split tables, inferred actor"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Mostly correct final log; repeated headers, infere"
+  }
+]

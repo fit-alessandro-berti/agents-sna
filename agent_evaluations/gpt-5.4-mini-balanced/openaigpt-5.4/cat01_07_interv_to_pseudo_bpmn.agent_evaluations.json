@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good agent choice; apt first step"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 7.4,
+    "explanation": "Useful model; some sequencing ambiguity"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.2,
+    "explanation": "Strong synthesis; minor unsupported details"
+  }
+]

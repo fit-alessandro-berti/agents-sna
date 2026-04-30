@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-balanced",
+  "question": "cat04_02_pseudo_bpmn_open_question.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_balanced.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-balanced_cat04_02_pseudo_bpmn_open_question.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\requests\\cat04_02_pseudo_bpmn_open_question.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\responses\\cat04_02_pseudo_bpmn_open_question.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\traces\\cat04_02_pseudo_bpmn_open_question.trace.json",
+  "final_answer_length": 7673
+}

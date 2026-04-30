@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.1,
+    "explanation": "Correct agent choice; apt for DECLARE modeling"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.3,
+    "explanation": "Useful draft, but key semantics/errors remain"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.2,
+    "explanation": "Final dict is plausible but semantically flawed"
+  }
+]

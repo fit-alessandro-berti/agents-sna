@@ -4,13 +4,20 @@ import argparse
 import json
 from math import sqrt
 from pathlib import Path
+import re
 import sys
+
+import pandas as pd
 
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 
 DEFAULT_OUTPUT_NAME = "social_network_analysis.json"
+DEFAULT_LATEX_OUTPUT_NAME = "agent_usage_by_category.tex"
+EXCLUDED_USAGE_AGENT_TYPES = frozenset({"START", "COMPLETE"})
+LATEX_TABLE_CAPTION = "Agent usage by benchmark question category."
+LATEX_TABLE_LABEL = "tab:agent-usage-by-category"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -24,8 +31,17 @@ def main(argv: list[str] | None = None) -> int:
             continue_on_error=args.continue_on_error,
         )
         output_path = args.output or args.evaluations_dir / DEFAULT_OUTPUT_NAME
+        latex_output_path = (
+            args.latex_output or args.evaluations_dir / DEFAULT_LATEX_OUTPUT_NAME
+        )
         write_json_file(output_path, analysis)
+        write_agent_usage_latex_table(
+            args.evaluations_dir,
+            latex_output_path,
+            continue_on_error=args.continue_on_error,
+        )
         print(f"wrote {output_path}")
+        print(f"wrote {latex_output_path}")
     except Exception as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
@@ -47,6 +63,14 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "Output JSON path. Defaults to social_network_analysis.json inside "
             "the evaluations folder."
+        ),
+    )
+    parser.add_argument(
+        "--latex-output",
+        type=Path,
+        help=(
+            "Output LaTeX table path. Defaults to agent_usage_by_category.tex "
+            "inside the evaluations folder."
         ),
     )
     parser.add_argument(
@@ -103,7 +127,9 @@ def analyze_evaluation_folder(
 
         for source, target in zip(records, records[1:]):
             edge_key = (source["agent_type"], target["agent_type"])
-            edge_scores.setdefault(edge_key, []).append(edge_evaluation(source, target, edge_score))
+            edge_scores.setdefault(edge_key, []).append(
+                edge_evaluation(source, target, edge_score)
+            )
 
     return {
         "source_dir": str(evaluations_dir),
@@ -121,6 +147,120 @@ def analyze_evaluation_folder(
             for (source, target), scores in sorted(edge_scores.items())
         ],
     }
+
+
+def build_agent_usage_by_category_table(
+    evaluations_dir: Path,
+    *,
+    continue_on_error: bool = False,
+) -> pd.DataFrame:
+    if not evaluations_dir.is_dir():
+        raise ValueError(f"Evaluation folder not found: {evaluations_dir}")
+
+    files = sorted(evaluations_dir.glob("*.agent_evaluations.json"))
+    if not files:
+        raise ValueError(f"No *.agent_evaluations.json files found in {evaluations_dir}")
+
+    usage: dict[str, dict[str, int]] = {}
+    categories: set[str] = set()
+    for path in files:
+        try:
+            records = read_evaluation_file(path)
+        except Exception:
+            if not continue_on_error:
+                raise
+            continue
+
+        category = question_category_from_path(path)
+        categories.add(category)
+        for record in records:
+            agent_type = str(record["agent_type"])
+            if agent_type in EXCLUDED_USAGE_AGENT_TYPES:
+                continue
+            usage.setdefault(agent_type, {})
+            usage[agent_type][category] = usage[agent_type].get(category, 0) + 1
+
+    table = pd.DataFrame.from_dict(usage, orient="index")
+    if categories:
+        table = table.reindex(columns=sorted(categories), fill_value=0)
+    if not table.empty:
+        table = table.fillna(0).astype(int)
+    table.index.name = "Agent"
+    return table.sort_index()
+
+
+def write_agent_usage_latex_table(
+    evaluations_dir: Path,
+    output_path: Path,
+    *,
+    continue_on_error: bool = False,
+) -> None:
+    table = build_agent_usage_by_category_table(
+        evaluations_dir,
+        continue_on_error=continue_on_error,
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(agent_usage_table_to_latex(table), encoding="utf-8")
+
+
+def agent_usage_table_to_latex(table: pd.DataFrame) -> str:
+    try:
+        return table.to_latex(
+            caption=LATEX_TABLE_CAPTION,
+            label=LATEX_TABLE_LABEL,
+            escape=True,
+        )
+    except ImportError:
+        return render_latex_table(table, caption=LATEX_TABLE_CAPTION, label=LATEX_TABLE_LABEL)
+
+
+def render_latex_table(table: pd.DataFrame, *, caption: str, label: str) -> str:
+    column_format = "l" + ("r" * len(table.columns))
+    header = [table.index.name or "Agent", *(str(column) for column in table.columns)]
+    lines = [
+        "\\begin{table}",
+        f"\\caption{{{escape_latex(caption)}}}",
+        f"\\label{{{escape_latex(label)}}}",
+        f"\\begin{{tabular}}{{{column_format}}}",
+        "\\hline",
+        " & ".join(escape_latex(cell) for cell in header) + r" \\",
+        "\\hline",
+    ]
+    for index_value, row in table.iterrows():
+        cells = [str(index_value), *(str(value) for value in row)]
+        lines.append(" & ".join(escape_latex(cell) for cell in cells) + r" \\")
+    lines.extend(
+        [
+            "\\hline",
+            "\\end{tabular}",
+            "\\end{table}",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def escape_latex(value: str) -> str:
+    replacements = {
+        "\\": r"\textbackslash{}",
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+        "~": r"\textasciitilde{}",
+        "^": r"\textasciicircum{}",
+    }
+    return "".join(replacements.get(character, character) for character in value)
+
+
+def question_category_from_path(path: Path) -> str:
+    match = re.match(r"^(cat\d+)_", path.name)
+    if match:
+        return match.group(1)
+    return "unknown"
 
 
 def read_evaluation_file(path: Path) -> list[dict[str, float | str]]:

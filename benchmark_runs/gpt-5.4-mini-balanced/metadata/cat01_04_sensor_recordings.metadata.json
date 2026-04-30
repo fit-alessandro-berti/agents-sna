@@ -1,0 +1,13 @@
+{
+  "run_name": "gpt-5.4-mini-balanced",
+  "question": "cat01_04_sensor_recordings.txt",
+  "status": "completed",
+  "error": null,
+  "model": "openai/gpt-5.4-mini",
+  "config": "configs\\pm_benchmark_balanced.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\gpt-5.4-mini-balanced_cat01_04_sensor_recordings.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\requests\\cat01_04_sensor_recordings.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\responses\\cat01_04_sensor_recordings.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\gpt-5.4-mini-balanced\\traces\\cat01_04_sensor_recordings.trace.json",
+  "final_answer_length": 3083
+}

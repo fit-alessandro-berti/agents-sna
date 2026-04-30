@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good agent choice; process modeler was apt"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 8.6,
+    "explanation": "Correct strict sequence; slightly overassertive"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Accurate final fix; mostly repeats prior node"
+  }
+]

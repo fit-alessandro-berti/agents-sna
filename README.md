@@ -198,10 +198,11 @@ statistics:
 
 `python src/agents_sna/evaluation_network.py agent_evaluations/gpt-5.4-mini-verification-heavy/openaigpt-5.4`
 
-The default output is:
+The default outputs are:
 
 ```text
 agent_evaluations/<source-run>/<judge-model>/social_network_analysis.json
+agent_evaluations/<source-run>/<judge-model>/agent_usage_by_category.tex
 ```
 
 Nodes are grouped by `agent_type`. Directed edges are consecutive
@@ -225,3 +226,8 @@ instantiated per evaluated question:
   ]
 }
 ```
+
+The LaTeX table is generated with Pandas. It uses benchmark question
+categories such as `cat01` as columns, agent types as rows, and integer
+counts for how often each agent appears in judged answers for that
+category. `START` and `COMPLETE` markers are excluded.

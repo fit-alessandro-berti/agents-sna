@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 7.1,
+    "explanation": "Useful log read; duration math slightly loose"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 6.9,
+    "explanation": "Actionable but mostly repeats prior findings"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.0,
+    "explanation": "Solid synthesis; some overclaim from tiny sample"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good agent choice; apt formal-model focus"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 8.6,
+    "explanation": "Correct underfitting example; clear rationale"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Correct final, but misses double Close_Order issue"
+  }
+]

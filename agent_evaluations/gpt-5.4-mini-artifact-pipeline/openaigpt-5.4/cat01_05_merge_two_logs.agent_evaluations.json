@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 5.3,
+    "explanation": "Useful map, but over-merges payment at 5s"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.8,
+    "explanation": "Sharp audit; flags key overconfidence"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.1,
+    "explanation": "Solid output, but keeps dubious payment merge"
+  }
+]

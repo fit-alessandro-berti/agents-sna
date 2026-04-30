@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good expert choice; apt first step"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 8.4,
+    "explanation": "Correct anomalies; loop semantics a bit vague"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.2,
+    "explanation": "Useful concise audit, mostly repeats n2"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.6,
+    "explanation": "Accurate final; clear, grounded, slightly generic"
+  }
+]

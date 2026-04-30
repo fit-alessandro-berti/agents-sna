@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first expert choice; appropriate setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 6.4,
+    "explanation": "Useful grouping, but speculative labels"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.7,
+    "explanation": "Strong correction; adds needed caution"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Solid final answer, still partly speculative"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 8.8,
+    "explanation": "Correct grouping; slight overclaim on support"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.9,
+    "explanation": "Useful validation; little new beyond prior"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.9,
+    "explanation": "Accurate final answer; concise and grounded"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 8.7,
+    "explanation": "Accurate anomaly mapping; slight overclaim"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.8,
+    "explanation": "Useful condensation; little new added"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.6,
+    "explanation": "Correct, grounded final; minor caveat noted"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.2,
+    "explanation": "Correct expert chosen; appropriate first step"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.4,
+    "explanation": "Split tree; loop semantics wrong; incomplete"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 3.1,
+    "explanation": "Integrated tree, but loop model still incorrect"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.7,
+    "explanation": "Final answer preserves wrong loop semantics"
+  }
+]

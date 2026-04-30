@@ -10,9 +10,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from agents_sna.evaluation_network import (
     analyze_evaluation_folder,
+    build_agent_usage_by_category_table,
     count_summary,
+    question_category_from_path,
     read_evaluation_file,
     score_summary,
+    write_agent_usage_latex_table,
 )
 
 
@@ -111,6 +114,66 @@ class EvaluationNetworkTests(unittest.TestCase):
         self.assertEqual(edge["source"], "START")
         self.assertEqual(edge["target"], "parser")
         self.assertEqual(edge["average"], 7.0)
+
+    def test_question_category_from_path_uses_benchmark_prefix(self) -> None:
+        self.assertEqual(
+            question_category_from_path(
+                Path("cat03_08_powl_discovery.agent_evaluations.json")
+            ),
+            "cat03",
+        )
+
+    def test_build_agent_usage_by_category_table_counts_agents(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_evaluation(
+                root / "cat01_01_case_id_inference.agent_evaluations.json",
+                [
+                    ("START", 8.0),
+                    ("parser", 6.0),
+                    ("parser", 7.0),
+                    ("COMPLETE", 8.0),
+                ],
+            )
+            write_evaluation(
+                root / "cat02_01_conformance_textual.agent_evaluations.json",
+                [
+                    ("START", 8.0),
+                    ("critic", 6.0),
+                    ("parser", 7.0),
+                    ("COMPLETE", 8.0),
+                ],
+            )
+
+            table = build_agent_usage_by_category_table(root)
+
+        self.assertEqual(list(table.columns), ["cat01", "cat02"])
+        self.assertEqual(list(table.index), ["critic", "parser"])
+        self.assertEqual(table.loc["parser", "cat01"], 2)
+        self.assertEqual(table.loc["parser", "cat02"], 1)
+        self.assertEqual(table.loc["critic", "cat01"], 0)
+        self.assertEqual(table.loc["critic", "cat02"], 1)
+
+    def test_write_agent_usage_latex_table_writes_tex_file(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_evaluation(
+                root / "cat01_01_case_id_inference.agent_evaluations.json",
+                [
+                    ("START", 8.0),
+                    ("parser", 6.0),
+                    ("COMPLETE", 8.0),
+                ],
+            )
+            output_path = root / "usage.tex"
+
+            write_agent_usage_latex_table(root, output_path)
+
+            content = output_path.read_text(encoding="utf-8")
+
+        self.assertIn("\\begin{tabular}", content)
+        self.assertIn("cat01", content)
+        self.assertIn("parser", content)
 
     def test_read_evaluation_file_rejects_invalid_scores(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
