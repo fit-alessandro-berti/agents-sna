@@ -1,0 +1,448 @@
+{
+  "source_dir": "agent_evaluations\\grok-4.20-balanced\\openaigpt-5.4",
+  "files_processed": 57,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 5.842105263157895,
+    "stddev": 2.5669250748311416
+  },
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 57,
+      "average": 5.324561403508772,
+      "stddev": 2.1595386692007783
+    },
+    {
+      "agent_type": "START",
+      "count": 57,
+      "average": 8.096491228070175,
+      "stddev": 0.8326590069487495
+    },
+    {
+      "agent_type": "conformance_anomaly_checker",
+      "count": 52,
+      "average": 3.286538461538462,
+      "stddev": 2.0120816666169627
+    },
+    {
+      "agent_type": "event_log_interpreter",
+      "count": 32,
+      "average": 5.15,
+      "stddev": 2.3911294402436685
+    },
+    {
+      "agent_type": "fairness_and_ethics_reviewer",
+      "count": 34,
+      "average": 3.726470588235294,
+      "stddev": 2.292995577780992
+    },
+    {
+      "agent_type": "hypothesis_generator",
+      "count": 46,
+      "average": 5.108695652173913,
+      "stddev": 1.7901695434592007
+    },
+    {
+      "agent_type": "optimization_consultant",
+      "count": 32,
+      "average": 3.675,
+      "stddev": 2.1540659228538015
+    },
+    {
+      "agent_type": "process_modeler",
+      "count": 58,
+      "average": 4.141379310344828,
+      "stddev": 1.9978466409990656
+    },
+    {
+      "agent_type": "query_and_sql_analyst",
+      "count": 22,
+      "average": 4.595454545454545,
+      "stddev": 2.057022842655524
+    }
+  ],
+  "edges": [
+    {
+      "source": "START",
+      "target": "conformance_anomaly_checker",
+      "count": 2,
+      "average": 7.800000000000001,
+      "stddev": 1.0000000000000004
+    },
+    {
+      "source": "START",
+      "target": "event_log_interpreter",
+      "count": 16,
+      "average": 6.675,
+      "stddev": 1.945668265660927
+    },
+    {
+      "source": "START",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 6,
+      "average": 7.05,
+      "stddev": 0.8597480251019288
+    },
+    {
+      "source": "START",
+      "target": "hypothesis_generator",
+      "count": 10,
+      "average": 7.25,
+      "stddev": 0.9780081799248921
+    },
+    {
+      "source": "START",
+      "target": "optimization_consultant",
+      "count": 1,
+      "average": 8.3,
+      "stddev": 0.0
+    },
+    {
+      "source": "START",
+      "target": "process_modeler",
+      "count": 18,
+      "average": 5.055555555555555,
+      "stddev": 2.113507411921452
+    },
+    {
+      "source": "START",
+      "target": "query_and_sql_analyst",
+      "count": 4,
+      "average": 7.4,
+      "stddev": 1.0
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "COMPLETE",
+      "count": 6,
+      "average": 5.516666666666667,
+      "stddev": 2.0119780206442504
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "conformance_anomaly_checker",
+      "count": 1,
+      "average": 2.0,
+      "stddev": 0.0
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "event_log_interpreter",
+      "count": 10,
+      "average": 3.34,
+      "stddev": 1.9835322029147902
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 1,
+      "average": 4.7,
+      "stddev": 0.0
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "hypothesis_generator",
+      "count": 13,
+      "average": 4.084615384615384,
+      "stddev": 1.171354346863988
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "optimization_consultant",
+      "count": 9,
+      "average": 3.233333333333333,
+      "stddev": 2.359378449224852
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "process_modeler",
+      "count": 10,
+      "average": 3.4,
+      "stddev": 2.2081666603768837
+    },
+    {
+      "source": "conformance_anomaly_checker",
+      "target": "query_and_sql_analyst",
+      "count": 2,
+      "average": 4.1,
+      "stddev": 1.4999999999999998
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "COMPLETE",
+      "count": 2,
+      "average": 6.1,
+      "stddev": 0.10000000000000009
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "conformance_anomaly_checker",
+      "count": 9,
+      "average": 2.611111111111111,
+      "stddev": 2.262468879807801
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "event_log_interpreter",
+      "count": 1,
+      "average": 5.0,
+      "stddev": 0.0
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 2,
+      "average": 1.8499999999999999,
+      "stddev": 0.44999999999999996
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "hypothesis_generator",
+      "count": 7,
+      "average": 4.357142857142857,
+      "stddev": 1.027976018143201
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "optimization_consultant",
+      "count": 1,
+      "average": 2.6,
+      "stddev": 0.0
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "process_modeler",
+      "count": 9,
+      "average": 3.677777777777778,
+      "stddev": 1.365265768004146
+    },
+    {
+      "source": "event_log_interpreter",
+      "target": "query_and_sql_analyst",
+      "count": 1,
+      "average": 4.3,
+      "stddev": 0.0
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "COMPLETE",
+      "count": 11,
+      "average": 5.9363636363636365,
+      "stddev": 1.7828846530133162
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "conformance_anomaly_checker",
+      "count": 2,
+      "average": 2.25,
+      "stddev": 0.3500000000000001
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 1,
+      "average": 3.4,
+      "stddev": 0.0
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "hypothesis_generator",
+      "count": 6,
+      "average": 5.666666666666667,
+      "stddev": 0.9410396142328737
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "optimization_consultant",
+      "count": 3,
+      "average": 3.233333333333333,
+      "stddev": 1.1440668201153674
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "process_modeler",
+      "count": 2,
+      "average": 2.8499999999999996,
+      "stddev": 0.55
+    },
+    {
+      "source": "fairness_and_ethics_reviewer",
+      "target": "query_and_sql_analyst",
+      "count": 9,
+      "average": 4.066666666666666,
+      "stddev": 1.2622730819174326
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "COMPLETE",
+      "count": 3,
+      "average": 4.666666666666667,
+      "stddev": 2.5746628689770024
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "conformance_anomaly_checker",
+      "count": 13,
+      "average": 3.2923076923076926,
+      "stddev": 1.5284288254793592
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "event_log_interpreter",
+      "count": 1,
+      "average": 5.8,
+      "stddev": 0.0
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 3,
+      "average": 6.0,
+      "stddev": 1.283225103661344
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "hypothesis_generator",
+      "count": 1,
+      "average": 6.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "optimization_consultant",
+      "count": 17,
+      "average": 3.664705882352941,
+      "stddev": 1.9682602579198143
+    },
+    {
+      "source": "hypothesis_generator",
+      "target": "process_modeler",
+      "count": 8,
+      "average": 3.625,
+      "stddev": 1.4592378147512488
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "COMPLETE",
+      "count": 7,
+      "average": 5.014285714285714,
+      "stddev": 1.7891966045675132
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "conformance_anomaly_checker",
+      "count": 5,
+      "average": 3.6399999999999997,
+      "stddev": 1.135957745693034
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 14,
+      "average": 2.4,
+      "stddev": 1.457982951105494
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "process_modeler",
+      "count": 4,
+      "average": 4.025,
+      "stddev": 1.0638961415476604
+    },
+    {
+      "source": "optimization_consultant",
+      "target": "query_and_sql_analyst",
+      "count": 2,
+      "average": 1.8,
+      "stddev": 0.0
+    },
+    {
+      "source": "process_modeler",
+      "target": "COMPLETE",
+      "count": 15,
+      "average": 5.586666666666667,
+      "stddev": 2.434711938242843
+    },
+    {
+      "source": "process_modeler",
+      "target": "conformance_anomaly_checker",
+      "count": 20,
+      "average": 3.215,
+      "stddev": 1.9494294036973998
+    },
+    {
+      "source": "process_modeler",
+      "target": "event_log_interpreter",
+      "count": 2,
+      "average": 3.4000000000000004,
+      "stddev": 0.19999999999999996
+    },
+    {
+      "source": "process_modeler",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 5,
+      "average": 3.16,
+      "stddev": 1.8249383551232627
+    },
+    {
+      "source": "process_modeler",
+      "target": "hypothesis_generator",
+      "count": 8,
+      "average": 4.6375,
+      "stddev": 1.8580483712756242
+    },
+    {
+      "source": "process_modeler",
+      "target": "optimization_consultant",
+      "count": 1,
+      "average": 5.6,
+      "stddev": 0.0
+    },
+    {
+      "source": "process_modeler",
+      "target": "process_modeler",
+      "count": 7,
+      "average": 4.4714285714285715,
+      "stddev": 2.2243549856173623
+    },
+    {
+      "source": "query_and_sql_analyst",
+      "target": "COMPLETE",
+      "count": 13,
+      "average": 4.615384615384615,
+      "stddev": 2.1529393695582986
+    },
+    {
+      "source": "query_and_sql_analyst",
+      "target": "event_log_interpreter",
+      "count": 2,
+      "average": 3.5,
+      "stddev": 0.7000000000000002
+    },
+    {
+      "source": "query_and_sql_analyst",
+      "target": "fairness_and_ethics_reviewer",
+      "count": 2,
+      "average": 2.6,
+      "stddev": 1.4
+    },
+    {
+      "source": "query_and_sql_analyst",
+      "target": "hypothesis_generator",
+      "count": 1,
+      "average": 1.7,
+      "stddev": 0.0
+    },
+    {
+      "source": "query_and_sql_analyst",
+      "target": "query_and_sql_analyst",
+      "count": 4,
+      "average": 4.7,
+      "stddev": 2.237185732119709
+    }
+  ]
+}

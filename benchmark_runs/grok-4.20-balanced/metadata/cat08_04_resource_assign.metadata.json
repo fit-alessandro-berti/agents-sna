@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-balanced",
+  "question": "cat08_04_resource_assign.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_balanced.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-balanced_cat08_04_resource_assign.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-balanced\\requests\\cat08_04_resource_assign.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-balanced\\responses\\cat08_04_resource_assign.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-balanced\\traces\\cat08_04_resource_assign.trace.json",
+  "final_answer_length": 9999
+}

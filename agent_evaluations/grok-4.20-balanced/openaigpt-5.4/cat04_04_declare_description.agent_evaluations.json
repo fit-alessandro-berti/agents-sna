@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first expert choice"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.3,
+    "explanation": "Major DECLARE misreadings; wrong semantics"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 4.2,
+    "explanation": "Useful critique, but includes false claims"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 3.6,
+    "explanation": "Some useful prompts; many wrong assumptions"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.7,
+    "explanation": "Speculative and grounded in prior errors"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 2.8,
+    "explanation": "Important lens, but weakly grounded"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.1,
+    "explanation": "Fluent synthesis built on semantic errors"
+  }
+]

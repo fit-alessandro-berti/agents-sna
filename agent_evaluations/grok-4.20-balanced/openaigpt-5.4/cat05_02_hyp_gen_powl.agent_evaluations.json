@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first agent choice; relevant and efficient"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 6.4,
+    "explanation": "Useful framing, but SQL/hypotheses partly shaky"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 6.9,
+    "explanation": "Strong anomaly summary; some overclaims/SQL issues"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 5.6,
+    "explanation": "Relevant focus, but SQL is imprecise/problematic"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 2.8,
+    "explanation": "Several unsupported assumptions and invalid SQL"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 2.3,
+    "explanation": "Largely speculative; weak grounding in schema"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.1,
+    "explanation": "Actionable tone, but bad SQL and invented impacts"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.7,
+    "explanation": "Covers task, but inherits speculation and SQL flaw"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first pick; relevant and sufficient"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 6.1,
+    "explanation": "Useful description, but many unsupported specifics"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 3.2,
+    "explanation": "Off-task; adds speculative mining hypotheses"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.4,
+    "explanation": "Overformalized and speculative beyond prompt"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.1,
+    "explanation": "Mostly speculative conformance claims"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.6,
+    "explanation": "Invented performance facts and redesigns"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 1.8,
+    "explanation": "Irrelevant schema/SQL, not image description"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 1.2,
+    "explanation": "Largely irrelevant, highly speculative bias"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.3,
+    "explanation": "Coherent summary, but repeats unsupported details"
+  }
+]

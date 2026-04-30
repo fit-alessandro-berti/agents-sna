@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first pick, but not clearly optimal"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 7.4,
+    "explanation": "Useful structural read; some speculative BPMN deta"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.1,
+    "explanation": "Mostly unsupported normative claims, off-task"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 2.4,
+    "explanation": "Speculative hypotheses from image-only input"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.3,
+    "explanation": "Invented redesign advice, weak grounding"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 1.3,
+    "explanation": "Highly speculative bias claims, irrelevant"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Describes image, but padded with unsupported criti"
+  }
+]

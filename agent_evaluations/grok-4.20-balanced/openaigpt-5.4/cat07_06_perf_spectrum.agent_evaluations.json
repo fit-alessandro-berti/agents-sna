@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first agent choice for image description"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 6.4,
+    "explanation": "Useful chart read, but several unsupported claims"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.2,
+    "explanation": "Overformalized; infers model beyond visible eviden"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 3.5,
+    "explanation": "Speculative percentages; weakly grounded"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.6,
+    "explanation": "Claims visible anomalies not justified by chart"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.8,
+    "explanation": "Recommendations built on unsupported anomalies"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 1.2,
+    "explanation": "Fairness claims entirely ungrounded in image"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 2.9,
+    "explanation": "Queries okay, but invented scale and conclusions"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.7,
+    "explanation": "Final answer amplifies many unsupported specifics"
+  }
+]

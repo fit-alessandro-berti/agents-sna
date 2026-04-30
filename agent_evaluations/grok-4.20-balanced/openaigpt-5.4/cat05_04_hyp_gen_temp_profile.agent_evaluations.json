@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 5.3,
+    "explanation": "Useful ideas, but SQL has major flaws"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 4.2,
+    "explanation": "Good framing, invalid SQL and overclaims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.8,
+    "explanation": "Covers task, but several query defects"
+  }
+]

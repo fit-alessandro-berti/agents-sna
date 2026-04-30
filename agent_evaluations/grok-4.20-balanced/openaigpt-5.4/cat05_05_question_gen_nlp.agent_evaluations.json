@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first agent choice; relevant and efficient"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 8.4,
+    "explanation": "Strong, prompt-aligned 20 questions; slight overre"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 3.2,
+    "explanation": "Off-task optimization claims; invented metrics"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.6,
+    "explanation": "Misgrounded conformance framing; fabricated norms"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.3,
+    "explanation": "Formalism mostly irrelevant; several modeling erro"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Useful final list, but contaminated by weak prior "
+  }
+]

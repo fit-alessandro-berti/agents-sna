@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.3,
+    "explanation": "Reasonable first agent choice; limited direct valu"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 7.8,
+    "explanation": "Strong scaffold; some unsupported numeric impacts"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 6.6,
+    "explanation": "Useful ops focus, but vague and some weak rigor"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 4.7,
+    "explanation": "Several invented rules/patterns not grounded"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.8,
+    "explanation": "Good formal angle, but overclaims on semantics"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 3.2,
+    "explanation": "Invented precise stats from snippet; poor groundin"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 4.3,
+    "explanation": "Helpful OCEL/SQL angle, but fabricated numbers"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 4.0,
+    "explanation": "Relevant caution, but largely tangential/speculati"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.9,
+    "explanation": "Comprehensive but polluted by many unsupported cla"
+  }
+]

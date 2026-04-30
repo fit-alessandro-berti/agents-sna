@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.2,
+    "explanation": "Correct agent choice; direct and efficient"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 7.8,
+    "explanation": "Useful bias analysis; some unsupported metrics"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 6.4,
+    "explanation": "Helpful diagnostics, but speculative/log-heavy"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 4.3,
+    "explanation": "Mostly repetition; limited new value"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 3.4,
+    "explanation": "Redundant restatement with minor additions"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 4.8,
+    "explanation": "Some redesign value; several unsupported claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.1,
+    "explanation": "Strong synthesis, but overclaims some fairness tes"
+  }
+]

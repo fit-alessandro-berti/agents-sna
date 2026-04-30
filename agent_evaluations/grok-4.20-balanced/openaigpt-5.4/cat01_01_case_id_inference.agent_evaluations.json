@@ -1,32 +1,27 @@
 [
   {
     "agent_type": "START",
-    "evaluation": 9.1,
-    "explanation": "Right first agent; efficient routing."
+    "evaluation": 9.2,
+    "explanation": "Good first-agent choice for case inference"
   },
   {
     "agent_type": "event_log_interpreter",
-    "evaluation": 8.8,
-    "explanation": "Correct grouping; minor overclaim on uniqueness."
-  },
-  {
-    "agent_type": "process_modeler",
-    "evaluation": 3.6,
-    "explanation": "Mostly irrelevant; model errors and bad notation."
-  },
-  {
-    "agent_type": "conformance_anomaly_checker",
-    "evaluation": 2.9,
-    "explanation": "Unsupported perfect-fitness claims; off-task."
+    "evaluation": 8.6,
+    "explanation": "Correct partition; slight overclaim on certainty"
   },
   {
     "agent_type": "hypothesis_generator",
-    "evaluation": 4.2,
-    "explanation": "Some useful caveats, but mostly unnecessary."
+    "evaluation": 3.4,
+    "explanation": "Mostly speculative; adds weak/odd criteria"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.3,
+    "explanation": "Useful summary, but modeling adds little"
   },
   {
     "agent_type": "COMPLETE",
-    "evaluation": 1.0,
-    "explanation": "No final answer provided."
+    "evaluation": 8.1,
+    "explanation": "Correct final grouping; minor unsupported claims"
   }
 ]

@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first expert, but not optimal"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.7,
+    "explanation": "Useful gist, but many unsupported specifics"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.6,
+    "explanation": "Hallucinates defects from unseen diagram"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 2.2,
+    "explanation": "Builds on false assumptions; speculative"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.8,
+    "explanation": "Optimization advice grounded in hallucinations"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.9,
+    "explanation": "Fluent summary, but repeats unsupported claims"
+  }
+]

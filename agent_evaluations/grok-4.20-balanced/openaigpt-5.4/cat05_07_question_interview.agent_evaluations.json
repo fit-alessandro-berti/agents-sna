@@ -1,0 +1,52 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Reasonable first-agent choice; limited impact"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 8.4,
+    "explanation": "Strong, grounded questions; slight overreach"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.4,
+    "explanation": "Useful gaps; too model-heavy and assumptive"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 6.6,
+    "explanation": "Some value, but partially redundant/speculative"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.8,
+    "explanation": "Repeated modeling detail, weak prompt fit"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 7.1,
+    "explanation": "Useful synthesis questions; still repetitive"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 6.1,
+    "explanation": "Adds angles, but speculative and less central"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 5.2,
+    "explanation": "Optimization claims unsupported; some good asks"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 6.9,
+    "explanation": "Relevant fairness lens; partly beyond core ask"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.7,
+    "explanation": "Comprehensive final list; slightly overextended"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.2,
+    "explanation": "Reasonable first pick, but unjustified"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 3.1,
+    "explanation": "Detailed but image-grounding is doubtful"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.0,
+    "explanation": "Invented formalization from uncertain reading"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 2.4,
+    "explanation": "Speculative claims, weak for description task"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.8,
+    "explanation": "Overconfident anomalies on unverified model"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.2,
+    "explanation": "Optimization advice built on assumptions"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.7,
+    "explanation": "Fluent synthesis, but likely hallucinated details"
+  }
+]

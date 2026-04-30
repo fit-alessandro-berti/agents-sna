@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first agent choice; apt and efficient"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 6.8,
+    "explanation": "Useful bias ID; overclaims direct discrimination"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 5.2,
+    "explanation": "Some good checks; adds unsupported thresholds"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 3.4,
+    "explanation": "Assumed norms; several unsupported claims"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 6.4,
+    "explanation": "Solid log reading; counterfactual claim unproven"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.6,
+    "explanation": "Mostly speculative ops claims, weak grounding"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.9,
+    "explanation": "Correct core answer; overstated legal/process clai"
+  }
+]

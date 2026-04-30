@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.2,
+    "explanation": "Reasonable first agent pick; little substance"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 7.4,
+    "explanation": "Useful structure; some unsupported specifics"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 3.1,
+    "explanation": "Invents precise metrics; weakly grounded"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 3.4,
+    "explanation": "Fairness lens useful, but speculative stats"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.6,
+    "explanation": "Assumes unjustified normative thresholds/model"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 2.3,
+    "explanation": "Severe fabrication of data-quality findings"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.8,
+    "explanation": "Formalism added, but model/figures speculative"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.7,
+    "explanation": "Comprehensive but heavily polluted by inventions"
+  }
+]

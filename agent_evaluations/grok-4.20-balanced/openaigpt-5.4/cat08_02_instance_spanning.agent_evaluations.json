@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.4,
+    "explanation": "Reasonable first-agent choice, little else"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 7.2,
+    "explanation": "Useful structure; some speculative claims"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 7.6,
+    "explanation": "Actionable and relevant; still assumption-heavy"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 5.3,
+    "explanation": "Adds unsupported numbers; weaker grounding"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 6.8,
+    "explanation": "Good log focus, but invented metrics/results"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.9,
+    "explanation": "Formal angle helpful; model assumptions shaky"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 2.4,
+    "explanation": "Mostly off-task; harmful constraint changes"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.7,
+    "explanation": "Comprehensive but polluted by off-task fairness"
+  }
+]
