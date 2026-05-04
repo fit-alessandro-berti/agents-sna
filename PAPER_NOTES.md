@@ -24,6 +24,18 @@ The analysis in this document is based on:
 
 The final-answer metric used below is the `COMPLETE` node score assigned by the judge model `openai/gpt-5.4`. The SNA edge scores use the repository default, where a directed edge is scored with the target node's evaluation.
 
+The generated social-network pictures are SVG files. Because every run uses the same basename, the full relative path is the useful identifier:
+
+| Run | Social-network picture file |
+|---|---|
+| `gpt-5.4-mini-no-agent` | `agent_evaluations/gpt-5.4-mini-no-agent/openaigpt-5.4/social_network_analysis.svg` |
+| `gpt-5.4-mini-artifact-pipeline` | `agent_evaluations/gpt-5.4-mini-artifact-pipeline/openaigpt-5.4/social_network_analysis.svg` |
+| `gpt-5.4-mini-balanced` | `agent_evaluations/gpt-5.4-mini-balanced/openaigpt-5.4/social_network_analysis.svg` |
+| `gpt-5.4-mini-verification-heavy` | `agent_evaluations/gpt-5.4-mini-verification-heavy/openaigpt-5.4/social_network_analysis.svg` |
+| `gpt-5.4-mini-ver-heavy-excl` | `agent_evaluations/gpt-5.4-mini-ver-heavy-excl/openaigpt-5.4/social_network_analysis.svg` |
+| `grok-4.20-balanced` | `agent_evaluations/grok-4.20-balanced/openaigpt-5.4/social_network_analysis.svg` |
+| `qwen3.6-35b-a3b-balanced` | `agent_evaluations/qwen3.6-35b-a3b-balanced/openaigpt-5.4/social_network_analysis.svg` |
+
 ## Type of Agentic Framework
 
 The implemented framework is best described as a centralized, selector-mediated conversational multi-agent framework.
@@ -274,6 +286,8 @@ Category observations:
 
 ### GPT Artifact Pipeline
 
+Social-network picture: `agent_evaluations/gpt-5.4-mini-artifact-pipeline/openaigpt-5.4/social_network_analysis.svg`.
+
 | Node | Count | Mean | sd | Interpretation |
 |---|---:|---:|---:|---|
 | `answer_precision_auditor` | 56 | 7.529 | 1.708 | Strong and heavily used; the main successful node in this configuration |
@@ -293,6 +307,8 @@ Underperforming edges with count at least 2 include:
 - `trace_and_variant_reasoner -> answer_precision_auditor`: count 2, mean 5.850.
 
 ### GPT Balanced
+
+Social-network picture: `agent_evaluations/gpt-5.4-mini-balanced/openaigpt-5.4/social_network_analysis.svg`.
 
 | Node | Count | Mean | sd | Interpretation |
 |---|---:|---:|---:|---|
@@ -319,6 +335,8 @@ The process-modeling role is both important and weak. Since `cat03` is one of th
 
 ### GPT Verification Heavy
 
+Social-network picture: `agent_evaluations/gpt-5.4-mini-verification-heavy/openaigpt-5.4/social_network_analysis.svg`.
+
 | Node | Count | Mean | sd | Interpretation |
 |---|---:|---:|---:|---|
 | `counterexample_hunter` | 10 | 8.160 | 0.539 | Best node; adversarial review is useful |
@@ -342,6 +360,8 @@ Underperforming edges with count at least 2 include:
 - `artifact_parser -> formal_semantics_checker`: count 6, mean 6.667.
 
 ### GPT Verification Heavy With Excluded Low Edges
+
+Social-network picture: `agent_evaluations/gpt-5.4-mini-ver-heavy-excl/openaigpt-5.4/social_network_analysis.svg`.
 
 | Node | Count | Mean | sd | Interpretation |
 |---|---:|---:|---:|---|
@@ -367,6 +387,8 @@ Remaining lower-scoring edges with count at least 2 include:
 
 ### Grok Balanced
 
+Social-network picture: `agent_evaluations/grok-4.20-balanced/openaigpt-5.4/social_network_analysis.svg`.
+
 | Node | Count | Mean | sd | Interpretation |
 |---|---:|---:|---:|---|
 | `event_log_interpreter` | 32 | 5.150 | 2.391 | Best non-special node, but still low |
@@ -389,6 +411,8 @@ Prominent low-scoring edges include:
 - `process_modeler -> conformance_anomaly_checker`: count 20, mean 3.215.
 
 ### Qwen Balanced
+
+Social-network picture: `agent_evaluations/qwen3.6-35b-a3b-balanced/openaigpt-5.4/social_network_analysis.svg`.
 
 | Node | Count | Mean | sd | Interpretation |
 |---|---:|---:|---:|---|
@@ -595,4 +619,3 @@ Before turning this into a paper, the following would strengthen the empirical c
 - Try a fixed-route verification pipeline against the dynamic selector to separate role value from routing quality.
 - Improve the process modeling agent, since process-model tasks are consistently weak.
 - Test category-specific configurations, especially for `cat03` and `cat07`.
-
