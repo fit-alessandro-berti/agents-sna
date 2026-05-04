@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first pick; conformance was the right lens"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 6.4,
+    "explanation": "Mostly correct; overclaims and weak grounding"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 3.1,
+    "explanation": "Speculative RCA; adds unsupported claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Core findings right, but desiderata handling flawe"
+  }
+]

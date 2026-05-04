@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.8,
+    "explanation": "Reasonable first pick, but not clearly optimal"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.9,
+    "explanation": "Useful overview, but several unsupported BPMN clai"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.6,
+    "explanation": "Off-task optimization advice; speculative defects"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.8,
+    "explanation": "Redundant, speculative, and not needed for descrip"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.7,
+    "explanation": "Coherent description, but repeats shaky inferences"
+  }
+]

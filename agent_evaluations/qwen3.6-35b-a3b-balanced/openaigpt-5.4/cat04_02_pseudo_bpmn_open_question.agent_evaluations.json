@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; relevant and efficient"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 7.1,
+    "explanation": "Useful redesign ideas; some unsupported claims"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.3,
+    "explanation": "Some rigor, but formalism is vague/misapplied"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 7.8,
+    "explanation": "Strong risk checks; a few speculative issues"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 7.4,
+    "explanation": "Relevant fairness safeguards; limited mining rigor"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Solid synthesis, but inherits weak assumptions"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; relevant and efficient"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 3.4,
+    "explanation": "Useful structure read, but wrong final verdict"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 5.1,
+    "explanation": "Sharper anomaly framing, still wrong conclusion"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.4,
+    "explanation": "Final answer grounded but substantively incorrect"
+  }
+]

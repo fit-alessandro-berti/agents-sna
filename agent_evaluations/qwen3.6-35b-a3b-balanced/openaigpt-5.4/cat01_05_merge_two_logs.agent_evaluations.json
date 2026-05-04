@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.0,
+    "explanation": "Good first agent choice; appropriate scope"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 7.6,
+    "explanation": "Useful merge; 5s payment match is shaky"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.6,
+    "explanation": "Invents concurrency/constraints from one case"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.2,
+    "explanation": "Unsupported mandatory QC/compliance claims"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.7,
+    "explanation": "Speculative optimization from tiny evidence"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.4,
+    "explanation": "Mostly correct merge, but overstates claims"
+  }
+]

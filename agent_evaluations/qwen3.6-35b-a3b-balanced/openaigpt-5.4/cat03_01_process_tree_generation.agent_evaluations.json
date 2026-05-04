@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.5,
+    "explanation": "Correctly chose process_modeler first"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.6,
+    "explanation": "Useful tree, but loop semantics likely wrong"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.2,
+    "explanation": "Clear final tree, repeats loop modeling defect"
+  }
+]

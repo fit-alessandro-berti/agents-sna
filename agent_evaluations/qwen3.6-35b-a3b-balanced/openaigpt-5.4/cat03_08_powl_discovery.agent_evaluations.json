@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first agent choice; appropriate and focused"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 6.4,
+    "explanation": "Useful model, but overclaims on Case 3 fit"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 4.8,
+    "explanation": "Spots IQC issue, but wrongly deems full fit"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.1,
+    "explanation": "Solid final POWL, but unresolved IQC mismatch"
+  }
+]

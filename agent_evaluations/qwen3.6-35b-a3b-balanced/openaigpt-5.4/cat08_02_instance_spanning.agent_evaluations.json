@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.2,
+    "explanation": "Reasonable first pick; omitted log/query angle"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 6.4,
+    "explanation": "Useful ideas, but several unsupported assumptions"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.5,
+    "explanation": "Formalism-heavy; some PM inaccuracies/speculation"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 5.1,
+    "explanation": "Good temporal-join focus; SQL logic partly flawed"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 3.6,
+    "explanation": "Mostly speculative human-factor detours"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.2,
+    "explanation": "Structured synthesis, but inherits key errors"
+  }
+]

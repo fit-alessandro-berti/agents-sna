@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good agent choice; apt for temporal profile"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.8,
+    "explanation": "Useful dict, but many pair timings inconsistent"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.7,
+    "explanation": "Off-task critique; adds unsupported assumptions"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 2.9,
+    "explanation": "Mostly commentary; little direct answer value"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.6,
+    "explanation": "Final dict has major temporal inconsistencies"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.8,
+    "explanation": "Reasonable first pick, but not optimal."
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.7,
+    "explanation": "Useful labels; speculative and inconsistent."
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 2.3,
+    "explanation": "Over-speculative; misgrounds the diagram."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.4,
+    "explanation": "Clear summary, but inherits key inaccuracies."
+  }
+]

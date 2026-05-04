@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good agent choice; appropriate first step"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.8,
+    "explanation": "Useful net, but RDS loop redoes CR; AP caveat"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 3.1,
+    "explanation": "Mostly off-task; pushes unsupported redesigns"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 1.4,
+    "explanation": "Invalid PN code; place-place arcs, incoherent edit"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.3,
+    "explanation": "Final code has illegal place-place arcs; not PM4PY"
+  }
+]

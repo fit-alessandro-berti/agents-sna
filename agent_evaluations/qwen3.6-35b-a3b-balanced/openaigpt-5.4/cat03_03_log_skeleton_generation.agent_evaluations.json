@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good agent choice; apt and sufficient"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.3,
+    "explanation": "Useful draft, but flipped always_after pairs"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.6,
+    "explanation": "Final answer misinterprets always_after badly"
+  }
+]

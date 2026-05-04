@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 9.0,
+    "explanation": "Right first agent; direct fit to fairness prompt"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 8.7,
+    "explanation": "Strong, grounded fairness analysis; minor legal ov"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 6.1,
+    "explanation": "Useful verification ideas; drifts beyond asked ans"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 4.8,
+    "explanation": "Some process insight, but speculative and off-role"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 5.0,
+    "explanation": "Partly useful; invents norms not in model/prompt"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 3.2,
+    "explanation": "Mostly speculative ops claims; weak grounding"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 7.6,
+    "explanation": "Good synthesis, but repetitive and somewhat overst"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Solid final answer; clear and grounded, some overc"
+  }
+]

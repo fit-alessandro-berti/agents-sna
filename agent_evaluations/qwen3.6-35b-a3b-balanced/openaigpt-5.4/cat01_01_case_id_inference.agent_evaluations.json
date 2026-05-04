@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first agent choice; direct and relevant"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 6.8,
+    "explanation": "Correct grouping, but dept typo weakens rigor"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.4,
+    "explanation": "Invents parallel lab/X-ray and tau step"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 1.8,
+    "explanation": "Mostly unsupported normative claims"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 1.3,
+    "explanation": "Speculative bias claims from tiny sample"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 1.6,
+    "explanation": "Unsupported assumptions; harmful routing rule"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.1,
+    "explanation": "Case grouping right, but adds bad anomalies"
+  }
+]

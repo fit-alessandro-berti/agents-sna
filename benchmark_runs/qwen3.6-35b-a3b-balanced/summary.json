@@ -1,0 +1,306 @@
+{
+  "run_name": "qwen3.6-35b-a3b-balanced",
+  "requested_run_name": "qwen3.6-35b-a3b-balanced",
+  "model": "qwen/qwen3.6-35b-a3b",
+  "config": "configs\\pm_benchmark_balanced.json",
+  "benchmark_dir": "C:\\Users\\berti\\pm-llm-benchmark",
+  "max_threads": 100,
+  "started_at": "2026-05-04T06:41:03+0200",
+  "finished_at": "2026-05-04T06:42:10+0200",
+  "questions": [
+    {
+      "question": "cat01_01_case_id_inference.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_01_case_id_inference.txt"
+    },
+    {
+      "question": "cat01_02_activity_context.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_02_activity_context.txt"
+    },
+    {
+      "question": "cat01_03_high_level_events.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_03_high_level_events.txt"
+    },
+    {
+      "question": "cat01_04_sensor_recordings.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_04_sensor_recordings.txt"
+    },
+    {
+      "question": "cat01_05_merge_two_logs.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_05_merge_two_logs.txt"
+    },
+    {
+      "question": "cat01_06_system_logs.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_06_system_logs.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\requests\\cat01_06_system_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\responses\\cat01_06_system_logs.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\traces\\cat01_06_system_logs.trace.json"
+    },
+    {
+      "question": "cat01_07_interv_to_pseudo_bpmn.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_07_interv_to_pseudo_bpmn.txt"
+    },
+    {
+      "question": "cat01_08_tables_to_log.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat01_08_tables_to_log.txt"
+    },
+    {
+      "question": "cat02_01_conformance_textual.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_01_conformance_textual.txt"
+    },
+    {
+      "question": "cat02_02_conf_desiderata.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_02_conf_desiderata.txt"
+    },
+    {
+      "question": "cat02_03_anomaly_event_log.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_03_anomaly_event_log.txt"
+    },
+    {
+      "question": "cat02_04_powl_anomaly_detection.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_04_powl_anomaly_detection.txt"
+    },
+    {
+      "question": "cat02_05_two_powls_anomalies.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_05_two_powls_anomalies.txt"
+    },
+    {
+      "question": "cat02_06_root_cause_1.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_06_root_cause_1.txt"
+    },
+    {
+      "question": "cat02_07_root_cause_2.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_07_root_cause_2.txt"
+    },
+    {
+      "question": "cat02_08_underfitting_process_tree.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_08_underfitting_process_tree.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\requests\\cat02_08_underfitting_process_tree.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\responses\\cat02_08_underfitting_process_tree.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\traces\\cat02_08_underfitting_process_tree.trace.json"
+    },
+    {
+      "question": "cat02_09_fix_process_tree.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat02_09_fix_process_tree.txt"
+    },
+    {
+      "question": "cat03_01_process_tree_generation.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_01_process_tree_generation.txt"
+    },
+    {
+      "question": "cat03_02_powl_generation.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_02_powl_generation.txt"
+    },
+    {
+      "question": "cat03_03_log_skeleton_generation.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_03_log_skeleton_generation.txt"
+    },
+    {
+      "question": "cat03_04_declare_generation.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_04_declare_generation.txt"
+    },
+    {
+      "question": "cat03_05_temp_profile_generation.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_05_temp_profile_generation.txt"
+    },
+    {
+      "question": "cat03_06_petri_net_generation.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_06_petri_net_generation.txt"
+    },
+    {
+      "question": "cat03_07_process_tree_discovery.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_07_process_tree_discovery.txt"
+    },
+    {
+      "question": "cat03_08_powl_discovery.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat03_08_powl_discovery.txt"
+    },
+    {
+      "question": "cat04_01_pseudo_bpmn_description.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat04_01_pseudo_bpmn_description.txt"
+    },
+    {
+      "question": "cat04_02_pseudo_bpmn_open_question.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat04_02_pseudo_bpmn_open_question.txt"
+    },
+    {
+      "question": "cat04_03_declare_open_question.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat04_03_declare_open_question.txt"
+    },
+    {
+      "question": "cat04_04_declare_description.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat04_04_declare_description.txt"
+    },
+    {
+      "question": "cat04_05_sql_filt_num_events.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat04_05_sql_filt_num_events.txt"
+    },
+    {
+      "question": "cat04_06_sql_filt_three_df.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat04_06_sql_filt_three_df.txt"
+    },
+    {
+      "question": "cat04_07_sql_filt_top_k_vars.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat04_07_sql_filt_top_k_vars.txt"
+    },
+    {
+      "question": "cat05_01_hyp_generation_log.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat05_01_hyp_generation_log.txt"
+    },
+    {
+      "question": "cat05_02_hyp_gen_powl.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat05_02_hyp_gen_powl.txt"
+    },
+    {
+      "question": "cat05_03_hyp_gen_declare.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat05_03_hyp_gen_declare.txt"
+    },
+    {
+      "question": "cat05_04_hyp_gen_temp_profile.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat05_04_hyp_gen_temp_profile.txt"
+    },
+    {
+      "question": "cat05_05_question_gen_nlp.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat05_05_question_gen_nlp.txt"
+    },
+    {
+      "question": "cat05_06_question_pseudo_bpmn.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat05_06_question_pseudo_bpmn.txt"
+    },
+    {
+      "question": "cat05_07_question_interview.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat05_07_question_interview.txt"
+    },
+    {
+      "question": "cat06_01_bias_text.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat06_01_bias_text.txt"
+    },
+    {
+      "question": "cat06_02_bias_event_log.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat06_02_bias_event_log.txt"
+    },
+    {
+      "question": "cat06_03_bias_powl.txt",
+      "status": "completed",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat06_03_bias_powl.txt",
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\requests\\cat06_03_bias_powl.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\responses\\cat06_03_bias_powl.responses.json",
+      "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen3.6-35b-a3b-balanced\\traces\\cat06_03_bias_powl.trace.json"
+    },
+    {
+      "question": "cat06_04_bias_two_logs.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat06_04_bias_two_logs.txt"
+    },
+    {
+      "question": "cat06_05_bias_two_logs_2.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat06_05_bias_two_logs_2.txt"
+    },
+    {
+      "question": "cat06_06_bias_mitigation_declare.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat06_06_bias_mitigation_declare.txt"
+    },
+    {
+      "question": "cat06_07_fair_unfair_powl.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat06_07_fair_unfair_powl.txt"
+    },
+    {
+      "question": "cat07_01_ocdfg.png",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat07_01_ocdfg.txt"
+    },
+    {
+      "question": "cat07_02_bpmn_orders.png",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat07_02_bpmn_orders.txt"
+    },
+    {
+      "question": "cat07_03_bpmn_dispatch.png",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat07_03_bpmn_dispatch.txt"
+    },
+    {
+      "question": "cat07_04_causal_net.png",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat07_04_causal_net.txt"
+    },
+    {
+      "question": "cat07_05_proclets.png",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat07_05_proclets.txt"
+    },
+    {
+      "question": "cat07_06_perf_spectrum.png",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat07_06_perf_spectrum.txt"
+    },
+    {
+      "question": "cat08_01_queue_mining.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat08_01_queue_mining.txt"
+    },
+    {
+      "question": "cat08_02_instance_spanning.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat08_02_instance_spanning.txt"
+    },
+    {
+      "question": "cat08_03_transport_opt.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat08_03_transport_opt.txt"
+    },
+    {
+      "question": "cat08_04_resource_assign.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat08_04_resource_assign.txt"
+    },
+    {
+      "question": "cat08_05_task_schedul.txt",
+      "status": "skipped_existing_response",
+      "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen3.6-35b-a3b-balanced_cat08_05_task_schedul.txt"
+    }
+  ]
+}

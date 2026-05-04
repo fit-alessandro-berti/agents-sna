@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.2,
+    "explanation": "Plausible routing, but weakly justified"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 4.6,
+    "explanation": "Useful structure, several unsupported details"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 2.7,
+    "explanation": "Speculative optimization, not description"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.1,
+    "explanation": "Answers wrong task; adds dubious specifics"
+  }
+]

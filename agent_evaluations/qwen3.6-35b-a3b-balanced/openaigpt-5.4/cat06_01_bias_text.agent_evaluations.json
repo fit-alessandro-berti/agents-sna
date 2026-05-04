@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.5,
+    "explanation": "Good first routing; fairness agent was apt"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 8.7,
+    "explanation": "Strong, grounded bias analysis; slight overreach"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 5.1,
+    "explanation": "Some useful points; much is speculative ops talk"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 4.8,
+    "explanation": "Partly useful, but conformance framing is forced"
+  },
+  {
+    "agent_type": "hypothesis_generator",
+    "evaluation": 6.6,
+    "explanation": "Useful restatement; limited new evidence or rigor"
+  },
+  {
+    "agent_type": "query_and_sql_analyst",
+    "evaluation": 5.9,
+    "explanation": "Concrete audit ideas, but schema/log assumptions"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 8.9,
+    "explanation": "Best synthesis; precise, grounded, actionable"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Solid final answer, but less nuanced than n7"
+  }
+]

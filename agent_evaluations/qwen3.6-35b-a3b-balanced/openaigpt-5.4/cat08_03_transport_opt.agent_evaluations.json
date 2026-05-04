@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first expert choice; limited by itself"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 5.4,
+    "explanation": "Useful structure, but overformal and partly shaky"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 5.9,
+    "explanation": "Practical deviations noted; some unsupported claim"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 6.8,
+    "explanation": "Actionable strategies, but evidence often invented"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.3,
+    "explanation": "Covers all sections, but includes unsupported spec"
+  }
+]

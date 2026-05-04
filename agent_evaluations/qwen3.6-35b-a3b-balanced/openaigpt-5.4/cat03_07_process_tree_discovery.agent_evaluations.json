@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; appropriate and focused"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 3.4,
+    "explanation": "Wrong loop semantics; claims all traces fit"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 8.8,
+    "explanation": "Correctly spots Case 3 mismatch and impact"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.6,
+    "explanation": "Repeats flawed tree; false fitness claim"
+  }
+]

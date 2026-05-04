@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first agent choice; appropriate and focused"
+  },
+  {
+    "agent_type": "event_log_interpreter",
+    "evaluation": 4.9,
+    "explanation": "Useful but inconsistent, wrong first event mapping"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.3,
+    "explanation": "Off-task redesign; unsupported session-case shift"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.4,
+    "explanation": "Readable final log, but flawed case split/misgroun"
+  }
+]

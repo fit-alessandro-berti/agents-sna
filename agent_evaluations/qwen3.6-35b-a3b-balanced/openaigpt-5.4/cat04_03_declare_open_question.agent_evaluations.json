@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first agent choice; reasonable setup"
+  },
+  {
+    "agent_type": "process_modeler",
+    "evaluation": 2.8,
+    "explanation": "Fluent but many DECLARE semantics errors"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 3.1,
+    "explanation": "Builds on wrong semantics; weak grounding"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 4.9,
+    "explanation": "Useful conflict spotting, but semantics shaky"
+  },
+  {
+    "agent_type": "fairness_and_ethics_reviewer",
+    "evaluation": 5.4,
+    "explanation": "Relevant ethics angle, but speculative"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.4,
+    "explanation": "Final answer repeats major modeling mistakes"
+  }
+]

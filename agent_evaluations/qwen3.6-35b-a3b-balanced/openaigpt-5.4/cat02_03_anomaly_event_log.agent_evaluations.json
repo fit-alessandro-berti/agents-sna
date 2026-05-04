@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first agent choice; sensible routing"
+  },
+  {
+    "agent_type": "conformance_anomaly_checker",
+    "evaluation": 8.1,
+    "explanation": "Strong anomaly check; minor overclaims"
+  },
+  {
+    "agent_type": "optimization_consultant",
+    "evaluation": 4.6,
+    "explanation": "Some useful redesign ideas; key inaccuracies"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.2,
+    "explanation": "Good synthesis, but repeats unsupported claims"
+  }
+]
