@@ -6,6 +6,7 @@ import io
 from pathlib import Path
 import sys
 import tempfile
+import threading
 import unittest
 from unittest.mock import patch
 
@@ -57,6 +58,32 @@ class FailOnceOrchestrator:
         if type(self).calls == 1:
             raise RuntimeError("question failure")
         return OrchestrationResult(final_answer="second answer", agent_answers=())
+
+
+class ConcurrentOrchestrator:
+    active = 0
+    max_active = 0
+    started = 0
+    lock = threading.Lock()
+    second_started = threading.Event()
+
+    def __init__(self, *, config, client, event_handler=None) -> None:
+        pass
+
+    def run(self, prompt):
+        with type(self).lock:
+            type(self).active += 1
+            type(self).started += 1
+            type(self).max_active = max(type(self).max_active, type(self).active)
+            if type(self).started >= 2:
+                type(self).second_started.set()
+
+        if not type(self).second_started.wait(timeout=2):
+            raise RuntimeError("second concurrent question did not start")
+
+        with type(self).lock:
+            type(self).active -= 1
+        return OrchestrationResult(final_answer=f"answer {prompt}", agent_answers=())
 
 
 class BenchmarkRunnerTests(unittest.TestCase):
@@ -139,6 +166,32 @@ class BenchmarkRunnerTests(unittest.TestCase):
     def test_safe_question_slug(self) -> None:
         self.assertEqual(safe_question_slug(Path("cat 01?/x.txt")), "x")
 
+    def test_parser_accepts_additional_payload_json(self) -> None:
+        args = build_parser().parse_args(
+            [
+                "run",
+                "--config",
+                "config.json",
+                "--additional-payload",
+                '{"temperature": 0.2}',
+                "--max-threads",
+                "100",
+            ]
+        )
+
+        self.assertEqual(args.additional_payload, {"temperature": 0.2})
+        self.assertEqual(args.max_threads, 100)
+        alias_args = build_parser().parse_args(
+            [
+                "run",
+                "--config",
+                "config.json",
+                "--max_threads",
+                "25",
+            ]
+        )
+        self.assertEqual(alias_args.max_threads, 25)
+
     def test_run_benchmark_continues_after_failed_question_by_default(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -181,6 +234,51 @@ class BenchmarkRunnerTests(unittest.TestCase):
                 (benchmark_dir / "answers" / "run_b.txt").read_text(encoding="utf-8"),
                 "second answer\n",
             )
+
+    def test_run_benchmark_can_process_questions_concurrently(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            benchmark_dir = root / "pm-llm-benchmark"
+            questions_dir = benchmark_dir / "questions"
+            questions_dir.mkdir(parents=True)
+            (questions_dir / "a.txt").write_text("first", encoding="utf-8")
+            (questions_dir / "b.txt").write_text("second", encoding="utf-8")
+            output_dir = root / "runs"
+
+            args = build_parser().parse_args(
+                [
+                    "run",
+                    "--config",
+                    "config.json",
+                    "--benchmark-dir",
+                    str(benchmark_dir),
+                    "--output-dir",
+                    str(output_dir),
+                    "--api-key",
+                    "key",
+                    "--no-color",
+                    "--max-threads",
+                    "2",
+                ]
+            )
+
+            ConcurrentOrchestrator.active = 0
+            ConcurrentOrchestrator.max_active = 0
+            ConcurrentOrchestrator.started = 0
+            ConcurrentOrchestrator.second_started = threading.Event()
+            with (
+                redirect_stdout(io.StringIO()),
+                redirect_stderr(io.StringIO()),
+                patch.object(benchmark_runner, "OpenRouterClient", FakeOpenRouterClient),
+                patch.object(benchmark_runner, "AgenticOrchestrator", ConcurrentOrchestrator),
+                patch.object(benchmark_runner, "load_config", return_value=object()),
+                patch.object(benchmark_runner, "resolve_config_path", return_value=Path("config.json")),
+            ):
+                run_benchmark(args)
+
+            self.assertGreaterEqual(ConcurrentOrchestrator.max_active, 2)
+            self.assertTrue((benchmark_dir / "answers" / "run_a.txt").is_file())
+            self.assertTrue((benchmark_dir / "answers" / "run_b.txt").is_file())
 
 
 if __name__ == "__main__":

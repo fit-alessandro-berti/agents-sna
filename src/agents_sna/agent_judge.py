@@ -12,7 +12,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from agents_sna.benchmark_runner import RetryingChatClient, clean_model_name
-from agents_sna.cli import color_text, write_json_file, Colors
+from agents_sna.cli import color_text, parse_json_object, write_json_file, Colors
 from agents_sna.openrouter import DEFAULT_BASE_URL, OpenRouterClient
 
 
@@ -58,6 +58,7 @@ def run_agent_judge(args: argparse.Namespace) -> None:
             timeout=args.timeout,
             app_url=args.app_url,
             app_name=args.app_name,
+            additional_payload=args.additional_payload,
         ),
         retry_delay=args.retry_delay,
         max_retries=args.max_retries,
@@ -186,6 +187,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--app-name",
         default="agents-sna-agent-judge",
         help="X-Title header value sent to OpenRouter.",
+    )
+    parser.add_argument(
+        "--additional-payload",
+        type=parse_json_object,
+        help=(
+            "JSON object merged into every OpenRouter request payload, e.g. "
+            '{"temperature": 0.2}.'
+        ),
     )
     parser.add_argument(
         "--retry-delay",

@@ -122,6 +122,15 @@ and only the final request is sent.
 The implementation uses `requests.post` against OpenRouter's
 `/chat/completions` endpoint.
 
+All OpenRouter-backed scripts accept `--additional-payload` with a JSON
+object that is merged into every request payload, for example:
+
+```bash
+agents-sna --additional-payload '{"temperature": 0.2}' "Your prompt"
+python src/agents_sna/benchmark_runner.py run --config configs/agents.example.json --additional-payload '{"reasoning":{"effort":"high"}}'
+python src/agents_sna/agent_judge.py benchmark_runs/run --additional-payload '{"temperature": 0}'
+```
+
 ## Test
 
 `python -m unittest discover -s tests`
@@ -148,6 +157,10 @@ retries the same request after 15 seconds by default; adjust this with
 fails at the orchestration level, the failure is recorded and the runner
 continues with later questions by default. Use `--stop-on-error` to stop
 after the first failed question.
+
+Use `--max-threads N` to run multiple questions concurrently, for
+example `--max-threads 100`. The default is `1`, which preserves the
+original sequential behavior.
 
 Local artifacts are written under:
 

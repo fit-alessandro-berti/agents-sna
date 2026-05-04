@@ -43,6 +43,27 @@ class OpenRouterClientTests(unittest.TestCase):
         )
         self.assertNotIn("temperature", kwargs["json"])
 
+    def test_complete_merges_additional_payload(self) -> None:
+        client = OpenRouterClient(
+            api_key="secret",
+            model="default-model",
+            base_url="https://example.test/api/v1",
+            additional_payload={
+                "temperature": 0.2,
+                "reasoning": {"effort": "high"},
+            },
+        )
+        messages = [{"role": "user", "content": "hello"}]
+
+        with patch("agents_sna.openrouter.requests.post", return_value=FakeResponse()) as post:
+            client.complete(messages)
+
+        _, kwargs = post.call_args
+        self.assertEqual(kwargs["json"]["model"], "default-model")
+        self.assertEqual(kwargs["json"]["messages"], messages)
+        self.assertEqual(kwargs["json"]["temperature"], 0.2)
+        self.assertEqual(kwargs["json"]["reasoning"], {"effort": "high"})
+
 
 if __name__ == "__main__":
     unittest.main()

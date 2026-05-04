@@ -8,10 +8,21 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from agents_sna.cli import ReportRecorder
+from agents_sna.cli import ReportRecorder, build_parser
 
 
 class ReportRecorderTests(unittest.TestCase):
+    def test_parser_accepts_additional_payload_json(self) -> None:
+        args = build_parser().parse_args(
+            [
+                "hello",
+                "--additional-payload",
+                '{"temperature": 0.2}',
+            ]
+        )
+
+        self.assertEqual(args.additional_payload, {"temperature": 0.2})
+
     def test_writes_request_inputs_and_compact_trace(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             request_inputs_path = Path(directory) / "requests.json"

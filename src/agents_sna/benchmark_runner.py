@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import base64
 from collections.abc import Callable
+from concurrent.futures import Future, ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 import json
 import os
 from pathlib import Path
@@ -17,17 +19,37 @@ from agents_sna.cli import (
     color_text,
     composite_event_handler,
     normalize_messages,
+    parse_json_object,
     resolve_config_path,
     write_json_file,
     Colors,
 )
-from agents_sna.config import load_config
+from agents_sna.config import AgenticConfig, load_config
 from agents_sna.openrouter import DEFAULT_BASE_URL, DEFAULT_MODEL, OpenRouterClient
 from agents_sna.orchestrator import AgenticOrchestrator
 from agents_sna.types import ChatMessage, MessageContent
 
 
 IMAGE_PROMPT = "Can you describe the provided visualization?"
+
+
+@dataclass(frozen=True)
+class QuestionRunTask:
+    index: int
+    total: int
+    question_path: Path
+    answer_path: Path
+    request_path: Path
+    response_path: Path
+    trace_path: Path
+    metadata_path: Path
+
+
+@dataclass(frozen=True)
+class QuestionRunResult:
+    index: int
+    summary: dict[str, object]
+    failed: bool = False
 
 
 class RetryingChatClient:
@@ -232,6 +254,8 @@ def run_benchmark(args: argparse.Namespace) -> None:
     api_key = args.api_key or os.getenv("OPENROUTER_API_KEY")
     if not api_key:
         raise ValueError("OpenRouter API key missing. Set OPENROUTER_API_KEY or pass --api-key.")
+    if args.max_threads < 1:
+        raise ValueError("--max-threads must be at least 1.")
 
     benchmark_dir = args.benchmark_dir.resolve()
     questions_dir = benchmark_dir / "questions"
@@ -268,17 +292,20 @@ def run_benchmark(args: argparse.Namespace) -> None:
             timeout=args.timeout,
             app_url=args.app_url,
             app_name=args.app_name,
+            additional_payload=args.additional_payload,
         ),
         retry_delay=args.retry_delay,
         max_retries=args.max_retries,
         use_color=not args.no_color,
     )
 
-    summary: list[dict[str, object]] = []
+    summary_by_index: list[dict[str, object] | None] = [None] * len(question_paths)
+    tasks: list[QuestionRunTask] = []
     started_at = time.strftime("%Y-%m-%dT%H:%M:%S%z")
     print(
         color_text(
-            f"Running {len(question_paths)} questions as {run_slug} using {config_path}",
+            f"Running {len(question_paths)} questions as {run_slug} using "
+            f"{config_path} with max_threads={args.max_threads}",
             Colors.GREEN,
             enabled=not args.no_color,
         )
@@ -301,69 +328,39 @@ def run_benchmark(args: argparse.Namespace) -> None:
                 f"[{index}/{len(question_paths)}] skipping answered "
                 f"{answer_path.name}"
             )
-            summary.append(
-                {
-                    "question": question_path.name,
-                    "status": "skipped_existing_response",
-                    "answer_path": str(answer_path),
-                }
-            )
+            summary_by_index[index - 1] = {
+                "question": question_path.name,
+                "status": "skipped_existing_response",
+                "answer_path": str(answer_path),
+            }
             continue
 
-        print(f"[{index}/{len(question_paths)}] answering {question_path.name}")
-        recorder = QuestionRunRecorder(
-            run_name=run_slug,
-            question_name=question_path.name,
-            answer_path=answer_path,
-            request_path=request_path,
-            response_path=response_path,
-            trace_path=trace_path,
-            metadata_path=metadata_path,
-            model=args.model,
-            config_path=config_path,
+        tasks.append(
+            QuestionRunTask(
+                index=index,
+                total=len(question_paths),
+                question_path=question_path,
+                answer_path=answer_path,
+                request_path=request_path,
+                response_path=response_path,
+                trace_path=trace_path,
+                metadata_path=metadata_path,
+            )
         )
 
-        try:
-            prompt = load_question_prompt(question_path)
-            result = AgenticOrchestrator(
-                config=config,
-                client=client,
-                event_handler=recorder.handle,
-            ).run(prompt)
-            answer_path.write_text(result.final_answer + "\n", encoding="utf-8")
-            recorder.write(final_answer=result.final_answer, status="completed")
-            summary.append(
-                {
-                    "question": question_path.name,
-                    "status": "completed",
-                    "answer_path": str(answer_path),
-                    "request_path": str(request_path),
-                    "response_path": str(response_path),
-                    "trace_path": str(trace_path),
-                }
-            )
-        except Exception as exc:
-            recorder.write(final_answer="", status="failed", error=str(exc))
-            summary.append(
-                {
-                    "question": question_path.name,
-                    "status": "failed",
-                    "error": str(exc),
-                    "request_path": str(request_path),
-                    "response_path": str(response_path),
-                    "trace_path": str(trace_path),
-                }
-            )
-            action = "stopping" if args.stop_on_error else "continuing"
-            print(
-                color_text(
-                    f"failed {question_path.name}: {exc} ({action})",
-                    Colors.RED,
-                    enabled=not args.no_color,
-                )
-            )
-            if args.stop_on_error:
-                break
+    for result in run_question_tasks(
+        tasks,
+        config=config,
+        client=client,
+        args=args,
+        run_slug=run_slug,
+        config_path=config_path,
+    ):
+        summary_by_index[result.index - 1] = result.summary
+        if result.failed and args.stop_on_error and args.max_threads == 1:
+            break
+
+    summary = [item for item in summary_by_index if item is not None]
 
     write_json_file(
         run_dir / "summary.json",
@@ -373,11 +370,152 @@ def run_benchmark(args: argparse.Namespace) -> None:
             "model": args.model,
             "config": str(config_path),
             "benchmark_dir": str(benchmark_dir),
+            "max_threads": args.max_threads,
             "started_at": started_at,
             "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
             "questions": summary,
         },
     )
+
+
+def run_question_tasks(
+    tasks: list[QuestionRunTask],
+    *,
+    config: AgenticConfig,
+    client: RetryingChatClient,
+    args: argparse.Namespace,
+    run_slug: str,
+    config_path: Path,
+) -> list[QuestionRunResult]:
+    if not tasks:
+        return []
+
+    if args.max_threads == 1:
+        results: list[QuestionRunResult] = []
+        for task in tasks:
+            result = run_question_task(
+                task,
+                config=config,
+                client=client,
+                args=args,
+                run_slug=run_slug,
+                config_path=config_path,
+            )
+            results.append(result)
+            if result.failed and args.stop_on_error:
+                break
+        return results
+
+    max_workers = min(args.max_threads, len(tasks))
+    results: list[QuestionRunResult] = []
+    next_task_index = 0
+    stopping = False
+    futures: dict[Future[QuestionRunResult], QuestionRunTask] = {}
+
+    def submit_next(executor: ThreadPoolExecutor) -> None:
+        nonlocal next_task_index
+        task = tasks[next_task_index]
+        next_task_index += 1
+        futures[
+            executor.submit(
+                run_question_task,
+                task,
+                config=config,
+                client=client,
+                args=args,
+                run_slug=run_slug,
+                config_path=config_path,
+            )
+        ] = task
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        for _ in range(max_workers):
+            submit_next(executor)
+
+        while futures:
+            for future in as_completed(tuple(futures)):
+                futures.pop(future)
+                if future.cancelled():
+                    break
+                result = future.result()
+                results.append(result)
+
+                if result.failed and args.stop_on_error:
+                    stopping = True
+                    for pending in futures:
+                        pending.cancel()
+
+                if not stopping and next_task_index < len(tasks):
+                    submit_next(executor)
+                break
+
+    return results
+
+
+def run_question_task(
+    task: QuestionRunTask,
+    *,
+    config: AgenticConfig,
+    client: RetryingChatClient,
+    args: argparse.Namespace,
+    run_slug: str,
+    config_path: Path,
+) -> QuestionRunResult:
+    print(f"[{task.index}/{task.total}] answering {task.question_path.name}")
+    recorder = QuestionRunRecorder(
+        run_name=run_slug,
+        question_name=task.question_path.name,
+        answer_path=task.answer_path,
+        request_path=task.request_path,
+        response_path=task.response_path,
+        trace_path=task.trace_path,
+        metadata_path=task.metadata_path,
+        model=args.model,
+        config_path=config_path,
+    )
+
+    try:
+        prompt = load_question_prompt(task.question_path)
+        result = AgenticOrchestrator(
+            config=config,
+            client=client,
+            event_handler=recorder.handle,
+        ).run(prompt)
+        task.answer_path.write_text(result.final_answer + "\n", encoding="utf-8")
+        recorder.write(final_answer=result.final_answer, status="completed")
+        return QuestionRunResult(
+            index=task.index,
+            summary={
+                "question": task.question_path.name,
+                "status": "completed",
+                "answer_path": str(task.answer_path),
+                "request_path": str(task.request_path),
+                "response_path": str(task.response_path),
+                "trace_path": str(task.trace_path),
+            },
+        )
+    except Exception as exc:
+        recorder.write(final_answer="", status="failed", error=str(exc))
+        action = "stopping" if args.stop_on_error else "continuing"
+        print(
+            color_text(
+                f"failed {task.question_path.name}: {exc} ({action})",
+                Colors.RED,
+                enabled=not args.no_color,
+            )
+        )
+        return QuestionRunResult(
+            index=task.index,
+            summary={
+                "question": task.question_path.name,
+                "status": "failed",
+                "error": str(exc),
+                "request_path": str(task.request_path),
+                "response_path": str(task.response_path),
+                "trace_path": str(task.trace_path),
+            },
+            failed=True,
+        )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -438,6 +576,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="X-Title header value sent to OpenRouter.",
     )
     parser.add_argument(
+        "--additional-payload",
+        type=parse_json_object,
+        help=(
+            "JSON object merged into every OpenRouter request payload, e.g. "
+            '{"temperature": 0.2}.'
+        ),
+    )
+    parser.add_argument(
         "--overwrite",
         action="store_true",
         help="Recompute answers even if the answer file already exists.",
@@ -466,6 +612,17 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=0,
         help="Maximum retries per failed request. Use 0 for unlimited retries.",
+    )
+    parser.add_argument(
+        "--max-threads",
+        "--max_threads",
+        dest="max_threads",
+        type=int,
+        default=1,
+        help=(
+            "Maximum number of benchmark questions to run concurrently. "
+            "Defaults to 1."
+        ),
     )
     parser.add_argument(
         "--skip-images",

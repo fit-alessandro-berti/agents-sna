@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from agents_sna.agent_judge import (
     MAX_EXPLANATION_CHARS,
     build_evaluation_candidates,
+    build_parser,
     build_judge_messages,
     collect_request_files,
     infer_response_path,
@@ -51,6 +52,17 @@ class AgentJudgeTests(unittest.TestCase):
             output_path,
             Path("agent_evaluations/source-run/openaigpt-5.4/cat.agent_evaluations.json"),
         )
+
+    def test_parser_accepts_additional_payload_json(self) -> None:
+        args = build_parser().parse_args(
+            [
+                "requests",
+                "--additional-payload",
+                '{"temperature": 0.2}',
+            ]
+        )
+
+        self.assertEqual(args.additional_payload, {"temperature": 0.2})
 
     def test_build_candidates_skips_later_selectors_and_includes_complete(self) -> None:
         requests = [

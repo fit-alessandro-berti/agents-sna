@@ -316,6 +316,7 @@ def main(argv: list[str] | None = None) -> int:
             timeout=args.timeout,
             app_url=args.app_url,
             app_name=args.app_name,
+            additional_payload=args.additional_payload,
         )
         result = AgenticOrchestrator(
             config=config,
@@ -406,6 +407,14 @@ def build_parser() -> argparse.ArgumentParser:
         help="X-Title header value sent to OpenRouter.",
     )
     parser.add_argument(
+        "--additional-payload",
+        type=parse_json_object,
+        help=(
+            "JSON object merged into every OpenRouter request payload, e.g. "
+            '{"temperature": 0.2}.'
+        ),
+    )
+    parser.add_argument(
         "--show-transcript",
         action="store_true",
         help="Deprecated: progress output now shows the transcript during the run.",
@@ -454,6 +463,19 @@ def read_prompt(args: argparse.Namespace) -> str:
     if sys.stdin.isatty():
         raise ValueError("Provide a prompt argument, --prompt-file, or pipe text on stdin.")
     return sys.stdin.read()
+
+
+def parse_json_object(raw_json: str) -> dict[str, object]:
+    try:
+        parsed = json.loads(raw_json)
+    except json.JSONDecodeError as exc:
+        raise argparse.ArgumentTypeError(
+            f"additional payload must be valid JSON: {exc.msg}"
+        ) from exc
+
+    if not isinstance(parsed, dict):
+        raise argparse.ArgumentTypeError("additional payload must be a JSON object")
+    return parsed
 
 
 def resolve_config_path(raw_path: str) -> Path:

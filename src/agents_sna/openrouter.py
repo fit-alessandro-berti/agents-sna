@@ -23,6 +23,7 @@ class OpenRouterClient:
     timeout: float = 120.0
     app_url: str | None = None
     app_name: str = "agents-sna"
+    additional_payload: dict[str, object] | None = None
 
     def complete(
         self,
@@ -34,6 +35,8 @@ class OpenRouterClient:
             "model": model or self.model,
             "messages": messages,
         }
+        if self.additional_payload:
+            payload.update(self.additional_payload)
 
         try:
             response = requests.post(
