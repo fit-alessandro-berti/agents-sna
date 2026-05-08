@@ -1,0 +1,13 @@
+{
+  "run_name": "qwen36-35b-a3b-artifact-pipeline",
+  "question": "cat04_06_sql_filt_three_df.txt",
+  "status": "completed",
+  "error": null,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen36-35b-a3b-artifact-pipeline_cat04_06_sql_filt_three_df.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_06_sql_filt_three_df.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_06_sql_filt_three_df.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\traces\\cat04_06_sql_filt_three_df.trace.json",
+  "final_answer_length": 2230
+}

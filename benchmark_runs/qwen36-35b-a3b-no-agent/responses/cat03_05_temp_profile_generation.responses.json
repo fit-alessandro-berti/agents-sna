@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "```python\ntemporal_profile = {\n    # Directly sequential activities\n    ('SS', 'OP'): (86400, 43200),\n    ('OP', 'RC'): (604800, 259200),\n    ('RC', 'QI'): (86400, 43200),\n    ('QI', 'CA'): (172800, 86400),\n    ('CA', 'PT'): (259200, 172800),\n    ('PT', 'PK'): (43200, 21600),\n    ('PK', 'WS'): (86400, 43200),\n    ('WS', 'DT'): (259200, 172800),\n    ('DT', 'AS'): (604800, 345600),\n\n    # Activities separated by 1-2 steps\n    ('SS', 'RC'): (604800, 302400),\n    ('OP', 'QI'): (604800, 259200),\n    ('RC', 'CA'): (345600, 172800),\n    ('QI', 'PT'): (518400, 259200),\n    ('CA', 'PK'): (432000, 259200),\n    ('PT', 'WS'): (172800, 129600),\n    ('PK', 'DT'): (432000, 259200),\n    ('WS', 'AS'): (1036800, 518400),\n\n    # Activities separated by multiple steps (long-range dependencies)\n    ('SS', 'PT'): (864000, 432000),\n    ('OP', 'PK'): (691200, 345600),\n    ('RC', 'DT'): (864000, 432000),\n    ('QI', 'AS'): (1209600, 604800),\n    ('CA', 'WS'): (518400, 259200),\n    ('PT', 'AS'): (950400, 475200),\n    ('SS', 'DT'): (1209600, 604800),\n    ('OP', 'AS'): (1382400, 691200)\n}\n```"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "```sql\nWITH case_counts AS (\n    SELECT case_id\n    FROM event_log\n    GROUP BY case_id\n    HAVING COUNT(*) <= 6\n)\nSELECT e.*\nFROM event_log e\nJOIN case_counts c ON e.case_id = c.case_id;\n```"
+  }
+]

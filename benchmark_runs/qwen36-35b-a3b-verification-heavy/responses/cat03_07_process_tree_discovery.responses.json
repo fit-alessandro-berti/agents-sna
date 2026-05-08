@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "selector",
+    "iteration": 1,
+    "agent": null,
+    "content": "[\"domain_reasoner\"]"
+  },
+  {
+    "kind": "agent",
+    "iteration": 1,
+    "agent": "domain_reasoner",
+    "content": "`-> ( 'RA', 'VF', 'AE', * ( -> ( 'RMI', 'VF' ), tau ), 'AD', 'SC', 'AC' )`"
+  },
+  {
+    "kind": "selector",
+    "iteration": 2,
+    "agent": null,
+    "content": "[\"FINAL\"]"
+  },
+  {
+    "kind": "final",
+    "iteration": 50,
+    "agent": null,
+    "content": "`-> ( 'Receive Application (RA)', 'Validate Form (VF)', 'Assess Eligibility (AE)', * ( -> ( 'Request Missing Info (RMI)', 'Validate Form (VF)' ), 'tau' ), 'Approval Decision (AD)', 'Send Confirmation (SC)', 'Archive Case (AC)' )`"
+  }
+]

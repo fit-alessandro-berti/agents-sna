@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "`-> ( -> ( 'RA', -> ( 'VF', -> ( 'AE', X( 'AD', -> ( * ( 'RMI', 'VF' ), 'AD' ) ) ) ) ), -> ( 'SC', 'AC' ) )`"
+  }
+]

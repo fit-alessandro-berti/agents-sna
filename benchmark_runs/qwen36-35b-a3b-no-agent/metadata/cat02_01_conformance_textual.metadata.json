@@ -1,0 +1,13 @@
+{
+  "run_name": "qwen36-35b-a3b-no-agent",
+  "question": "cat02_01_conformance_textual.txt",
+  "status": "completed",
+  "error": null,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "config": "configs\\no_agents.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen36-35b-a3b-no-agent_cat02_01_conformance_textual.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-no-agent\\requests\\cat02_01_conformance_textual.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-no-agent\\responses\\cat02_01_conformance_textual.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-no-agent\\traces\\cat02_01_conformance_textual.trace.json",
+  "final_answer_length": 2534
+}

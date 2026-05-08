@@ -1,0 +1,13 @@
+{
+  "run_name": "qwen36-35b-a3b-artifact-pipeline",
+  "question": "cat07_04_causal_net.png",
+  "status": "completed",
+  "error": null,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen36-35b-a3b-artifact-pipeline_cat07_04_causal_net.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat07_04_causal_net.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat07_04_causal_net.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\traces\\cat07_04_causal_net.trace.json",
+  "final_answer_length": 3969
+}
