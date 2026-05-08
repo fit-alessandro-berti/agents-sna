@@ -1,0 +1,13 @@
+{
+  "run_name": "qwen36-35b-a3b-ver-heavy-excl",
+  "question": "cat02_08_underfitting_process_tree.txt",
+  "status": "completed",
+  "error": null,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "config": "configs\\pm_benchmark_verification_heavy_excluding_low_edges.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\qwen36-35b-a3b-ver-heavy-excl_cat02_08_underfitting_process_tree.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_08_underfitting_process_tree.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_08_underfitting_process_tree.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\traces\\cat02_08_underfitting_process_tree.trace.json",
+  "final_answer_length": 2135
+}

@@ -1,0 +1,245 @@
+{
+  "source_dir": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4",
+  "files_processed": 57,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 3.210526315789474,
+    "stddev": 1.0552598766191275
+  },
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 57,
+      "average": 5.482456140350878,
+      "stddev": 2.045973607469631
+    },
+    {
+      "agent_type": "START",
+      "count": 57,
+      "average": 7.378947368421053,
+      "stddev": 0.6957860232947862
+    },
+    {
+      "agent_type": "artifact_parser",
+      "count": 22,
+      "average": 6.504545454545454,
+      "stddev": 1.6926249847036334
+    },
+    {
+      "agent_type": "benchmark_answer_judge",
+      "count": 4,
+      "average": 5.0249999999999995,
+      "stddev": 1.0449282272003184
+    },
+    {
+      "agent_type": "bias_and_impact_auditor",
+      "count": 7,
+      "average": 6.371428571428572,
+      "stddev": 1.3791449584168194
+    },
+    {
+      "agent_type": "counterexample_hunter",
+      "count": 16,
+      "average": 6.48125,
+      "stddev": 2.306571793268096
+    },
+    {
+      "agent_type": "data_consistency_auditor",
+      "count": 10,
+      "average": 4.85,
+      "stddev": 1.4087228258248674
+    },
+    {
+      "agent_type": "domain_reasoner",
+      "count": 57,
+      "average": 5.178947368421053,
+      "stddev": 1.4940509916502078
+    },
+    {
+      "agent_type": "formal_semantics_checker",
+      "count": 10,
+      "average": 3.5,
+      "stddev": 1.820988742414406
+    }
+  ],
+  "edges": [
+    {
+      "source": "START",
+      "target": "artifact_parser",
+      "count": 22,
+      "average": 6.504545454545454,
+      "stddev": 1.6926249847036334
+    },
+    {
+      "source": "START",
+      "target": "bias_and_impact_auditor",
+      "count": 3,
+      "average": 6.7,
+      "stddev": 0.648074069840786
+    },
+    {
+      "source": "START",
+      "target": "counterexample_hunter",
+      "count": 1,
+      "average": 8.9,
+      "stddev": 0.0
+    },
+    {
+      "source": "START",
+      "target": "domain_reasoner",
+      "count": 31,
+      "average": 5.496774193548387,
+      "stddev": 1.2860251015880957
+    },
+    {
+      "source": "artifact_parser",
+      "target": "COMPLETE",
+      "count": 2,
+      "average": 7.9,
+      "stddev": 0.10000000000000009
+    },
+    {
+      "source": "artifact_parser",
+      "target": "bias_and_impact_auditor",
+      "count": 1,
+      "average": 8.4,
+      "stddev": 0.0
+    },
+    {
+      "source": "artifact_parser",
+      "target": "domain_reasoner",
+      "count": 19,
+      "average": 4.678947368421053,
+      "stddev": 1.387758111551608
+    },
+    {
+      "source": "benchmark_answer_judge",
+      "target": "COMPLETE",
+      "count": 4,
+      "average": 5.375,
+      "stddev": 1.9253246479490151
+    },
+    {
+      "source": "bias_and_impact_auditor",
+      "target": "COMPLETE",
+      "count": 4,
+      "average": 5.85,
+      "stddev": 0.6576473218982954
+    },
+    {
+      "source": "bias_and_impact_auditor",
+      "target": "benchmark_answer_judge",
+      "count": 1,
+      "average": 4.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "bias_and_impact_auditor",
+      "target": "data_consistency_auditor",
+      "count": 2,
+      "average": 6.0,
+      "stddev": 1.0999999999999996
+    },
+    {
+      "source": "counterexample_hunter",
+      "target": "COMPLETE",
+      "count": 7,
+      "average": 6.1000000000000005,
+      "stddev": 2.3397191528655132
+    },
+    {
+      "source": "counterexample_hunter",
+      "target": "benchmark_answer_judge",
+      "count": 3,
+      "average": 5.333333333333333,
+      "stddev": 1.0370899457402698
+    },
+    {
+      "source": "counterexample_hunter",
+      "target": "domain_reasoner",
+      "count": 6,
+      "average": 5.516666666666667,
+      "stddev": 2.047288179248073
+    },
+    {
+      "source": "data_consistency_auditor",
+      "target": "COMPLETE",
+      "count": 8,
+      "average": 5.1,
+      "stddev": 1.325707358356285
+    },
+    {
+      "source": "data_consistency_auditor",
+      "target": "counterexample_hunter",
+      "count": 1,
+      "average": 5.4,
+      "stddev": 0.0
+    },
+    {
+      "source": "data_consistency_auditor",
+      "target": "domain_reasoner",
+      "count": 1,
+      "average": 2.8,
+      "stddev": 0.0
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "COMPLETE",
+      "count": 25,
+      "average": 5.54,
+      "stddev": 2.178623418583395
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "bias_and_impact_auditor",
+      "count": 2,
+      "average": 4.5,
+      "stddev": 0.20000000000000018
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "counterexample_hunter",
+      "count": 12,
+      "average": 6.7250000000000005,
+      "stddev": 2.3541187310753893
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "data_consistency_auditor",
+      "count": 8,
+      "average": 4.5625,
+      "stddev": 1.3284742187938763
+    },
+    {
+      "source": "domain_reasoner",
+      "target": "formal_semantics_checker",
+      "count": 10,
+      "average": 3.5,
+      "stddev": 1.820988742414406
+    },
+    {
+      "source": "formal_semantics_checker",
+      "target": "COMPLETE",
+      "count": 7,
+      "average": 4.257142857142857,
+      "stddev": 1.8623005303403966
+    },
+    {
+      "source": "formal_semantics_checker",
+      "target": "bias_and_impact_auditor",
+      "count": 1,
+      "average": 7.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "formal_semantics_checker",
+      "target": "counterexample_hunter",
+      "count": 2,
+      "average": 4.35,
+      "stddev": 0.95
+    }
+  ]
+}

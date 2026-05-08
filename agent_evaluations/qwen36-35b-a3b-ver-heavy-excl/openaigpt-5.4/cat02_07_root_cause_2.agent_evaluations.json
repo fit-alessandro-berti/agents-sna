@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first pick: parse before analysis"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; minor overinterpretation"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.6,
+    "explanation": "Useful, but overclaims on resource/region"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 4.7,
+    "explanation": "Some value, but speculative fairness claims"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.9,
+    "explanation": "Checks data, but adds unsupported causality"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.8,
+    "explanation": "Covers task, but too certain from tiny log"
+  }
+]

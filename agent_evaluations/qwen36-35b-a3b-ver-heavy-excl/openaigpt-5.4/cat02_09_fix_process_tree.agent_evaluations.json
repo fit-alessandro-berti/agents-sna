@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first pick; no parsing/check step"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Useful but overconstrains receipts order"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.8,
+    "explanation": "Found key flaw; strong corrected structure"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 9.1,
+    "explanation": "Accurate, grounded, semantically coherent fix"
+  }
+]

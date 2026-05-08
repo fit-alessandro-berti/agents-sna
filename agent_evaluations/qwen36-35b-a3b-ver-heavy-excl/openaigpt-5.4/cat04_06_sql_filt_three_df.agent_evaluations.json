@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first expert selection"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Usable SQL, but tie/order claims overreach"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.3,
+    "explanation": "Strong edge-case critique; helpful fix"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.6,
+    "explanation": "Clear, but keeps flawed tie-break heuristic"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.2,
+    "explanation": "Final answer excludes NULL cases incorrectly"
+  }
+]

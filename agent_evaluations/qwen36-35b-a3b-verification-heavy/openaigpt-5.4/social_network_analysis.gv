@@ -1,0 +1,74 @@
+digraph social_network_analysis {
+  graph [
+    rankdir="TB",
+    bgcolor="transparent",
+    margin="0.03",
+    pad="0.02",
+    nodesep="0.22",
+    ranksep="0.32",
+    splines="polyline",
+    concentrate="true",
+    outputorder="edgesfirst",
+    ordering="out"
+  ];
+  node [
+    shape="box",
+    style="rounded,filled",
+    fontname="Helvetica-Bold",
+    fontsize="9",
+    margin="0.045,0.035",
+    penwidth="0.8",
+    color="#666666"
+  ];
+  edge [
+    fontname="Helvetica-Bold",
+    fontsize="6.8",
+    arrowsize="0.55",
+    fontcolor="#333333"
+  ];
+
+  "START" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>START</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=57</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=7,5 std=0,7</B></FONT></TD></TR></TABLE>>, fillcolor="#c6deb6"];
+  "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>COMPLETE</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=57</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=5,3 std=1,7</B></FONT></TD></TR></TABLE>>, fillcolor="#f7edc3"];
+  "domain_reasoner" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>domain<BR/>reasoner</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=54</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=5,1 std=1,7</B></FONT></TD></TR></TABLE>>, fillcolor="#fcefc4"];
+  "artifact_parser" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>artifact<BR/>parser</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=26</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=6,2 std=1,5</B></FONT></TD></TR></TABLE>>, fillcolor="#e4e7be"];
+  "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>benchmark<BR/>answer<BR/>judge</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=26</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=5,1 std=2,1</B></FONT></TD></TR></TABLE>>, fillcolor="#fdefc4"];
+  "formal_semantics_checker" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>formal<BR/>semantics<BR/>checker</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=12</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=5,4 std=2,2</B></FONT></TD></TR></TABLE>>, fillcolor="#f5ecc2"];
+  "counterexample_hunter" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>counterexample<BR/>hunter</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=9</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=5,6 std=2,8</B></FONT></TD></TR></TABLE>>, fillcolor="#f2ecc2"];
+  "data_consistency_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>data<BR/>consistency<BR/>auditor</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=8</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=5,5 std=1,6</B></FONT></TD></TR></TABLE>>, fillcolor="#f4ecc2"];
+  "bias_and_impact_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD><B>bias<BR/>and<BR/>impact<BR/>auditor</B></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>f=6</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="7"><B>mu=5,8 std=1,8</B></FONT></TD></TR></TABLE>>, fillcolor="#eceac0"];
+
+  "START" -> "domain_reasoner" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=28</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,7 std=1,5</B></FONT></TD></TR></TABLE>>, color="#e0d783", fontcolor="#e0d783", penwidth="4.50"];
+  "START" -> "artifact_parser" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=26</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,2 std=1,5</B></FONT></TD></TR></TABLE>>, color="#c8cf7d", fontcolor="#c8cf7d", penwidth="4.24"];
+  "benchmark_answer_judge" -> "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=23</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,6 std=1,8</B></FONT></TD></TR></TABLE>>, color="#e1d784", fontcolor="#e1d784", penwidth="3.86"];
+  "artifact_parser" -> "domain_reasoner" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=18</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=4,8 std=1,5</B></FONT></TD></TR></TABLE>>, color="#fcd786", fontcolor="#fcd786", penwidth="3.21"];
+  "domain_reasoner" -> "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=16</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,0 std=2,0</B></FONT></TD></TR></TABLE>>, color="#fde08b", fontcolor="#fde08b", penwidth="2.96"];
+  "domain_reasoner" -> "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=16</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=4,5 std=1,7</B></FONT></TD></TR></TABLE>>, color="#facf81", fontcolor="#facf81", penwidth="2.96"];
+  "domain_reasoner" -> "formal_semantics_checker" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=9</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,3 std=2,2</B></FONT></TD></TR></TABLE>>, color="#f1dc88", fontcolor="#f1dc88", penwidth="2.06"];
+  "domain_reasoner" -> "counterexample_hunter" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=7</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,6 std=2,2</B></FONT></TD></TR></TABLE>>, color="#b4c978", fontcolor="#b4c978", penwidth="1.80"];
+  "formal_semantics_checker" -> "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=5</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,2 std=1,6</B></FONT></TD></TR></TABLE>>, color="#f3dd88", fontcolor="#f3dd88", penwidth="1.54"];
+  "data_consistency_auditor" -> "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=4</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,9 std=1,1</B></FONT></TD></TR></TABLE>>, color="#d4d380", fontcolor="#d4d380", penwidth="1.41"];
+  "counterexample_hunter" -> "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=4</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,4 std=1,5</B></FONT></TD></TR></TABLE>>, color="#ecda86", fontcolor="#ecda86", penwidth="1.41"];
+  "domain_reasoner" -> "data_consistency_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=4</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,2 std=1,5</B></FONT></TD></TR></TABLE>>, color="#f7de89", fontcolor="#f7de89", penwidth="1.41"];
+  "formal_semantics_checker" -> "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=3</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,4 std=1,8</B></FONT></TD></TR></TABLE>>, color="#c0cc7b", fontcolor="#c0cc7b", penwidth="1.29"];
+  "START" -> "bias_and_impact_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=3</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,2 std=0,8</B></FONT></TD></TR></TABLE>>, color="#c7cf7d", fontcolor="#c7cf7d", penwidth="1.29"];
+  "artifact_parser" -> "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=3</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,2 std=1,3</B></FONT></TD></TR></TABLE>>, color="#c7cf7d", fontcolor="#c7cf7d", penwidth="1.29"];
+  "counterexample_hunter" -> "domain_reasoner" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=3</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=4,1 std=2,3</B></FONT></TD></TR></TABLE>>, color="#f7c079", fontcolor="#f7c079", penwidth="1.29"];
+  "formal_semantics_checker" -> "domain_reasoner" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=3</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=3,4 std=1,1</B></FONT></TD></TR></TABLE>>, color="#f1a76a", fontcolor="#f1a76a", penwidth="1.29"];
+  "domain_reasoner" -> "bias_and_impact_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=2</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,9 std=0,9</B></FONT></TD></TR></TABLE>>, color="#a5c474", fontcolor="#a5c474", penwidth="1.16"];
+  "bias_and_impact_auditor" -> "data_consistency_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=2</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,8 std=1,6</B></FONT></TD></TR></TABLE>>, color="#acc676", fontcolor="#acc676", penwidth="1.16"];
+  "artifact_parser" -> "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=2</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=6,8 std=1,9</B></FONT></TD></TR></TABLE>>, color="#aec776", fontcolor="#aec776", penwidth="1.16"];
+  "bias_and_impact_auditor" -> "COMPLETE" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=2</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,8 std=1,2</B></FONT></TD></TR></TABLE>>, color="#d7d481", fontcolor="#d7d481", penwidth="1.16"];
+  "data_consistency_auditor" -> "formal_semantics_checker" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=2</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=4,4 std=0,4</B></FONT></TD></TR></TABLE>>, color="#f9cb7f", fontcolor="#f9cb7f", penwidth="1.16"];
+  "counterexample_hunter" -> "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=2</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=3,9 std=1,9</B></FONT></TD></TR></TABLE>>, color="#f5b975", fontcolor="#f5b975", penwidth="1.16"];
+  "artifact_parser" -> "formal_semantics_checker" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=8,7 std=0,0</B></FONT></TD></TR></TABLE>>, color="#55ab5f", fontcolor="#55ab5f", penwidth="1.03"];
+  "benchmark_answer_judge" -> "domain_reasoner" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=7,0 std=0,0</B></FONT></TD></TR></TABLE>>, color="#a3c373", fontcolor="#a3c373", penwidth="1.03"];
+  "bias_and_impact_auditor" -> "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,6 std=0,0</B></FONT></TD></TR></TABLE>>, color="#e3d784", fontcolor="#e3d784", penwidth="1.03"];
+  "artifact_parser" -> "data_consistency_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=5,4 std=0,0</B></FONT></TD></TR></TABLE>>, color="#ecda86", fontcolor="#ecda86", penwidth="1.03"];
+  "benchmark_answer_judge" -> "data_consistency_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=4,2 std=0,0</B></FONT></TD></TR></TABLE>>, color="#f8c47b", fontcolor="#f8c47b", penwidth="1.03"];
+  "benchmark_answer_judge" -> "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=3,0 std=0,0</B></FONT></TD></TR></TABLE>>, color="#ee9a63", fontcolor="#ee9a63", penwidth="1.03"];
+  "formal_semantics_checker" -> "counterexample_hunter" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=2,4 std=0,0</B></FONT></TD></TR></TABLE>>, color="#ea8457", fontcolor="#ea8457", penwidth="1.03"];
+  "artifact_parser" -> "bias_and_impact_auditor" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=2,3 std=0,0</B></FONT></TD></TR></TABLE>>, color="#e98155", fontcolor="#e98155", penwidth="1.03"];
+  "data_consistency_auditor" -> "benchmark_answer_judge" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=2,2 std=0,0</B></FONT></TD></TR></TABLE>>, color="#e87d53", fontcolor="#e87d53", penwidth="1.03"];
+  "bias_and_impact_auditor" -> "domain_reasoner" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=2,0 std=0,0</B></FONT></TD></TR></TABLE>>, color="#e7764f", fontcolor="#e7764f", penwidth="1.03"];
+  "data_consistency_auditor" -> "counterexample_hunter" [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0"><TR><TD><FONT POINT-SIZE="6.8"><B>f=1</B></FONT></TD></TR><TR><TD><FONT POINT-SIZE="6.8"><B>mu=1,2 std=0,0</B></FONT></TD></TR></TABLE>>, color="#e05a3f", fontcolor="#e05a3f", penwidth="1.03"];
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first-agent choice, little substance"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.7,
+    "explanation": "Useful start, but major flow/preemption errors"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.6,
+    "explanation": "Sharp corrections; caught key modeling flaws"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.2,
+    "explanation": "Some fixes, but still inconsistent and vague"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.4,
+    "explanation": "Final answer retains serious process-order errors"
+  }
+]

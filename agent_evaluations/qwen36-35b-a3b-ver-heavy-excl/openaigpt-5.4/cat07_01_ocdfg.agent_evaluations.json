@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first parser choice; limited value"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.3,
+    "explanation": "Invents many specifics; weak grounding"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.1,
+    "explanation": "Useful framing but many unsupported claims"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 1.7,
+    "explanation": "Speculative loop/dropoff claims, ungrounded"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.0,
+    "explanation": "Final answer compounds prior hallucinations"
+  }
+]

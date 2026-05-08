@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.2,
+    "explanation": "Reasonable first pick; no parsing step"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.8,
+    "explanation": "Useful draft but many unsupported assumptions"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.3,
+    "explanation": "Checks syntax, misses key semantic errors"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.2,
+    "explanation": "Semantically inconsistent final skeleton"
+  }
+]

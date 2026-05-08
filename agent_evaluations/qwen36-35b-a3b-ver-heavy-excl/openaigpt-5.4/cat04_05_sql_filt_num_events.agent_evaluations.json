@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first agent choice; no parsing check"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.9,
+    "explanation": "Correct SQL; unsupported efficiency claims"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.8,
+    "explanation": "Validates core logic; misses overclaims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.2,
+    "explanation": "Final answer correct but adds weak claims"
+  }
+]

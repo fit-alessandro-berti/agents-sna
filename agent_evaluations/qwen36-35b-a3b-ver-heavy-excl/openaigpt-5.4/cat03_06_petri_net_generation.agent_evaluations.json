@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first pick; sensible routing."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.2,
+    "explanation": "Useful draft, but invalid place→place arc."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.4,
+    "explanation": "Missed critical structural error."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 5.3,
+    "explanation": "Caught arc bug, but dropped CL in final flow."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.4,
+    "explanation": "Valid net, but II loop semantics are dubious."
+  }
+]

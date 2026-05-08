@@ -1,0 +1,21 @@
+{
+  "source_dir": "agent_evaluations\\qwen36-35b-a3b-no-agent\\openaigpt-5.4",
+  "files_processed": 57,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 0.0,
+    "stddev": 0.0
+  },
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 57,
+      "average": 6.37719298245614,
+      "stddev": 1.985475111628983
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 3.4,
+    "explanation": "Useful extraction, but many DECLARE semantics wron"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.3,
+    "explanation": "Builds on false semantics; major hallucinated flow"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.1,
+    "explanation": "Catches one issue, but keeps key semantic errors"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.0,
+    "explanation": "Final answer is largely semantically incorrect"
+  }
+]

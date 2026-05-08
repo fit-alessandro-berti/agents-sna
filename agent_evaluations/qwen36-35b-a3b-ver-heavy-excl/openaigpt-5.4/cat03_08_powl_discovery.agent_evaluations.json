@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.2,
+    "explanation": "Reasonable first pick; no parser/check first"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.3,
+    "explanation": "Useful draft, but missed Case 3 IQC pattern"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.1,
+    "explanation": "Approved a wrong model; missed key mismatch"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.4,
+    "explanation": "Found flaw, but proposed invalid loop fix"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.0,
+    "explanation": "Final model uses wrong LOOP semantics"
+  }
+]

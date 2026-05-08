@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.2,
+    "explanation": "Reasonable first pick, but no parsing step"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Useful log, but wrong pick aggregation"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.4,
+    "explanation": "Clear final table, repeats flawed assumptions"
+  }
+]

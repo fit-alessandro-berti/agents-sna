@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.4,
+    "explanation": "Reasonable first pick, but skipped parsing step"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.3,
+    "explanation": "Many DECLARE semantics errors; misleading"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.0,
+    "explanation": "Final answer repeats major semantic mistakes"
+  }
+]

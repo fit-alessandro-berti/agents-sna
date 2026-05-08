@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first pick; domain expert was apt."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.1,
+    "explanation": "Useful baseline; string key flaw, tie issue."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.7,
+    "explanation": "Strong edge cases; exposed key defects."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.2,
+    "explanation": "Substantive fix; still timestamp ambiguity."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.6,
+    "explanation": "Mostly rubber-stamps; misses open caveats."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Solid final query; minor unsupported claims."
+  }
+]

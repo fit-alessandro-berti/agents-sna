@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first agent choice"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Useful tree, but loop semantics are flawed"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.3,
+    "explanation": "Approved a semantically questionable loop"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.1,
+    "explanation": "Final answer inherits loop modeling issue"
+  }
+]

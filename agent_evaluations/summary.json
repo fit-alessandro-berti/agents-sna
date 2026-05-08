@@ -2,346 +2,346 @@
   "judge_model": "openai/gpt-5.4",
   "evaluated_files": [
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_01_case_id_inference.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_01_case_id_inference.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_01_case_id_inference.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_01_case_id_inference.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_01_case_id_inference.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_01_case_id_inference.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_02_activity_context.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_02_activity_context.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_02_activity_context.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_02_activity_context.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_02_activity_context.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_02_activity_context.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_03_high_level_events.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_03_high_level_events.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_03_high_level_events.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_03_high_level_events.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_03_high_level_events.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_03_high_level_events.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_04_sensor_recordings.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_04_sensor_recordings.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_04_sensor_recordings.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_04_sensor_recordings.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_04_sensor_recordings.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_04_sensor_recordings.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_05_merge_two_logs.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_05_merge_two_logs.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_05_merge_two_logs.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_05_merge_two_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_05_merge_two_logs.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_05_merge_two_logs.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_06_system_logs.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_06_system_logs.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_06_system_logs.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_06_system_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_06_system_logs.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_06_system_logs.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_07_interv_to_pseudo_bpmn.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_07_interv_to_pseudo_bpmn.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_07_interv_to_pseudo_bpmn.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_07_interv_to_pseudo_bpmn.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_07_interv_to_pseudo_bpmn.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_07_interv_to_pseudo_bpmn.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat01_08_tables_to_log.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat01_08_tables_to_log.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat01_08_tables_to_log.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat01_08_tables_to_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat01_08_tables_to_log.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat01_08_tables_to_log.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_01_conformance_textual.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_01_conformance_textual.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_01_conformance_textual.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_01_conformance_textual.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_01_conformance_textual.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_01_conformance_textual.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_02_conf_desiderata.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_02_conf_desiderata.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_02_conf_desiderata.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_02_conf_desiderata.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_02_conf_desiderata.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_02_conf_desiderata.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_03_anomaly_event_log.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_03_anomaly_event_log.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_03_anomaly_event_log.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_03_anomaly_event_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_03_anomaly_event_log.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_03_anomaly_event_log.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_04_powl_anomaly_detection.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_04_powl_anomaly_detection.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_04_powl_anomaly_detection.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_04_powl_anomaly_detection.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_04_powl_anomaly_detection.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_04_powl_anomaly_detection.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_05_two_powls_anomalies.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_05_two_powls_anomalies.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_05_two_powls_anomalies.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_05_two_powls_anomalies.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_05_two_powls_anomalies.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_05_two_powls_anomalies.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_06_root_cause_1.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_06_root_cause_1.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_06_root_cause_1.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_06_root_cause_1.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_06_root_cause_1.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_06_root_cause_1.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_07_root_cause_2.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_07_root_cause_2.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_07_root_cause_2.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_07_root_cause_2.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_07_root_cause_2.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_07_root_cause_2.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_08_underfitting_process_tree.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_08_underfitting_process_tree.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_08_underfitting_process_tree.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_08_underfitting_process_tree.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_08_underfitting_process_tree.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_08_underfitting_process_tree.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat02_09_fix_process_tree.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat02_09_fix_process_tree.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat02_09_fix_process_tree.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat02_09_fix_process_tree.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat02_09_fix_process_tree.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat02_09_fix_process_tree.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_01_process_tree_generation.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_01_process_tree_generation.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_01_process_tree_generation.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_01_process_tree_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_01_process_tree_generation.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_01_process_tree_generation.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_02_powl_generation.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_02_powl_generation.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_02_powl_generation.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_02_powl_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_02_powl_generation.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_02_powl_generation.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_03_log_skeleton_generation.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_03_log_skeleton_generation.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_03_log_skeleton_generation.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_03_log_skeleton_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_03_log_skeleton_generation.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_03_log_skeleton_generation.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_04_declare_generation.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_04_declare_generation.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_04_declare_generation.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_04_declare_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_04_declare_generation.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_04_declare_generation.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_05_temp_profile_generation.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_05_temp_profile_generation.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_05_temp_profile_generation.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_05_temp_profile_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_05_temp_profile_generation.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_05_temp_profile_generation.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_06_petri_net_generation.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_06_petri_net_generation.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_06_petri_net_generation.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_06_petri_net_generation.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_06_petri_net_generation.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_06_petri_net_generation.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_07_process_tree_discovery.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_07_process_tree_discovery.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_07_process_tree_discovery.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_07_process_tree_discovery.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_07_process_tree_discovery.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_07_process_tree_discovery.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat03_08_powl_discovery.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat03_08_powl_discovery.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat03_08_powl_discovery.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat03_08_powl_discovery.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat03_08_powl_discovery.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat03_08_powl_discovery.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_01_pseudo_bpmn_description.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_01_pseudo_bpmn_description.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat04_01_pseudo_bpmn_description.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat04_01_pseudo_bpmn_description.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat04_01_pseudo_bpmn_description.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat04_01_pseudo_bpmn_description.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_02_pseudo_bpmn_open_question.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_02_pseudo_bpmn_open_question.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat04_02_pseudo_bpmn_open_question.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat04_02_pseudo_bpmn_open_question.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat04_02_pseudo_bpmn_open_question.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat04_02_pseudo_bpmn_open_question.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_03_declare_open_question.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_03_declare_open_question.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat04_03_declare_open_question.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat04_03_declare_open_question.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat04_03_declare_open_question.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat04_03_declare_open_question.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_04_declare_description.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_04_declare_description.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat04_04_declare_description.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat04_04_declare_description.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat04_04_declare_description.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat04_04_declare_description.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_05_sql_filt_num_events.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_05_sql_filt_num_events.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat04_05_sql_filt_num_events.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat04_05_sql_filt_num_events.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat04_05_sql_filt_num_events.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat04_05_sql_filt_num_events.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_06_sql_filt_three_df.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_06_sql_filt_three_df.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat04_06_sql_filt_three_df.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat04_06_sql_filt_three_df.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat04_06_sql_filt_three_df.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat04_06_sql_filt_three_df.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat04_07_sql_filt_top_k_vars.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat04_07_sql_filt_top_k_vars.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat04_07_sql_filt_top_k_vars.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat04_07_sql_filt_top_k_vars.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat04_07_sql_filt_top_k_vars.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat04_07_sql_filt_top_k_vars.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat05_01_hyp_generation_log.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat05_01_hyp_generation_log.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat05_01_hyp_generation_log.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat05_01_hyp_generation_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat05_01_hyp_generation_log.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat05_01_hyp_generation_log.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat05_02_hyp_gen_powl.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat05_02_hyp_gen_powl.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat05_02_hyp_gen_powl.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat05_02_hyp_gen_powl.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat05_02_hyp_gen_powl.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat05_02_hyp_gen_powl.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat05_03_hyp_gen_declare.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat05_03_hyp_gen_declare.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat05_03_hyp_gen_declare.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat05_03_hyp_gen_declare.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat05_03_hyp_gen_declare.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat05_03_hyp_gen_declare.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat05_04_hyp_gen_temp_profile.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat05_04_hyp_gen_temp_profile.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat05_04_hyp_gen_temp_profile.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat05_04_hyp_gen_temp_profile.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat05_04_hyp_gen_temp_profile.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat05_04_hyp_gen_temp_profile.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat05_05_question_gen_nlp.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat05_05_question_gen_nlp.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat05_05_question_gen_nlp.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat05_05_question_gen_nlp.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat05_05_question_gen_nlp.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat05_05_question_gen_nlp.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat05_06_question_pseudo_bpmn.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat05_06_question_pseudo_bpmn.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat05_06_question_pseudo_bpmn.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat05_06_question_pseudo_bpmn.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat05_06_question_pseudo_bpmn.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat05_06_question_pseudo_bpmn.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat05_07_question_interview.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat05_07_question_interview.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat05_07_question_interview.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat05_07_question_interview.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat05_07_question_interview.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat05_07_question_interview.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat06_01_bias_text.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat06_01_bias_text.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat06_01_bias_text.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat06_01_bias_text.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat06_01_bias_text.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat06_01_bias_text.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat06_02_bias_event_log.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat06_02_bias_event_log.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat06_02_bias_event_log.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat06_02_bias_event_log.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat06_02_bias_event_log.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat06_02_bias_event_log.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat06_03_bias_powl.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat06_03_bias_powl.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat06_03_bias_powl.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat06_03_bias_powl.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat06_03_bias_powl.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat06_03_bias_powl.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat06_04_bias_two_logs.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat06_04_bias_two_logs.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat06_04_bias_two_logs.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat06_04_bias_two_logs.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat06_04_bias_two_logs.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat06_04_bias_two_logs.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat06_05_bias_two_logs_2.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat06_05_bias_two_logs_2.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat06_05_bias_two_logs_2.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat06_05_bias_two_logs_2.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat06_05_bias_two_logs_2.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat06_05_bias_two_logs_2.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat06_06_bias_mitigation_declare.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat06_06_bias_mitigation_declare.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat06_06_bias_mitigation_declare.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat06_06_bias_mitigation_declare.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat06_06_bias_mitigation_declare.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat06_06_bias_mitigation_declare.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat06_07_fair_unfair_powl.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat06_07_fair_unfair_powl.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat06_07_fair_unfair_powl.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat06_07_fair_unfair_powl.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat06_07_fair_unfair_powl.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat06_07_fair_unfair_powl.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat07_01_ocdfg.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat07_01_ocdfg.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat07_01_ocdfg.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat07_01_ocdfg.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat07_01_ocdfg.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat07_01_ocdfg.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat07_02_bpmn_orders.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat07_02_bpmn_orders.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat07_02_bpmn_orders.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat07_02_bpmn_orders.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat07_02_bpmn_orders.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat07_02_bpmn_orders.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat07_03_bpmn_dispatch.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat07_03_bpmn_dispatch.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat07_03_bpmn_dispatch.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat07_03_bpmn_dispatch.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat07_03_bpmn_dispatch.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat07_03_bpmn_dispatch.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat07_04_causal_net.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat07_04_causal_net.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat07_04_causal_net.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat07_04_causal_net.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat07_04_causal_net.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat07_04_causal_net.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat07_05_proclets.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat07_05_proclets.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat07_05_proclets.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat07_05_proclets.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat07_05_proclets.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat07_05_proclets.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat07_06_perf_spectrum.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat07_06_perf_spectrum.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat07_06_perf_spectrum.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat07_06_perf_spectrum.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat07_06_perf_spectrum.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat07_06_perf_spectrum.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat08_01_queue_mining.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat08_01_queue_mining.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat08_01_queue_mining.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat08_01_queue_mining.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat08_01_queue_mining.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat08_01_queue_mining.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat08_02_instance_spanning.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat08_02_instance_spanning.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat08_02_instance_spanning.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat08_02_instance_spanning.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat08_02_instance_spanning.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat08_02_instance_spanning.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat08_03_transport_opt.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat08_03_transport_opt.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat08_03_transport_opt.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat08_03_transport_opt.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat08_03_transport_opt.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat08_03_transport_opt.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat08_04_resource_assign.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat08_04_resource_assign.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat08_04_resource_assign.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat08_04_resource_assign.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat08_04_resource_assign.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat08_04_resource_assign.agent_evaluations.json",
+      "status": "completed"
     },
     {
-      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\requests\\cat08_05_task_schedul.requests.json",
-      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-artifact-pipeline\\responses\\cat08_05_task_schedul.responses.json",
-      "output_path": "agent_evaluations\\qwen36-35b-a3b-artifact-pipeline\\openaigpt-5.4\\cat08_05_task_schedul.agent_evaluations.json",
-      "status": "skipped_existing"
+      "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\requests\\cat08_05_task_schedul.requests.json",
+      "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\qwen36-35b-a3b-ver-heavy-excl\\responses\\cat08_05_task_schedul.responses.json",
+      "output_path": "agent_evaluations\\qwen36-35b-a3b-ver-heavy-excl\\openaigpt-5.4\\cat08_05_task_schedul.agent_evaluations.json",
+      "status": "completed"
     }
   ]
 }

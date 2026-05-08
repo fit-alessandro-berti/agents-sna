@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Sensible first routing to parser"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.6,
+    "explanation": "Accurate extraction; minor overclaim on semantics"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.2,
+    "explanation": "Useful, but major edge error in model2"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Answers task, but repeats model2 edge hallucinatio"
+  }
+]

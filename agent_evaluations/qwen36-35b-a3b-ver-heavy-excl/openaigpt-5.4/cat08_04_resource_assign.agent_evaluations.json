@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first pick, but no artifact parsing"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.1,
+    "explanation": "Strong PM framing; some unsupported quant claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Useful final, but adds causal/quant claims"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Reasonable first expert choice; limited by no pars"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 6.1,
+    "explanation": "Useful bias read, but overclaims threshold logic"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.3,
+    "explanation": "Answers prompt, but unsupported causal inferences"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first choice; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.4,
+    "explanation": "Useful extraction, but injects unsupported BPMN"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.3,
+    "explanation": "Adds rigor, but drifts into analytics/hallucinatio"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.6,
+    "explanation": "Overstates correctness; misses major defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.8,
+    "explanation": "Structured final, but several unsupported choices"
+  }
+]

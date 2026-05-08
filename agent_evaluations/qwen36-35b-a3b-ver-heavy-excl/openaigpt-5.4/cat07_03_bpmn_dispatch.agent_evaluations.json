@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first routing; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.2,
+    "explanation": "Useful parse, but several BPMN assumptions/errors"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.1,
+    "explanation": "Off-task PM analysis, not image description"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Descriptive core OK, but adds off-task analytics"
+  }
+]

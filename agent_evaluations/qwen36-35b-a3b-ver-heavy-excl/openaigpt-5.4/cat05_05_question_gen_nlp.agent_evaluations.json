@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.7,
+    "explanation": "Reasonable first routing, but skipped parsing."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.1,
+    "explanation": "Useful but overfits to process-mining framing."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.2,
+    "explanation": "Sharp, grounded risk questions improved final set."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.0,
+    "explanation": "Strong 20 questions; slightly narrower than prompt"
+  }
+]
