@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing; apt expert chosen"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 6.4,
+    "explanation": "Useful fix, but one invalid example, some overclai"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.1,
+    "explanation": "Overpraised; repeats flaws, adds shaky claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.8,
+    "explanation": "Mostly correct final, but repeats inaccuracies"
+  }
+]

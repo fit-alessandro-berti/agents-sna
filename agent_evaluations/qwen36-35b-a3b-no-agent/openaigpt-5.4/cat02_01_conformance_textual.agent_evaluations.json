@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.8,
+    "explanation": "Correct cases, grounded; misses ambiguity nuance"
+  }
+]

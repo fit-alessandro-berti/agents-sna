@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first pick; parser omitted"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.6,
+    "explanation": "Useful, but several unsupported specifics"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.1,
+    "explanation": "Helpful refinements; adds shaky PM claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.0,
+    "explanation": "Comprehensive, but over-assumptive in places"
+  }
+]

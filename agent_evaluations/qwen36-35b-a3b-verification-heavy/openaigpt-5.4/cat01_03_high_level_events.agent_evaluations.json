@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first agent choice; no deeper planning"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.4,
+    "explanation": "Useful grouping, but overclaims and minor PM drift"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.3,
+    "explanation": "Overpraises; misses defects and hallucinations"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.7,
+    "explanation": "Solid answer, but unsupported claims and extras"
+  }
+]

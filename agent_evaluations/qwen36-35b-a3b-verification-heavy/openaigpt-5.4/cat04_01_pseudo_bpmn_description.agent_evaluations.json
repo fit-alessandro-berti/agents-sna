@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first pick; parser was the right start"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.4,
+    "explanation": "Accurate extraction; some unsupported extras"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.8,
+    "explanation": "Useful but adds assumptions and PM overreach"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.9,
+    "explanation": "Covers prompt well; several unsupported details"
+  }
+]

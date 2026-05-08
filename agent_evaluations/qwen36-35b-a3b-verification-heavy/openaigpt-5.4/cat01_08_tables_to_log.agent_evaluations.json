@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first pick, but skipped parsing/audit"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.1,
+    "explanation": "Strong log build; minor unsupported assumptions"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.4,
+    "explanation": "Useful additions, but dubious audit claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.2,
+    "explanation": "Mostly correct final log; dropped key payment attr"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first routing to domain expert"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.1,
+    "explanation": "Mostly correct; minor overclaims/jargon"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.2,
+    "explanation": "Speculative fraud/proforma claims"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 1.0,
+    "explanation": "No substantive contribution"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Useful core, but adds unsupported claims"
+  }
+]

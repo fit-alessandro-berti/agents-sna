@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Reasonable first agent choice; no parsing first"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.6,
+    "explanation": "Useful core answer; some semantic overclaims"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 3.1,
+    "explanation": "Overpraised draft; missed clear defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.0,
+    "explanation": "Good structure, but still semantically imprecise"
+  }
+]

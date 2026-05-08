@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing to parser; sensible."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.3,
+    "explanation": "Useful extraction, but mislabels model/semantics."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.2,
+    "explanation": "Overinterprets badly; unsupported semantics."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.1,
+    "explanation": "Valuable critique, but too strong/speculative."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.4,
+    "explanation": "Mostly unsupported counterclaims/hallucinations."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.8,
+    "explanation": "Improves answer, but repeats shaky assumptions."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.5,
+    "explanation": "Final answer contains notation errors/speculation."
+  }
+]

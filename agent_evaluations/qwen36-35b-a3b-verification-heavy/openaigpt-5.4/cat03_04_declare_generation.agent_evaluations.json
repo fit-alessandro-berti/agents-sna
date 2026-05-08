@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.2,
+    "explanation": "Reasonable first pick, but no parsing step"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.3,
+    "explanation": "Useful draft, but several unsupported constraints"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.4,
+    "explanation": "Some checks, but endorses dubious semantics"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.2,
+    "explanation": "Major semantic errors and overconstrainting"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.8,
+    "explanation": "Polished but validates incorrect final model"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.6,
+    "explanation": "Final answer is heavily overconstrained/incorrect"
+  }
+]

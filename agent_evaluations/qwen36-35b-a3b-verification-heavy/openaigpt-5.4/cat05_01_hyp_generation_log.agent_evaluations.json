@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parse artifacts."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.6,
+    "explanation": "Useful extraction; overstated strict ordering."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.3,
+    "explanation": "Finds key anomalies; weak causal claims."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.2,
+    "explanation": "Overreaches; invents unsupported causes/physics."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.4,
+    "explanation": "Covers tasks but repeats unsupported assertions."
+  }
+]

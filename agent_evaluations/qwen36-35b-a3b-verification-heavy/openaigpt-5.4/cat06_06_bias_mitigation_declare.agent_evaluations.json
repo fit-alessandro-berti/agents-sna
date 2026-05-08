@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Reasonable first pick; no parsing step first"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.1,
+    "explanation": "Useful draft, but overconstrains and hallucinates"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 3.2,
+    "explanation": "Semantic errors on DECLARE; bad refinement advice"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Valid format, but flawed semantics and claims"
+  }
+]

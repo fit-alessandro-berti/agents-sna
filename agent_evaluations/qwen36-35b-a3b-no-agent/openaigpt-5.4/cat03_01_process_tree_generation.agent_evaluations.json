@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.4,
+    "explanation": "Loop semantics wrong; pm4py build invalid"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parser"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.4,
+    "explanation": "Useful models; missed receive step"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.7,
+    "explanation": "Correct refinement adding start node"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.9,
+    "explanation": "Strong synthesis, clear and faithful"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.6,
+    "explanation": "Solid final answer; minor fidelity gap"
+  }
+]

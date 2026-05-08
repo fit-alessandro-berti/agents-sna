@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good agent choice; relevant but minimal."
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 3.4,
+    "explanation": "Useful structure, but invalid place->place arc."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.9,
+    "explanation": "Final code repeats invalid arc; flawed PM4Py claim"
+  }
+]

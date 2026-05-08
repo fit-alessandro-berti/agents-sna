@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first pick; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.6,
+    "explanation": "Useful extraction, but adds unsupported details"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.8,
+    "explanation": "Structured, but hallucinates GRN and overstates"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.2,
+    "explanation": "Checks some logic, but too lenient and vague"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.0,
+    "explanation": "Semantics review is shallow; adds fake BPMN rigor"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.1,
+    "explanation": "Clear final model, but several unsupported claims"
+  }
+]

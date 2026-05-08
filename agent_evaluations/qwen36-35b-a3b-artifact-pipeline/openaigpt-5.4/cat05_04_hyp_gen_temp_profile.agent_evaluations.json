@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing; mapper was appropriate"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.4,
+    "explanation": "Solid mapping; minor unsupported anomaly claims"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 5.1,
+    "explanation": "Useful SQL, but invents bots and skips edge cases"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 4.3,
+    "explanation": "Not really auditing; adds more unsupported content"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.3,
+    "explanation": "Covers tasks, but SQL is naive on event pairing"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.8,
+    "explanation": "Reasonable first agent; minimal but apt"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 4.2,
+    "explanation": "Useful mapping, but many unsupported specifics"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 2.8,
+    "explanation": "Invents data logic and variants not grounded"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 4.6,
+    "explanation": "Some plausible insights; speculative bottlenecks"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 2.1,
+    "explanation": "Off-task investigation plan, not description"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.0,
+    "explanation": "Readable but inherits key factual/spec errors"
+  }
+]

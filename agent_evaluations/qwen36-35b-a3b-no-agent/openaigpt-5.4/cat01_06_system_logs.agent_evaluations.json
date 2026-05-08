@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.7,
+    "explanation": "Useful, but case split/merge is weak"
+  }
+]

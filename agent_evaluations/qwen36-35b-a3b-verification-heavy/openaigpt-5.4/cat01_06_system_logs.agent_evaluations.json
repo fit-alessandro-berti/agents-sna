@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.1,
+    "explanation": "Reasonable first pick; no parsing step"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Useful log, but over-assumes one case"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.3,
+    "explanation": "Overpraises; misses clear defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.0,
+    "explanation": "Coherent, but unsupported case narrative"
+  }
+]

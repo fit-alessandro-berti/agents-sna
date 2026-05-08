@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first agent choice; sensible mapping step"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 6.1,
+    "explanation": "Useful BPMN mapping, but adds shaky assumptions"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 7.2,
+    "explanation": "Helpful control-flow critique; some notation doubt"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 4.6,
+    "explanation": "Invents variants/log data beyond image evidence"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 3.4,
+    "explanation": "Mostly speculative optimization, not description"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.3,
+    "explanation": "Covers diagram, but overstates flaws/speculation"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first expert choice; reasonable routing."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.8,
+    "explanation": "Core fix right; conformance claims partly wrong."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.1,
+    "explanation": "Usable final, but repeats PM inaccuracies."
+  }
+]

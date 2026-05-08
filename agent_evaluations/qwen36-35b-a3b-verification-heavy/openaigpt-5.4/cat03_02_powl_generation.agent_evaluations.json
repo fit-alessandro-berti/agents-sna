@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first agent choice; reasonable start"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.4,
+    "explanation": "Correct POWL code; extra claims slightly shaky"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.2,
+    "explanation": "Useful review, but wrong 8-edge assertion"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.6,
+    "explanation": "Solid final code; unnecessary import/verbosity"
+  }
+]

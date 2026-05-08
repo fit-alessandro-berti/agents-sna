@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.0,
+    "explanation": "Reasonable first pick, but no validation plan"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.0,
+    "explanation": "Loop semantics wrong; excludes no-RMI traces"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.5,
+    "explanation": "Same flawed loop, just expanded labels"
+  }
+]

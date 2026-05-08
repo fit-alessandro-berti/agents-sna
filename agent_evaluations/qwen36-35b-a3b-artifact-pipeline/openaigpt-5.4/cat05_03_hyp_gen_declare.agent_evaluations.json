@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Sensible first agent selection."
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 5.7,
+    "explanation": "Useful, but DECLARE semantics/query flaws."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.2,
+    "explanation": "Good coverage; some unsupported claims/SQL issues."
+  }
+]

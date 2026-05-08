@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.3,
+    "explanation": "Good first routing; sensible parser choice"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.6,
+    "explanation": "Useful extraction; wrongly says TST loop skipped"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.4,
+    "explanation": "Mostly right model; bad set syntax and skip claim"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.2,
+    "explanation": "Checks coherence but misses prior defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Good final POWL; minor inaccuracies, extra claims"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first pick; parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.8,
+    "explanation": "Useful extraction, but many unsupported specifics"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.3,
+    "explanation": "Off-task PM analysis, not image description"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.1,
+    "explanation": "Some valid BPMN critique, but overassertive"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.4,
+    "explanation": "Descriptive but repeats dubious BPMN claims"
+  }
+]

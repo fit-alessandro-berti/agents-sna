@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.0,
+    "explanation": "Good first routing to control-flow expert"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 5.4,
+    "explanation": "Useful tree; tau/RDT/PM4PY details flawed"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.2,
+    "explanation": "Catches binary issue, but code has errors"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.1,
+    "explanation": "Final tree/code invalid; nonbinary root, bad paren"
+  }
+]

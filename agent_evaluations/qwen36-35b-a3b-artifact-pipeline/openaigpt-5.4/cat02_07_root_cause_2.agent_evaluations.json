@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first-agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.2,
+    "explanation": "Useful mapping; some unsupported timing claims"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 4.9,
+    "explanation": "Partly useful, but speculative bottlenecks/percent"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 4.3,
+    "explanation": "Good traces, but overclaims resource causality"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 5.8,
+    "explanation": "Some correction, but still endorses weak claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Answers task, but final overstates resource causes"
+  }
+]

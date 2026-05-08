@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first routing; parser was the right choice"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.6,
+    "explanation": "Useful extraction, but overreaches and invents fac"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Covers all parts, but many unsupported PM claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.2,
+    "explanation": "Structured answer, but several inaccuracies remain"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Good first pick; sensible expert routing"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.2,
+    "explanation": "Useful core answer, but loop semantics wrong"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 6.8,
+    "explanation": "Helpful correction; some overclaims remain"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Mostly answers task, but repeats semantic errors"
+  }
+]

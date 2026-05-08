@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.4,
+    "explanation": "Useful merge; wrong <2s handling at 2.0s"
+  }
+]

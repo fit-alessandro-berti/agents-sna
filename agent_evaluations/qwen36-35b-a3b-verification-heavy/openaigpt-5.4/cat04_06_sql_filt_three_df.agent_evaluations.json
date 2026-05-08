@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Reasonable first pick; no deeper routing check"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.3,
+    "explanation": "Useful SQL, but DATEDIFF semantics flawed"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.6,
+    "explanation": "Caught key timing/tie issues; strong refinement"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.1,
+    "explanation": "Mostly correct, but overclaims on ROWS/ties"
+  }
+]

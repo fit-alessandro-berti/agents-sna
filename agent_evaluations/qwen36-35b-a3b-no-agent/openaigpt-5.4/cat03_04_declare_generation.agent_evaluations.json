@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.4,
+    "explanation": "Wrong pm4py shape; duplicate keys; semantics off"
+  }
+]

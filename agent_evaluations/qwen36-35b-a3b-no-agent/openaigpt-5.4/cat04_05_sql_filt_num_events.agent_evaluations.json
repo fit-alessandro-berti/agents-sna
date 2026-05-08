@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 9.7,
+    "explanation": "Correct CTE+JOIN; fully answers prompt"
+  }
+]

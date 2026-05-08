@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.2,
+    "explanation": "Useful labels, but speculative semantics"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.4,
+    "explanation": "Overinterprets colors/conformance; unsupported"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.8,
+    "explanation": "Final answer hallucinates meaning and certainty"
+  }
+]

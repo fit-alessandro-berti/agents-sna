@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good expert choice for control-flow task"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 9.1,
+    "explanation": "Accurate trace, semantics, and key flaw noted"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.6,
+    "explanation": "Strong final, but added extra beyond ask"
+  }
+]

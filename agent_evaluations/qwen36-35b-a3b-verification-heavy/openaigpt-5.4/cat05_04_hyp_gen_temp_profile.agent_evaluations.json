@@ -1,0 +1,17 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.1,
+    "explanation": "Good first routing; sensible agent choice."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.3,
+    "explanation": "Useful, but SQL has shaky assumptions/errors."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.9,
+    "explanation": "Covers all parts; still overclaims and SQL issues."
+  }
+]

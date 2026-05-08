@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.7,
+    "explanation": "Accurate extraction; useful ambiguities flagged"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.2,
+    "explanation": "Useful ideas, but overclaims and weak grounding"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.9,
+    "explanation": "Sharp edge cases; materially improved rigor"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.6,
+    "explanation": "Improved robustness, but semantic flaws remain"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 7.8,
+    "explanation": "Relevant fairness safeguards; a bit generic"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.4,
+    "explanation": "Strong consistency checks and needed caveats"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.8,
+    "explanation": "Helpful intent, but formalism is imprecise"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.1,
+    "explanation": "Comprehensive and useful, but some unsupported cla"
+  }
+]

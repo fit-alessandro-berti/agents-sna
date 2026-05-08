@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Reasonable first expert choice; limited impact"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 6.5,
+    "explanation": "Useful but overfocused on BPMN semantics"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 5.3,
+    "explanation": "Some grounded questions, but invented feedbacks"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 6.9,
+    "explanation": "Strong performance angle; some unsupported detail"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.1,
+    "explanation": "Misaligned: adds ML/data assumptions, not audit"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.8,
+    "explanation": "Covers themes, but several BPMN inaccuracies"
+  }
+]

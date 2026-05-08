@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.4,
+    "explanation": "Reasonable first routing; no deeper value"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.3,
+    "explanation": "Useful parse, but LOOP semantics speculative"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.2,
+    "explanation": "Strong claims, but key semantics unsupported"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.4,
+    "explanation": "Overstates semantics and PM effects"
+  }
+]

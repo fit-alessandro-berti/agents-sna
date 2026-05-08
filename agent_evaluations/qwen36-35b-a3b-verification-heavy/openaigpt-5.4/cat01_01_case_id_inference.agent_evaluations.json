@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.0,
+    "explanation": "Correct grouping; minor overclaim on surrogate key"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.4,
+    "explanation": "Mostly consistent, but speculative anomalies added"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Accurate final mapping; extra unsupported notes"
+  }
+]

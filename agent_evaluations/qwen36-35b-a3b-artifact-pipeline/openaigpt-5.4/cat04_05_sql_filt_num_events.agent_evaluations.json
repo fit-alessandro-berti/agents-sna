@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first routing; mapper was apt"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 6.4,
+    "explanation": "Correct query; perf claims unsupported"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 4.2,
+    "explanation": "Mostly praise; repeats unsupported claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.8,
+    "explanation": "Correct final SQL; overstated extras"
+  }
+]

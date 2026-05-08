@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing; sensible agent choice."
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 5.3,
+    "explanation": "Useful draft, but tie-order claim is flawed."
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.2,
+    "explanation": "Missed major bug; suggested weak tie-breaker."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.0,
+    "explanation": "Final query keeps ordering bug; overclaims."
+  }
+]

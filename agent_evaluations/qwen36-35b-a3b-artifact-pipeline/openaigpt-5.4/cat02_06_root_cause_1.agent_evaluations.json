@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.0,
+    "explanation": "Good first pick; performance focus fits prompt"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 5.1,
+    "explanation": "Useful timings, but many unsupported inferences"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 6.2,
+    "explanation": "Strong variant view; still overclaims causes"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.8,
+    "explanation": "Answers task, but speculative and some inaccuracie"
+  }
+]

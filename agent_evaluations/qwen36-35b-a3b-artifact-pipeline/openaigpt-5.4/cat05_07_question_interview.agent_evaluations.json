@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.4,
+    "explanation": "Reasonable first pick; useful but unremarkable"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 7.4,
+    "explanation": "Strong sequencing/loop questions; a bit over-model"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 6.6,
+    "explanation": "Useful bottleneck angles; less central to prompt"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 7.1,
+    "explanation": "Grounded risk/compliance probes; slight overreach"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Several log/data-centric questions misfit intervie"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.3,
+    "explanation": "Sharp clarifications; some implementation leaning"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Well-synthesized, targeted, mostly grounded"
+  }
+]
