@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parse deliverables"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.4,
+    "explanation": "Useful extraction, but invents absent draft"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.0,
+    "explanation": "Hallucinates prior draft; off-prompt PM jargon"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.8,
+    "explanation": "Strong correction of unsupported PM framing"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Meets prompt well; a bit speculative at times"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-verification-heavy",
+  "question": "cat01_05_merge_two_logs.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_verification_heavy.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-verification-heavy_cat01_05_merge_two_logs.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\requests\\cat01_05_merge_two_logs.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\responses\\cat01_05_merge_two_logs.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\traces\\cat01_05_merge_two_logs.trace.json",
+  "final_answer_length": 3778
+}

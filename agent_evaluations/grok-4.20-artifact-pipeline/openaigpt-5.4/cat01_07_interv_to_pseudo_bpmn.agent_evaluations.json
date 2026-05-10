@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first pick; mapper was appropriate."
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.0,
+    "explanation": "Useful extraction; some unsupported task merging."
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 4.6,
+    "explanation": "Helpful skeleton, but BPMN semantics overstated."
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 2.4,
+    "explanation": "Overclaims rigor; says no unsupported inferences."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.8,
+    "explanation": "Solid structure, but key control-flow inaccuracies"
+  }
+]

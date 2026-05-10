@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "**Process Tree:**\n\n```\n-> ( \n  -> ( 'A', 'RG', 'IA', -> ( 'TI', 'TC' ) ),\n  X ( 'CE', 'FBP' ),\n  * (\n    X ( tau, -> ( 'SC', X ( 'TM', 'SPT' ), X ( 'FCE', 'FBA' ) ) ),\n    tau\n  ),\n  + ( 'AI', 'NC' ),\n  -> ( 'FAS', 'DDI' ),\n  + ( 'BL', 'ICP', 'MRF' )\n)\n```\n\n**Explanation of structure:**\n\n- Top-level `->` enforces the overall chronological order of the patient journey.\n- First block is a sequence containing arrival through triage.\n- `X(CE, FBP)` models the exclusive choice for the initial diagnostic test.\n- The loop `* ( ... , tau )` captures the \"review until normal results\" behavior: the body can execute zero or more times (via the `X(tau, ...)` silent exit), each iteration performing Specialist Consultation → exclusive treatment → re-diagnostic test. The loop exits (via the silent `tau` in the redo part) when results are normal.\n- `+(AI, NC)` models true concurrency of advanced imaging and nutritional counseling.\n- `->(FAS, DDI)` is the final sequential administrative steps.\n- The last `+(BL, ICP, MRF)` runs the three final administrative/financial activities in parallel.\n\nThis tree uses only the allowed operators and exactly the activities listed in the prompt. Silent steps (`tau`) are used only where needed to model the loop exit condition."
+  }
+]

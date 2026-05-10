@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-artifact-pipeline",
+  "question": "cat01_01_case_id_inference.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-artifact-pipeline_cat01_01_case_id_inference.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\requests\\cat01_01_case_id_inference.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\responses\\cat01_01_case_id_inference.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\traces\\cat01_01_case_id_inference.trace.json",
+  "final_answer_length": 2181
+}

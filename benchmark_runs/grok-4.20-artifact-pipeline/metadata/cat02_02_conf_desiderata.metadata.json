@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-artifact-pipeline",
+  "question": "cat02_02_conf_desiderata.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-artifact-pipeline_cat02_02_conf_desiderata.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\requests\\cat02_02_conf_desiderata.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\responses\\cat02_02_conf_desiderata.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\traces\\cat02_02_conf_desiderata.trace.json",
+  "final_answer_length": 4133
+}

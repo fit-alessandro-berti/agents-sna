@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-verification-heavy",
+  "question": "cat02_03_anomaly_event_log.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_verification_heavy.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-verification-heavy_cat02_03_anomaly_event_log.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\requests\\cat02_03_anomaly_event_log.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\responses\\cat02_03_anomaly_event_log.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\traces\\cat02_03_anomaly_event_log.trace.json",
+  "final_answer_length": 3748
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first agent selection; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.4,
+    "explanation": "Useful extraction, but several semantics misstated"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.6,
+    "explanation": "Fluent but materially wrong and overclaims"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.8,
+    "explanation": "Spots one issue, misses major contradictions"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.9,
+    "explanation": "Strong contradiction finding; one semantics slip"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.1,
+    "explanation": "Helpful synthesis guidance, but overpraises"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 7.2,
+    "explanation": "Useful inconsistency audit; one weak claim"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.4,
+    "explanation": "Detailed final, but repeats major semantic errors"
+  }
+]

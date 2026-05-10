@@ -1,0 +1,62 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 5.2,
+    "explanation": "Reasonable first pick, but skipped parsing first"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 6.4,
+    "explanation": "Useful bias read; overclaims fairness metrics"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 3.1,
+    "explanation": "Overstates schema issues; weak objections"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 4.2,
+    "explanation": "Good skepticism, but too dismissive"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.3,
+    "explanation": "Strong PM framing; some unsupported formalisms"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.3,
+    "explanation": "Invents absent formal models; misleading"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.8,
+    "explanation": "Accurate extraction; helpful ambiguity flags"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 5.9,
+    "explanation": "Clear synthesis, but repeats and overstates"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.7,
+    "explanation": "Useful critique; too harsh on fairness wording"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.6,
+    "explanation": "Best draft logic; still assumes threshold shift"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.1,
+    "explanation": "Practical refinement advice; mostly grounded"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Solid final answer; qualified but still overclaims"
+  }
+]

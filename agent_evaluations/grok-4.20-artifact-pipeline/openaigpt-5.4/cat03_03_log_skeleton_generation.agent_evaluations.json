@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing; mapper useful first"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 5.4,
+    "explanation": "Useful draft, but PO->IC DF is wrong"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 7.8,
+    "explanation": "Correctly fixes DF; minor concurrency overclaim"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.2,
+    "explanation": "Good audit; overstates grounding certainty"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Final dict is coherent and syntactically right"
+  }
+]

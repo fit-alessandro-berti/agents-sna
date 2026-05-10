@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first-agent choice; appropriate setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 8.6,
+    "explanation": "Accurate mapping and full case partition"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 7.8,
+    "explanation": "Useful reconstruction; minor overclaims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.9,
+    "explanation": "Correct final grouping; slight ID assumption"
+  }
+]

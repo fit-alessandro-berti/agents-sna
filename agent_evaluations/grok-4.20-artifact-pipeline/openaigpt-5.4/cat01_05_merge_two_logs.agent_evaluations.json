@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first-agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 4.7,
+    "explanation": "Useful merge, but breaks 2s rule inconsistently"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 1.5,
+    "explanation": "Incorrect audit; missed clear defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Mostly useful, but unjustified 5s merge"
+  }
+]

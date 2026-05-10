@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first routing; sensible parser choice."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 9.3,
+    "explanation": "Exact requirements; correct SQL; minor overclaim."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.4,
+    "explanation": "Correct validation; useful but mostly redundant."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.2,
+    "explanation": "Overgenerous scoring; little new substance."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 9.4,
+    "explanation": "Correct final SQL plus clear valid CTE option."
+  }
+]

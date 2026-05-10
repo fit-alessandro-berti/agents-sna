@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing to parse the artifact"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.6,
+    "explanation": "Useful parse, but several unsupported specifics"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.7,
+    "explanation": "Semantics review was overconfident, missed issues"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 5.2,
+    "explanation": "Some good skepticism, but speculative claims"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.4,
+    "explanation": "Partly useful; overstates lane/timer violations"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.9,
+    "explanation": "Relevant PM framing, but adds unsupported details"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.4,
+    "explanation": "Helpful critique; identifies unresolved conflicts"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 2.1,
+    "explanation": "Largely irrelevant to describing the visualization"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.0,
+    "explanation": "Solid final description, but ambiguity handling sh"
+  }
+]

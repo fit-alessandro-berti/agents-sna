@@ -1,0 +1,7 @@
+[
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.6,
+    "explanation": "Refused task; ignored prompt’s fairness analysis"
+  }
+]

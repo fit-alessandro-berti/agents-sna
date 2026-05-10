@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first routing to parse artifact"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.1,
+    "explanation": "Good parse, but invalid trace semantics"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.3,
+    "explanation": "Formally wrong about XOR/sequence behavior"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.9,
+    "explanation": "Corrected invalid traces; strong counterexample"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.1,
+    "explanation": "Accurately endorsed the corrected draft"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.7,
+    "explanation": "Correct, grounded, and answers both parts"
+  }
+]

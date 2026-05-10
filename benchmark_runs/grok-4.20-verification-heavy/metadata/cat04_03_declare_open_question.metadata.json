@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-verification-heavy",
+  "question": "cat04_03_declare_open_question.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_verification_heavy.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-verification-heavy_cat04_03_declare_open_question.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\requests\\cat04_03_declare_open_question.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\responses\\cat04_03_declare_open_question.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-verification-heavy\\traces\\cat04_03_declare_open_question.trace.json",
+  "final_answer_length": 9349
+}

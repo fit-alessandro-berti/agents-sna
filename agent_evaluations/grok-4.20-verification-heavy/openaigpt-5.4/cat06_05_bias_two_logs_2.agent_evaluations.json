@@ -1,0 +1,57 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.2,
+    "explanation": "Reasonable first agent, but skipped parsing"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 6.6,
+    "explanation": "Useful bias read; overclaims protected attribute"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 2.1,
+    "explanation": "Multiple false inconsistencies; misreads timestamp"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 5.4,
+    "explanation": "Correct direction, but repeats and overstates"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.5,
+    "explanation": "Invents thresholds; wrong chronology critique"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.4,
+    "explanation": "Solid extraction; one incorrect contradiction flag"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.9,
+    "explanation": "Helpful core answer, but fabricated decision rule"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.8,
+    "explanation": "Largely misleading; false semantic objections"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.3,
+    "explanation": "Accurate synthesis guidance; well targeted"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 6.8,
+    "explanation": "Good concise synthesis; still unsupported comparat"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Answers prompt clearly; minor unsupported details"
+  }
+]

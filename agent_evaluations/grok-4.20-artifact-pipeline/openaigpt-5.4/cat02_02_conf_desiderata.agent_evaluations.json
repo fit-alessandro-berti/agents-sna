@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing to schema mapping"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.6,
+    "explanation": "Useful mapping; slight overclaim on Case 2"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 8.5,
+    "explanation": "Accurate hard/soft constraint analysis"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 5.2,
+    "explanation": "Checks coverage but misses prior defects"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 6.9,
+    "explanation": "Strong trace view; unsupported extras"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Correct final answer; minor overreach"
+  }
+]

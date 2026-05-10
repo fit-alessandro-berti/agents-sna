@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parse requirements"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.6,
+    "explanation": "Strong extraction; slight overreach on flow"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Useful but invents metrics and impacts"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.7,
+    "explanation": "Helpful critique, missed major hallucinations"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 5.3,
+    "explanation": "Useful fairness lens; some unsupported claims"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.4,
+    "explanation": "Overstates rigor, validates unsupported content"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.9,
+    "explanation": "Strong catch of quantification and edge cases"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.1,
+    "explanation": "Some fixes, but adds arbitrary formulas"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.5,
+    "explanation": "Covers all parts but keeps unsupported numbers"
+  }
+]

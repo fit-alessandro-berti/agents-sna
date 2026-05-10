@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing to parse prompt artifacts"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; minor overreach on structure"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.6,
+    "explanation": "Correct fix, but unsupported precision claims"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.4,
+    "explanation": "Strong semantic check; slight overclaim on types"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.1,
+    "explanation": "Answers all parts, but repeats dubious PM claims"
+  }
+]

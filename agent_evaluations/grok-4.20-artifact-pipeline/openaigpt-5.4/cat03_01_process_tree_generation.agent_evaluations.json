@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.3,
+    "explanation": "Good first expert choice; sensible routing."
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 2.4,
+    "explanation": "Wrong loop/XOR structure; misleading tree."
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 4.1,
+    "explanation": "Spots flaws, but proposed fix still incorrect."
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 1.6,
+    "explanation": "Confidently wrong; drops RDT and misreads loop."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.2,
+    "explanation": "Final answer invalid and incomplete."
+  }
+]

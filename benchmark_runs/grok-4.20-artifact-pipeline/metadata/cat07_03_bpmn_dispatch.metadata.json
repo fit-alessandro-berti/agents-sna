@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-artifact-pipeline",
+  "question": "cat07_03_bpmn_dispatch.png",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-artifact-pipeline_cat07_03_bpmn_dispatch.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\requests\\cat07_03_bpmn_dispatch.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\responses\\cat07_03_bpmn_dispatch.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\traces\\cat07_03_bpmn_dispatch.trace.json",
+  "final_answer_length": 4064
+}

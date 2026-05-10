@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-no-agent",
+  "question": "cat06_06_bias_mitigation_declare.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\no_agents.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-no-agent_cat06_06_bias_mitigation_declare.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-no-agent\\requests\\cat06_06_bias_mitigation_declare.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-no-agent\\responses\\cat06_06_bias_mitigation_declare.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-no-agent\\traces\\cat06_06_bias_mitigation_declare.trace.json",
+  "final_answer_length": 995
+}

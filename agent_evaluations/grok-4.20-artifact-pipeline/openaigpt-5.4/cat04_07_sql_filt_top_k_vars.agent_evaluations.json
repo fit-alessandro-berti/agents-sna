@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 6.6,
+    "explanation": "Useful mapping; tie handling and K vague"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 4.2,
+    "explanation": "Some valid points; unsupported loop claim"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 5.1,
+    "explanation": "Mostly generic; little added rigor"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 2.3,
+    "explanation": "Diagnostics irrelevant; bad timestamp check"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 1.4,
+    "explanation": "Proposed SQL is flawed and misleading"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 2.0,
+    "explanation": "Incorrectly endorses flawed iter-5 query"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 3.5,
+    "explanation": "Tie warning useful; adds off-prompt demands"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.0,
+    "explanation": "Final SQL invalid/wrong; misses benchmark"
+  }
+]

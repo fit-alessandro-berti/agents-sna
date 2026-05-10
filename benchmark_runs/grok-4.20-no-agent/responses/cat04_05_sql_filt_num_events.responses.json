@@ -1,0 +1,8 @@
+[
+  {
+    "kind": "final",
+    "iteration": 1,
+    "agent": null,
+    "content": "```sql\nSELECT *\nFROM event_log\nWHERE case_id IN (\n    SELECT case_id\n    FROM event_log\n    GROUP BY case_id\n    HAVING COUNT(*) <= 6\n);\n```\n\n**Explanation (for clarity, not part of the answer):**  \nThis query first identifies all `case_id`s that have 6 or fewer events using a subquery with `GROUP BY` and `HAVING`. It then returns all original rows belonging to those qualifying cases. This is the standard and most efficient pattern in DuckDB/SQL for filtering cases based on their total event count."
+  }
+]

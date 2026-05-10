@@ -1,0 +1,67 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first choice: parse before modeling"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.3,
+    "explanation": "Useful draft, but II loop is wrong; AP forced"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 6.4,
+    "explanation": "Caught major issues, but loop fix phrasing shaky"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 5.3,
+    "explanation": "Finds key flaws; some critiques are misguided"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 2.2,
+    "explanation": "Mostly irrelevant claims on resources/concurrency"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.2,
+    "explanation": "Solid correction of prior errors; grounded"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.8,
+    "explanation": "Introduces serious net errors and bad arcs"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.6,
+    "explanation": "Helpful simplification, but over-penalizes tau"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.8,
+    "explanation": "Good extraction; AP assumption is debatable"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 6.1,
+    "explanation": "Mostly useful, but blesses AP over-approximation"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.4,
+    "explanation": "Clear benchmark guidance for final synthesis"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.1,
+    "explanation": "Some good constraints; repeats weak objections"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.3,
+    "explanation": "Executable, faithful net; AP optionality omitted"
+  }
+]

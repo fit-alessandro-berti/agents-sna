@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Sensible first routing to parser"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.8,
+    "explanation": "Useful draft, but overcommits constraints"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.1,
+    "explanation": "Incorrect schema criticism; misleading"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.8,
+    "explanation": "Invents exclusivity; repeats false issues"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.7,
+    "explanation": "Some structure help, but wrong semantics"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.5,
+    "explanation": "Claims invalid empty-schema model is best"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 1.7,
+    "explanation": "Approves flawed model; not rigorous"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.9,
+    "explanation": "Valid dict, but adds unsupported constraints"
+  }
+]

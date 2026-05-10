@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first choice: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 3.2,
+    "explanation": "Detailed but likely hallucinated specifics"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.4,
+    "explanation": "Off-task PM commentary on uncertain image"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.6,
+    "explanation": "Overconfident semantic claims unsupported"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 4.6,
+    "explanation": "Useful skepticism, but speculative defects"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 3.8,
+    "explanation": "Some valid checks, many unsupported leaps"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 1.2,
+    "explanation": "Irrelevant fairness speculation"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.8,
+    "explanation": "Reinforces shaky hallucinated description"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.3,
+    "explanation": "Fluent final answer built on weak grounding"
+  }
+]

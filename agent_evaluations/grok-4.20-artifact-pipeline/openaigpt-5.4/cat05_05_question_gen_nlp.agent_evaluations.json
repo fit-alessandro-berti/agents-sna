@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Good agent choice; sensible first step"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 8.1,
+    "explanation": "Strong 20 questions; slight overreach in coda"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.2,
+    "explanation": "Overclaims process-mining rigor; weak audit"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Meets prompt well; grounded, useful questions"
+  }
+]

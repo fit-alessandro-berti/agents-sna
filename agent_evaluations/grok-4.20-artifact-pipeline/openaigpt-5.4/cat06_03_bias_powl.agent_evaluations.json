@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.7,
+    "explanation": "Good first pick; fairness lens fits prompt"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 4.8,
+    "explanation": "Useful bias framing, but heavily speculative"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 8.9,
+    "explanation": "Strong grounding correction; narrows claims"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 2.9,
+    "explanation": "Repeats unsupported legal/proxy assertions"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 9.2,
+    "explanation": "Precise, grounded, and directly useful"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 4.1,
+    "explanation": "Some value, but still overclaims from prompt"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.1,
+    "explanation": "Fluent final, but materially overstates evidence"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing; parser was the right start"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.7,
+    "explanation": "Accurate extraction; useful ambiguities flagged"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.1,
+    "explanation": "Strong structure, but invented targets/assumptions"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.4,
+    "explanation": "Useful polish, but overrated flawed draft"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 4.6,
+    "explanation": "Some value, but fairness focus drifts prompt"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.8,
+    "explanation": "Helpful checks, but overclaims and shaky SQL"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 6.7,
+    "explanation": "Good skepticism, but one key critique is wrong"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.5,
+    "explanation": "Valuable corrections; mostly faithful and precise"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.1,
+    "explanation": "Comprehensive final, but still has unsupported det"
+  }
+]

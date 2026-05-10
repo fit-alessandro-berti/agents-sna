@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first routing; sensible mapper choice"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 6.4,
+    "explanation": "Useful mapping; several causal overclaims"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 4.8,
+    "explanation": "Some bottleneck insight; many unsupported claims"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 7.1,
+    "explanation": "Solid hypotheses and queries; minor SQL issues"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 6.9,
+    "explanation": "Good variant tracing; some unjustified inference"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 3.2,
+    "explanation": "Overstates semantics; invents mandatory rules"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 3.9,
+    "explanation": "Relevant caution, but highly speculative"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 4.5,
+    "explanation": "Missed prior defects; validates weak claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.6,
+    "explanation": "Answers task, but mixes evidence with conjecture"
+  }
+]

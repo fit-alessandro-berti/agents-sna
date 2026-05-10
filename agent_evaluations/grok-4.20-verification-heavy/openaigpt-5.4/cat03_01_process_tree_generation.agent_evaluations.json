@@ -1,0 +1,97 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first pick: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.8,
+    "explanation": "Useful extraction, but loop semantics flawed"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.2,
+    "explanation": "Identified issue, proposed wrong loop model"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.0,
+    "explanation": "Mostly repeats prior wrong structure"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.3,
+    "explanation": "Found a flaw, but replacement is invalid"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 3.8,
+    "explanation": "Clear summary, but reverts to bad loop"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 4.6,
+    "explanation": "Closer: tau loop idea, but overclaims"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.1,
+    "explanation": "Says corrected but repeats same bad tree"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.0,
+    "explanation": "Endorses semantically weak draft"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 1.3,
+    "explanation": "Introduces wrong RDT/tau structure"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 1.1,
+    "explanation": "Severely confused, malformed structure"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.9,
+    "explanation": "Some critique valid; final tree still wrong"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.4,
+    "explanation": "Proposes XOR that skips loop entirely"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 1.2,
+    "explanation": "Strongly endorses incorrect iteration 12"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.7,
+    "explanation": "Spots issues, then regresses to bad model"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.1,
+    "explanation": "Useful criticism, final claim still wrong"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.4,
+    "explanation": "Partly useful, but loop entry still wrong"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.6,
+    "explanation": "Near final form, but semantics still off"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.4,
+    "explanation": "Coherent final answer, conditional loop missed"
+  }
+]

@@ -1,0 +1,406 @@
+{
+  "source_dir": "agent_evaluations\\grok-4.20-artifact-pipeline\\openaigpt-5.4",
+  "files_processed": 57,
+  "files_skipped": [],
+  "edge_score": "target",
+  "edge_score_description": "Each edge occurrence is scored with the target node evaluation.",
+  "edge_instantiations_per_question": {
+    "count": 57,
+    "average": 5.754385964912281,
+    "stddev": 1.940163691361299
+  },
+  "nodes": [
+    {
+      "agent_type": "COMPLETE",
+      "count": 57,
+      "average": 5.238596491228069,
+      "stddev": 2.4711496284732495
+    },
+    {
+      "agent_type": "START",
+      "count": 57,
+      "average": 8.03859649122807,
+      "stddev": 0.5359871646685607
+    },
+    {
+      "agent_type": "answer_precision_auditor",
+      "count": 53,
+      "average": 4.743396226415093,
+      "stddev": 2.530456699324367
+    },
+    {
+      "agent_type": "control_flow_semantics_expert",
+      "count": 57,
+      "average": 4.407017543859649,
+      "stddev": 2.0519447043884127
+    },
+    {
+      "agent_type": "data_question_designer",
+      "count": 24,
+      "average": 4.625,
+      "stddev": 1.9103337404757317
+    },
+    {
+      "agent_type": "performance_and_resource_analyst",
+      "count": 20,
+      "average": 3.01,
+      "stddev": 1.1596982366115764
+    },
+    {
+      "agent_type": "risk_fairness_and_compliance_reviewer",
+      "count": 35,
+      "average": 4.291428571428571,
+      "stddev": 1.9657599662466319
+    },
+    {
+      "agent_type": "schema_and_artifact_mapper",
+      "count": 49,
+      "average": 6.079591836734695,
+      "stddev": 1.6250563056916079
+    },
+    {
+      "agent_type": "trace_and_variant_reasoner",
+      "count": 33,
+      "average": 4.078787878787879,
+      "stddev": 1.8707894259420839
+    }
+  ],
+  "edges": [
+    {
+      "source": "START",
+      "target": "control_flow_semantics_expert",
+      "count": 3,
+      "average": 6.533333333333334,
+      "stddev": 3.1351058816073323
+    },
+    {
+      "source": "START",
+      "target": "data_question_designer",
+      "count": 2,
+      "average": 7.25,
+      "stddev": 0.8499999999999996
+    },
+    {
+      "source": "START",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 5,
+      "average": 5.96,
+      "stddev": 2.32
+    },
+    {
+      "source": "START",
+      "target": "schema_and_artifact_mapper",
+      "count": 47,
+      "average": 6.082978723404256,
+      "stddev": 1.6171052609769168
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "COMPLETE",
+      "count": 33,
+      "average": 5.46969696969697,
+      "stddev": 2.591300696969001
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "control_flow_semantics_expert",
+      "count": 5,
+      "average": 4.08,
+      "stddev": 1.0067770358922574
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "data_question_designer",
+      "count": 5,
+      "average": 3.9400000000000004,
+      "stddev": 1.237093367535369
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 6,
+      "average": 3.183333333333333,
+      "stddev": 1.2116334245783895
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "schema_and_artifact_mapper",
+      "count": 1,
+      "average": 7.8,
+      "stddev": 0.0
+    },
+    {
+      "source": "answer_precision_auditor",
+      "target": "trace_and_variant_reasoner",
+      "count": 3,
+      "average": 4.233333333333333,
+      "stddev": 1.9014614262602216
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "COMPLETE",
+      "count": 1,
+      "average": 5.8,
+      "stddev": 0.0
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "answer_precision_auditor",
+      "count": 19,
+      "average": 4.294736842105264,
+      "stddev": 2.2357086911761455
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "control_flow_semantics_expert",
+      "count": 8,
+      "average": 3.55,
+      "stddev": 2.539192785118924
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "data_question_designer",
+      "count": 5,
+      "average": 5.0,
+      "stddev": 1.5453155017665487
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "performance_and_resource_analyst",
+      "count": 3,
+      "average": 3.233333333333333,
+      "stddev": 1.0402991022884824
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 8,
+      "average": 4.7,
+      "stddev": 1.3811227316933135
+    },
+    {
+      "source": "control_flow_semantics_expert",
+      "target": "trace_and_variant_reasoner",
+      "count": 13,
+      "average": 3.646153846153846,
+      "stddev": 1.9165736192147236
+    },
+    {
+      "source": "data_question_designer",
+      "target": "COMPLETE",
+      "count": 6,
+      "average": 4.883333333333334,
+      "stddev": 1.7733364661626463
+    },
+    {
+      "source": "data_question_designer",
+      "target": "answer_precision_auditor",
+      "count": 5,
+      "average": 4.32,
+      "stddev": 1.69162643630324
+    },
+    {
+      "source": "data_question_designer",
+      "target": "performance_and_resource_analyst",
+      "count": 4,
+      "average": 2.525,
+      "stddev": 1.4306903927824497
+    },
+    {
+      "source": "data_question_designer",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 4,
+      "average": 3.4,
+      "stddev": 1.4966629547095764
+    },
+    {
+      "source": "data_question_designer",
+      "target": "trace_and_variant_reasoner",
+      "count": 5,
+      "average": 4.08,
+      "stddev": 1.6424372134118248
+    },
+    {
+      "source": "performance_and_resource_analyst",
+      "target": "COMPLETE",
+      "count": 2,
+      "average": 5.199999999999999,
+      "stddev": 0.3999999999999999
+    },
+    {
+      "source": "performance_and_resource_analyst",
+      "target": "answer_precision_auditor",
+      "count": 6,
+      "average": 4.016666666666667,
+      "stddev": 2.451813387859869
+    },
+    {
+      "source": "performance_and_resource_analyst",
+      "target": "control_flow_semantics_expert",
+      "count": 4,
+      "average": 3.1500000000000004,
+      "stddev": 1.0735455276791943
+    },
+    {
+      "source": "performance_and_resource_analyst",
+      "target": "data_question_designer",
+      "count": 1,
+      "average": 7.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "performance_and_resource_analyst",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 6,
+      "average": 4.483333333333333,
+      "stddev": 2.1759416863101415
+    },
+    {
+      "source": "performance_and_resource_analyst",
+      "target": "trace_and_variant_reasoner",
+      "count": 1,
+      "average": 2.4,
+      "stddev": 0.0
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "COMPLETE",
+      "count": 6,
+      "average": 2.75,
+      "stddev": 1.5510748961069976
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "answer_precision_auditor",
+      "count": 16,
+      "average": 5.5874999999999995,
+      "stddev": 2.6799895055764673
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "control_flow_semantics_expert",
+      "count": 3,
+      "average": 5.599999999999999,
+      "stddev": 0.9273618495495707
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "data_question_designer",
+      "count": 7,
+      "average": 2.9857142857142853,
+      "stddev": 0.8903106543361647
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "performance_and_resource_analyst",
+      "count": 1,
+      "average": 2.3,
+      "stddev": 0.0
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "schema_and_artifact_mapper",
+      "count": 1,
+      "average": 4.2,
+      "stddev": 0.0
+    },
+    {
+      "source": "risk_fairness_and_compliance_reviewer",
+      "target": "trace_and_variant_reasoner",
+      "count": 1,
+      "average": 2.0,
+      "stddev": 0.0
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "COMPLETE",
+      "count": 1,
+      "average": 8.1,
+      "stddev": 0.0
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "answer_precision_auditor",
+      "count": 1,
+      "average": 1.5,
+      "stddev": 0.0
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "control_flow_semantics_expert",
+      "count": 25,
+      "average": 4.732,
+      "stddev": 1.92244011610245
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "data_question_designer",
+      "count": 1,
+      "average": 4.7,
+      "stddev": 0.0
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "performance_and_resource_analyst",
+      "count": 9,
+      "average": 3.4999999999999996,
+      "stddev": 1.0274023338281628
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 2,
+      "average": 5.05,
+      "stddev": 0.25
+    },
+    {
+      "source": "schema_and_artifact_mapper",
+      "target": "trace_and_variant_reasoner",
+      "count": 10,
+      "average": 4.970000000000001,
+      "stddev": 1.6068914089010495
+    },
+    {
+      "source": "trace_and_variant_reasoner",
+      "target": "COMPLETE",
+      "count": 8,
+      "average": 6.0,
+      "stddev": 2.2371857321197095
+    },
+    {
+      "source": "trace_and_variant_reasoner",
+      "target": "answer_precision_auditor",
+      "count": 6,
+      "average": 5.533333333333334,
+      "stddev": 2.7553987410576757
+    },
+    {
+      "source": "trace_and_variant_reasoner",
+      "target": "control_flow_semantics_expert",
+      "count": 9,
+      "average": 3.9000000000000004,
+      "stddev": 1.4437605218471807
+    },
+    {
+      "source": "trace_and_variant_reasoner",
+      "target": "data_question_designer",
+      "count": 3,
+      "average": 6.366666666666667,
+      "stddev": 1.8372685039360892
+    },
+    {
+      "source": "trace_and_variant_reasoner",
+      "target": "performance_and_resource_analyst",
+      "count": 3,
+      "average": 2.1999999999999997,
+      "stddev": 0.28284271247461895
+    },
+    {
+      "source": "trace_and_variant_reasoner",
+      "target": "risk_fairness_and_compliance_reviewer",
+      "count": 4,
+      "average": 3.275,
+      "stddev": 1.9664371334980428
+    }
+  ]
+}

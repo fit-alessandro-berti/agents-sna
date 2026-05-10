@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Sensible first routing to parser"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.2,
+    "explanation": "Thorough extraction; minor over-interpretation"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.6,
+    "explanation": "Useful but several unsupported specifics"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 3.1,
+    "explanation": "Overpraised draft; missed clear defects"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.7,
+    "explanation": "Some validation, but too uncritical"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.2,
+    "explanation": "Comprehensive yet many invented numbers"
+  }
+]

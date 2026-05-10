@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-artifact-pipeline",
+  "question": "cat03_06_petri_net_generation.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_artifact_pipeline.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-artifact-pipeline_cat03_06_petri_net_generation.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\requests\\cat03_06_petri_net_generation.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\responses\\cat03_06_petri_net_generation.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-artifact-pipeline\\traces\\cat03_06_petri_net_generation.trace.json",
+  "final_answer_length": 3247
+}

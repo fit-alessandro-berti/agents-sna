@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first choice; parser was the right start"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.4,
+    "explanation": "Useful extraction, but over-merged exceptions"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.1,
+    "explanation": "Hallucinated rates; gateway/order defects"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.2,
+    "explanation": "Caught issues, but overstated correctness"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.4,
+    "explanation": "Strong critique, but one ordering claim shaky"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.1,
+    "explanation": "Useful corrections; mostly grounded and precise"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.2,
+    "explanation": "Accurate meta-eval; advanced synthesis plan"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.6,
+    "explanation": "Helpful template, but wrongly claims fixes exist"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.0,
+    "explanation": "Solid final model; some role/loop ambiguity remain"
+  }
+]

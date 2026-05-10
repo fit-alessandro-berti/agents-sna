@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first routing to artifact mapping"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 3.2,
+    "explanation": "Useful mapping, but loop model is wrong"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 8.8,
+    "explanation": "Correctly fixed core loop semantics"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 7.4,
+    "explanation": "Solid audit; mostly confirms final shape"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.1,
+    "explanation": "Correct compact code; omitted SilentTransition imp"
+  }
+]

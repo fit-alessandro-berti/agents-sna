@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first agent choice; appropriate sequencing"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 6.7,
+    "explanation": "Strong log build; wrong payment resource assumptio"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 3.8,
+    "explanation": "Misordered 1002 trace; false anomaly claim"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 2.6,
+    "explanation": "Built on false violation; weak semantics grounding"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 4.7,
+    "explanation": "Some useful timings; flawed counts and assumptions"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.1,
+    "explanation": "Overstates correctness; misses key defects"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 1.8,
+    "explanation": "Invents synthetic event and unsupported compliance"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 4.2,
+    "explanation": "Useful ideas, but unsupported thresholds and SQL"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.0,
+    "explanation": "Final answer adds invented event, breaks chronolog"
+  }
+]

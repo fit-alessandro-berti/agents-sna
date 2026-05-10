@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.7,
+    "explanation": "Good first choice: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.9,
+    "explanation": "Accurate extraction; one ambiguity claim shaky"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.8,
+    "explanation": "Useful, but overstates Case 5 certainty"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.4,
+    "explanation": "Helpful critique, but still backs shaky Case 5"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 4.1,
+    "explanation": "Good skepticism, but wrongly downgrades Case 2"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.3,
+    "explanation": "Formalization flawed; misses Case 5 violation"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 7.6,
+    "explanation": "Solid audit; Case 5 defense is useful"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.3,
+    "explanation": "Correct final set and explanations; slightly rigid"
+  }
+]

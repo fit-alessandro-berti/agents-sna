@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing to parser"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 9.2,
+    "explanation": "Precise extraction; strong grounding"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Useful, but invented metrics/claims"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 9.5,
+    "explanation": "Sharp critique; catches major flaws"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.9,
+    "explanation": "Grounded audit; minor overreach"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 6.3,
+    "explanation": "Partly useful, but some false claims"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.4,
+    "explanation": "Helpful synthesis critique"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 3.2,
+    "explanation": "Largely off-scope and assumptive"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Comprehensive, but scope creep remains"
+  }
+]

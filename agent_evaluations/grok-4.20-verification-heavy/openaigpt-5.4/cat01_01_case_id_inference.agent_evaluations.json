@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first pick: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.8,
+    "explanation": "Useful grouping, but interpreted not parsed"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.6,
+    "explanation": "Checks basics; overclaims no anomalies"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.9,
+    "explanation": "Misuses formal semantics; unsupported claims"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 5.2,
+    "explanation": "Valid caution on IDs; bad merge conclusion"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.4,
+    "explanation": "Overstated impossibility; speculative merge"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.6,
+    "explanation": "Best synthesis; mostly grounded, minor glosses"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.1,
+    "explanation": "Helpful packaging advice; too generous"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Correct final grouping; overstates certainty"
+  }
+]

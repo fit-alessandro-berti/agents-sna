@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first agent choice; standard only"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.8,
+    "explanation": "Accurate extraction; slight interpretive overreach"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.9,
+    "explanation": "Useful but flawed ordering/grouping choice"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.2,
+    "explanation": "Overconfident; missed sequencing inconsistency"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.6,
+    "explanation": "Clear structure, but misorders QA vs coating"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing choice; sensible setup"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 7.1,
+    "explanation": "Useful mapping; minor DuckDB/date vagueness"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 6.6,
+    "explanation": "Mostly right; overclaims on concurrency/order"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Helpful but flawed DATE_DIFF edge handling"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 8.6,
+    "explanation": "Strong SQL plan; anti-join and scope correct"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 4.9,
+    "explanation": "Overly approving; misses tie/order edge case"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.4,
+    "explanation": "Correct final query; tie-order ambiguity remains"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing to parsing."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.8,
+    "explanation": "Accurate extraction; slight causal overreach."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.4,
+    "explanation": "Useful but overclaims causality from tiny log."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 4.2,
+    "explanation": "Good skepticism, but false 'falsifies' claim."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.8,
+    "explanation": "Mostly sound; contains a factual slip."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.3,
+    "explanation": "Helpful synthesis guidance; mostly grounded."
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 3.1,
+    "explanation": "Largely speculative fairness claims."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.7,
+    "explanation": "Invents r≈0.97; weak semantics relevance."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.1,
+    "explanation": "Complete, but overstates evidence and causality."
+  }
+]

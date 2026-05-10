@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first pick: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.7,
+    "explanation": "Accurate extraction; useful ambiguity flags"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.2,
+    "explanation": "Overclaims invalidity; misses loop severity"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 6.6,
+    "explanation": "Good counterexample; some semantic overreach"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.1,
+    "explanation": "Useful overall, but wrongly minimizes M1 flaw"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.9,
+    "explanation": "Helpful synthesis advice; endorses shaky view"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 1.6,
+    "explanation": "Largely irrelevant fairness speculation"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.8,
+    "explanation": "Clear but incorrect core judgment"
+  }
+]

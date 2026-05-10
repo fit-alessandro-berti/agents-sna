@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 6.2,
+    "explanation": "Reasonable first routing, but trivial"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.4,
+    "explanation": "Accurate extraction; flags K/tie ambiguities"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.6,
+    "explanation": "Useful skeleton, but overclaims and tie issue"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.8,
+    "explanation": "Mostly validation; misses ranking/timestamp caveat"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 3.9,
+    "explanation": "Incorrectly says no inconsistencies; weak audit"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Covers core steps, but tie/K and ordering gaps"
+  }
+]

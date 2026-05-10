@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parsing"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.7,
+    "explanation": "Accurate extraction; slight interpretation creep"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.6,
+    "explanation": "Useful findings, but speculative and SQL flawed"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.8,
+    "explanation": "Strong corrections; one SQL criticism shaky"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.4,
+    "explanation": "Careful consistency audit; solid SQL catch"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.6,
+    "explanation": "Good semantic guardrails; some overreach"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.4,
+    "explanation": "Helpful synthesis guidance; mildly inaccurate"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 3.2,
+    "explanation": "Overclaims bias from tiny sample"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Cautious prose, but SQL remains incorrect"
+  }
+]

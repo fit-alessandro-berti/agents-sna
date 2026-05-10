@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.1,
+    "explanation": "Good first routing to parsing."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.8,
+    "explanation": "Strong extraction; slight interpretive drift."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.4,
+    "explanation": "Useful mapping, but speculative labels."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.6,
+    "explanation": "Coherent, but overstates semantic certainty."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.3,
+    "explanation": "Mostly flawed objections; physics overreach."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 6.8,
+    "explanation": "Solid consistency audit; some overclaim."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.2,
+    "explanation": "Overly generous; ignores key ambiguities."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.1,
+    "explanation": "Complete answer, but still too confident."
+  }
+]

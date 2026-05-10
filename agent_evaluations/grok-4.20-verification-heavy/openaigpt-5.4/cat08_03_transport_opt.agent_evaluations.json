@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first routing; sensible parser choice"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.1,
+    "explanation": "Strong extraction; slight overclaim on no assumpti"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Useful but many unsupported thresholds/claims"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.4,
+    "explanation": "Sharp edge cases; grounded and corrective"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 7.6,
+    "explanation": "Helpful quality guidance; a bit too generous"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.1,
+    "explanation": "Some checks, but overvalidates weak assumptions"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 6.3,
+    "explanation": "Coherent review, but semantic rigor overstated"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 6.9,
+    "explanation": "Relevant fairness caveats; partly beyond prompt"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.2,
+    "explanation": "Comprehensive, but several invented metrics/claims"
+  }
+]

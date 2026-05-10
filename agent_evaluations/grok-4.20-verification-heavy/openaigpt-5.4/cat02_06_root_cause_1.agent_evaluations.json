@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing to parser"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.7,
+    "explanation": "Accurate extraction; no analysis"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Useful but had timing errors/overreach"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.2,
+    "explanation": "Validated flawed claims; added weak threshold"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.4,
+    "explanation": "Strong corrections on causality/edge cases"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.8,
+    "explanation": "Verified math and cleaned conclusions"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.1,
+    "explanation": "Helpful framing, little new substance"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 4.2,
+    "explanation": "Mostly tangential fairness caveats"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.9,
+    "explanation": "Solid overall, but unsupported SLA/business hrs"
+  }
+]

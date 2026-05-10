@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first routing choice"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 3.2,
+    "explanation": "Useful mapping; bad DECLARE semantics"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 5.4,
+    "explanation": "Spots key flaws; some wrong claims"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 2.1,
+    "explanation": "Introduces unsupported altresponse"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 2.8,
+    "explanation": "Still malformed; absence misuse"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 4.6,
+    "explanation": "Corrects nesting; overstates prompt issues"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 3.7,
+    "explanation": "Some sound logic, still speculative"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 1.2,
+    "explanation": "Flat binary schema claim is wrong"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.0,
+    "explanation": "Final answer fundamentally invalid"
+  }
+]

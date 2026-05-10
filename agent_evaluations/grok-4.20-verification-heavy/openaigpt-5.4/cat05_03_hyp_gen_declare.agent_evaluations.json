@@ -1,0 +1,62 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.5,
+    "explanation": "Good first routing to parse artifacts"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; useful ambiguity flags"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.6,
+    "explanation": "Useful conflict finding, but overclaims semantics"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.7,
+    "explanation": "Mostly useful; one semantic overreach"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.0,
+    "explanation": "Misleading counterexamples; invalid SQL logic"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 3.8,
+    "explanation": "Some valid cautions, many incorrect claims"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 1.5,
+    "explanation": "Largely irrelevant fairness speculation"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.1,
+    "explanation": "Strong synthesis critique and guidance"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 7.8,
+    "explanation": "Solid structured answer; minor SQL defect"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 1.3,
+    "explanation": "Off-prompt and speculative bias claims"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.4,
+    "explanation": "Clean consolidation; small semantic overclaim"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.9,
+    "explanation": "Covers tasks, but SQL/query logic has flaws"
+  }
+]

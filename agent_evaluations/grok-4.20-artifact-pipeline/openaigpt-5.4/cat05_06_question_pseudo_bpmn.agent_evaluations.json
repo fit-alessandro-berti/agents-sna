@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first routing; sensible agent choice."
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 6.4,
+    "explanation": "Useful 20 questions, but some drift/assumptions."
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 3.1,
+    "explanation": "Over-policed terms; several critiques unfounded."
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 5.0,
+    "explanation": "Some solid flow critique, but over-assumes BPMN."
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 3.8,
+    "explanation": "Raises risks, but injects many external assumption"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 4.2,
+    "explanation": "Helpful scope mapping, but invents log schema."
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 4.9,
+    "explanation": "Relevant bottleneck ideas, but speculative fixes."
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 2.4,
+    "explanation": "Misleading invented variants and fake percentages."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.8,
+    "explanation": "Strong final list; minor jargon/assumption issues."
+  }
+]

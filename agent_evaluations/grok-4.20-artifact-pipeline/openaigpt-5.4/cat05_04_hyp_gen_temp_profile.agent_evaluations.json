@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first routing; schema mapping fits"
+  },
+  {
+    "agent_type": "schema_and_artifact_mapper",
+    "evaluation": 5.8,
+    "explanation": "Useful map, but SQL has join/pairing defects"
+  },
+  {
+    "agent_type": "data_question_designer",
+    "evaluation": 4.7,
+    "explanation": "Some testable ideas; SQL has alias/scoping bugs"
+  },
+  {
+    "agent_type": "performance_and_resource_analyst",
+    "evaluation": 4.9,
+    "explanation": "Helpful bottleneck lens; overclaims and weak SQL"
+  },
+  {
+    "agent_type": "control_flow_semantics_expert",
+    "evaluation": 2.9,
+    "explanation": "Overstates violations from eventual-follows data"
+  },
+  {
+    "agent_type": "trace_and_variant_reasoner",
+    "evaluation": 2.4,
+    "explanation": "Invented variants not grounded in profile alone"
+  },
+  {
+    "agent_type": "risk_fairness_and_compliance_reviewer",
+    "evaluation": 2.1,
+    "explanation": "Mostly speculative; serious SQL alias error"
+  },
+  {
+    "agent_type": "answer_precision_auditor",
+    "evaluation": 1.6,
+    "explanation": "Incorrectly says no defects; misses major errors"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.3,
+    "explanation": "Covers tasks, but final SQL/grouping is flawed"
+  }
+]

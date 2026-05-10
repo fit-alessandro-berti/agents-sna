@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Good first routing to parser."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.3,
+    "explanation": "Overfit skeleton; many unsupported claims."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 4.2,
+    "explanation": "Useful critique, but adds unsupported cases."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.8,
+    "explanation": "Solid semantics check; some overreach."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.6,
+    "explanation": "Mixes good fixes with invented constraints."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.8,
+    "explanation": "Helpful scoring lens, but pushes hallucinations."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.1,
+    "explanation": "Consistent summary, yet repeats bad assumptions."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.7,
+    "explanation": "Final answer contains invented exclusivity/order."
+  }
+]
