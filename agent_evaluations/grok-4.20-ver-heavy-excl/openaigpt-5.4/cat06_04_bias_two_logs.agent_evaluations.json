@@ -1,0 +1,27 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first expert choice; reasonable routing"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 5.1,
+    "explanation": "Useful mechanism ID, but overclaims bias/threshold"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.6,
+    "explanation": "Strong correction; notes overreach, slight overcla"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.4,
+    "explanation": "Well-grounded audit; precise and evidence-based"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.2,
+    "explanation": "Final answer ignores critique; unsupported conclus"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first routing to parser."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.0,
+    "explanation": "Useful extraction; dubious 'no silent needed'."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.2,
+    "explanation": "Mostly repeats prior draft; weak correction."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.3,
+    "explanation": "Claims critical defect, then keeps same code."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 3.0,
+    "explanation": "Says structural error; repeats same structure."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.9,
+    "explanation": "Finds key nesting issue; strong fix."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 2.1,
+    "explanation": "Backs wrong nested model; misleading."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 9.2,
+    "explanation": "Clear semantic correction; final-ready."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.6,
+    "explanation": "Correct flat POWL code; concise and faithful."
+  }
+]

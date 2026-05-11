@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first choice; parser was appropriate"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; clear limits flagged"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 6.3,
+    "explanation": "Useful bias read, but overstates causality"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.4,
+    "explanation": "Misleading parity argument; weak counterexample"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 2.0,
+    "explanation": "Incorrect inconsistency claims; harmful doubt"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.8,
+    "explanation": "Strong core answer, but proxy/direct claims blur"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.3,
+    "explanation": "Some value, but semantic claims overreach"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.7,
+    "explanation": "Helpful polish, but overlooks major defects"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.4,
+    "explanation": "Answers prompt, but contains unsupported rigor"
+  }
+]

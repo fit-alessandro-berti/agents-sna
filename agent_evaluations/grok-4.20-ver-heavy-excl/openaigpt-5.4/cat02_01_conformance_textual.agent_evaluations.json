@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first pick: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 9.1,
+    "explanation": "Accurate extraction; useful ambiguity flags"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.6,
+    "explanation": "Strong conformance analysis; slight overreach"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.6,
+    "explanation": "Helpful validation, but mostly repetitive"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.0,
+    "explanation": "Misleading counterexamples; ignores explicit rules"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.9,
+    "explanation": "Correctly rejects bad skepticism; sharp synthesis"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 2.3,
+    "explanation": "Overstates ambiguity; weakly grounded audit"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 9.0,
+    "explanation": "Correct final verdict with grounded rationale"
+  }
+]

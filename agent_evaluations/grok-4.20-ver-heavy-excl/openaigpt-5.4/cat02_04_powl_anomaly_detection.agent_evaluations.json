@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.2,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.8,
+    "explanation": "Useful parse, but loop semantics misstated"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 6.1,
+    "explanation": "Strong corrections, some overreach on anomaly"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.4,
+    "explanation": "Semantically rigorous and corrective"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 2.3,
+    "explanation": "Largely speculative, off-task fairness claims"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.2,
+    "explanation": "Some value, but several semantic inaccuracies"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.4,
+    "explanation": "Mostly useful, but repeats loop/fairness errors"
+  }
+]

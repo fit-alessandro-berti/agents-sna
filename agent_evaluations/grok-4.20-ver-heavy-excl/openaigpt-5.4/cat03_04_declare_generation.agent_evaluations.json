@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Good first routing; parser was useful."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.5,
+    "explanation": "Over-assumed linearity; wrong role and weak rigor."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.9,
+    "explanation": "Useful corrections, but some claims are wrong."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.8,
+    "explanation": "Improves structure; still flawed on absence use."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.6,
+    "explanation": "Adds existence, but forces unjustified templates."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 3.7,
+    "explanation": "Misjudges quality; suggests redundant binaries."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.2,
+    "explanation": "Mostly coherent final draft, but overcommitted."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.0,
+    "explanation": "Clean output, yet semantically over-specified."
+  }
+]

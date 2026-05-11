@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Good first routing; sensible agent choice"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 7.1,
+    "explanation": "Useful models, but not true parsing; minor rigor g"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 5.8,
+    "explanation": "Fairness insights useful; some overreach/speculati"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 6.9,
+    "explanation": "Mostly correct; missed loop-faithfulness nuance"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.7,
+    "explanation": "Meta praise, little new substance; too generous"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.4,
+    "explanation": "Solid final answer; slight semantic oversimplifica"
+  }
+]

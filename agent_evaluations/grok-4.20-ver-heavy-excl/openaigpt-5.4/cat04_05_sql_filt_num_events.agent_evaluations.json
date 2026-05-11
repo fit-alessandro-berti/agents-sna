@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parsing; sensible choice"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; minor overreach on extras"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.6,
+    "explanation": "Correct query, but unsupported optimizer claims"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.2,
+    "explanation": "Mostly spurious objections; fatality claim wrong"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.8,
+    "explanation": "Some useful critique, but edge-case demands overbl"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.9,
+    "explanation": "Semantically precise and well-grounded"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.4,
+    "explanation": "Solid consistency check; no major defects"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 1.4,
+    "explanation": "Irrelevant fairness tangent; not benchmark-grounde"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.7,
+    "explanation": "Correct final SQL; minor unnecessary commentary"
+  }
+]

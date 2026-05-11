@@ -1,0 +1,57 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first agent selection"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.6,
+    "explanation": "Useful draft, but over-interprets cases"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 5.4,
+    "explanation": "Finds real issues, some overclaims"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.0,
+    "explanation": "Mixed: solid checks, bad assumptions"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.2,
+    "explanation": "Process-mining critique partly misguided"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.8,
+    "explanation": "Helpful synthesis, but internally shaky"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.1,
+    "explanation": "Strong log draft, but case logic debatable"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 2.1,
+    "explanation": "Largely irrelevant fairness framing"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.4,
+    "explanation": "Some useful fixes, still contradictory"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.2,
+    "explanation": "Contradicts prior advice; weak grounding"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.4,
+    "explanation": "Usable final answer, but not rigorous"
+  }
+]

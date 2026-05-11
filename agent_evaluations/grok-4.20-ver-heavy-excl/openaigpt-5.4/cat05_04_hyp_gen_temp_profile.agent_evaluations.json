@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first routing to parser."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 9.1,
+    "explanation": "Exact extraction; grounded and useful."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.2,
+    "explanation": "Useful ideas, but overclaims and bad SQL."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.6,
+    "explanation": "Strong critique; some claims overreach."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 7.8,
+    "explanation": "Sharp consistency checks; mostly valuable."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.1,
+    "explanation": "Good semantic cautions; one key overclaim."
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 2.4,
+    "explanation": "Largely irrelevant; speculative fairness talk."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.3,
+    "explanation": "Helpful synthesis advice, but flawed critique."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.5,
+    "explanation": "Answers task, but SQL/schema errors remain."
+  }
+]

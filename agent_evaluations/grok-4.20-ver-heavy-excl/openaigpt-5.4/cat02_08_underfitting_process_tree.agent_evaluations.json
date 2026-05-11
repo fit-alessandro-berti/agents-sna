@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.0,
+    "explanation": "Sensible first agent choice; no defects"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 2.0,
+    "explanation": "Major semantics errors; invalid trace claim"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 1.0,
+    "explanation": "Semantically wrong: partial parallel execution"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.5,
+    "explanation": "Correct counterexample; strong semantics"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 9.0,
+    "explanation": "Correctly rejects bad traces; best candidate"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 8.5,
+    "explanation": "Correct final answer; slightly overstated order"
+  }
+]

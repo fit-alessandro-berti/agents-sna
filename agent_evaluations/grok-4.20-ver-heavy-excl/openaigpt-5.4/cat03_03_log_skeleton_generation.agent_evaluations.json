@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.4,
+    "explanation": "Good first routing; parser was sensible"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.2,
+    "explanation": "Usable draft, but over-assumed constraints"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.8,
+    "explanation": "Helpful corrections, but wrong redundancy claim"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 6.3,
+    "explanation": "Improved rigor, but kept weak assumptions"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.4,
+    "explanation": "Overpraised flawed draft; misleading"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.9,
+    "explanation": "Coherent syntax, but underspecified semantics"
+  }
+]

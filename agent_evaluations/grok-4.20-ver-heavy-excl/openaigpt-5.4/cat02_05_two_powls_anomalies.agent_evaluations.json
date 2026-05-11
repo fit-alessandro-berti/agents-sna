@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first routing to exact parsing"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.9,
+    "explanation": "Accurate extraction; minimal overreach"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.8,
+    "explanation": "Useful but misgraded Model 1 severity"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.2,
+    "explanation": "Solid semantics; missed severe M1 flaw"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 9.4,
+    "explanation": "Crucial correction on M1 and balance"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 9.1,
+    "explanation": "Sharp synthesis guidance; grounded"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 9.3,
+    "explanation": "Best grounded consistency check"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 2.3,
+    "explanation": "Largely irrelevant fairness digression"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Mostly correct; contradictory severity"
+  }
+]

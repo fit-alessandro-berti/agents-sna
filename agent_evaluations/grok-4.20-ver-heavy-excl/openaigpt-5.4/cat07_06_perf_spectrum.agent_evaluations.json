@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first pick: parse before inference"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.1,
+    "explanation": "Useful extraction, but many guesses/hallucinations"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.4,
+    "explanation": "Overreaches badly: drift, loops, inefficiency"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.8,
+    "explanation": "Strong correction of unsupported claims"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.1,
+    "explanation": "Mostly grounded; slight overclaim on semantics"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.8,
+    "explanation": "Improved caution, but still asserts happy path"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.6,
+    "explanation": "Meta praise only; adds no new substance"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 2.1,
+    "explanation": "Invents case/group integrity from image alone"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.6,
+    "explanation": "Solid final description; minor unsupported wording"
+  }
+]

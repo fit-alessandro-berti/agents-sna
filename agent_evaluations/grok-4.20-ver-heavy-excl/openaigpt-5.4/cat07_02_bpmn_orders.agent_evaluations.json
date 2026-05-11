@@ -1,0 +1,57 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first choice: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.3,
+    "explanation": "Useful extraction, but many unchecked assumptions"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.4,
+    "explanation": "Off-task process-mining lecture; speculative"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.1,
+    "explanation": "Confidently blesses likely flawed semantics"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.6,
+    "explanation": "Some correction, still overstates soundness"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.4,
+    "explanation": "Strong critique; possibly overstates illegality"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 7.0,
+    "explanation": "Helpful consolidation of key inconsistencies"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.0,
+    "explanation": "Claims no hallucinations despite prior doubts"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.6,
+    "explanation": "Adversarial but several likely invented flaws"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.8,
+    "explanation": "Overly optimistic; ignores unresolved issues"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.1,
+    "explanation": "Reasonable description, but still speculative"
+  }
+]

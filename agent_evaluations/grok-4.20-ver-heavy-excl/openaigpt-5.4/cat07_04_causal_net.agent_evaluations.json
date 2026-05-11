@@ -1,0 +1,22 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.6,
+    "explanation": "Sensible first choice; no defects."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 4.2,
+    "explanation": "Useful labels, but many unsupported inferences."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.4,
+    "explanation": "Overinterprets image with PM jargon, ungrounded."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 1.0,
+    "explanation": "No final response provided."
+  }
+]

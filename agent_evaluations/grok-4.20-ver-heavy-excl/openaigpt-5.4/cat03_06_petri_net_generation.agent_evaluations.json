@@ -1,0 +1,52 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 7.8,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.2,
+    "explanation": "Useful draft, but loop/start semantics flawed"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 3.1,
+    "explanation": "Confidently missed key semantic defects"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.4,
+    "explanation": "Incorrectly certified flawed net as faithful"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.8,
+    "explanation": "Caught some issues, but one critique is shaky"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 2.0,
+    "explanation": "Mostly wrong counterexamples; misleading review"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.9,
+    "explanation": "Spotted earlier flaws, but proposed net wrong"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.2,
+    "explanation": "Final code badly misorders activities/loops"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.6,
+    "explanation": "Validated an incorrect refined model"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.0,
+    "explanation": "Executable, but semantics/order are incorrect"
+  }
+]

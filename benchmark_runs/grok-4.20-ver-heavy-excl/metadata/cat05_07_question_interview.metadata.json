@@ -1,0 +1,13 @@
+{
+  "run_name": "grok-4.20-ver-heavy-excl",
+  "question": "cat05_07_question_interview.txt",
+  "status": "completed",
+  "error": null,
+  "model": "x-ai/grok-4.20",
+  "config": "configs\\pm_benchmark_verification_heavy_excluding_low_edges.json",
+  "answer_path": "C:\\Users\\berti\\pm-llm-benchmark\\answers\\grok-4.20-ver-heavy-excl_cat05_07_question_interview.txt",
+  "request_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-ver-heavy-excl\\requests\\cat05_07_question_interview.requests.json",
+  "response_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-ver-heavy-excl\\responses\\cat05_07_question_interview.responses.json",
+  "trace_path": "C:\\Users\\berti\\agents-sna\\benchmark_runs\\grok-4.20-ver-heavy-excl\\traces\\cat05_07_question_interview.trace.json",
+  "final_answer_length": 3300
+}

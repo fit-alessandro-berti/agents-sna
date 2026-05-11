@@ -1,0 +1,52 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first choice: parse before inference"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 3.1,
+    "explanation": "Detailed but heavily speculative/hallucinated"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 2.6,
+    "explanation": "Strong PM jargon, weak grounding, overclaims"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 3.4,
+    "explanation": "Some caution, but assumes invalid semantics"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 1.4,
+    "explanation": "Invented contradictions; actively misleading"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.8,
+    "explanation": "Internally inconsistent and hallucinatory"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.9,
+    "explanation": "Correctly flags drift and hallucinations"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.7,
+    "explanation": "Useful correction and final-answer guidance"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 9.1,
+    "explanation": "Grounded extraction; fixes prior false claims"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.3,
+    "explanation": "Good description, minor overinterpretation"
+  }
+]

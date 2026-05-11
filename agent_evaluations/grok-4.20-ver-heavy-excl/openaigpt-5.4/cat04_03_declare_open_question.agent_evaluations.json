@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to exact extraction."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.1,
+    "explanation": "Useful extraction, but several semantic slips."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.2,
+    "explanation": "Fluent but overclaims; misses contradictions."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 8.9,
+    "explanation": "Strong contradiction check; well grounded."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.6,
+    "explanation": "Helpful critique, but some claims overstated."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 8.4,
+    "explanation": "Accurate gap analysis and next-step advice."
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 4.6,
+    "explanation": "Some relevant risks, but speculative extras."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 7.9,
+    "explanation": "Good consistency audit; slight overreach."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.8,
+    "explanation": "Solid synthesis, but still contains defects."
+  }
+]

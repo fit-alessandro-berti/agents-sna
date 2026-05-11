@@ -1,0 +1,47 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to exact log extraction"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 9.1,
+    "explanation": "Exact trace extraction; clear caveats"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.3,
+    "explanation": "Useful, but too absolute on P2P rules"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.6,
+    "explanation": "Overendorses assumed model as faithful"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 6.8,
+    "explanation": "Good caveats, but some weak objections"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 7.6,
+    "explanation": "Solid consistency checks; balanced note"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.9,
+    "explanation": "Helpful polish, but overrates draft quality"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 4.2,
+    "explanation": "Mostly tangential to prompt, slight value"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 6.1,
+    "explanation": "Covers key anomalies, but overstates certainty"
+  }
+]

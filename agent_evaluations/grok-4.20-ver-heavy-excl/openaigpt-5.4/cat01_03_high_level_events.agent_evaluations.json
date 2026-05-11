@@ -1,0 +1,52 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first pick: parse before reasoning"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.7,
+    "explanation": "Accurate extraction; minor overreach in groups"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.1,
+    "explanation": "Useful draft, but weak singleton QA split"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 6.4,
+    "explanation": "Catches QA flaw; some criticisms overstate"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.2,
+    "explanation": "Invents unjustified event 9 regrouping"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.9,
+    "explanation": "Good critique, but bad QA merge advice"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 2.8,
+    "explanation": "Misstates prompt fit; flawed final directives"
+  },
+  {
+    "agent_type": "bias_and_impact_auditor",
+    "evaluation": 2.1,
+    "explanation": "Mostly irrelevant fairness speculation"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 3.6,
+    "explanation": "Checks data well, then unsupported grouping"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 4.8,
+    "explanation": "Structured and clear, but wrong event grouping"
+  }
+]

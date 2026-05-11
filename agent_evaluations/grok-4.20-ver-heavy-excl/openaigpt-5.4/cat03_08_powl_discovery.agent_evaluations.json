@@ -1,0 +1,92 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.9,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.2,
+    "explanation": "Useful parse, but wrong loop assumptions"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.8,
+    "explanation": "Strong critique; one RT-loop claim shaky"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 3.6,
+    "explanation": "Advances discussion, but flawed semantics"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.8,
+    "explanation": "Some valid checks, many incorrect claims"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.4,
+    "explanation": "Partial fix, still semantically wrong"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.5,
+    "explanation": "Introduces invalid duplicate-AS structure"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 1.8,
+    "explanation": "Claims fidelity for a clearly broken model"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 8.4,
+    "explanation": "Accurate teardown of duplicate-AS model"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.9,
+    "explanation": "Closer model, but loop semantics still off"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.7,
+    "explanation": "Adds duplicate test loop; faulty reasoning"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.1,
+    "explanation": "Still broken; unsupported replay claim"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 7.9,
+    "explanation": "Useful counterexamples; good corrective steer"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.3,
+    "explanation": "LB XOR note useful; core model invalid"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 3.9,
+    "explanation": "Catches syntax issue, keeps wrong IQC loop"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.3,
+    "explanation": "Self-contradictory; repeats wrong solution"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 2.9,
+    "explanation": "Still asserts impossible loop behavior"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 3.4,
+    "explanation": "Final answer coherent-looking but semantically wro"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.4,
+    "explanation": "Good first agent choice; sensible setup"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 6.1,
+    "explanation": "Useful extraction; causal leap in parser role"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 8.7,
+    "explanation": "Strong verification; clear confounding warning"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 5.8,
+    "explanation": "Mostly useful; overclaims causality and >90%"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 7.1,
+    "explanation": "Coherent semantics check; a bit overstated"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 6.4,
+    "explanation": "Helpful QA, but too lenient and uncritical"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.6,
+    "explanation": "Covers task, but unsupported targets/causality"
+  }
+]

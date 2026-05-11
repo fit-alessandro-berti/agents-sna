@@ -1,0 +1,37 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.2,
+    "explanation": "Good first routing to parse artifacts"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 5.4,
+    "explanation": "Useful parse, but imposed false lifecycle order"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 4.7,
+    "explanation": "Mostly useful; unsupported chronology claims"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 4.3,
+    "explanation": "Some PM value, but wrong event aggregation"
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 3.1,
+    "explanation": "Catches issues but includes self-contradictions"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 5.9,
+    "explanation": "Helpful corrections, but repeats bad schema choice"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 2.6,
+    "explanation": "Final log has major ordering and aggregation error"
+  }
+]

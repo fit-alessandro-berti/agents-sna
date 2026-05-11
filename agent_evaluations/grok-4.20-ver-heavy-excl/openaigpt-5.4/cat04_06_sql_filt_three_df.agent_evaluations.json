@@ -1,0 +1,52 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first choice; parser was apt."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.4,
+    "explanation": "Accurate extraction; tie ambiguity flagged."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.8,
+    "explanation": "Useful query; unsupported anti join certainty."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 6.4,
+    "explanation": "Mostly correct; overstates no corrections."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 3.2,
+    "explanation": "Bad advice: NOT IN over anti join, shaky claim."
+  },
+  {
+    "agent_type": "counterexample_hunter",
+    "evaluation": 4.1,
+    "explanation": "Good tie warning; wrong triplet-scope critique."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.9,
+    "explanation": "Helpful conflict spotting; some overreach."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 2.4,
+    "explanation": "Introduces invalid tie-breaker logic."
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.8,
+    "explanation": "Reasonable summary, but accepts flawed tie fix."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 5.7,
+    "explanation": "Mostly works; row_number unused, ties unresolved."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.6,
+    "explanation": "Good first agent choice; appropriate setup."
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.1,
+    "explanation": "Strong extraction; slight overreach on uniqueness."
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 6.2,
+    "explanation": "Useful grouping, but added unsupported PM claims."
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 5.4,
+    "explanation": "Checks help, but overstates certainty and logic."
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.7,
+    "explanation": "Mostly boilerplate; unsupported semantic claims."
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.8,
+    "explanation": "Correct final grouping; minor overclaim on certain"
+  }
+]

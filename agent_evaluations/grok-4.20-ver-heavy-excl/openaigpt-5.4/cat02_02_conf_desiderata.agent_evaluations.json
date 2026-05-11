@@ -1,0 +1,42 @@
+[
+  {
+    "agent_type": "START",
+    "evaluation": 8.3,
+    "explanation": "Good first routing to extraction"
+  },
+  {
+    "agent_type": "artifact_parser",
+    "evaluation": 8.8,
+    "explanation": "Accurate extraction; minor overreach"
+  },
+  {
+    "agent_type": "domain_reasoner",
+    "evaluation": 8.1,
+    "explanation": "Useful and correct; some needless jargon"
+  },
+  {
+    "agent_type": "data_consistency_auditor",
+    "evaluation": 7.6,
+    "explanation": "Solid verification; one overclaim on traces"
+  },
+  {
+    "agent_type": "formal_semantics_checker",
+    "evaluation": 4.7,
+    "explanation": "Formalism partly unsupported/inaccurate"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 5.4,
+    "explanation": "Meta-helpful but inflated and redundant"
+  },
+  {
+    "agent_type": "benchmark_answer_judge",
+    "evaluation": 4.2,
+    "explanation": "Mostly repetition; limited added value"
+  },
+  {
+    "agent_type": "COMPLETE",
+    "evaluation": 7.8,
+    "explanation": "Strong final; some unsupported PM claims"
+  }
+]
