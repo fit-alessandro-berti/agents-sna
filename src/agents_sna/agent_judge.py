@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import Future, ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 import glob
 import json
 import os
@@ -18,6 +20,22 @@ from agents_sna.openrouter import DEFAULT_BASE_URL, OpenRouterClient
 
 DEFAULT_JUDGE_MODEL = "openai/gpt-5.4"
 MAX_EXPLANATION_CHARS = 50
+
+
+@dataclass(frozen=True)
+class JudgeRunTask:
+    index: int
+    total: int
+    request_path: Path
+    response_path: Path
+    output_path: Path
+
+
+@dataclass(frozen=True)
+class JudgeRunResult:
+    index: int
+    summary: dict[str, object]
+    failed: bool = False
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -43,6 +61,8 @@ def run_agent_judge(args: argparse.Namespace) -> None:
     api_key = args.api_key or os.getenv("OPENROUTER_API_KEY")
     if not api_key:
         raise ValueError("OpenRouter API key missing. Set OPENROUTER_API_KEY or pass --api-key.")
+    if args.max_threads < 1:
+        raise ValueError("--max-threads must be at least 1.")
 
     request_files = collect_request_files(args.request_inputs)
     if args.limit is not None:
@@ -65,7 +85,8 @@ def run_agent_judge(args: argparse.Namespace) -> None:
         use_color=not args.no_color,
     )
 
-    summary: list[dict[str, object]] = []
+    summary_by_index: list[dict[str, object] | None] = [None] * len(request_files)
+    tasks: list[JudgeRunTask] = []
     for index, request_path in enumerate(request_files, start=1):
         response_path = infer_response_path(request_path, args.responses_dir)
         output_path = output_file_path(
@@ -76,64 +97,142 @@ def run_agent_judge(args: argparse.Namespace) -> None:
 
         if output_path.exists() and output_path.read_text(encoding="utf-8").strip() and not args.overwrite:
             print(f"[{index}/{len(request_files)}] skipping judged {output_path.name}")
-            summary.append(
-                {
-                    "request_path": str(request_path),
-                    "response_path": str(response_path),
-                    "output_path": str(output_path),
-                    "status": "skipped_existing",
-                }
-            )
+            summary_by_index[index - 1] = {
+                "request_path": str(request_path),
+                "response_path": str(response_path),
+                "output_path": str(output_path),
+                "status": "skipped_existing",
+            }
             continue
 
-        print(f"[{index}/{len(request_files)}] judging {request_path.name}")
-        try:
-            requests = read_json_list(request_path)
-            responses = read_json_list(response_path)
-            candidates = build_evaluation_candidates(requests, responses)
-            evaluations = judge_candidates(
-                client=client,
-                candidates=candidates,
-                original_prompt=extract_original_prompt(requests),
-                judge_model=args.judge_model,
+        tasks.append(
+            JudgeRunTask(
+                index=index,
+                total=len(request_files),
+                request_path=request_path,
+                response_path=response_path,
+                output_path=output_path,
             )
-            write_json_file(output_path, evaluations)
-            summary.append(
-                {
-                    "request_path": str(request_path),
-                    "response_path": str(response_path),
-                    "output_path": str(output_path),
-                    "status": "completed",
-                }
-            )
-        except Exception as exc:
-            summary.append(
-                {
-                    "request_path": str(request_path),
-                    "response_path": str(response_path),
-                    "output_path": str(output_path),
-                    "status": "failed",
-                    "error": str(exc),
-                }
-            )
-            print(
-                color_text(
-                    f"failed {request_path.name}: {exc}",
-                    Colors.RED,
-                    enabled=not args.no_color,
-                ),
-                file=sys.stderr,
-            )
-            if not args.continue_on_error:
-                break
+        )
+
+    for result in run_judge_tasks(tasks, client=client, args=args):
+        summary_by_index[result.index - 1] = result.summary
+
+    summary = [item for item in summary_by_index if item is not None]
 
     write_json_file(
         args.output_dir / "summary.json",
         {
             "judge_model": args.judge_model,
+            "max_threads": args.max_threads,
             "evaluated_files": summary,
         },
     )
+
+
+def run_judge_tasks(
+    tasks: list[JudgeRunTask],
+    *,
+    client: RetryingChatClient,
+    args: argparse.Namespace,
+) -> list[JudgeRunResult]:
+    if not tasks:
+        return []
+
+    if args.max_threads == 1:
+        results: list[JudgeRunResult] = []
+        for task in tasks:
+            result = run_judge_task(task, client=client, args=args)
+            results.append(result)
+            if result.failed and not args.continue_on_error:
+                break
+        return results
+
+    max_workers = min(args.max_threads, len(tasks))
+    results: list[JudgeRunResult] = []
+    next_task_index = 0
+    stopping = False
+    futures: dict[Future[JudgeRunResult], JudgeRunTask] = {}
+
+    def submit_next(executor: ThreadPoolExecutor) -> None:
+        nonlocal next_task_index
+        task = tasks[next_task_index]
+        next_task_index += 1
+        futures[executor.submit(run_judge_task, task, client=client, args=args)] = task
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        for _ in range(max_workers):
+            submit_next(executor)
+
+        while futures:
+            for future in as_completed(tuple(futures)):
+                futures.pop(future)
+                if future.cancelled():
+                    break
+
+                result = future.result()
+                results.append(result)
+
+                if result.failed and not args.continue_on_error:
+                    stopping = True
+                    for pending in futures:
+                        pending.cancel()
+
+                if not stopping and next_task_index < len(tasks):
+                    submit_next(executor)
+                break
+
+    return results
+
+
+def run_judge_task(
+    task: JudgeRunTask,
+    *,
+    client: RetryingChatClient,
+    args: argparse.Namespace,
+) -> JudgeRunResult:
+    print(f"[{task.index}/{task.total}] judging {task.request_path.name}")
+    try:
+        requests = read_json_list(task.request_path)
+        responses = read_json_list(task.response_path)
+        candidates = build_evaluation_candidates(requests, responses)
+        evaluations = judge_candidates(
+            client=client,
+            candidates=candidates,
+            original_prompt=extract_original_prompt(requests),
+            judge_model=args.judge_model,
+        )
+        write_json_file(task.output_path, evaluations)
+        return JudgeRunResult(
+            index=task.index,
+            summary={
+                "request_path": str(task.request_path),
+                "response_path": str(task.response_path),
+                "output_path": str(task.output_path),
+                "status": "completed",
+            },
+        )
+    except Exception as exc:
+        action = "continuing" if args.continue_on_error else "stopping"
+        print(
+            color_text(
+                f"failed {task.request_path.name}: {exc} ({action})",
+                Colors.RED,
+                enabled=not args.no_color,
+            ),
+            file=sys.stderr,
+        )
+        return JudgeRunResult(
+            index=task.index,
+            summary={
+                "request_path": str(task.request_path),
+                "response_path": str(task.response_path),
+                "output_path": str(task.output_path),
+                "status": "failed",
+                "error": str(exc),
+            },
+            failed=True,
+        )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -217,6 +316,17 @@ def build_parser() -> argparse.ArgumentParser:
         "--continue-on-error",
         action="store_true",
         help="Continue with later files after a failed evaluation.",
+    )
+    parser.add_argument(
+        "--max-threads",
+        "--max_threads",
+        dest="max_threads",
+        type=int,
+        default=1,
+        help=(
+            "Maximum number of request/response file pairs to judge concurrently. "
+            "Defaults to 1."
+        ),
     )
     parser.add_argument(
         "--limit",

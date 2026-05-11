@@ -60,6 +60,14 @@ class FailOnceOrchestrator:
         return OrchestrationResult(final_answer="second answer", agent_answers=())
 
 
+class NeverCalledOrchestrator:
+    def __init__(self, *, config, client, event_handler=None) -> None:
+        pass
+
+    def run(self, prompt):
+        raise AssertionError("orchestrator should not run for existing response artifacts")
+
+
 class ConcurrentOrchestrator:
     active = 0
     max_active = 0
@@ -230,9 +238,51 @@ class BenchmarkRunnerTests(unittest.TestCase):
 
             self.assertEqual(FailOnceOrchestrator.calls, 2)
             self.assertFalse((benchmark_dir / "answers" / "run_a.txt").exists())
+            self.assertFalse((benchmark_dir / "answers" / "run_b.txt").exists())
+            self.assertTrue((output_dir / "run" / "metadata" / "b.metadata.json").is_file())
+
+    def test_run_benchmark_skips_existing_local_response_artifacts(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            benchmark_dir = root / "pm-llm-benchmark"
+            questions_dir = benchmark_dir / "questions"
+            questions_dir.mkdir(parents=True)
+            (questions_dir / "a.txt").write_text("first", encoding="utf-8")
+            output_dir = root / "runs"
+            response_path = output_dir / "run" / "responses" / "a.responses.json"
+            response_path.parent.mkdir(parents=True)
+            response_path.write_text('[{"kind":"final","content":"existing"}]', encoding="utf-8")
+
+            args = build_parser().parse_args(
+                [
+                    "run",
+                    "--config",
+                    "config.json",
+                    "--benchmark-dir",
+                    str(benchmark_dir),
+                    "--output-dir",
+                    str(output_dir),
+                    "--api-key",
+                    "key",
+                    "--no-color",
+                ]
+            )
+
+            with (
+                redirect_stdout(io.StringIO()),
+                redirect_stderr(io.StringIO()),
+                patch.object(benchmark_runner, "OpenRouterClient", FakeOpenRouterClient),
+                patch.object(benchmark_runner, "AgenticOrchestrator", NeverCalledOrchestrator),
+                patch.object(benchmark_runner, "load_config", return_value=object()),
+                patch.object(benchmark_runner, "resolve_config_path", return_value=Path("config.json")),
+            ):
+                run_benchmark(args)
+
+            summary = (output_dir / "run" / "summary.json").read_text(encoding="utf-8")
+            self.assertIn('"status": "skipped_existing_response"', summary)
             self.assertEqual(
-                (benchmark_dir / "answers" / "run_b.txt").read_text(encoding="utf-8"),
-                "second answer\n",
+                response_path.read_text(encoding="utf-8"),
+                '[{"kind":"final","content":"existing"}]',
             )
 
     def test_run_benchmark_can_process_questions_concurrently(self) -> None:
@@ -277,8 +327,10 @@ class BenchmarkRunnerTests(unittest.TestCase):
                 run_benchmark(args)
 
             self.assertGreaterEqual(ConcurrentOrchestrator.max_active, 2)
-            self.assertTrue((benchmark_dir / "answers" / "run_a.txt").is_file())
-            self.assertTrue((benchmark_dir / "answers" / "run_b.txt").is_file())
+            self.assertFalse((benchmark_dir / "answers" / "run_a.txt").exists())
+            self.assertFalse((benchmark_dir / "answers" / "run_b.txt").exists())
+            self.assertTrue((output_dir / "run" / "traces" / "a.trace.json").is_file())
+            self.assertTrue((output_dir / "run" / "traces" / "b.trace.json").is_file())
 
 
 if __name__ == "__main__":

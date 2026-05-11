@@ -141,22 +141,24 @@ Run a config over every question in a local PM-LLM-Benchmark checkout:
 
 `python src/agents_sna/benchmark_runner.py gpt-5.4-mini-verification-heavy --config configs/pm_benchmark_verification_heavy.json --benchmark-dir ../pm-llm-benchmark --model openai/gpt-5.4-mini`
 
-The positional name is the benchmark run alias used for answer filenames,
+The positional name is the benchmark run alias used for local artifacts,
 for example:
 
 ```text
-../pm-llm-benchmark/answers/gpt-5.4-mini-verification-heavy_cat01_01_case_id_inference.txt
+benchmark_runs/gpt-5.4-mini-verification-heavy/responses/cat01_01_case_id_inference.responses.json
 ```
 
 The actual OpenRouter model is controlled by `--model`.
 
-Questions with an existing non-empty answer file are skipped unless
-`--overwrite` is passed. If an OpenRouter request fails, the runner
-retries the same request after 15 seconds by default; adjust this with
-`--retry-delay` or cap retries with `--max-retries`. If a question still
-fails at the orchestration level, the failure is recorded and the runner
-continues with later questions by default. Use `--stop-on-error` to stop
-after the first failed question.
+Questions with an existing non-empty local `responses/*.responses.json`
+artifact are skipped unless `--overwrite` is passed. The runner does not
+write answer files into `../pm-llm-benchmark/answers`; final answers are
+kept in the local `responses/` and `traces/` artifacts. If an OpenRouter
+request fails, the runner retries the same request after 15 seconds by
+default; adjust this with `--retry-delay` or cap retries with
+`--max-retries`. If a question still fails at the orchestration level,
+the failure is recorded and the runner continues with later questions by
+default. Use `--stop-on-error` to stop after the first failed question.
 
 Use `--max-threads N` to run multiple questions concurrently, for
 example `--max-threads 100`. The default is `1`, which preserves the
@@ -185,6 +187,10 @@ LLM-as-a-judge:
 You can also pass a `requests/` directory, individual
 `*.requests.json` files, or glob patterns. Matching response files are
 found from the sibling `responses/` directory by default.
+
+Use `--max-threads N` to judge multiple request/response file pairs
+concurrently. The default is `1`, which preserves the original
+sequential behavior.
 
 Each output file is written under:
 

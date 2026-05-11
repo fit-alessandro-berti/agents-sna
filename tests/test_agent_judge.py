@@ -1,12 +1,17 @@
 from __future__ import annotations
 
+from contextlib import redirect_stderr, redirect_stdout
+import io
 from pathlib import Path
 import sys
 import tempfile
+import threading
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
+import agents_sna.agent_judge as agent_judge
 from agents_sna.agent_judge import (
     MAX_EXPLANATION_CHARS,
     build_evaluation_candidates,
@@ -16,7 +21,35 @@ from agents_sna.agent_judge import (
     infer_response_path,
     output_file_path,
     parse_judge_response,
+    run_agent_judge,
 )
+
+
+class ConcurrentJudgeClient:
+    active = 0
+    max_active = 0
+    started = 0
+    lock = threading.Lock()
+    second_started = threading.Event()
+
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
+    def complete(self, messages, *, model=None):
+        with type(self).lock:
+            type(self).active += 1
+            type(self).started += 1
+            type(self).max_active = max(type(self).max_active, type(self).active)
+            if type(self).started >= 2:
+                type(self).second_started.set()
+
+        try:
+            if not type(self).second_started.wait(timeout=2):
+                raise RuntimeError("second concurrent judge request did not start")
+            return '[{"node_id":"n1","evaluation":8,"explanation":"Solid"}]'
+        finally:
+            with type(self).lock:
+                type(self).active -= 1
 
 
 class AgentJudgeTests(unittest.TestCase):
@@ -59,10 +92,85 @@ class AgentJudgeTests(unittest.TestCase):
                 "requests",
                 "--additional-payload",
                 '{"temperature": 0.2}',
+                "--max-threads",
+                "100",
             ]
         )
 
         self.assertEqual(args.additional_payload, {"temperature": 0.2})
+        self.assertEqual(args.max_threads, 100)
+        alias_args = build_parser().parse_args(
+            [
+                "requests",
+                "--max_threads",
+                "25",
+            ]
+        )
+        self.assertEqual(alias_args.max_threads, 25)
+
+    def test_run_agent_judge_can_process_files_concurrently(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            run_dir = root / "run"
+            requests_dir = run_dir / "requests"
+            responses_dir = run_dir / "responses"
+            requests_dir.mkdir(parents=True)
+            responses_dir.mkdir()
+            for name, prompt in (("a", "first"), ("b", "second")):
+                (requests_dir / f"{name}.requests.json").write_text(
+                    (
+                        '[{"kind":"final","iteration":1,"agent":null,'
+                        f'"messages":[{{"role":"user","content":"{prompt}"}}]}}]'
+                    ),
+                    encoding="utf-8",
+                )
+                (responses_dir / f"{name}.responses.json").write_text(
+                    '[{"kind":"final","iteration":1,"agent":null,"content":"answer"}]',
+                    encoding="utf-8",
+                )
+            output_dir = root / "evaluations"
+
+            args = build_parser().parse_args(
+                [
+                    str(run_dir),
+                    "--output-dir",
+                    str(output_dir),
+                    "--api-key",
+                    "key",
+                    "--no-color",
+                    "--max-threads",
+                    "2",
+                ]
+            )
+
+            ConcurrentJudgeClient.active = 0
+            ConcurrentJudgeClient.max_active = 0
+            ConcurrentJudgeClient.started = 0
+            ConcurrentJudgeClient.second_started = threading.Event()
+            with (
+                redirect_stdout(io.StringIO()),
+                redirect_stderr(io.StringIO()),
+                patch.object(agent_judge, "OpenRouterClient", ConcurrentJudgeClient),
+            ):
+                run_agent_judge(args)
+
+            self.assertGreaterEqual(ConcurrentJudgeClient.max_active, 2)
+            self.assertTrue(
+                (
+                    output_dir
+                    / "run"
+                    / "openaigpt-5.4"
+                    / "a.agent_evaluations.json"
+                ).is_file()
+            )
+            self.assertTrue(
+                (
+                    output_dir
+                    / "run"
+                    / "openaigpt-5.4"
+                    / "b.agent_evaluations.json"
+                ).is_file()
+            )
 
     def test_build_candidates_skips_later_selectors_and_includes_complete(self) -> None:
         requests = [

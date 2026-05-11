@@ -323,15 +323,18 @@ def run_benchmark(args: argparse.Namespace) -> None:
         trace_path = trace_dir / f"{question_slug}.trace.json"
         metadata_path = metadata_dir / f"{question_slug}.metadata.json"
 
-        if answer_received(answer_path) and not args.overwrite:
+        if artifact_received(response_path) and not args.overwrite:
             print(
-                f"[{index}/{len(question_paths)}] skipping answered "
-                f"{answer_path.name}"
+                f"[{index}/{len(question_paths)}] skipping existing response "
+                f"{response_path.name}"
             )
             summary_by_index[index - 1] = {
                 "question": question_path.name,
                 "status": "skipped_existing_response",
-                "answer_path": str(answer_path),
+                "request_path": str(request_path),
+                "response_path": str(response_path),
+                "trace_path": str(trace_path),
+                "metadata_path": str(metadata_path),
             }
             continue
 
@@ -481,7 +484,8 @@ def run_question_task(
             client=client,
             event_handler=recorder.handle,
         ).run(prompt)
-        task.answer_path.write_text(result.final_answer + "\n", encoding="utf-8")
+        # Do not write PM-LLM-Benchmark answer files; traces/responses carry the result.
+        # task.answer_path.write_text(result.final_answer + "\n", encoding="utf-8")
         recorder.write(final_answer=result.final_answer, status="completed")
         return QuestionRunResult(
             index=task.index,
@@ -525,7 +529,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "run_name",
         help=(
-            "Benchmark run/model alias used in answer filenames, e.g. "
+            "Benchmark run/model alias used in local artifact paths, e.g. "
             "gpt-5.4-mini-verification-heavy."
         ),
     )
@@ -586,7 +590,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--overwrite",
         action="store_true",
-        help="Recompute answers even if the answer file already exists.",
+        help="Run even if a matching local response artifact already exists.",
     )
     parser.add_argument(
         "--continue-on-error",
@@ -678,9 +682,13 @@ def answer_file_path(*, answers_dir: Path, run_slug: str, question_path: Path) -
 
 
 def answer_received(answer_path: Path) -> bool:
-    if not answer_path.exists() or not answer_path.is_file():
+    return artifact_received(answer_path)
+
+
+def artifact_received(path: Path) -> bool:
+    if not path.exists() or not path.is_file():
         return False
-    return bool(answer_path.read_text(encoding="utf-8", errors="ignore").strip())
+    return bool(path.read_text(encoding="utf-8", errors="ignore").strip())
 
 
 def safe_question_slug(question_path: Path) -> str:
